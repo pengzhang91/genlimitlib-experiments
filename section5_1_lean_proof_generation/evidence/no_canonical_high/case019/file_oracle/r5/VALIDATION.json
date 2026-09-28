@@ -1,0 +1,212 @@
+{
+  "author_lean_size": {
+    "bytes": 49267,
+    "files": 7,
+    "lines": 1277,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 3497.998769,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 153,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 153
+      },
+      "total_upstream_usd": 4.433577,
+      "unverifiable": 0
+    },
+    "run_id": "file_oracle_case019_nocanonical_v1_r5",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "f9d982f50f0bb8328444fbffa26da9569a7de62efb5ac07b2c0e83f6ac2898d6",
+      "within_word_limit": true,
+      "words": 131
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 49267,
+    "files": 7,
+    "lines": 1277,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 3379.834344483912,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "source_hashes": {
+        "APIProbe.lean": "287dc2b4f6a53e404ef68ddef4752d9d1c4beb628bbd2a56c2c10eb1b1f6210b",
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Check.lean": "b4aa1203a7a03134e49f3e3328384c671dfb7c0f777e7be9dfeb2d3d6011dea8",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "Debug.lean": "88f2d8d849b4729674f74b8a1513ad206123ac143731a5624c6cb8ef8d391bb7",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "Explore.lean": "f1083fedc1b256d573dc8ac54ad66dd2480f6ffc8bd8e26374e0e19c13e2eff5",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Probe.lean": "fe7521ba5f128fd7d5018c3ab615c096a62cd31dc5c55f19dcd7b0bda6296428",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 3484.736548705958,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 3497.998769,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+        "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+        "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+        "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+        "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+        "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+        "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 55,
+    "failed_checker_command_events_to_first_pass": 41,
+    "first_valid_observed_pass_seconds": 3379.834344483912,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 3497.311280446127,
+        "usage": {
+          "cache_write_input_tokens": 746712,
+          "cached_input_tokens": 8130345,
+          "input_tokens": 8887201,
+          "output_tokens": 92044,
+          "reasoning_output_tokens": 31278
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "file_oracle_case019_nocanonical_v1_r5",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

@@ -1,0 +1,40 @@
+{
+  "arm": "P",
+  "condition": "canonical_medium",
+  "formal_runs": [
+    "p_case025_reasoning_medium_v1_r1",
+    "p_case025_reasoning_medium_v1_r2",
+    "p_case025_reasoning_medium_v1_r3",
+    "p_case025_reasoning_medium_v1_r4",
+    "p_case025_reasoning_medium_v1_r5"
+  ],
+  "model": "openai/gpt-5.6-sol",
+  "prompt_file_source_sha256": {
+    "AGENTS.md": "8f0abe796a10f296e4b3fe2579ddd1e9346914e74d83497aff65737c303f0f7c",
+    "control/AUTHOR_PROMPT.txt": "9fe102d54392502010cdb4ea945f9d02e2329c1f73727a571674bb57eaf28ae3",
+    "design/AGENTS.md": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087",
+    "design/CANONICAL_FULL_PROOF.md": "ec7fa24de38e3a829ba7c985fcc2c2cf3486f0dcfe0d2d0a1b6eb169f798325f",
+    "design/LEAN_CHECK.md": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713",
+    "design/SOURCE_CONFIG.md": "31b99b1b690aee1d32c8d9eeb368e5443b1d43d5818cbbf7d0ee63b1147a4d0e",
+    "design/Stage3Model.lean": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941",
+    "design/TASK_STAGE3.md": "dfbd76d1b5857a33557f8f22020f9c85af9eebbd6710f7c6ccca23fe7021e5b3",
+    "design/THEOREM_STATEMENT.md": "80345ba6d205898a0b7083fa564688d58f965a82af82210c9ad1ddf9e613375f",
+    "design/TargetTemplate.lean": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79",
+    "review_design/AGENTS.md": "2b3561f9b21d93b50345b3ed651753722659ade9dfbae4a561c72beb13acdf55",
+    "review_design/OBLIGATIONS.md": "3694d8e238a763af9d0b429148950f3f19c97934242468240f8db61a0437159f",
+    "review_design/REVIEW_TASK.md": "690352c7997fe638185ec2d5b792a008f3c4f1de03a00ceb2125e8782ccaffdb"
+  },
+  "provider_pin": {
+    "allow_fallbacks": false,
+    "only": [
+      "openai"
+    ]
+  },
+  "reasoning_effort": "medium",
+  "seconds_per_run": 5400,
+  "source_bundles": [
+    "lean2paper_case025_reasoning_medium_v1"
+  ],
+  "task": "case025",
+  "transport": "openrouter-via-local-pinning-proxy"
+}

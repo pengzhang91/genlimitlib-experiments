@@ -1,0 +1,9 @@
+import Case024Helpers
+open MeasureTheory
+#check MeasureTheory.integrable_const
+#check MeasureTheory.integral_congr_ae
+#check MeasureTheory.integral_eq_zero_of_ae
+#check MeasureTheory.integral_mono_ae
+#check isProbabilityMeasure_iff
+#check measure_univ
+#check IsProbabilityMeasure.measure_univ

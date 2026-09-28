@@ -1,0 +1,10 @@
+import Helpers
+import Mathlib
+#check Finset.single_le_sum
+#check Finset.single_le_sum_of_mem
+#check Finset.sum_le_sum_of_subset_of_nonneg
+#check GenLimit.mem_sample_iff
+#check Finset.mem_image
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_not_subset
+#check Nat.sub_lt

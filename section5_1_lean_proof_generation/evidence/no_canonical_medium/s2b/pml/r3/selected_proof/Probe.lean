@@ -1,0 +1,14 @@
+import Stage3Model
+#check Function.Injective.of_lt_imp_ne
+#check Function.Pairwise
+#check Finset.mem_biUnion
+#check Finset.mem_image
+#check Fin.lastCases_last
+#check Fin.lastCases_castSucc
+#check Nat.even_or_odd
+#check Nat.two_mul_div_two_of_even
+#check Nat.two_mul_div_two
+#check Nat.mod_two_eq_zero_or_one
+#check Nat.log2
+#check Nat.log_le_self
+#check Nat.log_lt_self

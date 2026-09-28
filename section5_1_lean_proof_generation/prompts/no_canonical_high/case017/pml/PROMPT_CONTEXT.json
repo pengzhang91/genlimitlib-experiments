@@ -1,0 +1,41 @@
+{
+  "arm": "PML",
+  "condition": "no_canonical_high",
+  "formal_runs": [
+    "pml_case017_nocanonical_v1_r1",
+    "pml_case017_nocanonical_v1_r2",
+    "pml_case017_nocanonical_v1_r3",
+    "pml_case017_nocanonical_v1_r4",
+    "pml_case017_nocanonical_v1_r5"
+  ],
+  "model": "openai/gpt-5.6-sol",
+  "prompt_file_source_sha256": {
+    "AGENTS.md": "6fb87dcc51c63ab5e61c031eabfc9f1cb15152da8c98ddba1f58f14306917015",
+    "control/AUTHOR_PROMPT.txt": "4c86a791d4f05053872879e878ad9da1fdc6e9b786b286f3bfc7bdec168f3495",
+    "design/AGENTS.md": "2681048a22109632ecfd25e3a0d2941a5f33df38a6ef3a8b1605acad0c3a49ac",
+    "design/LEAN_CHECK.md": "7a1dc260528cf6fcce6eb648e0e1ba7f031bf1775ef62eafe54e2b878db9af45",
+    "design/SOURCE_CONFIG.md": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff",
+    "design/Stage3Model.lean": "46d845fdc7580f4925043a06c5744d6a83de5d8f478c868d31eda06ae6bcdbcf",
+    "design/TASK_STAGE3.md": "a5d6f54358e917e65770bb8bd133679ac8bb6a16a5f165f838b527eaab7a0107",
+    "design/THEOREM_STATEMENT.md": "8cb1b320626596f9b4122a493d8fccfaea6019662666969a09aed1bcd274f052",
+    "design/TargetTemplate.lean": "6d20091dd811b3eb7b09c1a216defc2ec9cb83686a55f592c84e8dede9b6aeca",
+    "review_design/AGENTS.md": "2b3561f9b21d93b50345b3ed651753722659ade9dfbae4a561c72beb13acdf55",
+    "review_design/OBLIGATIONS.md": "3b29e6b7498002748cf42382a2e4469af351fa47751a2ba59db135283bc95bc1",
+    "review_design/REVIEW_TASK.md": "690352c7997fe638185ec2d5b792a008f3c4f1de03a00ceb2125e8782ccaffdb"
+  },
+  "provider_pin": {
+    "allow_fallbacks": false,
+    "only": [
+      "openai"
+    ]
+  },
+  "reasoning_effort": "high",
+  "seconds_per_run": 5400,
+  "source_bundles": [
+    "lean2paper_case017_nocanonical_v1",
+    "lean2paper_case017_nocanonical_v1_r3r5",
+    "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1"
+  ],
+  "task": "case017",
+  "transport": "openrouter-via-local-pinning-proxy"
+}

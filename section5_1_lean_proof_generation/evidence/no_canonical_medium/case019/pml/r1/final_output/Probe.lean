@@ -1,0 +1,13 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+#check Nat.decode
+#check Nat.encode
+#check Equiv.ofCountable
+#check Set.Countable.range
+#check Set.countable_iff_exists_surjective
+#check GenLimit.PatientMachine.generator
+#check GenLimit.PatientMachine.output
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.NoiseLossFeedback.finiteOmissionClass
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower

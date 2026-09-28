@@ -1,0 +1,14 @@
+import S2BFormalization
+#check Nat.pow_log2_le
+#check Nat.lt_pow_succ_log2
+#check Nat.log2_mul_le
+#check Nat.log2_mul_self
+#check Nat.log2_two_mul
+#check Nat.log2_mul
+#check Nat.log2_pow
+#check Filter.Tendsto.limsup_eq
+#check Filter.Tendsto.const_mul
+#check Filter.Tendsto.mul_const
+#check Filter.Tendsto.add
+#check Filter.Tendsto.div_const
+#check squeeze_zero

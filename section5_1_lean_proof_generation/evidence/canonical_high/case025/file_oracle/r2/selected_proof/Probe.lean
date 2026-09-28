@@ -1,0 +1,19 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.PatientMachine.output
+#check GenLimit.PatientMachine.run
+#check GenLimit.PatientMachine.processRound
+#check GenLimit.PatientMachine.output_available
+#check GenLimit.Generic.FinitelyManyViolations
+#check Set.Finite.exists_finset_eq
+#check Encodable.decode
+#check Encodable.encode
+#check Nat.unpair
+#check Nat.pair
+#check Equiv.ofSurjective
+#check Function.Surjective
+#check Set.Finite.toFinset
+#check GenLimit.PatientScope.relativeLowerDensity
+#check Filter.EventuallyEq.liminf_eq

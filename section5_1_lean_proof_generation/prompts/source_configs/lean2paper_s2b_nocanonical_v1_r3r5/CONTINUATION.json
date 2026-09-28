@@ -1,0 +1,36 @@
+{
+  "campaign": "stage3-s2b-nocanonical-v1-r3-r5",
+  "combined_target_replicates_per_arm": 5,
+  "continuation_replicates": [
+    3,
+    4,
+    5
+  ],
+  "created_utc": "2026-09-21T16:56:02.388448+00:00",
+  "decision_note": "The user requested three additional independent runs per arm after the S2-B no-canonical-proof r1-r2 results were observed. Five-run summaries are descriptive and must not be presented as a preregistered fixed-sample analysis.",
+  "decision_timing": "after_r1_r2_results_observed",
+  "parent_bundle_basename": "lean2paper_s2b_nocanonical_v1",
+  "parent_result_archive": {
+    "name": "s2b_nocanonical_v1_results_20260921T152848Z.tar.zst",
+    "sha256": "b1106d0101b29b4e9523f7f19861bd7a971e0c569546cc64fb0892565629f5a4"
+  },
+  "parent_results_summary_sha256": "eb1094db054cd8ae53c545bd2ef1781d23b30a3f635af82450613e2e01010e81",
+  "parent_source_archive": null,
+  "parent_source_manifest_sha256": "a3cc2d8b1795b0b543de9c1533f4f3f9c2d51fcbe21c09617b662da7e02b0b17",
+  "parent_validation_sha256": {
+    "file_oracle_s2b_nocanonical_v1_r1": "043db4f7ff153d8c03dc316b1dc165e545f8345c9cc34daaf0a63a9d49730fd1",
+    "file_oracle_s2b_nocanonical_v1_r2": "92126b651e1a0cfa54ef5ee9ff7ee9d855c1c9abd90e345715b10ebd00c4ecac",
+    "p_s2b_nocanonical_v1_r1": "1953364b4180ae4165e056efe1a9a4b8c8a11143b70768cddaf7f7d69519ebf7",
+    "p_s2b_nocanonical_v1_r2": "46fa99953922394f1f35e83407812e80448bc6493d9b9ce0b1ce3294e1c83286",
+    "pml_s2b_nocanonical_v1_r1": "7b6d9cf221ade0d0dbe7a99d0cf7188e7df5d86fb4d1aac8d4996273aa694fef",
+    "pml_s2b_nocanonical_v1_r2": "aeab12cf0e6740a04f72e1853477cb212d906a1cf449ccbc9aed638199e57163"
+  },
+  "resource_change": {
+    "continuation_request_per_job": {
+      "cpus": 1,
+      "memory_gib": 8
+    },
+    "justification": "Completed r1-r2 author jobs used 2.3-3.5 GiB MaxRSS and averaged less than one CPU; the smaller request is nonbinding and improves scheduler placement.",
+    "scientific_protocol_changed": false
+  }
+}

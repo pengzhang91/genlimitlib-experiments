@@ -1,0 +1,15 @@
+import Helpers
+#check Finset.equivBitIndices
+#check Set.Finite.toFinset
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.bddAbove
+#check Set.Finite.bddAbove_range
+#check Filter.Tendsto.div_atTop
+#check Filter.Tendsto.const_mul
+#check Filter.Tendsto.const_div_atTop
+#check Filter.Tendsto.liminf_eq
+#check Filter.isBoundedUnder_le
+#check Filter.isCoboundedUnder_ge_of_le
+#check Filter.isBoundedUnder_ge_of_le
+#check Filter.liminf_le_liminf
+#check tendsto_const_nhds.sub

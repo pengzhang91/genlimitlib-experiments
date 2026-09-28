@@ -1,0 +1,7 @@
+Overall outcome: PARTIAL
+
+`output/Case025Formalization.lean` compiles without `sorry`, new axioms, unsafe declarations, or kernel-bypass mechanisms. The strongest checked result is `Stage3Case025.finite_noise_reduction_to_positive`: assuming the positive-presentation engine, it constructs the fixed countable family of all finite additions, proves every member infinite, and reduces every complete finite-occurrence-contaminated input to an exact positive presentation of one expanded member while retaining `Follows`, `NovelGeneratesInLimit`, and the half-density conclusion for that expanded target.
+
+Also checked are the underlying range lemmas: finite occurrence violations imply finitely many distinct off-target range values; the range equals the target union a finite set; and every such finite addition occurs in the explicit enumeration using `Nat.unpair` and `Finset.equivBitIndices`.
+
+The exact declaration `stage3_result : Stage3Case025.MainClaim` is not completed. Remaining gaps are (1) formalizing the patient-stack positive-presentation engine, including its charging argument for repeated rounds, and (2) transferring eventual validity and ambient-prefix relative lower density from the finite addition back to the original target. Materially used sources were `Stage3Model.lean`, `CANONICAL_FULL_PROOF.md`, the supplied core vocabulary, and mathlib finite-set/pairing infrastructure.

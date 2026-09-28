@@ -1,0 +1,10 @@
+import Obstruction
+#check Fin.sum_univ_eq_sum_range
+#check Fin.sum_univ_succ
+#check Nat.le_mul_self
+#check Nat.mul_self_lt_mul_self
+#check Nat.mul_lt_mul
+#check Nat.mul_lt_mul_of_pos_right
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_not_subset
+#check Set.ssubset_iff_subset_ne

@@ -1,0 +1,13 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.TargetMain
+open Filter
+#check Filter.isBoundedUnder_le
+#check Filter.isBoundedUnder_ge
+#check Filter.IsBoundedUnder
+#check Filter.isBounded_le_def
+#check Filter.isCobounded_le_def
+#check Filter.isBoundedUnder_le_of_le
+#check Filter.isBoundedUnder_ge_of_le
+#check isBoundedUnder_le_of_le
+#check isCoboundedUnder_ge_of_le
+#check isBoundedUnder_le
+#check isCoboundedUnder_ge

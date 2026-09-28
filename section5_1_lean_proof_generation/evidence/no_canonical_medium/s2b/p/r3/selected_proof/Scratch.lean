@@ -1,0 +1,15 @@
+import Stage3Model
+import Mathlib.Tactic
+#check Fin.lastCases
+#check Fin.last
+#check Fin.castSucc
+#check Finset.max'
+#check Set.Finite.exists_not_mem
+#check Finset.exists_nat_subset_range
+#check Finset.card_image_le
+#check Finset.card_union_le
+#check Nat.find_spec
+#check Nat.find_min'
+#check Filter.Tendsto.limsup_eq
+#check Real.isLittleO_log_id_atTop
+#check Real.tendsto_log_div_rpow_atTop

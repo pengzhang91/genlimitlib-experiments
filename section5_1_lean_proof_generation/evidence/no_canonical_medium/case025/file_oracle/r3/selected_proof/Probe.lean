@@ -1,0 +1,11 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+#check GenLimit.finset_eventually_subset_sample
+#check GenLimit.Generic.finset_eventually_subset_sample
+#check Set.Finite.subset_bddAbove
+#check Finset.equivBitIndices_zero
+#check Finset.equivBitIndices_apply_zero
+#check Set.Infinite.diff
+#check Filter.Tendsto.natCast
+#check Filter.Tendsto.div_atTop

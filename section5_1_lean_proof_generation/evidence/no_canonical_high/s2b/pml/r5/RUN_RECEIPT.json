@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_s2b_nocanonical_v1_r5",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "pml_s2b_nocanonical_v1_r5",
+  "final_output_files": 4,
+  "formal_run_id": "pml_s2b_nocanonical_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 8681961,
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "107cd062d06d43c89379a7f603f57d9e96bb9a6377262e350c61099c8609cb33"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/s2b/pml/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/s2b/pml/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/s2b/pml/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_s2b_nocanonical_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r5/proxy_requests.jsonl",
+      "sha256": "95023d14c4f943c0b2f1c4f26fa7e06525a0a69a57505c8c8d3ae3ee8f0fcb87"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "3468a7893f2d4174fdbfad50130cbb7bb4fa4a70db81e9a27845979b94a94e56"
+    },
+    "status": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r5/STATUS.json",
+      "sha256": "d16ee77809f5af9123c2199c9f2ec6f524090ed96e4122591bbca40b3ad0596a"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/pml/results/pml_s2b_nocanonical_v1_r5/VALIDATION.json",
+      "sha256": "58954ad5fdbf03e02712f209f47d6e919c5ab65041014fdd7b9d7bfffa6197f2"
+    }
+  },
+  "task": "s2b"
+}

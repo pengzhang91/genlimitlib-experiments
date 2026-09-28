@@ -1,0 +1,16 @@
+import Stage3Model
+import Mathlib
+#check Real.nat_sqrt_le_real_sqrt
+#check Real.tendsto_sqrt_atTop
+#check tendsto_natCast_atTop_atTop
+#check Filter.Tendsto.sqrt
+#check tendsto_inv_atTop_zero
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check tendsto_one_div_add_atTop_nhds_zero_nat
+#check Filter.Tendsto.limsup_eq
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integral_congr_ae
+#check MeasureTheory.integral_const
+#check Set.Finite.subset_bddAbove
+#check Finset.card_image_le
+#check Nat.cast_div

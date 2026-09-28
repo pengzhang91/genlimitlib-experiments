@@ -1,0 +1,15 @@
+import Stage3Model
+import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+#check isLittleO_log_id_atTop
+#check Real.isLittleO_log_id_atTop
+#check Real.tendsto_log_div_rpow_atTop
+#check Nat.le_log2
+#check Nat.log2_lt
+#check Nat.lt_two_pow_iff_log2_lt
+#check Nat.two_pow_le_iff_le_log2
+#check Nat.log2_two_pow
+#check Nat.log2_le_self
+#check Nat.log2_lt_self
+#check Nat.log2_mono_right
+#check Nat.count_eq_card_filter_range

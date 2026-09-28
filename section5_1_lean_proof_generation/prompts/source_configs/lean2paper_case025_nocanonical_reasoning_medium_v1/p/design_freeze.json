@@ -1,0 +1,856 @@
+{
+  "arm_config_sha256": "f984eece8cdfa964357de8e220f999ac567a154e17ef546c4e86d95a92e22535",
+  "campaign_controller_hashes": {},
+  "codex_binary": "${USER_HOME}/.codex/packages/standalone/releases/0.155.1-x86_64-unknown-linux-musl/bin/codex",
+  "codex_path": "${USER_HOME}/.codex/packages/standalone/releases/0.155.1-x86_64-unknown-linux-musl/codex-path",
+  "codex_sha256": "0753dfe1d8b87a52436deb13eb1c549661ef4c84fee2c5aa688385eebeccb761",
+  "codex_version": "codex-cli 0.155.1",
+  "cohort": "case025_nocanonical_reasoning_medium_v1",
+  "condition": "P",
+  "controller_hashes": {
+    "AUTHOR_PROMPT.txt": "fa4f2abb340971f7e17c6662e90f69e5e9ca0e6cd5160de4d7ab9646359380f8",
+    "ControllerAudit.lean": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c",
+    "LEAN_CHECK.sh": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae",
+    "build_packets.py": "9e2f0fe36bbd683246ea48a316e311f6fabdb948cbede262d8925905eea35aee",
+    "build_review.py": "2863762d7e72801a1b1eb4896ab793cec148f8c3627e01f45c488e84f54346a9",
+    "check_driver.py": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68",
+    "codex_adapter.py": "4f26fe45dfc794ee5a438722fd53772e3f1a42bc101a40a4e4715de0c1e13edf",
+    "experiment.py": "153fb8901cee80d32c2efc8d9f5f1d4c6af148b4bd32f57d01a32b0e66fc8419",
+    "material_usage.py": "415056220e5ca773368376fe87557e46cd8b9bbb808f51ddb4545129b1fe87a3",
+    "measurements.py": "e50e8bf7fd27ec7f989d93d21b57efc88b266a35ad233d50246385f485b3db94",
+    "openrouter_proxy.py": "2856c0db6002ae232ac2f02228a2ccecdbc8de16deef24fb564d4e18bf873dea",
+    "test_controller.py": "679a0f21d43467125b5b856488090734a43f14eb7a2fa3004af96dc0e3c084da",
+    "verify_routing.py": "ffdfcd657ca37b4b56e17bd8287ec205d126fde52ae6cc5e7a8facc6c84b1251"
+  },
+  "created_utc": "2026-09-24T00:01:04.151008+00:00",
+  "design_hashes": {
+    "AGENTS.md": {
+      "bytes": 1222,
+      "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+    },
+    "LEAN_CHECK.md": {
+      "bytes": 753,
+      "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+    },
+    "SOURCE_CONFIG.md": {
+      "bytes": 799,
+      "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+    },
+    "Stage3Model.lean": {
+      "bytes": 3801,
+      "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+    },
+    "TASK_STAGE3.md": {
+      "bytes": 1633,
+      "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+    },
+    "THEOREM_STATEMENT.md": {
+      "bytes": 3121,
+      "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+    },
+    "TargetTemplate.lean": {
+      "bytes": 515,
+      "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+    }
+  },
+  "environment": {
+    "LEAN_SYSROOT": "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/lean-4.24.0-linux",
+    "standard_paths": [
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/batteries/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/Qq/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/aesop/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/plausible/.lake/build/lib/lean",
+      "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/mathlib/.lake/build/lib/lean"
+    ],
+    "standard_root": "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages"
+  },
+  "experiment": "stage3-case025-nocanonical-reasoning-medium-v1",
+  "external_hashes": {
+    "${USER_HOME}/.codex/packages/standalone/releases/0.155.1-x86_64-unknown-linux-musl/bin/codex": "0753dfe1d8b87a52436deb13eb1c549661ef4c84fee2c5aa688385eebeccb761",
+    "${USER_HOME}/.codex/packages/standalone/releases/0.155.1-x86_64-unknown-linux-musl/codex-path/rg": "e62198eb19b136b88c330af83647b5a962cb99b6b1f066758568f12de1974849",
+    "/usr/bin/python3.9": "1fc00bd3c184be73ebd14596efb8b5cdd94c9f9aa397fb97301c6787bc65db4e",
+    "/usr/lib64/libpython3.9.so.1.0": "c28f33903bce5b4b3bf412280ef085f0e3ad5e58f34a7bfc8c3b91d0a1dba471",
+    "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean": "b02f88768c04d30c2e03dac019563572b11fab124c4b8747316b40d00fd096fc",
+    "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/lake-manifest.json": "994d8b6a379cea0e626d27fe8fa2fc74a2d966197a6998ecde6bd419634991aa",
+    "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/GenLimitLean/lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/lean-4.24.0-linux/bin/lean": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "${SHARED_NVME_ROOT}/lean2paper/runtime/lean4-v4.24.0-mathlib-f897ebcf/lean-4.24.0-linux/lib/lean/Init.olean": "1385bebe46eb1353b63655ad3a6aec55cb2f27c7cb2b1b6dba6385505b60f640"
+  },
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "model": "openai/gpt-5.6-sol",
+  "model_context_window": 1050000,
+  "openrouter_key_file": "${USER_HOME}/.config/openrouter/key",
+  "openrouter_model_slug": "openai/gpt-5.6-sol",
+  "packet_build_ledger_sha256": "2fccbede2dfed7e13dba10e446333e267d66b29ff36c275800567b6449181abe",
+  "platform": {
+    "machine": "x86_64",
+    "system": "Linux"
+  },
+  "primary_endpoint": "Exact checked proof frozen by the author cutoff and independently validated later without repair.",
+  "private_mapping_sha256": "f0244bf01cb91d7173efcb184b7559593a04e4831dff25edd879510a9c93ef02",
+  "protocol_hashes": {
+    "AGENTS.md": "6fb87dcc51c63ab5e61c031eabfc9f1cb15152da8c98ddba1f58f14306917015"
+  },
+  "proxy_base_url": "http://127.0.0.1:19351/v1",
+  "proxy_port": 19351,
+  "python_binary": "/usr/bin/python3.9",
+  "python_prefix": "/usr",
+  "python_version": "3.9.21",
+  "reasoning": "medium",
+  "reasoning_effort": "medium",
+  "review_design_hashes": {
+    "AGENTS.md": {
+      "bytes": 862,
+      "sha256": "2b3561f9b21d93b50345b3ed651753722659ade9dfbae4a561c72beb13acdf55"
+    },
+    "OBLIGATIONS.md": {
+      "bytes": 1917,
+      "sha256": "3694d8e238a763af9d0b429148950f3f19c97934242468240f8db61a0437159f"
+    },
+    "REVIEW_TASK.md": {
+      "bytes": 2634,
+      "sha256": "690352c7997fe638185ec2d5b792a008f3c4f1de03a00ceb2125e8782ccaffdb"
+    }
+  },
+  "run_inputs": {
+    "p_case025_nocanonical_reasoning_medium_v1_r1": {
+      "AGENTS.md": {
+        "bytes": 1222,
+        "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+      },
+      "CHECK_DRIVER.py": {
+        "bytes": 9023,
+        "sha256": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68"
+      },
+      "ControllerAudit.lean": {
+        "bytes": 2662,
+        "sha256": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c"
+      },
+      "ControllerAudit.olean": {
+        "bytes": 355320,
+        "sha256": "c9aa4c5be4c19da0e72f2400580bb155b3b995f509f51537fea7e93186662fd4"
+      },
+      "LEAN_CHECK.md": {
+        "bytes": 753,
+        "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+      },
+      "LEAN_CHECK.sh": {
+        "bytes": 113,
+        "sha256": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae"
+      },
+      "LEAN_ENV.json": {
+        "bytes": 1239,
+        "sha256": "4955a7a80b697fdbc5930d9366582402e8e7c76a3092a09a653b78a41f4e4c0e"
+      },
+      "LEAN_ENV.sh": {
+        "bytes": 1234,
+        "sha256": "5484b0d9bbe8401f1e047bd5dc814d117e54a60514033db2e4779c479de5c107"
+      },
+      "SOURCE_CONFIG.md": {
+        "bytes": 799,
+        "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+      },
+      "Stage3Model.lean": {
+        "bytes": 3801,
+        "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+      },
+      "Stage3Model.olean": {
+        "bytes": 55552,
+        "sha256": "e8f391e8f574c2d998ba15574852d3ded59c586516d9e72ece077ea43bf712d5"
+      },
+      "TASK_STAGE3.md": {
+        "bytes": 1633,
+        "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+      },
+      "THEOREM_STATEMENT.md": {
+        "bytes": 3121,
+        "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+      },
+      "TargetTemplate.lean": {
+        "bytes": 515,
+        "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+      },
+      "papers/P06_NoisyExamples.pdf": {
+        "bytes": 394658,
+        "sha256": "1e2401c4641714a2b2c62c477152551a20f9e68ed7a7d17cb501d020a14b1c99"
+      },
+      "papers/P12_NoiseLossAndFeedback.pdf": {
+        "bytes": 609741,
+        "sha256": "d5205931bf32c057a48f8eb84e2da364fbb6c6fcc482d34f1b6711903f232e67"
+      },
+      "papers/P17_InfiniteContamination.pdf": {
+        "bytes": 727896,
+        "sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9"
+      },
+      "papers/P19_EffectOfNoise.pdf": {
+        "bytes": 447226,
+        "sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b"
+      },
+      "papers/P39_DenseGeneration.pdf": {
+        "bytes": 389100,
+        "sha256": "1a9a81a7aa02719f5cfe852746f3db853d47d42f699e8f62cc78f451ef7cb23e"
+      },
+      "vocabulary/GenLimit/Core/Basic.lean": {
+        "bytes": 1560,
+        "sha256": "9edcbdf57710497f2c29cf5b45f6b63d3becc88ec9122e5483a6252eea4de357"
+      },
+      "vocabulary/GenLimit/Core/FiniteContamination.lean": {
+        "bytes": 762,
+        "sha256": "db6134d931eaf735194ed36ad1b6e585be54fba9d9072832dc9feb6d398a35b9"
+      },
+      "vocabulary/GenLimit/Core/GenericGeneration.lean": {
+        "bytes": 2640,
+        "sha256": "87cbe11a08bd3614ea52309a17a49623390ab2f14ba4bde6a8de217d5f5ede79"
+      },
+      "vocabulary/GenLimit/Core/OnlineGeneration.lean": {
+        "bytes": 936,
+        "sha256": "b66c1b3882b596a1e541d3f7fd42731308c7fca5a1fe7f423d69d910dab61ae2"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.lean": {
+        "bytes": 534,
+        "sha256": "64b47adca54078c81e090a3b4c0be9125a3e1a8993b24059aa1e20adf17cd4cf"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Density.lean": {
+        "bytes": 685,
+        "sha256": "54bb5738904e7263831af69253cef28dff865fa957ee1a9cb259c4e9c85c4f07"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.lean": {
+        "bytes": 4402,
+        "sha256": "f0ba70b7a9d20a69e087189fc2cd62c9c6d44a583747526d11bcb6ff16dde5cc"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.lean": {
+        "bytes": 916,
+        "sha256": "2847afa45b6670187819f5a0fd61c597b9a89146da96383f45d320cca7fe95d5"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/Basic.olean": {
+        "bytes": 104040,
+        "sha256": "26f138abee144818488b3dbfa81f1a8f65ec30b60d2afac04f979157202f3f9c"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/FiniteContamination.olean": {
+        "bytes": 36840,
+        "sha256": "651ab456fc00ab3cf94456cd47e5eb0ecd9be79e3b4431a5a834c7f329d0e324"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/GenericGeneration.olean": {
+        "bytes": 62840,
+        "sha256": "23a8a097b7ab2bdd3065030a6c3f0b8535fc417ea1ad362a2fede6c6b303e08f"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/OnlineGeneration.olean": {
+        "bytes": 40472,
+        "sha256": "897a630f26cc2366d0b6893003bc580f024432ad6a59ae0c71c7398a91ac1b02"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.olean": {
+        "bytes": 36544,
+        "sha256": "53df293d60bb59c6f2197bfab7a719c7d5fa035662386db2e32131078a045c24"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Density.olean": {
+        "bytes": 36960,
+        "sha256": "1758a50705d7c6f5e1c9d2f880e731f01b5e263a9b50394bd3d310f01cbe32e5"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.olean": {
+        "bytes": 218000,
+        "sha256": "1197c0d77f7ce3d9dd17a1e59b56bc5239f83e5bd1190ab25d6241a5fba71217"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.olean": {
+        "bytes": 40976,
+        "sha256": "1cd300a1e03212e7a4923d2a2bf00096b789bbdfe06b4f4983843e0ac4671e26"
+      }
+    },
+    "p_case025_nocanonical_reasoning_medium_v1_r2": {
+      "AGENTS.md": {
+        "bytes": 1222,
+        "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+      },
+      "CHECK_DRIVER.py": {
+        "bytes": 9023,
+        "sha256": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68"
+      },
+      "ControllerAudit.lean": {
+        "bytes": 2662,
+        "sha256": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c"
+      },
+      "ControllerAudit.olean": {
+        "bytes": 355320,
+        "sha256": "c9aa4c5be4c19da0e72f2400580bb155b3b995f509f51537fea7e93186662fd4"
+      },
+      "LEAN_CHECK.md": {
+        "bytes": 753,
+        "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+      },
+      "LEAN_CHECK.sh": {
+        "bytes": 113,
+        "sha256": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae"
+      },
+      "LEAN_ENV.json": {
+        "bytes": 1239,
+        "sha256": "4955a7a80b697fdbc5930d9366582402e8e7c76a3092a09a653b78a41f4e4c0e"
+      },
+      "LEAN_ENV.sh": {
+        "bytes": 1234,
+        "sha256": "5484b0d9bbe8401f1e047bd5dc814d117e54a60514033db2e4779c479de5c107"
+      },
+      "SOURCE_CONFIG.md": {
+        "bytes": 799,
+        "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+      },
+      "Stage3Model.lean": {
+        "bytes": 3801,
+        "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+      },
+      "Stage3Model.olean": {
+        "bytes": 55552,
+        "sha256": "e8f391e8f574c2d998ba15574852d3ded59c586516d9e72ece077ea43bf712d5"
+      },
+      "TASK_STAGE3.md": {
+        "bytes": 1633,
+        "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+      },
+      "THEOREM_STATEMENT.md": {
+        "bytes": 3121,
+        "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+      },
+      "TargetTemplate.lean": {
+        "bytes": 515,
+        "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+      },
+      "papers/P06_NoisyExamples.pdf": {
+        "bytes": 394658,
+        "sha256": "1e2401c4641714a2b2c62c477152551a20f9e68ed7a7d17cb501d020a14b1c99"
+      },
+      "papers/P12_NoiseLossAndFeedback.pdf": {
+        "bytes": 609741,
+        "sha256": "d5205931bf32c057a48f8eb84e2da364fbb6c6fcc482d34f1b6711903f232e67"
+      },
+      "papers/P17_InfiniteContamination.pdf": {
+        "bytes": 727896,
+        "sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9"
+      },
+      "papers/P19_EffectOfNoise.pdf": {
+        "bytes": 447226,
+        "sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b"
+      },
+      "papers/P39_DenseGeneration.pdf": {
+        "bytes": 389100,
+        "sha256": "1a9a81a7aa02719f5cfe852746f3db853d47d42f699e8f62cc78f451ef7cb23e"
+      },
+      "vocabulary/GenLimit/Core/Basic.lean": {
+        "bytes": 1560,
+        "sha256": "9edcbdf57710497f2c29cf5b45f6b63d3becc88ec9122e5483a6252eea4de357"
+      },
+      "vocabulary/GenLimit/Core/FiniteContamination.lean": {
+        "bytes": 762,
+        "sha256": "db6134d931eaf735194ed36ad1b6e585be54fba9d9072832dc9feb6d398a35b9"
+      },
+      "vocabulary/GenLimit/Core/GenericGeneration.lean": {
+        "bytes": 2640,
+        "sha256": "87cbe11a08bd3614ea52309a17a49623390ab2f14ba4bde6a8de217d5f5ede79"
+      },
+      "vocabulary/GenLimit/Core/OnlineGeneration.lean": {
+        "bytes": 936,
+        "sha256": "b66c1b3882b596a1e541d3f7fd42731308c7fca5a1fe7f423d69d910dab61ae2"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.lean": {
+        "bytes": 534,
+        "sha256": "64b47adca54078c81e090a3b4c0be9125a3e1a8993b24059aa1e20adf17cd4cf"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Density.lean": {
+        "bytes": 685,
+        "sha256": "54bb5738904e7263831af69253cef28dff865fa957ee1a9cb259c4e9c85c4f07"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.lean": {
+        "bytes": 4402,
+        "sha256": "f0ba70b7a9d20a69e087189fc2cd62c9c6d44a583747526d11bcb6ff16dde5cc"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.lean": {
+        "bytes": 916,
+        "sha256": "2847afa45b6670187819f5a0fd61c597b9a89146da96383f45d320cca7fe95d5"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/Basic.olean": {
+        "bytes": 104040,
+        "sha256": "26f138abee144818488b3dbfa81f1a8f65ec30b60d2afac04f979157202f3f9c"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/FiniteContamination.olean": {
+        "bytes": 36840,
+        "sha256": "651ab456fc00ab3cf94456cd47e5eb0ecd9be79e3b4431a5a834c7f329d0e324"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/GenericGeneration.olean": {
+        "bytes": 62840,
+        "sha256": "23a8a097b7ab2bdd3065030a6c3f0b8535fc417ea1ad362a2fede6c6b303e08f"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/OnlineGeneration.olean": {
+        "bytes": 40472,
+        "sha256": "897a630f26cc2366d0b6893003bc580f024432ad6a59ae0c71c7398a91ac1b02"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.olean": {
+        "bytes": 36544,
+        "sha256": "53df293d60bb59c6f2197bfab7a719c7d5fa035662386db2e32131078a045c24"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Density.olean": {
+        "bytes": 36960,
+        "sha256": "1758a50705d7c6f5e1c9d2f880e731f01b5e263a9b50394bd3d310f01cbe32e5"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.olean": {
+        "bytes": 218000,
+        "sha256": "1197c0d77f7ce3d9dd17a1e59b56bc5239f83e5bd1190ab25d6241a5fba71217"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.olean": {
+        "bytes": 40976,
+        "sha256": "1cd300a1e03212e7a4923d2a2bf00096b789bbdfe06b4f4983843e0ac4671e26"
+      }
+    },
+    "p_case025_nocanonical_reasoning_medium_v1_r3": {
+      "AGENTS.md": {
+        "bytes": 1222,
+        "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+      },
+      "CHECK_DRIVER.py": {
+        "bytes": 9023,
+        "sha256": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68"
+      },
+      "ControllerAudit.lean": {
+        "bytes": 2662,
+        "sha256": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c"
+      },
+      "ControllerAudit.olean": {
+        "bytes": 355320,
+        "sha256": "c9aa4c5be4c19da0e72f2400580bb155b3b995f509f51537fea7e93186662fd4"
+      },
+      "LEAN_CHECK.md": {
+        "bytes": 753,
+        "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+      },
+      "LEAN_CHECK.sh": {
+        "bytes": 113,
+        "sha256": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae"
+      },
+      "LEAN_ENV.json": {
+        "bytes": 1239,
+        "sha256": "4955a7a80b697fdbc5930d9366582402e8e7c76a3092a09a653b78a41f4e4c0e"
+      },
+      "LEAN_ENV.sh": {
+        "bytes": 1234,
+        "sha256": "5484b0d9bbe8401f1e047bd5dc814d117e54a60514033db2e4779c479de5c107"
+      },
+      "SOURCE_CONFIG.md": {
+        "bytes": 799,
+        "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+      },
+      "Stage3Model.lean": {
+        "bytes": 3801,
+        "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+      },
+      "Stage3Model.olean": {
+        "bytes": 55552,
+        "sha256": "e8f391e8f574c2d998ba15574852d3ded59c586516d9e72ece077ea43bf712d5"
+      },
+      "TASK_STAGE3.md": {
+        "bytes": 1633,
+        "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+      },
+      "THEOREM_STATEMENT.md": {
+        "bytes": 3121,
+        "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+      },
+      "TargetTemplate.lean": {
+        "bytes": 515,
+        "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+      },
+      "papers/P06_NoisyExamples.pdf": {
+        "bytes": 394658,
+        "sha256": "1e2401c4641714a2b2c62c477152551a20f9e68ed7a7d17cb501d020a14b1c99"
+      },
+      "papers/P12_NoiseLossAndFeedback.pdf": {
+        "bytes": 609741,
+        "sha256": "d5205931bf32c057a48f8eb84e2da364fbb6c6fcc482d34f1b6711903f232e67"
+      },
+      "papers/P17_InfiniteContamination.pdf": {
+        "bytes": 727896,
+        "sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9"
+      },
+      "papers/P19_EffectOfNoise.pdf": {
+        "bytes": 447226,
+        "sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b"
+      },
+      "papers/P39_DenseGeneration.pdf": {
+        "bytes": 389100,
+        "sha256": "1a9a81a7aa02719f5cfe852746f3db853d47d42f699e8f62cc78f451ef7cb23e"
+      },
+      "vocabulary/GenLimit/Core/Basic.lean": {
+        "bytes": 1560,
+        "sha256": "9edcbdf57710497f2c29cf5b45f6b63d3becc88ec9122e5483a6252eea4de357"
+      },
+      "vocabulary/GenLimit/Core/FiniteContamination.lean": {
+        "bytes": 762,
+        "sha256": "db6134d931eaf735194ed36ad1b6e585be54fba9d9072832dc9feb6d398a35b9"
+      },
+      "vocabulary/GenLimit/Core/GenericGeneration.lean": {
+        "bytes": 2640,
+        "sha256": "87cbe11a08bd3614ea52309a17a49623390ab2f14ba4bde6a8de217d5f5ede79"
+      },
+      "vocabulary/GenLimit/Core/OnlineGeneration.lean": {
+        "bytes": 936,
+        "sha256": "b66c1b3882b596a1e541d3f7fd42731308c7fca5a1fe7f423d69d910dab61ae2"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.lean": {
+        "bytes": 534,
+        "sha256": "64b47adca54078c81e090a3b4c0be9125a3e1a8993b24059aa1e20adf17cd4cf"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Density.lean": {
+        "bytes": 685,
+        "sha256": "54bb5738904e7263831af69253cef28dff865fa957ee1a9cb259c4e9c85c4f07"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.lean": {
+        "bytes": 4402,
+        "sha256": "f0ba70b7a9d20a69e087189fc2cd62c9c6d44a583747526d11bcb6ff16dde5cc"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.lean": {
+        "bytes": 916,
+        "sha256": "2847afa45b6670187819f5a0fd61c597b9a89146da96383f45d320cca7fe95d5"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/Basic.olean": {
+        "bytes": 104040,
+        "sha256": "26f138abee144818488b3dbfa81f1a8f65ec30b60d2afac04f979157202f3f9c"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/FiniteContamination.olean": {
+        "bytes": 36840,
+        "sha256": "651ab456fc00ab3cf94456cd47e5eb0ecd9be79e3b4431a5a834c7f329d0e324"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/GenericGeneration.olean": {
+        "bytes": 62840,
+        "sha256": "23a8a097b7ab2bdd3065030a6c3f0b8535fc417ea1ad362a2fede6c6b303e08f"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/OnlineGeneration.olean": {
+        "bytes": 40472,
+        "sha256": "897a630f26cc2366d0b6893003bc580f024432ad6a59ae0c71c7398a91ac1b02"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.olean": {
+        "bytes": 36544,
+        "sha256": "53df293d60bb59c6f2197bfab7a719c7d5fa035662386db2e32131078a045c24"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Density.olean": {
+        "bytes": 36960,
+        "sha256": "1758a50705d7c6f5e1c9d2f880e731f01b5e263a9b50394bd3d310f01cbe32e5"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.olean": {
+        "bytes": 218000,
+        "sha256": "1197c0d77f7ce3d9dd17a1e59b56bc5239f83e5bd1190ab25d6241a5fba71217"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.olean": {
+        "bytes": 40976,
+        "sha256": "1cd300a1e03212e7a4923d2a2bf00096b789bbdfe06b4f4983843e0ac4671e26"
+      }
+    },
+    "p_case025_nocanonical_reasoning_medium_v1_r4": {
+      "AGENTS.md": {
+        "bytes": 1222,
+        "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+      },
+      "CHECK_DRIVER.py": {
+        "bytes": 9023,
+        "sha256": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68"
+      },
+      "ControllerAudit.lean": {
+        "bytes": 2662,
+        "sha256": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c"
+      },
+      "ControllerAudit.olean": {
+        "bytes": 355320,
+        "sha256": "c9aa4c5be4c19da0e72f2400580bb155b3b995f509f51537fea7e93186662fd4"
+      },
+      "LEAN_CHECK.md": {
+        "bytes": 753,
+        "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+      },
+      "LEAN_CHECK.sh": {
+        "bytes": 113,
+        "sha256": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae"
+      },
+      "LEAN_ENV.json": {
+        "bytes": 1239,
+        "sha256": "4955a7a80b697fdbc5930d9366582402e8e7c76a3092a09a653b78a41f4e4c0e"
+      },
+      "LEAN_ENV.sh": {
+        "bytes": 1234,
+        "sha256": "5484b0d9bbe8401f1e047bd5dc814d117e54a60514033db2e4779c479de5c107"
+      },
+      "SOURCE_CONFIG.md": {
+        "bytes": 799,
+        "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+      },
+      "Stage3Model.lean": {
+        "bytes": 3801,
+        "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+      },
+      "Stage3Model.olean": {
+        "bytes": 55552,
+        "sha256": "e8f391e8f574c2d998ba15574852d3ded59c586516d9e72ece077ea43bf712d5"
+      },
+      "TASK_STAGE3.md": {
+        "bytes": 1633,
+        "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+      },
+      "THEOREM_STATEMENT.md": {
+        "bytes": 3121,
+        "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+      },
+      "TargetTemplate.lean": {
+        "bytes": 515,
+        "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+      },
+      "papers/P06_NoisyExamples.pdf": {
+        "bytes": 394658,
+        "sha256": "1e2401c4641714a2b2c62c477152551a20f9e68ed7a7d17cb501d020a14b1c99"
+      },
+      "papers/P12_NoiseLossAndFeedback.pdf": {
+        "bytes": 609741,
+        "sha256": "d5205931bf32c057a48f8eb84e2da364fbb6c6fcc482d34f1b6711903f232e67"
+      },
+      "papers/P17_InfiniteContamination.pdf": {
+        "bytes": 727896,
+        "sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9"
+      },
+      "papers/P19_EffectOfNoise.pdf": {
+        "bytes": 447226,
+        "sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b"
+      },
+      "papers/P39_DenseGeneration.pdf": {
+        "bytes": 389100,
+        "sha256": "1a9a81a7aa02719f5cfe852746f3db853d47d42f699e8f62cc78f451ef7cb23e"
+      },
+      "vocabulary/GenLimit/Core/Basic.lean": {
+        "bytes": 1560,
+        "sha256": "9edcbdf57710497f2c29cf5b45f6b63d3becc88ec9122e5483a6252eea4de357"
+      },
+      "vocabulary/GenLimit/Core/FiniteContamination.lean": {
+        "bytes": 762,
+        "sha256": "db6134d931eaf735194ed36ad1b6e585be54fba9d9072832dc9feb6d398a35b9"
+      },
+      "vocabulary/GenLimit/Core/GenericGeneration.lean": {
+        "bytes": 2640,
+        "sha256": "87cbe11a08bd3614ea52309a17a49623390ab2f14ba4bde6a8de217d5f5ede79"
+      },
+      "vocabulary/GenLimit/Core/OnlineGeneration.lean": {
+        "bytes": 936,
+        "sha256": "b66c1b3882b596a1e541d3f7fd42731308c7fca5a1fe7f423d69d910dab61ae2"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.lean": {
+        "bytes": 534,
+        "sha256": "64b47adca54078c81e090a3b4c0be9125a3e1a8993b24059aa1e20adf17cd4cf"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Density.lean": {
+        "bytes": 685,
+        "sha256": "54bb5738904e7263831af69253cef28dff865fa957ee1a9cb259c4e9c85c4f07"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.lean": {
+        "bytes": 4402,
+        "sha256": "f0ba70b7a9d20a69e087189fc2cd62c9c6d44a583747526d11bcb6ff16dde5cc"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.lean": {
+        "bytes": 916,
+        "sha256": "2847afa45b6670187819f5a0fd61c597b9a89146da96383f45d320cca7fe95d5"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/Basic.olean": {
+        "bytes": 104040,
+        "sha256": "26f138abee144818488b3dbfa81f1a8f65ec30b60d2afac04f979157202f3f9c"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/FiniteContamination.olean": {
+        "bytes": 36840,
+        "sha256": "651ab456fc00ab3cf94456cd47e5eb0ecd9be79e3b4431a5a834c7f329d0e324"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/GenericGeneration.olean": {
+        "bytes": 62840,
+        "sha256": "23a8a097b7ab2bdd3065030a6c3f0b8535fc417ea1ad362a2fede6c6b303e08f"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/OnlineGeneration.olean": {
+        "bytes": 40472,
+        "sha256": "897a630f26cc2366d0b6893003bc580f024432ad6a59ae0c71c7398a91ac1b02"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.olean": {
+        "bytes": 36544,
+        "sha256": "53df293d60bb59c6f2197bfab7a719c7d5fa035662386db2e32131078a045c24"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Density.olean": {
+        "bytes": 36960,
+        "sha256": "1758a50705d7c6f5e1c9d2f880e731f01b5e263a9b50394bd3d310f01cbe32e5"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.olean": {
+        "bytes": 218000,
+        "sha256": "1197c0d77f7ce3d9dd17a1e59b56bc5239f83e5bd1190ab25d6241a5fba71217"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.olean": {
+        "bytes": 40976,
+        "sha256": "1cd300a1e03212e7a4923d2a2bf00096b789bbdfe06b4f4983843e0ac4671e26"
+      }
+    },
+    "p_case025_nocanonical_reasoning_medium_v1_r5": {
+      "AGENTS.md": {
+        "bytes": 1222,
+        "sha256": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087"
+      },
+      "CHECK_DRIVER.py": {
+        "bytes": 9023,
+        "sha256": "2c8ece482989e9dcb8021b73847bfc993339de11b3fe32356516ee9fa7ba8f68"
+      },
+      "ControllerAudit.lean": {
+        "bytes": 2662,
+        "sha256": "a85424fbb690f62220767d60deec04cf02b8fdf7de4a9e743b6d90887dbd129c"
+      },
+      "ControllerAudit.olean": {
+        "bytes": 355320,
+        "sha256": "c9aa4c5be4c19da0e72f2400580bb155b3b995f509f51537fea7e93186662fd4"
+      },
+      "LEAN_CHECK.md": {
+        "bytes": 753,
+        "sha256": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713"
+      },
+      "LEAN_CHECK.sh": {
+        "bytes": 113,
+        "sha256": "ca248df6dda6ec9d5a7d2b8d878b21743c667a71db82c20a3c25b6a58fa368ae"
+      },
+      "LEAN_ENV.json": {
+        "bytes": 1239,
+        "sha256": "4955a7a80b697fdbc5930d9366582402e8e7c76a3092a09a653b78a41f4e4c0e"
+      },
+      "LEAN_ENV.sh": {
+        "bytes": 1234,
+        "sha256": "5484b0d9bbe8401f1e047bd5dc814d117e54a60514033db2e4779c479de5c107"
+      },
+      "SOURCE_CONFIG.md": {
+        "bytes": 799,
+        "sha256": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff"
+      },
+      "Stage3Model.lean": {
+        "bytes": 3801,
+        "sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941"
+      },
+      "Stage3Model.olean": {
+        "bytes": 55552,
+        "sha256": "e8f391e8f574c2d998ba15574852d3ded59c586516d9e72ece077ea43bf712d5"
+      },
+      "TASK_STAGE3.md": {
+        "bytes": 1633,
+        "sha256": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f"
+      },
+      "THEOREM_STATEMENT.md": {
+        "bytes": 3121,
+        "sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+      },
+      "TargetTemplate.lean": {
+        "bytes": 515,
+        "sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79"
+      },
+      "papers/P06_NoisyExamples.pdf": {
+        "bytes": 394658,
+        "sha256": "1e2401c4641714a2b2c62c477152551a20f9e68ed7a7d17cb501d020a14b1c99"
+      },
+      "papers/P12_NoiseLossAndFeedback.pdf": {
+        "bytes": 609741,
+        "sha256": "d5205931bf32c057a48f8eb84e2da364fbb6c6fcc482d34f1b6711903f232e67"
+      },
+      "papers/P17_InfiniteContamination.pdf": {
+        "bytes": 727896,
+        "sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9"
+      },
+      "papers/P19_EffectOfNoise.pdf": {
+        "bytes": 447226,
+        "sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b"
+      },
+      "papers/P39_DenseGeneration.pdf": {
+        "bytes": 389100,
+        "sha256": "1a9a81a7aa02719f5cfe852746f3db853d47d42f699e8f62cc78f451ef7cb23e"
+      },
+      "vocabulary/GenLimit/Core/Basic.lean": {
+        "bytes": 1560,
+        "sha256": "9edcbdf57710497f2c29cf5b45f6b63d3becc88ec9122e5483a6252eea4de357"
+      },
+      "vocabulary/GenLimit/Core/FiniteContamination.lean": {
+        "bytes": 762,
+        "sha256": "db6134d931eaf735194ed36ad1b6e585be54fba9d9072832dc9feb6d398a35b9"
+      },
+      "vocabulary/GenLimit/Core/GenericGeneration.lean": {
+        "bytes": 2640,
+        "sha256": "87cbe11a08bd3614ea52309a17a49623390ab2f14ba4bde6a8de217d5f5ede79"
+      },
+      "vocabulary/GenLimit/Core/OnlineGeneration.lean": {
+        "bytes": 936,
+        "sha256": "b66c1b3882b596a1e541d3f7fd42731308c7fca5a1fe7f423d69d910dab61ae2"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.lean": {
+        "bytes": 534,
+        "sha256": "64b47adca54078c81e090a3b4c0be9125a3e1a8993b24059aa1e20adf17cd4cf"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/Density.lean": {
+        "bytes": 685,
+        "sha256": "54bb5738904e7263831af69253cef28dff865fa957ee1a9cb259c4e9c85c4f07"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.lean": {
+        "bytes": 4402,
+        "sha256": "f0ba70b7a9d20a69e087189fc2cd62c9c6d44a583747526d11bcb6ff16dde5cc"
+      },
+      "vocabulary/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.lean": {
+        "bytes": 916,
+        "sha256": "2847afa45b6670187819f5a0fd61c597b9a89146da96383f45d320cca7fe95d5"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/Basic.olean": {
+        "bytes": 104040,
+        "sha256": "26f138abee144818488b3dbfa81f1a8f65ec30b60d2afac04f979157202f3f9c"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/FiniteContamination.olean": {
+        "bytes": 36840,
+        "sha256": "651ab456fc00ab3cf94456cd47e5eb0ecd9be79e3b4431a5a834c7f329d0e324"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/GenericGeneration.olean": {
+        "bytes": 62840,
+        "sha256": "23a8a097b7ab2bdd3065030a6c3f0b8535fc417ea1ad362a2fede6c6b303e08f"
+      },
+      "vocabulary/lib/lean/GenLimit/Core/OnlineGeneration.olean": {
+        "bytes": 40472,
+        "sha256": "897a630f26cc2366d0b6893003bc580f024432ad6a59ae0c71c7398a91ac1b02"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Announcements.olean": {
+        "bytes": 36544,
+        "sha256": "53df293d60bb59c6f2197bfab7a719c7d5fa035662386db2e32131078a045c24"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/Density.olean": {
+        "bytes": 36960,
+        "sha256": "1758a50705d7c6f5e1c9d2f880e731f01b5e263a9b50394bd3d310f01cbe32e5"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/PatientScope.olean": {
+        "bytes": 218000,
+        "sha256": "1197c0d77f7ce3d9dd17a1e59b56bc5239f83e5bd1190ab25d6241a5fba71217"
+      },
+      "vocabulary/lib/lean/GenLimit/Paper39_DenseGeneration/Abstract/TargetDensity.olean": {
+        "bytes": 40976,
+        "sha256": "1cd300a1e03212e7a4923d2a2bf00096b789bbdfe06b4f4983843e0ac4671e26"
+      }
+    }
+  },
+  "scope": "Five fresh Delta CPU replicates for Case 025; descriptive pilot evidence.",
+  "seconds_per_run": 5400,
+  "seed": null,
+  "seed_note": "The upstream Responses API does not accept seed; repetition handles variation.",
+  "source_bundle_manifest_sha256": "f9c666470d90c930c8cc5a6536ce10f81e68160d60a004a567ba991d8b8a66df",
+  "standard_package_commits": {
+    "Cli": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+    "LeanSearchClient": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+    "Qq": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+    "aesop": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+    "batteries": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+    "importGraph": "d768126816be17600904726ca7976b185786e6b9",
+    "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "plausible": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+    "proofwidgets": "556caed0eadb7901e068131d1be208dd907d07a2"
+  },
+  "state": "PREPARED_NOT_STARTED",
+  "support_module_count": 0,
+  "transport": "openrouter-via-local-pinning-proxy",
+  "treatment": "Case 025 is stated over shared definition-only vocabulary. This arm supplies the papers plus only the exact eight-source stripped vocabulary needed to state the target. The estimand is the effect of the other arm's bundled research library, supplementary statement cards, and navigation material; it is not the isolated effect of proved declarations.",
+  "upstream_pin": {
+    "allow_fallbacks": false,
+    "only": [
+      "openai"
+    ]
+  }
+}

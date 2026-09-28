@@ -1,0 +1,21 @@
+import Stage3Model
+import Mathlib.Analysis.SpecialFunctions.Log.Base
+open Set Filter
+open GenLimit.KleinbergWei
+#check squeeze_zero
+#check squeeze_zero'
+#check Filter.Tendsto.squeeze
+#check tendsto_of_tendsto_of_tendsto_of_le_of_le
+#check Real.tendsto_log_atTop
+#check Real.isLittleO_log_id_atTop
+#check Asymptotics.IsLittleO.comp_tendsto
+#check Asymptotics.IsLittleO.comp_tendsto'
+#check Asymptotics.IsLittleO.comp_tendsto_of_tendsto_norm_atTop
+#check tendsto_natCast_atTop_atTop
+#check Filter.Tendsto.const_mul
+#check Filter.Tendsto.mul_const
+#check Filter.Tendsto.add
+#check tendsto_one_div_atTop_nhds_zero_nat
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check tendsto_nat_nhds_top
+#check OrderedLanguage.prefixCount

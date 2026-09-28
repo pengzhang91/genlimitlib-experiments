@@ -1,0 +1,13 @@
+import Stage3Model
+#check Nat.pow_right_injective
+#check Nat.pow_right_injective₀
+#check Nat.pow_left_injective
+#check Nat.two_pow_injective
+#check Odd
+#check Nat.not_even_iff_odd
+#check Nat.even_pow
+#check Nat.odd_pow
+#check Nat.Coprime.pow_right_iff
+#check Nat.mul_right_cancel
+#check Nat.mul_left_cancel
+#check Nat.eq_of_mul_eq_mul_left

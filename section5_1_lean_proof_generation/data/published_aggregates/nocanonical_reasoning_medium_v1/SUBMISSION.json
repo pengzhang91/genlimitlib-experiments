@@ -1,0 +1,138 @@
+{
+  "schema": "lean2paper.no-canonical-reasoning-medium.submission.v1",
+  "recorded_utc": "2026-09-23T23:57:45Z",
+  "factorial_cell": {
+    "canonical_full_proof": "absent",
+    "reasoning_effort": "medium"
+  },
+  "scientific_protocol": {
+    "model": "openai/gpt-5.6-sol",
+    "model_verbosity": "medium",
+    "author_budget_seconds": 5400,
+    "provider_only": [
+      "openai"
+    ],
+    "allow_fallbacks": false,
+    "tasks": 5,
+    "arms_per_task": 3,
+    "replicates_per_arm": 5,
+    "planned_author_runs": 75
+  },
+  "source_audit": {
+    "path": "reports/nocanonical_reasoning_medium_source_audit.json",
+    "state": "PASS",
+    "model_calls": 0,
+    "high_no_canonical_scientific_inputs_byte_identical": true,
+    "canonical_medium_delta_limited_to_proof_ablation": true
+  },
+  "resources": {
+    "author_partition": "cpu",
+    "author_time_limit": "01:35:00",
+    "scientific_author_budget_seconds": 5400,
+    "wrapper_overhead_seconds": 300,
+    "cpus_per_task": 1,
+    "memory": "8G",
+    "parallel_arms_per_wave": [
+      "P",
+      "PML",
+      "PML-FileOracle"
+    ],
+    "wave_dependency_schedule": "R1 -> R2 -> R3 -> R4 -> R5 within each task",
+    "final_verify_partition": "cpu",
+    "final_verify_time_limit": "00:20:00"
+  },
+  "campaigns": {
+    "s2b": {
+      "bundle": "lean2paper_s2b_nocanonical_reasoning_medium_v1",
+      "source_manifest_sha256": "c0962cf3fdf84f9b0675eb8182a31a68879caafab9dde042bab41ad0838a713e",
+      "source_archive_sha256": "6eba06820aba60b04f7404cc5d2a7f59e13e3aa847eaed2bb957ee5eaaaf26e3",
+      "setup": {
+        "job_id": "SLURM_JOB_001",
+        "partition": "cpu-interactive"
+      },
+      "waves": [
+        "SLURM_JOB_002",
+        "SLURM_JOB_003",
+        "SLURM_JOB_004",
+        "SLURM_JOB_005",
+        "SLURM_JOB_006"
+      ],
+      "verify_job_id": "SLURM_JOB_007",
+      "prepared_artifact_source": "lean2paper_s2b_nocanonical_v1"
+    },
+    "case017": {
+      "bundle": "lean2paper_case017_nocanonical_reasoning_medium_v1",
+      "source_manifest_sha256": "a177253f5d186b7f6717aa24d3ff1dc6769e2cbb33ade160301be694d440a793",
+      "source_archive_sha256": "5bc6fe4aba1194e1d5ddb1230688bd2897b933ff98ff462223502b166cd9028e",
+      "setup": {
+        "job_id": "SLURM_JOB_008",
+        "partition": "cpu-interactive"
+      },
+      "waves": [
+        "SLURM_JOB_009",
+        "SLURM_JOB_010",
+        "SLURM_JOB_011",
+        "SLURM_JOB_012",
+        "SLURM_JOB_013"
+      ],
+      "verify_job_id": "SLURM_JOB_014",
+      "prepared_artifact_source": "lean2paper_case017_nocanonical_v1"
+    },
+    "case019": {
+      "bundle": "lean2paper_case019_nocanonical_reasoning_medium_v1",
+      "source_manifest_sha256": "6b6208e9a34d2915aaaa1f93b9c4b6b26e6be86d1c11359e70a4118143c80d1b",
+      "source_archive_sha256": "d7d52136bea01769b42a84834f1d3aafbf0979b5f5035be25bb574694de30474",
+      "setup": {
+        "job_id": "SLURM_JOB_015",
+        "partition": "cpu"
+      },
+      "waves": [
+        "SLURM_JOB_016",
+        "SLURM_JOB_017",
+        "SLURM_JOB_018",
+        "SLURM_JOB_019",
+        "SLURM_JOB_020"
+      ],
+      "verify_job_id": "SLURM_JOB_021",
+      "prepared_artifact_source": "content-addressed 161-file Lean cache"
+    },
+    "case024": {
+      "bundle": "lean2paper_case024_nocanonical_reasoning_medium_v1",
+      "source_manifest_sha256": "22db0bf1b9093ff0021ad22b9d940c90d2d1eccef7848cfaa3eb29ed5cb0969b",
+      "source_archive_sha256": "f59f53ce45313550499649334052fc6d640c542f241f1617c38bfb9a0f9d4bd3",
+      "setup": {
+        "job_id": "SLURM_JOB_022",
+        "partition": "cpu"
+      },
+      "waves": [
+        "SLURM_JOB_023",
+        "SLURM_JOB_024",
+        "SLURM_JOB_025",
+        "SLURM_JOB_026",
+        "SLURM_JOB_027"
+      ],
+      "verify_job_id": "SLURM_JOB_028",
+      "prepared_artifact_source": "content-addressed 161-file Lean cache"
+    },
+    "case025": {
+      "bundle": "lean2paper_case025_nocanonical_reasoning_medium_v1",
+      "source_manifest_sha256": "f9c666470d90c930c8cc5a6536ce10f81e68160d60a004a567ba991d8b8a66df",
+      "source_archive_sha256": "ab1cf0929f76d7f2e36d93009ac7d72ac0bbade76d28626c5e172bba4b67d865",
+      "setup": {
+        "job_id": "SLURM_JOB_029",
+        "partition": "cpu"
+      },
+      "waves": [
+        "SLURM_JOB_030",
+        "SLURM_JOB_031",
+        "SLURM_JOB_032",
+        "SLURM_JOB_033",
+        "SLURM_JOB_034"
+      ],
+      "verify_job_id": "SLURM_JOB_035",
+      "prepared_artifact_source": "content-addressed 161-file Lean cache"
+    }
+  },
+  "model_calls_at_submission": 0,
+  "slurm_job_id_redaction": "Concrete Slurm scheduler identifiers were replaced by stable file-local labels; equality and array-task suffix relationships are preserved."
+}

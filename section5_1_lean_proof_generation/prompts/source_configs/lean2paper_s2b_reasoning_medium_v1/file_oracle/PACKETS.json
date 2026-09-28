@@ -1,0 +1,32 @@
+{
+  "file_oracle_s2b_reasoning_medium_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-23T05:26:10.500061+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_s2b_reasoning_medium_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-23T05:26:10.500090+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_s2b_reasoning_medium_v1_r3": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-23T05:26:10.500096+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_s2b_reasoning_medium_v1_r4": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-23T05:26:10.500099+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_s2b_reasoning_medium_v1_r5": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-23T05:26:10.500103+00:00",
+    "source_template": "run_005_v1"
+  }
+}

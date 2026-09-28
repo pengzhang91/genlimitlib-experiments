@@ -1,0 +1,49 @@
+\subsection{Resolving an open problem in a special case}
+\label{sec:new-mathematics}
+\emph{Mistake-Bounded Language Generation} \citep[][P29]{mistake}
+studies generators that learn from positive examples and output an unobserved
+point at each step. A mistake occurs when the output is outside the target
+language. The paper asks how the total number of mistakes trades off against
+how quickly the generator stops making them (Section~8, Open Direction~(2)).
+We resolve this question for deterministic generation on the family underlying
+the paper's tradeoff construction. GenLimitLib's separate definitions of
+mistake and convergence guarantees helped guide this analysis.
+As in P29, observations are distinct, and time counts the points observed so far.
+
+We consider the family of languages $L_i=P_i\cup R_i$,
+where $P_i=\bigcup_{k\le i}C_k$. The blocks $C_i$ are nonempty and finite,
+the sets $R_i$ are countably infinite, and all these sets are mutually disjoint.
+Thus each successive language contains one more finite block, together with
+an infinite part $R_i$ that belongs only to that language. We call this the \emph{staircase family} and write $s_i=|P_i|$.
+We measure convergence by the number of distinct observations needed before
+all later outputs are guaranteed to be valid, for every presentation order.
+
+For this family, the tradeoff comes from a simple choice. When the observed
+set is exactly $P_k$, the generator can output in $R_k$, which is valid only
+for $L_k$, or in $C_{k+1}$, which is valid for every later target.
+Away from these points, it can choose an unobserved point common to all
+compatible targets. Let $\sigma_k=1$ record the choice of $R_k$ and
+$\sigma_k=0$ the choice of $C_{k+1}$. Write $M_i(G)$ for the worst-case
+number of mistakes of a generator $G$ on $L_i$, and $D_i(G)$ for its
+worst-case convergence time.
+
+\begin{result}[Optimal mistake and convergence guarantees]
+\label{thm:staircase-frontier}
+For a binary sequence $\sigma=(\sigma_k)_{k\ge1}$, let
+$J_i(\sigma)=\{1\le k<i:\sigma_k=1\}\cup\{i:\sigma_i=0\}$ and define
+\[
+ m_i(\sigma)=|J_i(\sigma)|,\qquad
+ d_i(\sigma)=\max\bigl(\{0\}\cup\{s_k+1:k\in J_i(\sigma)\}\bigr).
+\]
+Each sequence $\sigma$ is realized by a deterministic generator $G_\sigma$
+with $M_i(G_\sigma)=m_i(\sigma)$ and $D_i(G_\sigma)=d_i(\sigma)$ for all $i$.
+Conversely, every deterministic generator $G$ admits a sequence $\sigma$
+such that $m_i(\sigma)\le M_i(G)$ and $d_i(\sigma)\le D_i(G)$ for every $i$.
+These are exactly the Pareto-optimal guarantees: none can be improved
+without worsening another.
+\end{result}
+
+The theorem gives matching constructions and lower bounds for every optimal
+tradeoff on this family. It determines both the number and the latest possible
+timing of mistakes, for arbitrary positive finite block sizes
+(Appendix~\ref{app:p29-frontier}).

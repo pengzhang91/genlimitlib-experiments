@@ -1,0 +1,9 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+#check Nat.find_congr
+#check Classical.choose
+#print GenLimit.PatientMachine.lowestConsistent
+#print GenLimit.PatientMachine.leastAvailable
+#print GenLimit.PatientMachine.Available
+#print GenLimit.Generic.InjectiveValueContaminatedPresentationAtMost
+#print GenLimit.Generic.FiniteNoiseFiniteOmissionEnumeration

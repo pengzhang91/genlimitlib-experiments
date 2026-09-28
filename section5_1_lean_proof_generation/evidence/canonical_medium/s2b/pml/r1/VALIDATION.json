@@ -1,0 +1,175 @@
+{
+  "author_lean_size": {
+    "bytes": 37156,
+    "files": 2,
+    "lines": 903,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 1436.839048,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 65,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 65
+      },
+      "total_upstream_usd": 1.6941585999999997,
+      "unverifiable": 0
+    },
+    "run_id": "pml_s2b_reasoning_medium_v1_r1",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "f95c881cacfc4c894e013f2548017d4370d64be7f84956e15bed4f5a946bed54",
+      "within_word_limit": true,
+      "words": 82
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 37077,
+    "files": 1,
+    "lines": 899,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 1370.1609787563793,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "source_hashes": {
+        "ApiCheck.lean": "07e4a3a555f8007987da4dfdb0a4c247fa7c63eda3f29c8e5a6559774369ebcd",
+        "Check.lean": "7b9bd53848e05e51341550a21823a01c82d41ce9f7c57956d0faa4ab32e3cd7b",
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 1424.0545229180716,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "source_hashes": {
+        "Check.lean": "7b9bd53848e05e51341550a21823a01c82d41ce9f7c57956d0faa4ab32e3cd7b",
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 1436.839048,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "source_hashes": {
+        "Check.lean": "7b9bd53848e05e51341550a21823a01c82d41ce9f7c57956d0faa4ab32e3cd7b",
+        "S2BFormalization.lean": "3fb00f4dda1e49fa87b6e88b1f7ef43e88e7025e3dc5a0715c1b010276d67970"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 38,
+    "failed_checker_command_events_to_first_pass": 27,
+    "first_valid_observed_pass_seconds": 1370.1609787563793,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 1436.398306003306,
+        "usage": {
+          "cache_write_input_tokens": 237546,
+          "cached_input_tokens": 3268518,
+          "input_tokens": 3510419,
+          "output_tokens": 43788,
+          "reasoning_output_tokens": 9359
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "pml_s2b_reasoning_medium_v1_r1",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

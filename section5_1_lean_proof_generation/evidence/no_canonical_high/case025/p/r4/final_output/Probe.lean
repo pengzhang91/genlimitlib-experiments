@@ -1,0 +1,14 @@
+import Stage3Model
+import Mathlib
+#check Finset.max'
+#check Finset.max
+#check Finset.max'
+#check Finset.min'
+#check Nat.find
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset
+#check Finset.exists_max_image
+#check Filter.le_liminf_of_le
+#check le_liminf_of_le
+#check Nat.le_log2
+#check Real.isLittleO_logb_id_atTop

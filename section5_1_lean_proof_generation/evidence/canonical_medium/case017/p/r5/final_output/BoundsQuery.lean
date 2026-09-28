@@ -1,0 +1,13 @@
+import Mathlib
+open Filter
+#check isBoundedUnder_le_of_eventually_le
+#check isBoundedUnder_le_of_eventually_le'
+#check isBoundedUnder_ge_of_eventually_le
+#check isCoboundedUnder_le_of_eventually_le
+#check isCoboundedUnder_ge_of_eventually_le
+#check Filter.isBoundedUnder_le
+#check Filter.isCoboundedUnder_le
+#check IsBounded.isBoundedUnder_le
+#check IsCobounded.isCoboundedUnder_le
+#check bddBelow_def
+#check bddAbove_def

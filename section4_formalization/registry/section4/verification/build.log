@@ -1,0 +1,170 @@
+ℹ [902/1114] Replayed Section4.InvariantRepair
+info: Section4/InvariantRepair.lean:78:0: 'GenLimit.ParetoGeneration.literal_claim_3_2_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/InvariantRepair.lean:79:0: 'GenLimit.ParetoGeneration.maxScoreBound_persists_insert' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/InvariantRepair.lean:80:0: 'GenLimit.ParetoGeneration.InsertionSplit.orderMaxScoreBounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Section4/InvariantRepair.lean:81:0: 'GenLimit.ParetoGeneration.target_selected_in_greedyListScan' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/InvariantRepair.lean:82:0: 'GenLimit.ParetoGeneration.theorem_4_arbitrary_scheduler' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/InvariantRepair.lean:83:0: 'GenLimit.ParetoGeneration.overview_theorem_1_semantic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/InvariantRepair.lean:84:0: 'Section4.InvariantRepair.published_theorem_8_with_repetitions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [903/1114] Replayed Section4.ReplayCore
+warning: Section4/ReplayCore.lean:36:8: automatically included section variable(s) unused in theorem `Section4.Replay.mem_profile`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayCore.lean:41:8: automatically included section variable(s) unused in theorem `Section4.Replay.mem_group`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayCore.lean:57:0: automatically included section variable(s) unused in theorem `Section4.Replay.residual_eq_mem_iff`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [914/1114] Replayed Section4.ReplayNecessity
+info: Section4/ReplayNecessity.lean:84:0: 'Section4.Replay.criterion_of_properlyGeneratable' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [995/1114] Replayed Section4.ReplayTriangle
+info: Section4/ReplayTriangle.lean:62:0: 'Section4.Replay.triangle_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [996/1114] Replayed Section4.ReplayConstruction
+warning: Section4/ReplayConstruction.lean:18:0: automatically included section variable(s) unused in theorem `Section4.Replay.firstChoice_spec`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayConstruction.lean:32:0: automatically included section variable(s) unused in theorem `Section4.Replay.lowerChoice_spec`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayConstruction.lean:43:8: automatically included section variable(s) unused in theorem `Section4.Replay.mem_candidates`:
+  [Fintype ι]
+  [DecidableEq ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayConstruction.lean:158:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [997/1114] Replayed Section4.ReplayMachine
+warning: Section4/ReplayMachine.lean:98:0: automatically included section variable(s) unused in theorem `Section4.Replay.machine_state_card`:
+  [DecidableEq ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [998/1114] Replayed Section4.ReplaySufficiency
+warning: Section4/ReplaySufficiency.lean:11:0: automatically included section variable(s) unused in theorem `Section4.Replay.first_observation_mem`:
+  [Fintype ι]
+  [DecidableEq ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [999/1114] Replayed Section4.ReplayChanges
+warning: Section4/ReplayChanges.lean:15:8: automatically included section variable(s) unused in theorem `Section4.Replay.changeCount_zero`:
+  [Fintype ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayChanges.lean:18:0: automatically included section variable(s) unused in theorem `Section4.Replay.changeCount_succ`:
+  [Fintype ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1000/1114] Replayed Section4.ReplayMinimal
+warning: Section4/ReplayMinimal.lean:12:0: automatically included section variable(s) unused in theorem `Section4.Replay.exists_minimal_below`:
+  [DecidableEq ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayMinimal.lean:32:0: automatically included section variable(s) unused in theorem `Section4.Replay.residual_eq_of_first_subset`:
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Section4/ReplayMinimal.lean:69:0: automatically included section variable(s) unused in theorem `Section4.Replay.chosenOutput_minimal`:
+  [DecidableEq ι]
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1002/1114] Replayed Section4.Replay
+warning: Section4/Replay.lean:17:0: automatically included section variable(s) unused in theorem `Section4.Replay.criterion_iff_realized_profiles`:
+  [Nonempty ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: Section4/Replay.lean:42:0: 'Section4.Replay.triangle_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/Replay.lean:43:0: 'Section4.Replay.finite_replay_characterization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/Replay.lean:44:0: 'Section4.Replay.finite_replay_characterization_profiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/Replay.lean:45:0: 'Section4.Replay.finite_state_replay_corollary' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1003/1114] Replayed Section4.Staircase
+warning: Section4/Staircase.lean:87:10: This simp argument is unused:
+  target
+
+Hint: Omit it from the simp argument list.
+  simp [̵t̵a̵r̵g̵e̵t̵]̵ ̵at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Section4/Staircase.lean:94:30: unused variable `F`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Section4/Staircase.lean:185:33: This simp argument is unused:
+  target
+
+Hint: Omit it from the simp argument list.
+  simp [t̵a̵r̵g̵e̵t̵,̵ ̵Charged, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Section4/Staircase.lean:188:33: This simp argument is unused:
+  target
+
+Hint: Omit it from the simp argument list.
+  simp [t̵a̵r̵g̵e̵t̵,̵ ̵Charged, hs, hEq, hlt, hsizes]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Section4/Staircase.lean:342:10: This simp argument is unused:
+  target
+
+Hint: Omit it from the simp argument list.
+  simp [t̵a̵r̵g̵e̵t̵,̵ ̵Nat.ne_of_lt hki]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3124/3130] Built Section4.StaircaseExtremes (32s)
+⚠ [3125/3130] Built Section4.StaircaseTransport (32s)
+warning: Section4/StaircaseTransport.lean:27:11: unused variable `R`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [3126/3130] Built Section4.StaircaseRepresentation (33s)
+info: Section4/StaircaseRepresentation.lean:185:0: 'Section4.Staircase.exists_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3127/3130] Built Section4.StaircaseTransportProfiles (5.9s)
+ℹ [3128/3130] Built Section4.StaircaseAbstract (2.8s)
+info: Section4/StaircaseAbstract.lean:53:0: 'Section4.Staircase.abstract_exact_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Section4/StaircaseAbstract.lean:54:0: 'Section4.Staircase.abstract_exact_staircase_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3129/3130] Built Section4 (2.5s)
+Build completed successfully (3130 jobs).

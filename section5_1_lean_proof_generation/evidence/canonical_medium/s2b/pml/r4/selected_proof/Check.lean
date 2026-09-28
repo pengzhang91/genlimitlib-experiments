@@ -1,0 +1,12 @@
+import Stage3Model
+import Mathlib.Data.Nat.Nth
+#check Nat.nth_strictMono
+#check Nat.nth_mem_of_infinite
+#check Nat.nth_count
+#check Nat.range_nth_of_infinite
+#check Nat.nth_le_of_lt_card
+#check Nat.count_le
+#check Nat.count_nth_of_infinite
+#check Set.range_comp
+#check Set.range_eq_iff
+#check Set.Infinite.nth

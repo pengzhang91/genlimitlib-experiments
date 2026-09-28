@@ -1,0 +1,79 @@
+[
+  {
+    "paper": "P02",
+    "sha256": "acaf59abdb4542173cb20dd05e874f7fa5b505bf7b2c5c561529d5e387502482",
+    "expected_sha256": "acaf59abdb4542173cb20dd05e874f7fa5b505bf7b2c5c561529d5e387502482",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2410.13714v5",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P02.pdf"
+  },
+  {
+    "paper": "P04",
+    "sha256": "52e1f0d2111d73a2a248e7b8bdc113ee4f331e0c0478a3e5c7826b0417b7ab8b",
+    "expected_sha256": "cea686c86617749044c31e89fd212b29a32ad91a88c088326b30f7991b785381",
+    "matches": false,
+    "url": "https://arxiv.org/pdf/2411.15364v2",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P04.pdf"
+  },
+  {
+    "paper": "P06",
+    "sha256": "95c02ce2bd069b4fdf9a6b70d81763d9f9a49d65063f5141017b4474a71ad059",
+    "expected_sha256": "95c02ce2bd069b4fdf9a6b70d81763d9f9a49d65063f5141017b4474a71ad059",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2501.04179v2",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P06.pdf"
+  },
+  {
+    "paper": "P08",
+    "sha256": "b4268bc32c32c7aa3660b8f54c425b8d1a2534f23cfab10774a5d2b592e847c0",
+    "expected_sha256": "b4268bc32c32c7aa3660b8f54c425b8d1a2534f23cfab10774a5d2b592e847c0",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2504.17004v2",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P08.pdf"
+  },
+  {
+    "paper": "P09",
+    "sha256": "647dff8492c32479171e6acb4751a17a084407a39e502ec7ce6dfeebf9a6e61d",
+    "expected_sha256": "647dff8492c32479171e6acb4751a17a084407a39e502ec7ce6dfeebf9a6e61d",
+    "matches": true,
+    "url": "https://proceedings.mlr.press/v267/peale25a.html",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P09.pdf"
+  },
+  {
+    "paper": "P12",
+    "sha256": "ef6dc568b5815b6fe052c5dd52bef89d01a1d7d4eed86e946c368305078c42e5",
+    "expected_sha256": "ef6dc568b5815b6fe052c5dd52bef89d01a1d7d4eed86e946c368305078c42e5",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2507.15319v2",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P12.pdf"
+  },
+  {
+    "paper": "P17",
+    "sha256": "6a791bc54891ba447fbf391db9f84927dbe20231a310cfee821760f7aafa9760",
+    "expected_sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9",
+    "matches": false,
+    "url": "https://arxiv.org/pdf/2511.07417v1",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P17.pdf"
+  },
+  {
+    "paper": "P23",
+    "sha256": "c884ae86bdb9510c752b26cd5962ea94fb548885672b3cb0d24a2c2ab31cad3d",
+    "expected_sha256": "c884ae86bdb9510c752b26cd5962ea94fb548885672b3cb0d24a2c2ab31cad3d",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2604.02385v2",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P23.pdf"
+  },
+  {
+    "paper": "P27",
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "url": "https://openreview.net/pdf?id=jvfXyIcQ8a"
+  },
+  {
+    "paper": "P28",
+    "sha256": "40af9564b2066c0c47840aaf66b28caf12e5848b1673153cfcd4c92d0de5bf2a",
+    "expected_sha256": "40af9564b2066c0c47840aaf66b28caf12e5848b1673153cfcd4c92d0de5bf2a",
+    "matches": true,
+    "url": "https://arxiv.org/pdf/2605.06211v1",
+    "path": "outputs/E01S_paper_understanding_2026-09-13/inputs/source/P28.pdf"
+  }
+]

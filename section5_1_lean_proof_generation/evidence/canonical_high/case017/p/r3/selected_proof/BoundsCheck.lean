@@ -1,0 +1,15 @@
+import Stage3Model
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check isBoundedUnder_le_of_eventually_le
+#check isBoundedUnder_ge_of_eventually_le
+#check isCoboundedUnder_le_of_eventually_le
+#check isCoboundedUnder_ge_of_eventually_le
+#check Filter.isBoundedUnder_le_of_eventually_le
+#check Filter.isCoboundedUnder_le_of_eventually_le
+#check Filter.Eventually.isBoundedUnder_le
+#check Filter.Eventually.isCoboundedUnder_le
+#check Filter.IsBoundedUnder
+#check Filter.IsCoboundedUnder
+#check isBounded_le_def
+#check isCobounded_le_def

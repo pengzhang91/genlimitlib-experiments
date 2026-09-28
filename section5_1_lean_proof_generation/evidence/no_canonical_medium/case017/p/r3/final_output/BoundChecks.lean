@@ -1,0 +1,13 @@
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check isBoundedUnder_le_of_eventually_le
+#check isBoundedUnder_le_of_eventually_ge
+#check isCoboundedUnder_le_of_eventually_le
+#check isCoboundedUnder_le_of_eventually_ge
+#check isBoundedUnder_ge_of_eventually_le
+#check isCoboundedUnder_ge_of_eventually_le
+#check isBoundedUnder_of
+#check isCoboundedUnder_of
+#check isBounded_le_def
+#check isCobounded_le_def
+#check Filter.isBoundedUnder_le

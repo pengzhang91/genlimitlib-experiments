@@ -1,0 +1,13 @@
+import Diagonal
+import GenLimit.Paper39_DenseGeneration.Abstract.Density
+#check Finset.card_image_of_injective
+#check Finset.card_image_iff
+#check Finset.card_image_le
+#check Nat.log_pow
+#check Nat.log_mono_right
+#check Nat.log_mul_base
+#check Filter.Tendsto.const_add
+#check Filter.Tendsto.add_const
+#check Filter.Tendsto.limsup_eq
+#check GenLimit.tendsto_countingError_div
+#check GenLimit.tendsto_natLog2_div

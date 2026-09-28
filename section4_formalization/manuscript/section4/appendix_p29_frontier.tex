@@ -1,0 +1,255 @@
+% Standalone fragment: requires the host's suppthm environment and amsmath.
+% Adapted from the September 18 contextual companion
+% companions/mistake_deadline_frontier.tex. The Pareto-minimality argument
+% below strengthens its schedule-domination statement.
+\subsection{Optimal mistake and convergence guarantees for the staircase family}
+\label{app:p29-frontier}
+
+In this subsection we prove Theorem~\ref{thm:staircase-frontier}, which
+determines the optimal mistake and convergence guarantees for the staircase
+family. This family generalizes the construction in Theorem~6.4
+of~\citet[][P29]{mistake} by allowing arbitrary positive finite block sizes.
+We compare generators on every possible target simultaneously: improving
+one target's guarantee may worsen another's. The proof constructs generators
+from a sequence of binary choices, derives matching lower bounds for
+arbitrary generators, and shows that every resulting choice expresses an
+optimal tradeoff.
+
+\subsubsection{Languages, histories, and guarantees}
+\label{app:p29-frontier-setup}
+We first give a concrete realization of the family in
+Section~\ref{sec:new-mathematics}. Fix positive integers $a_1,a_2,\ldots$. On
+$X=\mathbb N_{>0}\times\mathbb N_{>0}$, put
+\[
+ C_i=\{(i,j):1\le j\le a_i\},\qquad
+ P_i=\bigcup_{k=1}^{i}C_k,\qquad
+ s_i=|P_i|=\sum_{k=1}^{i}a_k,
+ \qquad s_0=0.
+\]
+Write $R_i=\{(i,j):j>a_i\}$ for the private remainder of column $i$,
+and define
+\[
+ L_i=P_i\cup R_i
+     =P_{i-1}\cup(\{i\}\times\mathbb N_{>0}).
+\]
+Each $L_i$ is infinite. For $k<i$, its intersection with $L_k$ is
+$P_k$. A point of $C_k$ belongs to exactly the languages $L_i$ with
+$i\ge k$, whereas a point of $R_k$ belongs only to $L_k$.
+For the abstract family in the main text, choose a bijection from each
+finite block to the first $a_i$ points of its column and from its countably
+infinite private part to the remainder. These bijections preserve every
+language membership. Any additional ambient points lie in no target;
+the lower-bound argument below also allows a generator to output them.
+Thus the concrete notation entails no restriction on the stated family.
+
+A legal history for target $L_i$ is a finite ordered list of distinct
+points in $L_i$. After a history of length $t\ge0$, a generator $G$
+outputs a point outside its observed set, before the next observation
+arrives. A generator is a deterministic function of the entire ordered
+history; no computability restriction is imposed. An output is
+a mistake when it lies outside the fixed target. This definition imposes
+freshness relative to observed inputs, without requiring the outputs to
+be mutually distinct.
+
+Let $M_i(G)\in\mathbb N\cup\{\infty\}$ be the supremum of the total
+number of mistakes over injective positive streams in $L_i$. Let
+$D_i(G)\in\mathbb N\cup\{\infty\}$ be the least nonnegative integer
+$D$ such that $G$ is valid on every legal $L_i$-history of every length
+$t\ge D$; set $D_i(G)=\infty$ if no such finite $D$ exists. In
+particular, an error after exactly $s$ observations forces
+$D_i(G)\ge s+1$, and $D_i(G)=0$ means that no legal history receives
+an invalid output. Time is the number of distinct observations,
+including time zero at the empty history.
+
+The same worst-case quantities result if streams are required to
+enumerate the entire target. Every finite injective positive history
+extends to such an enumeration. Thus every finite collection of
+mistakes witnessed on a positive stream is also witnessed on some
+complete text, and every history used to test a convergence time occurs on a
+complete text.
+
+The two quantities answer different questions: $M_i(G)$ bounds how many
+errors can occur, while $D_i(G)$ bounds how late an error can occur.
+We compare both quantities for all targets at once. Specifically, $G'$ dominates $G$ if
+$M_i(G')\le M_i(G)$ and $D_i(G')\le D_i(G)$ for every $i$. A profile
+is Pareto minimal if no generator dominates it with a strict inequality
+in at least one coordinate. Thus a Pareto-minimal profile cannot be improved
+on any target without worsening at least one of the guarantees.
+
+\subsubsection{Characterization and proof}
+\label{app:p29-frontier-proof}
+The relevant decisions occur when the observed set is exactly $P_k$.
+At that point the possible targets are $L_k,L_{k+1},\ldots$, whose
+intersection is $P_k$, so no unobserved point is valid for all of them.
+Choosing a point in $R_k$ is correct only for $L_k$; choosing a point
+in $C_{k+1}$ is correct for every later target. We record these choices
+by a binary sequence $\sigma=(\sigma_k)_{k\ge1}$, with $\sigma_k=1$
+for the first choice and $\sigma_k=0$ for the second. The construction
+below makes no mistakes away from these decision points.
+
+For target $L_i$, an earlier choice of $R_k$, with $k<i$, causes one
+mistake if the observed set reaches $P_k$. The choice of $C_{i+1}$
+causes a mistake at $P_i$. These observations motivate the candidate
+mistake bound and the corresponding set of possible error times:
+\[
+ m_i(\sigma)=\sum_{k<i}\sigma_k+1-\sigma_i,
+ \qquad
+ E_i(\sigma)=\{s_k:k<i,\ \sigma_k=1\}
+              \cup\{s_i:\sigma_i=0\}.
+\]
+The proposed convergence time is one more than the latest of these times, or
+zero if there are none:
+\begin{equation}
+\label{app:p29-frontier-deadline}
+ d_i(\sigma)=
+ \begin{cases}
+  0,&E_i(\sigma)=\varnothing,\\
+  1+\max E_i(\sigma),&E_i(\sigma)\ne\varnothing.
+ \end{cases}
+\end{equation}
+
+The first part of the theorem shows that these formulas are attained.
+The second proves that every generator has guarantees at least as large
+as those of one such sequence, simultaneously for every target. The third
+establishes that none of the resulting profiles can be improved further.
+
+\begin{suppthm}[Optimal mistake and convergence guarantees]
+\label{app:p29-frontier-theorem}
+For the staircase family above, the following assertions hold.
+\begin{enumerate}
+\item For every binary sequence $\sigma$, there is a deterministic
+generator $G_\sigma$ satisfying, simultaneously for all $i\ge1$,
+\begin{equation}
+\label{app:p29-frontier-exact}
+ M_i(G_\sigma)=m_i(\sigma),\qquad
+ D_i(G_\sigma)=d_i(\sigma).
+\end{equation}
+\item Every deterministic generator $G$ is dominated by a schedule:
+there is one $\sigma$ such that, for all $i\ge1$,
+\begin{equation}
+\label{app:p29-frontier-domination}
+ m_i(\sigma)\le M_i(G),\qquad d_i(\sigma)\le D_i(G).
+\end{equation}
+\item Every schedule profile is Pareto minimal. Consequently the
+profiles in~\eqref{app:p29-frontier-exact} are exactly the deterministic
+Pareto frontier.
+\end{enumerate}
+\end{suppthm}
+\begin{proof}
+\emph{Attaining the proposed guarantees.}
+We first define $G_\sigma$ on every finite history and then prove the
+two equalities in~\eqref{app:p29-frontier-exact}.
+Choose fixed orders for making all the selections below. If a history
+contains a point of $R_i$, any compatible target must be $L_i$.
+At such a realizable history, output any unobserved point of $L_i$.
+If a history is unrealizable, output any unobserved point of $X$;
+this branch is irrelevant to targetwise guarantees but makes the
+generator total and fresh.
+
+It remains to define the generator before a private point appears.
+At the empty history, output a point of $C_1$, which belongs to every
+target. At a nonempty history consisting only of finite-block points,
+let $k$ be the largest observed column index and let $S$ be its
+observed set. The compatible targets are precisely
+$L_k,L_{k+1},\ldots$, and their intersection is $P_k$. Indeed, the
+observed point of $C_k$ excludes every earlier target, while every
+target of index at least $k$ contains all the observed points. Their
+common core is $P_k$ because $L_k\cap L_{k+1}=P_k$.
+
+If $S\ne P_k$, output a point of $P_k\setminus S$. It is fresh and
+valid for every compatible target. If $S=P_k$, no fresh point is valid
+for all compatible targets. When $\sigma_k=1$, output a point of
+$R_k$, valid only for $L_k$. When $\sigma_k=0$, output a point of
+$C_{k+1}$, valid for every later target and invalid for $L_k$. Both
+choices are fresh.
+
+Fix a target $L_i$. Its stream can encounter a boundary $S=P_k$
+only for $k\le i$, and it can encounter each such boundary at most
+once because observations are injective. Every output away from
+these boundaries is valid. At a boundary $k<i$, a mistake occurs
+exactly when $\sigma_k=1$; at boundary $k=i$, a mistake occurs
+exactly when $\sigma_i=0$. The respective observed counts are $s_k$.
+This proves $M_i(G_\sigma)\le m_i(\sigma)$ and
+$D_i(G_\sigma)\le d_i(\sigma)$.
+
+To attain these bounds, present $C_1,C_2,\ldots,C_i$ in fixed
+internal orders, followed by an enumeration of $R_i$. This is an
+injective complete text of $L_i$, and it encounters every boundary
+$P_k$ for $k\le i$. It therefore realizes exactly the mistakes in
+$E_i(\sigma)$. If that set is nonempty, its latest mistake occurs
+after $\max E_i(\sigma)$ observations, forcing convergence time at least
+$1+\max E_i(\sigma)$. If it is empty, the preceding upper bound
+already gives convergence time zero. This establishes both equalities
+in~\eqref{app:p29-frontier-exact}.
+
+\emph{Lower bounds for an arbitrary generator.}
+We next show that allowing more elaborate choices, including dependence
+on the order of observations, cannot improve on all the profiles above.
+Fix a deterministic fresh generator $G$. For each $k$, let $h_k$
+be the ordered concatenation of $C_1,\ldots,C_k$ using the same
+fixed internal orders. Define
+\[
+ \sigma_k=1\quad\Longleftrightarrow\quad G(h_k)\in R_k.
+\]
+Freshness gives $G(h_k)\notin P_k$. Hence if $\sigma_k=0$,
+the output at $h_k$ is outside $L_k=P_k\cup R_k$.
+
+For a fixed target $L_i$, extend $h_i$ by the private remainder
+$R_i$ to obtain one complete $L_i$-text. At every earlier boundary
+$h_k$ with $\sigma_k=1$, the output belongs to $R_k$ and is
+invalid for $L_i$. At its own boundary $h_i$, the output is invalid
+if $\sigma_i=0$. Thus this one text witnesses all
+$m_i(\sigma)$ charged mistakes, at exactly the observed counts
+in $E_i(\sigma)$. The resulting mistake and convergence time lower bounds
+are~\eqref{app:p29-frontier-domination}; other errors made by $G$
+can only increase those quantities.
+
+The infinite concatenation of all finite blocks is used only to
+specify a consistent family of finite histories. It is not asserted
+to be a text of any one target. Each lower-bound argument above
+fixes $i$ and uses the legal prefix $h_i$ followed by a legal
+continuation for that same target.
+
+\emph{Optimality of every schedule.}
+The lower bound shows that the schedules suffice to find all optimal
+guarantees. We must still prove that every schedule is itself optimal.
+First, no two distinct schedules have coordinatewise ordered
+mistake vectors. Suppose otherwise that
+$m_i(\tau)\le m_i(\sigma)$ for every $i$, and let $k$ be the
+first index where $\tau_k\ne\sigma_k$. The inequality at $i=k$
+forces $\tau_k=1$ and $\sigma_k=0$. At $i=k+1$, the difference
+of the mistake counts is
+\[
+ m_{k+1}(\tau)-m_{k+1}(\sigma)
+ =1-(\tau_{k+1}-\sigma_{k+1}).
+\]
+For this to be nonpositive, we must also have
+$\tau_{k+1}=1$ and $\sigma_{k+1}=0$. But then
+\[
+ m_{k+2}(\tau)-m_{k+2}(\sigma)
+ =2-(\tau_{k+2}-\sigma_{k+2})\ge1,
+\]
+a contradiction. Therefore $\tau=\sigma$ whenever all the
+mistake inequalities hold.
+
+Now suppose an arbitrary $G$ dominates $G_\sigma$. The reduction
+just proved supplies a schedule $\tau$ with
+$m_i(\tau)\le M_i(G)\le m_i(\sigma)$ for every $i$, so
+$\tau=\sigma$. Applying the convergence time part of the same reduction
+gives $d_i(\sigma)\le D_i(G)\le d_i(\sigma)$, while the mistake
+inequalities also become equalities. No coordinate can improve
+strictly. Thus every schedule profile is Pareto minimal. Conversely,
+every Pareto-minimal generator must have the same profile as its
+dominating schedule, proving the final assertion.
+\end{proof}
+
+The two constant schedules illustrate the tradeoff. Always choosing
+$C_{k+1}$ makes no mistakes at the earlier decision points for target
+$L_i$, but makes one at $P_i$. Its guarantees are therefore $M_i=1$
+and $D_i=s_i+1$. Always choosing $R_k$ avoids the mistake at $P_i$
+but makes one at each earlier decision point, giving $M_i=i-1$ and
+$D_i=s_{i-1}+1$ for $i\ge2$, with $M_1=D_1=0$.
+Theorem~\ref{app:p29-frontier-theorem} determines all intermediate
+choices as well. Its lower bound applies to every deterministic generator,
+and its minimality statement shows that each listed profile is an optimal
+tradeoff across the targets, completing the special-case characterization.

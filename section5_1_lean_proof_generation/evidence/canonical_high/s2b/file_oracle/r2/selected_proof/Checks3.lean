@@ -1,0 +1,9 @@
+import Stage3Model
+#check Set.infinite_coe_iff
+#check Set.Infinite.to_subtype
+#check Set.infinite_coe_iff.mp
+#check Set.infinite_coe_iff.mpr
+#check Infinite.of_injective_forall_mem
+#check Set.infinite_range_of_injective
+#check Nat.pow_right_injective
+#check Nat.pow_left_injective

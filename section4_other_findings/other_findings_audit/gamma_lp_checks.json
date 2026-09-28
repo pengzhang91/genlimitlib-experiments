@@ -1,0 +1,122 @@
+{
+  "generic": {
+    "signatures": 30,
+    "infinite_subfamilies": 86,
+    "count_anchor_cases": 432,
+    "max_equality_residual": 0.0
+  },
+  "examples": {
+    "private_tail": [
+      [
+        2,
+        1,
+        0.5
+      ],
+      [
+        2,
+        2,
+        1.0
+      ],
+      [
+        2,
+        5,
+        2.5
+      ],
+      [
+        3,
+        1,
+        0.6666666666666667
+      ],
+      [
+        3,
+        2,
+        1.3333333333333335
+      ],
+      [
+        3,
+        5,
+        3.333333333333334
+      ],
+      [
+        4,
+        1,
+        0.75
+      ],
+      [
+        4,
+        2,
+        1.5
+      ],
+      [
+        4,
+        5,
+        3.75
+      ],
+      [
+        5,
+        1,
+        0.8
+      ],
+      [
+        5,
+        2,
+        1.6
+      ],
+      [
+        5,
+        5,
+        4.0
+      ]
+    ],
+    "parity": [
+      [
+        1,
+        1.0
+      ],
+      [
+        2,
+        1.0
+      ],
+      [
+        3,
+        1.0
+      ]
+    ]
+  },
+  "maxcut": [
+    {
+      "vertices": 0,
+      "edges": [],
+      "profiles": 3,
+      "computed_gamma": 3.0,
+      "expected_gamma": 3
+    },
+    {
+      "vertices": 1,
+      "edges": [],
+      "profiles": 6,
+      "computed_gamma": 5.0,
+      "expected_gamma": 5
+    },
+    {
+      "vertices": 2,
+      "edges": [],
+      "profiles": 9,
+      "computed_gamma": 7.0,
+      "expected_gamma": 7
+    },
+    {
+      "vertices": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "profiles": 11,
+      "computed_gamma": 18.0,
+      "expected_gamma": 18
+    }
+  ],
+  "lp_solves": 3450
+}

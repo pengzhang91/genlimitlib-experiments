@@ -1,0 +1,165 @@
+{
+  "author_lean_size": {
+    "bytes": 27902,
+    "files": 16,
+    "lines": 724,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 1022.84493,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 50,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 50
+      },
+      "total_upstream_usd": 1.0723596000000004,
+      "unverifiable": 0
+    },
+    "run_id": "p_case024_nocanonical_reasoning_medium_v1_r4",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "72c9def07bcf39f54c174d98559a1a7bb541163ca1e36204bf2b27aedfd868ce",
+      "within_word_limit": true,
+      "words": 100
+    }
+  },
+  "checkpoints": [
+    {
+      "checker_exit": 2,
+      "checkpoint": "0001",
+      "elapsed_seconds": 988.1184041169472,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49",
+        "Construction.lean": "cbcee9a0362c7894ba5d614eb97b231d67a64b03c9ea0981c172f7f5cf7ef465",
+        "Density.lean": "8aa777353473e0f0348125d8fddbc5368eb946b45265b268de938c955ad972bf",
+        "Family.lean": "9cc17741be50794ae06a02a38537708cad595387a839d84f415ea0dccf4580a9",
+        "Generator.lean": "00aa17901ce57cbaa5c4d1731efb254c67a145049f59f18b1ea0183c84bcfcd4",
+        "Many.lean": "68ffe12a1bee97b4a1a72d9c1f3b26b7731a10240adbcadef7f5a416f848c3c1",
+        "Pair.lean": "5cdbd2c4014ca9243f8c9970e59c42d3e53dc1e4332e76ff5f839199d090f849",
+        "Probe.lean": "afa4bd67855f578838a7a76927cec6fb7729bfb0fb49bcfbd39f3e968ae9106d",
+        "Probe2.lean": "bd03782fe7e1f70ebc12a9388c88a1d0a9f68f3910ec7eb37f3fad98a553ff72",
+        "Probe3.lean": "233571e3793f202d6d18e731c4f874dfda3dc6c7ee752573343c27c5a5937776",
+        "Probe4.lean": "170dabca8df7550ed4137ad0ae61bdc7d838bba1eb1d9b0e51d0bb3c00d63a25",
+        "Probe5.lean": "ec6a3dcb4df9a6f94f2d0ab692248aea40699d69803eefbb39e9cb07d106ed47",
+        "Probe6.lean": "6e519d5617e5e5030a32521211a679b50f87030de1d7636eb4190d61d3a49a04",
+        "Probe7.lean": "ff34fcd369ed0b5c60f2fea2ca6bf6c807ea6bc4412701feae642a0f43130221",
+        "Probe8.lean": "d3762f4e7d49fb2b778c8895656db3d5bc1de90bb2627d12722fefa2d41618e9",
+        "Sparse.lean": "efe3ba690d56ecc88a5262ecd2d905a1da99c81791ffbe4ab40f941ddb04f1e7"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "0002",
+      "elapsed_seconds": 1015.7971322359517,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49",
+        "Construction.lean": "cbcee9a0362c7894ba5d614eb97b231d67a64b03c9ea0981c172f7f5cf7ef465",
+        "Density.lean": "8aa777353473e0f0348125d8fddbc5368eb946b45265b268de938c955ad972bf",
+        "Family.lean": "9cc17741be50794ae06a02a38537708cad595387a839d84f415ea0dccf4580a9",
+        "Generator.lean": "00aa17901ce57cbaa5c4d1731efb254c67a145049f59f18b1ea0183c84bcfcd4",
+        "Many.lean": "68ffe12a1bee97b4a1a72d9c1f3b26b7731a10240adbcadef7f5a416f848c3c1",
+        "Pair.lean": "5cdbd2c4014ca9243f8c9970e59c42d3e53dc1e4332e76ff5f839199d090f849",
+        "Probe.lean": "afa4bd67855f578838a7a76927cec6fb7729bfb0fb49bcfbd39f3e968ae9106d",
+        "Probe2.lean": "bd03782fe7e1f70ebc12a9388c88a1d0a9f68f3910ec7eb37f3fad98a553ff72",
+        "Probe3.lean": "233571e3793f202d6d18e731c4f874dfda3dc6c7ee752573343c27c5a5937776",
+        "Probe4.lean": "170dabca8df7550ed4137ad0ae61bdc7d838bba1eb1d9b0e51d0bb3c00d63a25",
+        "Probe5.lean": "ec6a3dcb4df9a6f94f2d0ab692248aea40699d69803eefbb39e9cb07d106ed47",
+        "Probe6.lean": "6e519d5617e5e5030a32521211a679b50f87030de1d7636eb4190d61d3a49a04",
+        "Probe7.lean": "ff34fcd369ed0b5c60f2fea2ca6bf6c807ea6bc4412701feae642a0f43130221",
+        "Probe8.lean": "d3762f4e7d49fb2b778c8895656db3d5bc1de90bb2627d12722fefa2d41618e9",
+        "Sparse.lean": "efe3ba690d56ecc88a5262ecd2d905a1da99c81791ffbe4ab40f941ddb04f1e7"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 1022.84493,
+      "entry_compile_exit": 1,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "4bd9c1ef14ccea157719f2e2d1117cac5705cb6729d3a517bc3ffe9850054e49",
+        "Construction.lean": "cbcee9a0362c7894ba5d614eb97b231d67a64b03c9ea0981c172f7f5cf7ef465",
+        "Density.lean": "8aa777353473e0f0348125d8fddbc5368eb946b45265b268de938c955ad972bf",
+        "Family.lean": "9cc17741be50794ae06a02a38537708cad595387a839d84f415ea0dccf4580a9",
+        "Generator.lean": "00aa17901ce57cbaa5c4d1731efb254c67a145049f59f18b1ea0183c84bcfcd4",
+        "Many.lean": "68ffe12a1bee97b4a1a72d9c1f3b26b7731a10240adbcadef7f5a416f848c3c1",
+        "Pair.lean": "5cdbd2c4014ca9243f8c9970e59c42d3e53dc1e4332e76ff5f839199d090f849",
+        "Probe.lean": "afa4bd67855f578838a7a76927cec6fb7729bfb0fb49bcfbd39f3e968ae9106d",
+        "Probe2.lean": "bd03782fe7e1f70ebc12a9388c88a1d0a9f68f3910ec7eb37f3fad98a553ff72",
+        "Probe3.lean": "233571e3793f202d6d18e731c4f874dfda3dc6c7ee752573343c27c5a5937776",
+        "Probe4.lean": "170dabca8df7550ed4137ad0ae61bdc7d838bba1eb1d9b0e51d0bb3c00d63a25",
+        "Probe5.lean": "ec6a3dcb4df9a6f94f2d0ab692248aea40699d69803eefbb39e9cb07d106ed47",
+        "Probe6.lean": "6e519d5617e5e5030a32521211a679b50f87030de1d7636eb4190d61d3a49a04",
+        "Probe7.lean": "ff34fcd369ed0b5c60f2fea2ca6bf6c807ea6bc4412701feae642a0f43130221",
+        "Probe8.lean": "d3762f4e7d49fb2b778c8895656db3d5bc1de90bb2627d12722fefa2d41618e9",
+        "Sparse.lean": "efe3ba690d56ecc88a5262ecd2d905a1da99c81791ffbe4ab40f941ddb04f1e7"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 1022.4132761717774,
+        "usage": {
+          "cache_write_input_tokens": 84964,
+          "cached_input_tokens": 2790098,
+          "input_tokens": 2878462,
+          "output_tokens": 29513,
+          "reasoning_output_tokens": 9876
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "p_case024_nocanonical_reasoning_medium_v1_r4",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

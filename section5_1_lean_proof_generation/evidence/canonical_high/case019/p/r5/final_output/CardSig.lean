@@ -1,0 +1,15 @@
+import Mathlib
+#check Fintype.card_le_of_injective
+#check Fintype.card_congr
+#check Finset.card_attach
+#check Finset.univ_eq_attach
+#check Finset.card_coe_sort
+#check Finset.univ_card
+#check Nat.cast_div_le
+#check Nat.div_le_iff_le_mul
+#check Nat.lt_div_iff_mul_lt
+#check Nat.div_add_mod
+#check tendsto_natCast_atTop_atTop
+#check tendsto_one_div_add_atTop_nhds_zero_nat
+#check Filter.Tendsto.div
+#check tendsto_const_nhds.sub

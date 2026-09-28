@@ -1,0 +1,21 @@
+{
+  "author_budget_seconds": 5400,
+  "deadline_overshoot_seconds": 0,
+  "elapsed_seconds": 584.729635,
+  "exit_code": 0,
+  "formal_run_id": "file_oracle_case017_delta_v1_r5",
+  "monitor_errors": [],
+  "monitor_finished": true,
+  "recorded_run_id": "file_oracle_case017_delta_v1_r5",
+  "routing_audit": {
+    "calls": 23,
+    "pass": true,
+    "providers": {
+      "OpenAI": 23
+    },
+    "total_upstream_usd": 0.6240158,
+    "unverifiable": 0
+  },
+  "schema_version": 1,
+  "state": "FINISHED"
+}

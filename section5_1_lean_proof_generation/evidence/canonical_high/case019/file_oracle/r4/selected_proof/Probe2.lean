@@ -1,0 +1,13 @@
+import output.Sep
+import Mathlib
+#check Finset.exists_mem_not_mem_of_card_lt_card
+#check Finset.exists_not_mem
+#check Finset.card_le_card
+#check Finset.card_image_le
+#check Finset.card_union_le
+#check Nat.find_min'
+#check Nat.find_min
+#check Finset.range_subset_iff
+#check Finset.card_range
+#check Finset.image_subset_iff
+#check Finset.coe_image

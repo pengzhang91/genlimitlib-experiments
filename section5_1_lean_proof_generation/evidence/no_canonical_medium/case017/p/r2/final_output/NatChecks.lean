@@ -1,0 +1,14 @@
+import Stage3Model
+#check Nat.le_add_of_sub_le
+#check Nat.sub_le_iff_le_add
+#check Nat.le_of_sub_le_sub_right
+#check Nat.cast_le
+#check Nat.cast_add
+#check Nat.cast_div
+#check Nat.le_div_iff_mul_le
+#check Nat.lt_div_iff_mul_lt
+#check Filter.liminf_le_liminf
+#check Filter.isBoundedUnder_of_eventually_le
+#check Filter.isBoundedUnder_of_eventually_ge
+#check le_of_forall_pos_le_add
+#check le_of_forall_pos_le_add'

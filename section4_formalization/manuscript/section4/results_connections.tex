@@ -1,0 +1,70 @@
+\subsection{Identifying and repairing a proof gap}
+\label{sec:precision}
+In our first example we identify a gap in the proof of a published generation theorem and give a short repair. The repair preserves the original algorithm and theorem statement.
+
+In \emph{Pareto-optimal Non-uniform Language Generation},
+\citet[][P13]{charikar2026pareto} construct a generator whose convergence
+guarantee depends on the target language but holds for every presentation
+order. Their proof of Theorem~8 uses a procedure that inserts languages
+into an ordered list. When a language $L$ is inserted, the procedure
+considers subcollections containing $L$, drawn from the list up to $L$,
+whose intersection is finite. It stores the largest such intersection
+size as a score $m^\star(L)$, together with a subcollection
+$\mathcal C(L)$ attaining it. If no such subcollection exists, it stores
+zero and an empty subcollection. Claim~7 asserts that the stored
+subcollection remains a maximizer as further languages are inserted.
+
+While formalizing Claim~7, GenLimitLib records a counterexample. Take two disjoint infinite
+languages $A$ and $B$. When $A$ is inserted first, no subcollection
+containing $A$ has finite intersection, so the procedure stores
+$\mathcal C(A)=\varnothing$ and $m^\star(A)=0$. When $B$ is inserted,
+$\{A,B\}$ has intersection size zero, and the insertion rule places
+$B$ before $A$. However, the stored subcollection $\mathcal C(A)$
+remains empty. It does not contain $A$, so it cannot be the
+maximizing subcollection asserted by Claim~7.
+
+Our repair proves that every subcollection containing $L$, drawn from the current list up to $L$ and having finite intersection, has
+intersection size at most the stored score $m^\star(L)$.
+It proves that this bound is preserved after each insertion.
+This is the bound needed to complete the generation proof.
+
+\subsection{Connecting papers to derive new results}
+\label{sec:connections}
+
+GenLimitLib also supports transferring constructions between different learning
+problems. We connect a bounded-memory example from P31 to the replay
+model of P22, obtaining a stronger impossibility example. This connection
+then motivates an exact characterization result.
+
+\emph{Language Generation with Replay} \citep[][P22]{replay}
+studies a model in which the adversary can use the learner's earlier outputs to contaminate future observations. The paper studies several generation guarantees in this setting. We focus on \emph{proper generation in the limit}: proposals must come from a fixed family and eventually be contained in the true target.
+
+A different paper, \emph{On Language Generation in the Limit with
+Bounded Memory} \citep[][P31]{memory}, asks how restricting a
+learner's memory affects generation. It gives a three-language
+example on which an incremental index-based generator, retaining only its
+previous proposed index between observations, cannot succeed. The languages are
+$T\cup\{a,b\}$, $T\cup\{a,c\}$, and $T\cup\{b,c\}$,
+where $T$ is infinite and $a,b,c$ are distinct points outside $T$.
+
+Using GenLimitLib, we show that this same example also makes deterministic proper
+generation under replay impossible, even with unrestricted memory.
+Our proof combines P31's construction with the indistinguishability
+argument in P22's impossibility proof. This improves
+P22's four-language impossibility example to three languages.
+
+This connection motivates a broader question: which finite
+families permit proper generation under replay?
+Our Theorem~\ref{thm:proper-replay} below gives an exact characterization.
+We impose no computability restriction on the generator.
+\begin{result}[When proper generation under replay is possible]
+\label{thm:proper-replay}
+Let $L_1,\ldots,L_N$, with $N\ge1$, be a finite family of infinite countable
+languages. Deterministic proper generation under replay is possible
+if and only if, for every possible first observation $x$, there is
+a first proposal $L_j$ with the following property.
+Group the indices $i$ with $x\in L_i$ according to equality of
+$L_i\setminus L_j$. For every such group $E$, some language $L_h$
+from the original family satisfies
+$L_h\subseteq\bigcap_{i\in E}L_i$.
+\end{result}

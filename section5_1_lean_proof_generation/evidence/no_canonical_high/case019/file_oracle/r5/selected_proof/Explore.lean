@@ -1,0 +1,22 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.InfiniteContamination.finiteExpansionOracleFamily
+#check GenLimit.InfiniteContamination.exists_finiteExpansion_index_for_stream
+#check GenLimit.InfiniteContamination.finiteNoiseEnumeration_iff_core
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_upper
+#check GenLimit.UnionClosedness.powerSet_not_countable
+#check Filter.liminf_le_liminf
+#check liminf_le_liminf
+#check le_liminf_add
+#check liminf_add_le
+#check Filter.Tendsto.liminf_eq
+#check Set.Countable.mono
+#check Set.countable_range
+#check Set.Finite.countable
+#check Set.ncountable_coe

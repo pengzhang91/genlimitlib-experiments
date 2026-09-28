@@ -1,0 +1,14 @@
+import Stage3Model
+#check Set.Infinite.nthLe
+#check Set.Infinite.nthLe_mem
+#check Set.Infinite.nthLe_strictMono
+#check Set.Infinite.range_nthLe
+#check Set.Infinite.nthLe_of_lt
+#check Set.Infinite.nthLe_le
+#check Set.Infinite.nthLe_le_iff
+#check Set.Infinite.nthLe_lt_iff
+#check Set.encard
+#check Set.ncard
+#check Nat.log2_mul_le
+#check Nat.log2_le
+#check Nat.log2_lt

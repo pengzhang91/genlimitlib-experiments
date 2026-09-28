@@ -1,0 +1,16 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.TargetDensity
+#check Filter.liminf_le_liminf
+#check Filter.liminf_const_mul
+#check Filter.liminf_mul_const
+#check Filter.Tendsto.liminf_eq
+#check Filter.EventuallyLE.liminf_le_liminf
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_image_iff
+#check Finset.card_sdiff_add_card_inter
+#check GenLimit.PatientScope.prefixFinset
+#check GenLimit.PatientScope.mem_prefixFinset
+#check GenLimit.PatientScope.prefixCount
+#check Set.Finite.exists_le
+#check Set.ncard_le_ncard

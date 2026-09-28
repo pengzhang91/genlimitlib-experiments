@@ -1,0 +1,9 @@
+import Stage3Model
+import Mathlib.Tactic
+open Filter
+#check Set.infinite_iff_tendsto_nat_sum_indicator
+#check Set.infinite_iff_tendsto_nat_card_inter_range
+#check Finset.card_filter
+#check Filter.Tendsto.comp
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check Filter.Tendsto.const_div_atTop

@@ -1,0 +1,102 @@
+[
+  {
+    "paper_id": "P02",
+    "title": "Generation through the Lens of Learning Theory",
+    "source_edition": "arxiv-2410-13714-v5",
+    "official_url": "https://arxiv.org/abs/2410.13714v5",
+    "pdf_sha256": "acaf59abdb4542173cb20dd05e874f7fa5b505bf7b2c5c561529d5e387502482",
+    "registry_expected_sha256": "acaf59abdb4542173cb20dd05e874f7fa5b505bf7b2c5c561529d5e387502482",
+    "registry_byte_match": true,
+    "pages": 35
+  },
+  {
+    "paper_id": "P04",
+    "title": "Exploring Facets of Language Generation in the Limit",
+    "source_edition": "arxiv-2411-15364-v2",
+    "official_url": "https://arxiv.org/abs/2411.15364v2",
+    "pdf_sha256": "52e1f0d2111d73a2a248e7b8bdc113ee4f331e0c0478a3e5c7826b0417b7ab8b",
+    "registry_expected_sha256": "cea686c86617749044c31e89fd212b29a32ad91a88c088326b30f7991b785381",
+    "registry_byte_match": false,
+    "pages": 31
+  },
+  {
+    "paper_id": "P06",
+    "title": "Generation from Noisy Examples",
+    "source_edition": "arxiv-2501-04179-v2",
+    "official_url": "https://arxiv.org/abs/2501.04179v2",
+    "pdf_sha256": "95c02ce2bd069b4fdf9a6b70d81763d9f9a49d65063f5141017b4474a71ad059",
+    "registry_expected_sha256": "95c02ce2bd069b4fdf9a6b70d81763d9f9a49d65063f5141017b4474a71ad059",
+    "registry_byte_match": true,
+    "pages": 15
+  },
+  {
+    "paper_id": "P08",
+    "title": "(Im)possibility of Automated Hallucination Detection in Large Language Models",
+    "source_edition": "arxiv-2504-17004-v2",
+    "official_url": "https://arxiv.org/abs/2504.17004v2",
+    "pdf_sha256": "b4268bc32c32c7aa3660b8f54c425b8d1a2534f23cfab10774a5d2b592e847c0",
+    "registry_expected_sha256": "b4268bc32c32c7aa3660b8f54c425b8d1a2534f23cfab10774a5d2b592e847c0",
+    "registry_byte_match": true,
+    "pages": 20
+  },
+  {
+    "paper_id": "P09",
+    "title": "Representative Language Generation",
+    "source_edition": "icml-2025-pmlr-267-peale25a",
+    "official_url": "https://proceedings.mlr.press/v267/peale25a.html",
+    "pdf_sha256": "647dff8492c32479171e6acb4751a17a084407a39e502ec7ce6dfeebf9a6e61d",
+    "registry_expected_sha256": "647dff8492c32479171e6acb4751a17a084407a39e502ec7ce6dfeebf9a6e61d",
+    "registry_byte_match": true,
+    "pages": 24
+  },
+  {
+    "paper_id": "P12",
+    "title": "Language Generation in the Limit: Noise, Loss, and Feedback",
+    "source_edition": "arxiv-2507-15319-v2",
+    "official_url": "https://arxiv.org/abs/2507.15319v2",
+    "pdf_sha256": "ef6dc568b5815b6fe052c5dd52bef89d01a1d7d4eed86e946c368305078c42e5",
+    "registry_expected_sha256": "ef6dc568b5815b6fe052c5dd52bef89d01a1d7d4eed86e946c368305078c42e5",
+    "registry_byte_match": true,
+    "pages": 23
+  },
+  {
+    "paper_id": "P17",
+    "title": "Language Generation with Infinite Contamination",
+    "source_edition": "arxiv-2511-07417-v1",
+    "official_url": "https://arxiv.org/abs/2511.07417v1",
+    "pdf_sha256": "6a791bc54891ba447fbf391db9f84927dbe20231a310cfee821760f7aafa9760",
+    "registry_expected_sha256": "e1ef3e6d24cc382782446f24cb4377b885034812d3d678cf8d9789a703f5e0a9",
+    "registry_byte_match": false,
+    "pages": 71
+  },
+  {
+    "paper_id": "P19",
+    "title": "Characterizing the Effect of Noise in Language Generation in the Limit",
+    "source_edition": "arxiv-2601-21237-v2",
+    "official_url": "https://arxiv.org/abs/2601.21237v2",
+    "pdf_sha256": "91a94905872920a960e6686cc5f13c18911c718f25f02507ab42fda54aa9a9cd",
+    "registry_expected_sha256": "e02e71896533933188b7c405c57a06698221af6ba598ed1d90b841b675ae804b",
+    "registry_byte_match": false,
+    "pages": 17
+  },
+  {
+    "paper_id": "P23",
+    "title": "Validity, Sparse Holes, and Breadth in Language Generation: Banach Density, Topology, and Geometry",
+    "source_edition": "arxiv-2604-02385-v2",
+    "official_url": "https://arxiv.org/abs/2604.02385v2",
+    "pdf_sha256": "c884ae86bdb9510c752b26cd5962ea94fb548885672b3cb0d24a2c2ab31cad3d",
+    "registry_expected_sha256": "c884ae86bdb9510c752b26cd5962ea94fb548885672b3cb0d24a2c2ab31cad3d",
+    "registry_byte_match": true,
+    "pages": 80
+  },
+  {
+    "paper_id": "P28",
+    "title": "Contrastive Identification and Generation in the Limit",
+    "source_edition": "arxiv-2605-06211-v1",
+    "official_url": "https://arxiv.org/abs/2605.06211v1",
+    "pdf_sha256": "40af9564b2066c0c47840aaf66b28caf12e5848b1673153cfcd4c92d0de5bf2a",
+    "registry_expected_sha256": "40af9564b2066c0c47840aaf66b28caf12e5848b1673153cfcd4c92d0de5bf2a",
+    "registry_byte_match": true,
+    "pages": 23
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "elapsed_seconds": 3379.834344483912,
+  "kind": "observed_gate",
+  "matches_logged_gate": true,
+  "source_hashes": {
+    "APIProbe.lean": "287dc2b4f6a53e404ef68ddef4752d9d1c4beb628bbd2a56c2c10eb1b1f6210b",
+    "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57",
+    "Check.lean": "b4aa1203a7a03134e49f3e3328384c671dfb7c0f777e7be9dfeb2d3d6011dea8",
+    "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+    "Debug.lean": "88f2d8d849b4729674f74b8a1513ad206123ac143731a5624c6cb8ef8d391bb7",
+    "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+    "Explore.lean": "f1083fedc1b256d573dc8ac54ad66dd2480f6ffc8bd8e26374e0e19c13e2eff5",
+    "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+    "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+    "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+    "Probe.lean": "fe7521ba5f128fd7d5018c3ab615c096a62cd31dc5c55f19dcd7b0bda6296428",
+    "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1"
+  },
+  "stable_capture": true
+}

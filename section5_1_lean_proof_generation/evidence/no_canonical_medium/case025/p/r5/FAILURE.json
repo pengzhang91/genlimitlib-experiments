@@ -1,0 +1,42 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 459.891967,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case025Formalization.lean": "d36261c0e8102e76c3a28ea509a84573be92864afce9e1d888bea7f982ca5d77"
+    },
+    "source_hashes": {
+      "Case025Formalization.lean": "d36261c0e8102e76c3a28ea509a84573be92864afce9e1d888bea7f982ca5d77",
+      "Probe.lean": "790309215dde92404b7735e1f990e2ce3fe537906da2e22b0c73fffb7708d7b9"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

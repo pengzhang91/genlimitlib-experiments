@@ -1,0 +1,16 @@
+import Separation
+#check Finset.filter_card_add_filter_neg_card_eq_card
+#check Finset.card_filter_add_card_filter_neg_eq
+#check Finset.card_filter_le_iff
+#check Finset.card_image_of_injective
+#check Nat.count_eq_card_filter_range
+#check Finset.card_le_card
+#check Finset.card_image_le
+#check Finset.card_image_iff
+#check Finset.card_image_of_injOn
+#check Filter.Tendsto.liminf_eq
+#check Filter.Tendsto.liminf_eq.symm
+#check tendsto_natCast_div_natCast
+#check tendsto_const_nhds.div_atTop
+#check tendsto_natCast_atTop_atTop
+#check tendsto_natCast_div_add_atTop

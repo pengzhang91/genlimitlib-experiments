@@ -1,0 +1,10 @@
+import Helpers
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check Filter.isCoboundedUnder_of
+#check Filter.isCoboundedUnder_le
+#check Filter.isCoboundedUnder_ge
+#check isCoboundedUnder_of
+#check Filter.isBoundedUnder_of
+#print Filter.IsCoboundedUnder
+#print Filter.IsCobounded

@@ -1,0 +1,8 @@
+{
+  "checked_module_count": 20,
+  "all_delivery_sources_match_compiled_working_sources": true,
+  "all_proof_hashes_match_final_verification_record": true,
+  "upstream_proof_sources_and_dependency_pins_unchanged": true,
+  "final_build_success": true,
+  "declared_axiom_endpoint_count": 18
+}

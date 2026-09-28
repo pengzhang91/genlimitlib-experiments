@@ -1,0 +1,161 @@
+-- CROSS-PAPER MAP
+-- Typed relations between formalized developments.
+def Critical (C : LanguageFamily) (stream : ℕ → ℕ) (t n : ℕ) : Prop
+theorem critical_subset_of_le {C : LanguageFamily} {stream : ℕ → ℕ} {t i j : ℕ} (hij : i ≤ j) (hi : Critical C stream t i) (hj : Critical C stream t j) : C j ⊆ C i
+theorem least_consistent_critical {C : LanguageFamily} {stream : ℕ → ℕ} {t n : ℕ} (hn : Consistent C stream t n) (hleast : ∀ i, i < n → ¬ Consistent C stream t i) : Critical C stream t n
+theorem bad_earlier_eventually_inconsistent {C : LanguageFamily} {stream : ℕ → ℕ} {z : ℕ} (hP : Presents stream (C z)) : ∃ T, ∀ t, T ≤ t → ∀ i, i < z → ¬ C z ⊆ C i → ¬ Consistent C stream t i
+theorem target_eventually_critical {C : LanguageFamily} {stream : ℕ → ℕ} {z : ℕ} (hP : Presents stream (C z)) : ∃ T, ∀ t, T ≤ t → Critical C stream t z
+def ConsistentOn (C : LanguageFamily) (S : Finset ℕ) (n : ℕ) : Prop
+def CriticalOn (C : LanguageFamily) (S : Finset ℕ) (n : ℕ) : Prop
+theorem criticalOn_subset_of_le {C : LanguageFamily} {S : Finset ℕ} {i j : ℕ} (hij : i ≤ j) (hi : CriticalOn C S i) (hj : CriticalOn C S j) : C j ⊆ C i
+def criticalIndices (C : LanguageFamily) (S : Finset ℕ) : Finset ℕ
+def focus (C : LanguageFamily) (S : Finset ℕ) : ℕ
+theorem focus_spec {C : LanguageFamily} {S : Finset ℕ} {z : ℕ} (hzScope : z < S.card) (hz : CriticalOn C S z) : focus C S < S.card ∧ CriticalOn C S (focus C S) ∧ z ≤ focus C S
+def fresh (O : OracleFamily) (S : Finset ℕ) (i : ℕ) : ℕ
+theorem fresh_spec (O : OracleFamily) (S : Finset ℕ) (i : ℕ) : fresh O S i ∈ O.language i ∧ fresh O S i ∉ S
+def generator (O : OracleFamily) (S : Finset ℕ) : ℕ
+theorem generator_spec (O : OracleFamily) (S : Finset ℕ) : generator O S ∈ O.language (focus O.language S) ∧ generator O S ∉ S
+theorem sample_card_of_injective (stream : ℕ → ℕ) (hinjective : Function.Injective stream) (t : ℕ) : (sample stream t).card = t
+theorem eventually_target_below_sample_card (O : OracleFamily) {stream : ℕ → ℕ} {z : ℕ} (hP : Presents stream (O.language z)) : ∃ T, ∀ t, T ≤ t → z < (sample stream t).card
+def GeneratesFromObservedSet (O : OracleFamily) (stream : ℕ → ℕ) (z : ℕ) : Prop
+theorem kleinbergMullainathan_set_interface (O : OracleFamily) {stream : ℕ → ℕ} {z : ℕ} (hP : Presents stream (O.language z)) (hinjective : Function.Injective stream) : GeneratesFromObservedSet O stream z
+theorem kleinbergMullainathan_set_interface_with_repetitions (O : OracleFamily) {stream : ℕ → ℕ} {z : ℕ} (hP : Presents stream (O.language z)) : GeneratesFromObservedSet O stream z
+def Presents (stream : ℕ → ℕ) (L : Language) : Prop
+def sample (stream : ℕ → ℕ) (t : ℕ) : Finset ℕ
+def Consistent (C : LanguageFamily) (stream : ℕ → ℕ) (t i : ℕ) : Prop
+theorem mem_sample_iff {stream : ℕ → ℕ} {t u : ℕ} : u ∈ sample stream t ↔ ∃ s < t, stream s = u
+theorem sample_eq_of_eq_on_prefix {stream₁ stream₂ : ℕ → ℕ} {t : ℕ} (h : ∀ n, n < t → stream₁ n = stream₂ n) : sample stream₁ t = sample stream₂ t
+theorem sample_mono {stream : ℕ → ℕ} {s t : ℕ} (hst : s ≤ t) : sample stream s ⊆ sample stream t
+theorem value_mem_sample {stream : ℕ → ℕ} {s t : ℕ} (hst : s < t) : stream s ∈ sample stream t
+theorem mem_language_of_mem_sample_of_presents {stream : ℕ → ℕ} {L : Language} (hP : Presents stream L) {t u : ℕ} (hu : u ∈ sample stream t) : u ∈ L
+theorem consistent_of_target_subset {C : LanguageFamily} {stream : ℕ → ℕ} {z i t : ℕ} (hP : Presents stream (C z)) (hsub : C z ⊆ C i) : Consistent C stream t i
+theorem eventually_mem_sample_of_presents {stream : ℕ → ℕ} {L : Language} (hP : Presents stream L) {u : ℕ} (hu : u ∈ L) : ∃ T, ∀ t, T ≤ t → u ∈ sample stream t
+theorem presents_consistent {C : LanguageFamily} {stream : ℕ → ℕ} {z t : ℕ} (hP : Presents stream (C z)) : Consistent C stream t z
+theorem eventually_not_consistent_of_not_subset {C : LanguageFamily} {stream : ℕ → ℕ} {z i : ℕ} (hP : Presents stream (C z)) (hbad : ¬ C z ⊆ C i) : ∃ T, ∀ t, T ≤ t → ¬ Consistent C stream t i
+def IsNondecreasingCover (H : LanguageClass α) (classes : ℕ → LanguageClass α) : Prop
+def IsFiniteCover (H : LanguageClass α) {n : ℕ} (classes : Fin n → LanguageClass α) : Prop
+def UUS (H : LanguageClass α) : Prop
+def IsLimitGenerator (gen : Generator α) (H : LanguageClass α) : Prop
+def GeneratableInLimit (H : LanguageClass α) : Prop
+def IsUniformGeneratorAt (gen : Generator α) (H : LanguageClass α) (d : ℕ) : Prop
+def UniformlyGeneratable (H : LanguageClass α) : Prop
+def IsNonuniformGenerator (gen : Generator α) (H : LanguageClass α) : Prop
+def NonuniformlyGeneratable (H : LanguageClass α) : Prop
+theorem uniform_implies_nonuniform {H : LanguageClass α} (h : UniformlyGeneratable H) : NonuniformlyGeneratable H
+theorem nonuniform_implies_limit {H : LanguageClass α} (hUUS : UUS H) (h : NonuniformlyGeneratable H) : GeneratableInLimit H
+theorem uniform_implies_limit {H : LanguageClass α} (hUUS : UUS H) (h : UniformlyGeneratable H) : GeneratableInLimit H
+def IsClosureWitness (H : LanguageClass α) (S : Finset α) : Prop
+def ClosureDimensionAtMost (H : LanguageClass α) (d : ℕ) : Prop
+def HasClosureDimension (H : LanguageClass α) (d : ℕ) : Prop
+def HasFiniteClosureDimension (H : LanguageClass α) : Prop
+def HasInfiniteClosureDimension (H : LanguageClass α) : Prop
+theorem closure_witness_mono {H : LanguageClass α} {S T : Finset α} (hST : S ⊆ T) (hT : IsClosureWitness H T) : IsClosureWitness H S
+theorem exists_closure_witness_card_eq {H : LanguageClass α} (hC : HasInfiniteClosureDimension H) (d : ℕ) : ∃ S : Finset α, S.card = d ∧ IsClosureWitness H S
+theorem finite_closure_dimension_iff_not_infinite {H : LanguageClass α} : HasFiniteClosureDimension H ↔ ¬ HasInfiniteClosureDimension H
+theorem core_diff_sample_infinite {H : LanguageClass α} {d : ℕ} (hC : ClosureDimensionAtMost H d) (S : Finset α) (hd : d < S.card) (hVS : (versionSpace H S).Nonempty) : (commonCore H S \ (↑S : Set α)).Infinite
+theorem finite_language_class_has_finite_closure_dimension {H : LanguageClass α} (hH : H.Finite) : HasFiniteClosureDimension H
+def supportAt (G : SupportGenerator) (stream : Stream ℕ) (t : ℕ) : Set ℕ
+def completedSupport (G : SupportGenerator) (stream : Stream ℕ) (t : ℕ) : Set ℕ
+def Stable (G : SupportGenerator) (C : Generic.LanguageFamily ℕ) : Prop
+def FreshBreadthInLimit (G : SupportGenerator) (C : Generic.LanguageFamily ℕ) : Prop
+def RepeatingBreadthInLimit (G : SupportGenerator) (C : Generic.LanguageFamily ℕ) : Prop
+def symmDiff (A B : Set ℕ) : Set ℕ
+def UnambiguousAt (C : Generic.LanguageFamily ℕ) (z : ℕ) (S : Set ℕ) : Prop
+def UnambiguousInLimit (G : SupportGenerator) (C : Generic.LanguageFamily ℕ) : Prop
+def ApproximateBreadthAt (S K : Set ℕ) : Prop
+def ApproximateBreadthInLimit (G : SupportGenerator) (C : Generic.LanguageFamily ℕ) : Prop
+def HasDistinctLanguages (C : Generic.LanguageFamily ℕ) : Prop
+def IsLeastTargetIndex (C : Generic.LanguageFamily ℕ) (z : ℕ) : Prop
+def IdentifiableInLimit (C : Generic.LanguageFamily ℕ) : Prop
+theorem completedSupport_of_repeatingBreadth {G : SupportGenerator} {C : Generic.LanguageFamily ℕ} {z : ℕ} {stream : Stream ℕ} {t : ℕ} (hP : Generic.Presents stream (C z)) (h : supportAt G stream t = C z) : completedSupport G stream t = C z
+theorem finiteCollection_conditionTwo (C : Generic.LanguageFamily ℕ) (hRange : (Set.range C).Finite) : GenLimit.Angluin.ConditionTwo C
+theorem proposition_3_11_online_core (C : Generic.LanguageFamily ℕ) (hRange : (Set.range C).Finite) : IdentifiableInLimit C
+theorem finiteLanguages_conditionTwo (C : Generic.LanguageFamily ℕ) (hfinite : ∀ i, (C i).Finite) : GenLimit.Angluin.ConditionTwo C
+theorem proposition_3_12_online_core (C : Generic.LanguageFamily ℕ) (hfinite : ∀ i, (C i).Finite) : IdentifiableInLimit C
+theorem finite_uniform_threshold (P : ℕ → ℕ → Prop) : ∀ z, (∀ i, i < z → ∃ T, ∀ t, T ≤ t → P i t) → ∃ T, ∀ i, i < z → ∀ t, T ≤ t → P i t
+def MatchesInitialSegment (C : Generic.LanguageFamily ℕ) (S : Set ℕ) (t i : ℕ) : Prop
+def leastMatchingIndex (C : Generic.LanguageFamily ℕ) (S : Set ℕ) (t : ℕ) : ℕ
+theorem leastMatchingIndex_eq {C : Generic.LanguageFamily ℕ} {S : Set ℕ} {t z : ℕ} (hz : MatchesInitialSegment C S t z) (hearlier : ∀ i, i < z → ¬MatchesInitialSegment C S t i) : leastMatchingIndex C S t = z
+def completedSupportIdentifier (C : Generic.LanguageFamily ℕ) (G : SupportGenerator) : GenLimit.Angluin.SemanticIdentifier ℕ
+theorem eventually_leastMatching_of_target {C : Generic.LanguageFamily ℕ} {z : ℕ} (hzleast : IsLeastTargetIndex C z) : ∃ T, ∀ t, T ≤ t → ∀ i, i < z → ¬MatchesInitialSegment C (C z) t i
+theorem identifiable_of_completedSupport {C : Generic.LanguageFamily ℕ} {G : SupportGenerator} (hcomplete : ∀ z stream, Generic.Presents stream (C z) → ∃ T, ∀ t, T ≤ t → completedSupport G stream t = C z) : IdentifiableInLimit C
+theorem theorem_3_5_fresh_negative_core {C : Generic.LanguageFamily ℕ} {G : SupportGenerator} (h : FreshBreadthInLimit G C) : IdentifiableInLimit C
+theorem theorem_3_5_repeating_negative_core {C : Generic.LanguageFamily ℕ} {G : SupportGenerator} (h : RepeatingBreadthInLimit G C) : IdentifiableInLimit C
+theorem theorem_3_9 {C : Generic.LanguageFamily ℕ} {G : SupportGenerator} (hstable : Stable G C) (happrox : ApproximateBreadthInLimit G C) : IdentifiableInLimit C
+theorem theorem_3_9_impossibility {C : Generic.LanguageFamily ℕ} (hnot : ¬IdentifiableInLimit C) : ¬∃ G : SupportGenerator, Stable G C ∧ ApproximateBreadthInLimit G C
+def Eligible (C : Generic.LanguageFamily ℕ) (S : Set ℕ) (observed : Finset ℕ) (t i : ℕ) : Prop
+def leastEligibleIndex (C : Generic.LanguageFamily ℕ) (S : Set ℕ) (observed : Finset ℕ) (t : ℕ) : ℕ
+theorem leastEligibleIndex_eq {C : Generic.LanguageFamily ℕ} {S : Set ℕ} {observed : Finset ℕ} {t z : ℕ} (hz : Eligible C S observed t z) (hearlier : ∀ i, i < z → ¬Eligible C S observed t i) : leastEligibleIndex C S observed t = z
+def unambiguousIdentifier (C : Generic.LanguageFamily ℕ) (G : SupportGenerator) : GenLimit.Angluin.SemanticIdentifier ℕ
+theorem exists_distinct_from_target {C : Generic.LanguageFamily ℕ} (hC : HasDistinctLanguages C) (z : ℕ) : ∃ j, C j ≠ C z
+theorem symmDiff_target_finite {C : Generic.LanguageFamily ℕ} {z : ℕ} {S : Set ℕ} (hC : HasDistinctLanguages C) (hU : UnambiguousAt C z S) : (symmDiff S (C z)).Finite
+theorem missing_target_finite_of_unambiguous {C : Generic.LanguageFamily ℕ} {z : ℕ} {S : Set ℕ} (hC : HasDistinctLanguages C) (hU : UnambiguousAt C z S) : (C z \ S).Finite
+theorem strictSuperset_has_uncovered {S K L : Set ℕ} (hKL : K ⊆ L) (hclose : (symmDiff S K).encard < (symmDiff S L).encard) : ∃ x, x ∈ L ∧ x ∉ K ∧ x ∉ S
+theorem theorem_3_7 {C : Generic.LanguageFamily ℕ} {G : SupportGenerator} (hC : HasDistinctLanguages C) (hstable : Stable G C) (hunamb : UnambiguousInLimit G C) : IdentifiableInLimit C
+theorem identifiable_of_no_distinctLanguages {C : Generic.LanguageFamily ℕ} (hC : ¬HasDistinctLanguages C) : IdentifiableInLimit C
+theorem hasDistinctLanguages_of_not_identifiable {C : Generic.LanguageFamily ℕ} (hnot : ¬IdentifiableInLimit C) : HasDistinctLanguages C
+theorem theorem_3_7_impossibility {C : Generic.LanguageFamily ℕ} (hnot : ¬IdentifiableInLimit C) : ¬∃ G : SupportGenerator, Stable G C ∧ UnambiguousInLimit G C
+def identifiedFreshGenerator {C : Generic.LanguageFamily ℕ} (O : GenLimit.MembershipOracle C) (M : GenLimit.Angluin.SemanticIdentifier ℕ) : SupportGenerator where support t xs
+theorem theorem_3_5_positive_core {C : Generic.LanguageFamily ℕ} (O : GenLimit.MembershipOracle C) (hID : IdentifiableInLimit C) : ∃ G : SupportGenerator, FreshBreadthInLimit G C
+theorem theorem_3_5 {C : Generic.LanguageFamily ℕ} (O : GenLimit.MembershipOracle C) : IdentifiableInLimit C ↔ ∃ G : SupportGenerator, FreshBreadthInLimit G C
+def LabeledPresents (stream : ℕ → ℕ × Bool) (K : Set ℕ) : Prop
+def labeledIdentifierOutput (M : LabeledIdentifier) (stream : ℕ → ℕ × Bool) (t : ℕ) : ℕ
+def LabeledConsistent (C : Generic.LanguageFamily ℕ) {t : ℕ} (xs : Fin t → ℕ × Bool) (i : ℕ) : Prop
+def BreadthCorrectAt (A : ExhaustiveAlgorithm α) (K : Generic.Language α) (stream : Generic.Stream α) (t : ℕ) : Prop
+def IsBreadthGenerator (A : ExhaustiveAlgorithm α) (F : Generic.LanguageFamily α) : Prop
+def BreadthGeneratable (F : Generic.LanguageFamily α) : Prop
+def breadthIdentifier (A : ExhaustiveAlgorithm ℕ) (F : Generic.LanguageFamily ℕ) : List ℕ → ℕ
+def leastTargetIndex (F : Generic.LanguageFamily ℕ) (z : ℕ) : ℕ
+theorem leastTargetIndex_spec (F : Generic.LanguageFamily ℕ) (z : ℕ) : F (leastTargetIndex F z) = F z
+theorem leastTargetIndex_le_of_eq (F : Generic.LanguageFamily ℕ) (z i : ℕ) (hi : F i = F z) : leastTargetIndex F z ≤ i
+theorem breadthGenerator_semanticallyIdentifies {A : ExhaustiveAlgorithm ℕ} {F : Generic.LanguageFamily ℕ} (hA : IsBreadthGenerator A F) : GenLimit.Angluin.SemanticallyIdentifies (breadthIdentifier A F) F
+theorem generation_with_breadth_implies_conditionTwo {F : Generic.LanguageFamily ℕ} (_hNonempty : ∀ i, (F i).Nonempty) (hBreadth : BreadthGeneratable F) : GenLimit.Angluin.ConditionTwo F
+theorem conditionTwo_implies_angluinExistence_range {F : Generic.LanguageFamily ℕ} (hCondition : GenLimit.Angluin.ConditionTwo F) : ∀ L, L ∈ Set.range F → ∃ T : Finset ℕ, IsAngluinTellTale (Set.range F) L T
+theorem generation_with_breadth_implies_angluinExistence {F : Generic.LanguageFamily ℕ} (hNonempty : ∀ i, (F i).Nonempty) (hBreadth : BreadthGeneratable F) : ∀ L, L ∈ Set.range F → ∃ T : Finset ℕ, IsAngluinTellTale (Set.range F) L T
+def coSingletonNatFamily : Generic.LanguageFamily ℕ | 0 => Set.univ | i + 1 => Set.univ \ {i}
+def coSingletonNatClass : Generic.LanguageClass ℕ
+theorem range_coSingletonNatFamily : Set.range coSingletonNatFamily = coSingletonNatClass
+theorem coSingletonNatFamily_infinite (i : ℕ) : (coSingletonNatFamily i).Infinite
+theorem coSingletonNatFamily_nonempty (i : ℕ) : (coSingletonNatFamily i).Nonempty
+theorem coSingletonNatFamily_no_telltale_for_univ (T : Finset ℕ) : ¬ IsAngluinTellTale (Set.range coSingletonNatFamily) Set.univ T
+theorem claim_5_2 : ¬ BreadthGeneratable coSingletonNatFamily
+theorem integerSweep_bijective : Function.Bijective integerSweep
+def IsNonuniformGenerator (gen : Generator α) (C : LanguageFamily α) : Prop
+def NonuniformlyGeneratable (C : LanguageFamily α) : Prop
+def IsUniformGenerator (gen : Generator α) (C : LanguageFamily α) : Prop
+def UniformlyGeneratable (C : LanguageFamily α) : Prop
+abbrev ClosureDimensionAtLeast (C : LanguageClass α) (d : ℕ) : Prop
+abbrev IndexedClosureDimensionAtLeast (C : LanguageFamily α) (d : ℕ) : Prop
+abbrev HasInfiniteIndexedClosureDimension (C : LanguageFamily α) : Prop
+theorem generic_nonuniform_implies_source {gen : Generator α} {C : LanguageFamily α} (h : GenLimit.Generic.IsNonuniformGenerator gen (Set.range C)) : IsNonuniformGenerator gen C
+theorem source_nonuniform_implies_generic [Countable α] {gen : Generator α} {C : LanguageFamily α} (hNonempty : ∀ i, (C i).Nonempty) (h : IsNonuniformGenerator gen C) : GenLimit.Generic.IsNonuniformGenerator gen (Set.range C)
+theorem nonuniformlyGeneratable_iff_generic [Countable α] {C : LanguageFamily α} (hNonempty : ∀ i, (C i).Nonempty) : NonuniformlyGeneratable C ↔ GenLimit.Generic.NonuniformlyGeneratable (Set.range C)
+theorem generic_uniform_implies_source {gen : Generator α} {C : LanguageFamily α} {d : ℕ} (h : GenLimit.Generic.IsUniformGeneratorAt gen (Set.range C) d) : IsUniformGenerator gen C
+theorem source_uniform_implies_generic [Countable α] {gen : Generator α} {C : LanguageFamily α} (hNonempty : ∀ i, (C i).Nonempty) (h : IsUniformGenerator gen C) : ∃ d, GenLimit.Generic.IsUniformGeneratorAt gen (Set.range C) d
+theorem uniformlyGeneratable_iff_generic [Countable α] {C : LanguageFamily α} (hNonempty : ∀ i, (C i).Nonempty) : UniformlyGeneratable C ↔ GenLimit.Generic.UniformlyGeneratable (Set.range C)
+abbrev ExhaustiveAlgorithm (α : Type*)
+def generatorAt (A : ExhaustiveAlgorithm α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : ℕ → α
+def exhaustiveOutput (A : ExhaustiveAlgorithm α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : α
+def generatedBefore (A : ExhaustiveAlgorithm α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : Set α
+def generateOnly (A : ExhaustiveAlgorithm α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : Set α
+def ExhaustiveCorrectAt (A : ExhaustiveAlgorithm α) (K : GenLimit.Generic.Language α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : Prop
+def IsExhaustiveGenerator (A : ExhaustiveAlgorithm α) (C : GenLimit.Generic.LanguageClass α) : Prop
+def ExhaustivelyGeneratable (C : GenLimit.Generic.LanguageClass α) : Prop
+theorem generatedBefore_finite (A : ExhaustiveAlgorithm α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : (generatedBefore A stream t).Finite
+def RelaxedExhaustiveCorrectAt (A : ExhaustiveAlgorithm α) (K : GenLimit.Generic.Language α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : Prop
+theorem exhaustiveCorrectAt_implies_relaxed {A : ExhaustiveAlgorithm α} {K : GenLimit.Generic.Language α} {stream : GenLimit.Generic.Stream α} {t : ℕ} (h : ExhaustiveCorrectAt A K stream t) : RelaxedExhaustiveCorrectAt A K stream t
+def coSingletonIntegerClass : GenLimit.Generic.LanguageClass ℤ
+theorem coSingletonIntegerClass_countable : coSingletonIntegerClass.Countable
+def IsAngluinTellTale (C : GenLimit.Generic.LanguageClass α) (L : GenLimit.Generic.Language α) (T : Finset α) : Prop
+theorem coSingletonIntegerClass_no_telltale_for_univ (T : Finset ℤ) : ¬ IsAngluinTellTale coSingletonIntegerClass Set.univ T
+def integerSweepAlgorithm : ExhaustiveAlgorithm ℤ
+theorem integerSweep_past_union_future (stream : GenLimit.Generic.Stream ℤ) (t : ℕ) : generatedBefore integerSweepAlgorithm stream t ∪ generateOnly integerSweepAlgorithm stream t = Set.univ
+theorem integerSweep_future_subset_coSingleton (stream : GenLimit.Generic.Stream ℤ) (i : ℤ) {t : ℕ} (ht : Equiv.intEquivNat i < t) : generateOnly integerSweepAlgorithm stream t ⊆ Set.univ \ {i}
+def approximateFocusAlgorithm (F : Generic.LanguageFamily α) : SupportAlgorithm α
+theorem weakAngluin_implies_approximateBreadth {F : Generic.LanguageFamily α} (hWeak : WeakAngluinCondition F) : IsApproximateBreadthGenerator (approximateFocusAlgorithm F) F
+theorem weakAngluin_implies_approximateBreadthGeneratable {F : Generic.LanguageFamily α} (hWeak : WeakAngluinCondition F) : ApproximateBreadthGeneratable F
+theorem exactBreadthCorrectAt_implies_generation {G : SupportAlgorithm α} {K : Generic.Language α} {stream : Generic.Stream α} {t : ℕ} (h : ExactBreadthCorrectAt G K stream t) : GeneratesInLimitCorrectAt G K stream t
+theorem exactBreadthCorrectAt_implies_approximate {G : SupportAlgorithm α} {K : Generic.Language α} {stream : Generic.Stream α} {t : ℕ} (h : ExactBreadthCorrectAt G K stream t) : ApproximateBreadthCorrectAt G K stream t
+theorem exactBreadth_implies_limitGeneration {G : SupportAlgorithm α} {F : Generic.LanguageFamily α} (hG : IsExactBreadthGenerator G F) : IsLimitGenerator G F
+theorem exactBreadth_implies_approximateBreadth {G : SupportAlgorithm α} {F : Generic.LanguageFamily α} (hG : IsExactBreadthGenerator G F) : IsApproximateBreadthGenerator G F
+theorem removeObserved_exact_of_whole {G : SupportAlgorithm α} {K : Generic.Language α} {stream : Generic.Stream α} {t : ℕ} (h : WholeTargetCorrectAt G K stream t) : Exa

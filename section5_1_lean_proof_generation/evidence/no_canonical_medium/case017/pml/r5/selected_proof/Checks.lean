@@ -1,0 +1,14 @@
+import Stage3Model
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injective
+#check Finset.card_image_of_injective
+#check Finset.card_filter_le_iff
+#check Finset.filter_card_add_filter_neg_card_eq_card
+#check Finset.card_le_card
+#check Nat.find_min'
+#check Finset.le_sup
+#check Finset.sup_le
+#check Finset.card_union_le
+#check Set.ncard_le_ncard
+#check Set.Finite.ncard_le
+#check Set.ncard_image_le

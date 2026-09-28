@@ -1,0 +1,9 @@
+import Stage3Model
+#check Finset.max'_eq_iff
+#check Finset.le_max'
+#check Finset.max'_le_iff
+#check Finset.max'_mem
+#check Finset.max'_unique
+#check not_forall
+#check not_imp
+#check Set.Finite.bddAbove

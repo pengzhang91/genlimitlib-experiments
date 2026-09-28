@@ -1,0 +1,206 @@
+{
+  "author_lean_size": {
+    "bytes": 22571,
+    "files": 1,
+    "lines": 501,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 660.516948,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 32,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 32
+      },
+      "total_upstream_usd": 0.8081496,
+      "unverifiable": 0
+    },
+    "run_id": "pml_case017_nocanonical_reasoning_medium_v1_r5",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "f3bf8e4de52894f93d0ff779f5f07ebe48cfed5685322bfaf0d5f9b916ee2e38",
+      "within_word_limit": true,
+      "words": 116
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 22611,
+    "files": 1,
+    "lines": 501,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 547.9018153678626,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "05b0808e4f2f8e5f45822758d8d7b1bd6ed3f628dbf6ff8873e5875e4787e44b"
+      },
+      "source_hashes": {
+        "Case017Formalization.lean": "05b0808e4f2f8e5f45822758d8d7b1bd6ed3f628dbf6ff8873e5875e4787e44b",
+        "Check2.lean": "0b1a86b310d0be530f0b44708231725390874aecab6a3808e554b4ef823b27bc",
+        "Checks.lean": "3641afd3bc21175089d6bcd106e73c2a9138f5b9d935f91c730c62563db6953b"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 652.5691151521169,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0003",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 652.5691151521169,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 660.516948,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "source_hashes": {
+        "Case017Formalization.lean": "cbcf8cdfde0478f107c92ada429d52e695f72019f3ce0abba2ff05442d49ef95"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 16,
+    "failed_checker_command_events_to_first_pass": 11,
+    "first_valid_observed_pass_seconds": 547.9018153678626,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 660.0565022509545,
+        "usage": {
+          "cache_write_input_tokens": 81630,
+          "cached_input_tokens": 1869963,
+          "input_tokens": 1953769,
+          "output_tokens": 22573,
+          "reasoning_output_tokens": 6878
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "pml_case017_nocanonical_reasoning_medium_v1_r5",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

@@ -1,0 +1,19 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import Mathlib.Data.Nat.Pairing
+import Mathlib.Data.Nat.Bitwise
+
+#check GenLimit.PatientMachine.output
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.PatientMachine.patientScope_lowerDensity_half
+#check GenLimit.Generic.sample_eq_of_eq_on_prefix
+#check Nat.unpair
+#check Nat.pair_unpair
+#check Nat.unpair_pair
+#check Finset.sum_pow_two
+#check Nat.testBit_sum_two_pow
+#check Filter.liminf_congr
+#check Filter.Tendsto.liminf_eq
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check tendsto_const_nhds.div_atTop

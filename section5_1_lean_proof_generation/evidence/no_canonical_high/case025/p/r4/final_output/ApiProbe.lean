@@ -1,0 +1,12 @@
+import Stage3Model
+#check Set.infinite_range_of_injective
+#check Set.Finite.subset
+#check Set.finite_range_iff
+#check Set.range_comp
+#check Set.Infinite.mono
+#check Set.infinite_univ
+#check Finset.finite_toSet
+#check Set.toFinite
+#check Set.Finite.to_subtype
+#check Set.Finite.range
+#check Function.Injective.infinite_range

@@ -1,0 +1,11 @@
+import Helpers
+#check Nat.find_min'
+#check Nat.find_min
+#check Finset.exists_mem_not_mem_of_card_lt_card
+#check Finset.card_lt_card
+#check Finset.card_range
+#check Finset.eq_range_iff_card
+#check Set.nth
+#check Set.nth_mem
+#check Set.strictMono_nth
+#check Set.range_nth

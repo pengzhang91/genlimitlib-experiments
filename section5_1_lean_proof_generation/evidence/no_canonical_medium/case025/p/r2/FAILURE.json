@@ -1,0 +1,43 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 587.998732,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case025Formalization.lean": "8f266038962ad92b165827b15958d03b1354e8661e29137a430007213b34e5df",
+      "Helpers.lean": "14bc012b9a07fc6c55d94775726edac9e9fc92b5f44f4b42ec3244c1508da606"
+    },
+    "source_hashes": {
+      "Case025Formalization.lean": "8f266038962ad92b165827b15958d03b1354e8661e29137a430007213b34e5df",
+      "Helpers.lean": "14bc012b9a07fc6c55d94775726edac9e9fc92b5f44f4b42ec3244c1508da606"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

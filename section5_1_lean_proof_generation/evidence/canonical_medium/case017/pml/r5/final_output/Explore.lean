@@ -1,0 +1,17 @@
+import Helpers
+#check Set.infinite_range_of_injective
+#check Set.infinite_range_iff
+#check Set.Finite.subset
+#check Set.finite_Iio
+#check Set.Iic
+#check Set.finite_le_nat
+#check Set.finite_Iic
+#check Finset.range
+#check Finset.card_le_card_of_injOn
+#check Finset.card_erase_add_one
+#check Finset.max'
+#check Finset.max'_mem
+#check Finset.le_max'
+#check Finset.card_sdiff_add_card_inter
+#check Finset.card_union_le
+#check GenLimit.adversaryFirst_disjoint_generatorFirst

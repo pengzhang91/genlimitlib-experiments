@@ -1,0 +1,36 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case017_reasoning_medium_v1_r2",
+  "condition": "canonical_medium",
+  "evidence_directory_run_id": "p_case017_reasoning_medium_v1_r2",
+  "final_output_files": 4,
+  "formal_run_id": "p_case017_reasoning_medium_v1_r2",
+  "lean_success": false,
+  "original_validation_primary_success": false,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": null,
+  "selected_checkpoint_metadata": [],
+  "selected_proof_files": 0,
+  "source_bundle": "lean2paper_case017_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_reasoning_medium_v1/cohort/arms/p/logs/p_case017_reasoning_medium_v1_r2/proxy_requests.jsonl",
+      "sha256": "b0ef565de5add8c55e5d8eb55a0a7ee55e894136fc608a49631daccf315a5d87"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_reasoning_medium_v1/cohort/arms/p/logs/p_case017_reasoning_medium_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "6dfef19408cd25f1c5af13b66f8b4e00af131e8b6546e17d12f5aa9d7ec530cf"
+    },
+    "status": {
+      "path": "lean2paper_case017_reasoning_medium_v1/cohort/arms/p/logs/p_case017_reasoning_medium_v1_r2/STATUS.json",
+      "sha256": "852dab6de3661f6fa39a5ffab5353a1352f9128d20144cd53c891d656a14dd08"
+    },
+    "validation": {
+      "path": "lean2paper_case017_reasoning_medium_v1/cohort/arms/p/results/p_case017_reasoning_medium_v1_r2/VALIDATION.json",
+      "sha256": "5d4f4609c588ec5d86014ee516d01cdd698b350d1aa3cd8d357f9e8c7f62e2de"
+    }
+  },
+  "task": "case017"
+}

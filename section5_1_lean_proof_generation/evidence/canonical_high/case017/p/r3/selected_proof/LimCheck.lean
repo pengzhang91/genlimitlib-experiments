@@ -1,0 +1,15 @@
+import Stage3Model
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check le_liminf_iff
+#check Filter.le_liminf_iff
+#check eventually_lt_of_lt_liminf
+#check Filter.Tendsto.eventually
+#check Set.Infinite.tendsto_nat_count_atTop
+#check Set.Infinite.tendsto_nat_indicator_sum_atTop
+#check Set.infinite_iff_natIndicator
+#check Set.Infinite.tendsto_nat_indicator_sum_atTop
+#check GenLimit.PatientScope.relativeLowerDensity
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check tendsto_const_div_atTop_nhds_zero

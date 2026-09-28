@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case024_nocanonical_reasoning_medium_v1_r2",
+  "condition": "no_canonical_medium",
+  "evidence_directory_run_id": "pml_case024_nocanonical_reasoning_medium_v1_r2",
+  "final_output_files": 6,
+  "formal_run_id": "pml_case024_nocanonical_reasoning_medium_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 22257964,
+      "path": "lean2paper_case024_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_case024_nocanonical_reasoning_medium_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "235b2fc4399d9806d87dedc3debbc52d1fc8ddf66222a40c8f420aa180f84e97"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_medium/case024/pml/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_medium/case024/pml/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_medium/case024/pml/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_case024_nocanonical_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case024_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_case024_nocanonical_reasoning_medium_v1_r2/proxy_requests.jsonl",
+      "sha256": "cad6721760f7ac27882d91b5b0cd3ea261687a7f3c566674b31ff866e9f54b84"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case024_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_case024_nocanonical_reasoning_medium_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "499dcae3755068bcd03d95557baf54c661b0b72a91753ffecc8a7358aab63a68"
+    },
+    "status": {
+      "path": "lean2paper_case024_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_case024_nocanonical_reasoning_medium_v1_r2/STATUS.json",
+      "sha256": "be6e327ff2380725709af7b07ad44b3f9ca30eec751220bbb8eaf40f9ddba547"
+    },
+    "validation": {
+      "path": "lean2paper_case024_nocanonical_reasoning_medium_v1/cohort/arms/pml/results/pml_case024_nocanonical_reasoning_medium_v1_r2/VALIDATION.json",
+      "sha256": "b8a901ee15f93a6a86e9a35fa6235d581b62b3d68b5a983ad90c51877fd1d45d"
+    }
+  },
+  "task": "case024"
+}

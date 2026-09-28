@@ -1,0 +1,9 @@
+import Helpers
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check liminf_le_iff
+#check le_liminf_iff
+#check frequently_lt_of_liminf_lt
+#check eventually_lt_of_tendsto_lt
+#check Filter.Tendsto.eventually_lt_const
+#check Filter.Tendsto.eventually_const_lt

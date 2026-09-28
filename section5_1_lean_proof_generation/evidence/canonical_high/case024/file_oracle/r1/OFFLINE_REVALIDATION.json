@@ -1,0 +1,52 @@
+{
+  "checker_exit_code": 0,
+  "corrected_checker": "${REPO_ROOT}/lean2paper_case024_delta_v1_r3r5/templates/file_oracle/arm/control/check_driver.py",
+  "corrected_checker_sha256": "7995148af1891afc4ba31dba664620969981d747d5af4775acea8207dea028e8",
+  "corrected_gate": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "stage3_result": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 0,
+    "inadmissible_axioms": {},
+    "prohibited_mechanisms": [],
+    "source_hashes": {
+      "Case024Formalization.lean": "8aebf08e9a5ffdbbc3837729ce3f0eec2467864e82b206d8dbff78b5558cf916",
+      "Case024Helpers.lean": "81e6c650e4c68cd44662297f7b13ffead6a1ac3b731176c0d56b3c8409d7299f"
+    },
+    "sources_unchanged_during_check": true,
+    "target_kernel_pass": true
+  },
+  "created_utc": "2026-09-20T18:48:20.585807+00:00",
+  "model_calls": 0,
+  "original_checkpoint": "${REPO_ROOT}/lean2paper_case024_delta_v1/cohort/arms/file_oracle/logs/file_oracle_case024_delta_v1_r1/checkpoints/final",
+  "original_checkpoint_unchanged": true,
+  "original_gate": {
+    "entry_compile_exit": 1,
+    "prohibited_mechanisms": [],
+    "source_hashes": {
+      "Case024Formalization.lean": "8aebf08e9a5ffdbbc3837729ce3f0eec2467864e82b206d8dbff78b5558cf916"
+    },
+    "sources_unchanged_during_check": true,
+    "target_kernel_pass": false
+  },
+  "schema_version": 1,
+  "source_hashes_after": {
+    "Case024Formalization.lean": "8aebf08e9a5ffdbbc3837729ce3f0eec2467864e82b206d8dbff78b5558cf916",
+    "Case024Helpers.lean": "81e6c650e4c68cd44662297f7b13ffead6a1ac3b731176c0d56b3c8409d7299f"
+  },
+  "source_hashes_before": {
+    "Case024Formalization.lean": "8aebf08e9a5ffdbbc3837729ce3f0eec2467864e82b206d8dbff78b5558cf916",
+    "Case024Helpers.lean": "81e6c650e4c68cd44662297f7b13ffead6a1ac3b731176c0d56b3c8409d7299f"
+  },
+  "sources_unchanged": true
+}

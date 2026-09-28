@@ -1,0 +1,11 @@
+import Stage3Model
+#check tendsto_const_mul_atTop_of_pos
+#check Filter.Tendsto.const_mul_atTop
+#check Filter.Tendsto.div_atTop
+#check Finset.card_image_of_injective
+#check Finset.card_image_iff
+#check Finset.card_filter_le
+#check Set.Finite.image
+#check GenLimit.PatientScope.prefixCount
+#check GenLimit.PatientScope.mem_prefixFinset
+#check Stage3Case019.balanced

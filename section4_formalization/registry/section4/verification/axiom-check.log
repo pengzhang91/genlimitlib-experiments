@@ -1,0 +1,2 @@
+PASS: all 18 declared endpoints produced exactly one axiom report.
+Every reported axiom belongs to {propext, Classical.choice, Quot.sound}.

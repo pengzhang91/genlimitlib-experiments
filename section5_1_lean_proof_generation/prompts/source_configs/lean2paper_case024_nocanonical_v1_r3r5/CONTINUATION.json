@@ -1,0 +1,14 @@
+{
+  "combined_target_replicates_per_arm": 5,
+  "continuation_replicates": [
+    3,
+    4,
+    5
+  ],
+  "created_utc": "2026-09-21T21:46:58.605315+00:00",
+  "decision_timing": "before_any_case024_nocanonical_result",
+  "parent_bundle_basename": "lean2paper_case024_nocanonical_v1",
+  "parent_result_archive": null,
+  "parent_source_manifest_sha256": "557979bee78d67922df0de1bad6f12736d0df44204ef2ba2030c2e6df8668a40",
+  "reason": "Five independent runs per arm requested at bundle-design time."
+}

@@ -1,0 +1,11 @@
+import Stage3Model
+import Mathlib
+open Filter
+#check isCoboundedUnder_le_of_le
+#check isCobounded_le
+#check Filter.isCobounded_le
+#check Filter.Eventually.isCoboundedUnder
+#check Filter.EventuallyLE.isCoboundedUnder
+#check Finset.card_union_le
+#check div_le_one
+#check div_le_iff₀

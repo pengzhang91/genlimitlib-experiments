@@ -1,0 +1,9 @@
+import Case024Helpers
+#check strictMono_nat_of_lt_succ
+#check Finset.le_sup
+#check Fin.last
+#check Fin.castSucc
+#check Nat.lt_of_lt_of_le
+#check Set.mem_setOf_eq
+#check GenLimit.mem_sample
+#check GenLimit.mem_sample_iff

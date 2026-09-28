@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_s2b_nocanonical_v1_r1",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_s2b_nocanonical_v1_r1",
+  "final_output_files": 5,
+  "formal_run_id": "p_s2b_nocanonical_v1_r1",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 13332510,
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/p/logs/p_s2b_nocanonical_v1_r1/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "cc053ed2e1ef028e08c539b26c24055aa95e2a5a0d3c753d3d789d48ae349af9"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 1,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/s2b/p/r1/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/s2b/p/r1/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/s2b/p/r1/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_s2b_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/p/logs/p_s2b_nocanonical_v1_r1/proxy_requests.jsonl",
+      "sha256": "320e90e52d765a9fbf77b227d9fb75da6cd280f252cf3cbeb88f4672a43465b3"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/p/logs/p_s2b_nocanonical_v1_r1/ROUTING_AUDIT.json",
+      "sha256": "b7c9f8fb9a9338c20b71389305638e9bf1983b14131ab5ab41e0c7d7bfa2dc55"
+    },
+    "status": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/p/logs/p_s2b_nocanonical_v1_r1/STATUS.json",
+      "sha256": "620194eb74dc03af3ff79e08b5a8c8a4a1331ae869170c4b4f16f92803e4ec92"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/p/results/p_s2b_nocanonical_v1_r1/VALIDATION.json",
+      "sha256": "1953364b4180ae4165e056efe1a9a4b8c8a11143b70768cddaf7f7d69519ebf7"
+    }
+  },
+  "task": "s2b"
+}

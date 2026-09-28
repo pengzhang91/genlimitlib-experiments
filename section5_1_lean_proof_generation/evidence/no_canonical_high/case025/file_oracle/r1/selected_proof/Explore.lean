@@ -1,0 +1,16 @@
+import Stage3Model
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check Filter.le_liminf_add
+#check Filter.liminf_add_le
+#check Filter.liminf_sub_le
+#check Filter.le_liminf_sub
+#check Filter.liminf_sub_const
+#check Filter.liminf_const_sub
+#check Filter.liminf_add_const
+#check Filter.liminf_const_add
+#check Filter.liminf_neg
+#check Filter.Tendsto.isBoundedUnder_le
+#check Filter.Tendsto.isBoundedUnder_ge
+#check Filter.Tendsto.isCoboundedUnder_le
+#check Filter.Tendsto.isCoboundedUnder_ge

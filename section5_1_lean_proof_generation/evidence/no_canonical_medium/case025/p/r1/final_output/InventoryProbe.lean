@@ -1,0 +1,8 @@
+import Stage3Model
+set_option pp.universes false in
+#print GenLimit.PatientScope.PatientScopeCertificate
+#check GenLimit.PatientScope.PatientScopeCertificate.prefixCount_add_le
+#check GenLimit.PatientScope.PatientScopeCertificate.half_le_liminf
+#check GenLimit.PatientScope.PatientScopeCertificate.relativeLowerDensity_half
+#check GenLimit.PatientScope.relativeLowerDensity_mono
+#check GenLimit.PatientScope.prefixCount_mono

@@ -1,0 +1,222 @@
+{
+  "author_lean_size": {
+    "bytes": 15839,
+    "files": 3,
+    "lines": 381,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 714.181773,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 49,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 49
+      },
+      "total_upstream_usd": 1.3318671,
+      "unverifiable": 0
+    },
+    "run_id": "pml_case025_reasoning_medium_v1_r3",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "f0a937fc24ede2c60a6fee997980527890f14fa1e6436525e22b84a71b5c3b5b",
+      "within_word_limit": true,
+      "words": 52
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 15961,
+    "files": 3,
+    "lines": 383,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 648.6665110439062,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "10ffe96d801e59f9e6046433390541e39eb1d0a592141f6cabcc43afdb67d3b4"
+      },
+      "source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Check.lean": "b5f8caebff69a48d40c70c2f80fdc23f4a9aa040571b09779f9b8590dee8f0f5",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "10ffe96d801e59f9e6046433390541e39eb1d0a592141f6cabcc43afdb67d3b4"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 675.7864170242101,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Check.lean": "b5f8caebff69a48d40c70c2f80fdc23f4a9aa040571b09779f9b8590dee8f0f5",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0003",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 707.6345992390998,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 714.181773,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "source_hashes": {
+        "Case025Formalization.lean": "c0a22e33c474c752e3b90525589b618c8f804bfb163017e933830f246480c657",
+        "Positive.lean": "238c0b775a1c806fa07dd247448c80d497b13c1913460d888addee6468e4dc88",
+        "Transfer.lean": "42878d39a89d94e6e4e4af0630b7e92dc3db54cf7ff6bcc45bc0426b3a414ea2"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 18,
+    "failed_checker_command_events_to_first_pass": 13,
+    "first_valid_observed_pass_seconds": 648.6665110439062,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 713.7682568300515,
+        "usage": {
+          "cache_write_input_tokens": 240049,
+          "cached_input_tokens": 2298503,
+          "input_tokens": 2541819,
+          "output_tokens": 26551,
+          "reasoning_output_tokens": 6424
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "pml_case025_reasoning_medium_v1_r3",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

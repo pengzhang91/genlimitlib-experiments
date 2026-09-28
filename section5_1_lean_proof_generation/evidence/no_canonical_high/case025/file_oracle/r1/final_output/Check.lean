@@ -1,0 +1,16 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+open Filter
+open GenLimit
+open GenLimit.PatientScope
+#check GenLimit.InfiniteContamination.displayedNoise_finite
+#check GenLimit.Generic.FiniteNoise
+#check Finset.equivBitIndices
+#check Set.Finite.coe_toFinset
+#check div_le_div_of_nonneg_left
+#check div_le_div_of_nonneg_right
+#check tendsto_natCast_atTop_atTop
+#check Filter.le_liminf_iff
+#check Filter.eventually_lt_of_lt_liminf
+#check Filter.isBoundedUnder_of
+#check Filter.isCoboundedUnder_ge_of_le

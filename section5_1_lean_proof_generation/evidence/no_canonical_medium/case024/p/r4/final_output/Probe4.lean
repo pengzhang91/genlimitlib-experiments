@@ -1,0 +1,12 @@
+import Mathlib
+#check Nat.pow_right_injective
+#check Nat.pow_left_injective
+#check Nat.pow_left_strictMono
+#check Nat.count
+#check Nat.nth_count
+#check Nat.count_injective
+#check Nat.count_strictMono
+#check Nat.count_succ
+#check Nat.count_eq_card_filter_range
+#check Nat.nth_mem_of_infinite
+#check Nat.range_nth_of_infinite

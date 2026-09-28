@@ -1,0 +1,13 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.InfiniteContamination.exists_finiteExpansion_index_for_stream
+#check GenLimit.InfiniteContamination.displayedNoise_finite
+#check GenLimit.PatientScope.tendsto_prefixCount_atTop
+#check liminf_congr
+#check Filter.Tendsto.const_div_atTop
+#check tendsto_natCast_atTop_atTop
+#check Filter.EventuallyEq.liminf_eq
+#check Set.Finite.exists_nat_gt

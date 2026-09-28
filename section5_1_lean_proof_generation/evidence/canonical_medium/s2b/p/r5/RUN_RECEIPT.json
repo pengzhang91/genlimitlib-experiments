@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_s2b_reasoning_medium_v1_r5",
+  "condition": "canonical_medium",
+  "evidence_directory_run_id": "p_s2b_reasoning_medium_v1_r5",
+  "final_output_files": 7,
+  "formal_run_id": "p_s2b_reasoning_medium_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14799418,
+      "path": "lean2paper_s2b_reasoning_medium_v1/cohort/arms/p/logs/p_s2b_reasoning_medium_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "ee20814ba8d92b3201574ecfa2960833c6ea13803edb62967ffc63a1befa0b4c"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_medium/s2b/p/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_medium/s2b/p/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_medium/s2b/p/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 8,
+  "source_bundle": "lean2paper_s2b_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_reasoning_medium_v1/cohort/arms/p/logs/p_s2b_reasoning_medium_v1_r5/proxy_requests.jsonl",
+      "sha256": "d0c7cfdedd93dd9eacedc9ea6ffe59557d92bd6e86ad0d65d4b95ee28615e606"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_reasoning_medium_v1/cohort/arms/p/logs/p_s2b_reasoning_medium_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "698578ae9334c70ab1f6ea6ac1ac3634037b28bec1aa92f30181a32826dd34c2"
+    },
+    "status": {
+      "path": "lean2paper_s2b_reasoning_medium_v1/cohort/arms/p/logs/p_s2b_reasoning_medium_v1_r5/STATUS.json",
+      "sha256": "edfd439514841c4f5706262bb47635cc2e738a2f03f18b89f3d798b69ed5eb3b"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_reasoning_medium_v1/cohort/arms/p/results/p_s2b_reasoning_medium_v1_r5/VALIDATION.json",
+      "sha256": "653669db920dd1e5c031767550658d1b8a5e095ee279a867f10a7b661fb6e821"
+    }
+  },
+  "task": "s2b"
+}

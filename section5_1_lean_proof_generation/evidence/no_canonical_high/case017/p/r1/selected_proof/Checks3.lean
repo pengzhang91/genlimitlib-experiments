@@ -1,0 +1,14 @@
+import Stage3Model
+import Mathlib
+open Filter
+#check isBoundedUnder_of_eventually_ge
+#check isCoboundedUnder_of_eventually_le
+#check isCoboundedUnder_ge_of_eventually_le
+#check isBoundedUnder_ge_of_eventually_le
+#check isBoundedUnder_le_of_eventually_le
+#check isCoboundedUnder_le_of_eventually_ge
+#check Set.infinite_iff_tendsto_sum_indicator_atTop
+#check Finset.card_filter
+#check Finset.card_eq_sum_ones
+#check Finset.sum_boole
+#check Set.indicator_apply

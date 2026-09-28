@@ -1,0 +1,21 @@
+{
+  "author_budget_seconds": 5400,
+  "deadline_overshoot_seconds": 0,
+  "elapsed_seconds": 2556.674504,
+  "exit_code": 0,
+  "formal_run_id": "p_s2b_nocanonical_v1_r5",
+  "monitor_errors": [],
+  "monitor_finished": true,
+  "recorded_run_id": "p_s2b_nocanonical_v1_r5",
+  "routing_audit": {
+    "calls": 108,
+    "pass": true,
+    "providers": {
+      "OpenAI": 108
+    },
+    "total_upstream_usd": 2.9055796000000007,
+    "unverifiable": 0
+  },
+  "schema_version": 1,
+  "state": "FINISHED"
+}

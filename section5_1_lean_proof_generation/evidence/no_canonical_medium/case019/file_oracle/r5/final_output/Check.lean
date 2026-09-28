@@ -1,0 +1,10 @@
+import Stage3Model
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+#check Countable.of_injective
+#check Set.toFinite
+#check Set.countable_coe_iff
+#check Set.Countable.to_subtype
+#check Set.Countable.toEncodable
+#check countable_iff_exists_injective
+#check countable_iff_exists_surjective
+#check Set.range

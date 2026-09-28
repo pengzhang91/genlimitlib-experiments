@@ -1,0 +1,30 @@
+{
+  "cohort": "case024_reasoning_medium_v1",
+  "condition": "PML-FileOracle",
+  "design_note": "Post-hoc file-oracle ceiling. Relative to the frozen PML packet, the author receives the same inputs except that the 161-file research library is replaced by the exact thirteen-file Case 024 source/import set selected from the controller-held complete proof and library-vocabulary audit, with matching compiled modules and a mechanically regenerated manifest. No declaration names, usage hints, proof order, dependency graph, successful proof, or oracle declaration sheet are supplied.",
+  "research_modules": [
+    "GenLimit.Core.Basic",
+    "GenLimit.Core.ClassGeneration",
+    "GenLimit.Core.FiniteContamination",
+    "GenLimit.Core.GenericGeneration",
+    "GenLimit.Core.OnlineGeneration",
+    "GenLimit.Core.OrderedDensity",
+    "GenLimit.Core.SetGeneration",
+    "GenLimit.Paper17_InfiniteContamination.Definitions",
+    "GenLimit.Paper17_InfiniteContamination.PriorityStabilization",
+    "GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation",
+    "GenLimit.Paper17_InfiniteContamination.VanishingNoise",
+    "GenLimit.Paper39_DenseGeneration.Abstract.Announcements",
+    "GenLimit.Paper39_DenseGeneration.Abstract.PatientScope"
+  ],
+  "run_ids": [
+    "file_oracle_case024_reasoning_medium_v1_r1",
+    "file_oracle_case024_reasoning_medium_v1_r2",
+    "file_oracle_case024_reasoning_medium_v1_r3",
+    "file_oracle_case024_reasoning_medium_v1_r4",
+    "file_oracle_case024_reasoning_medium_v1_r5"
+  ],
+  "source_arm": "pml",
+  "source_run": "pml_case024_reasoning_medium_v1_r1",
+  "source_template": "templates/file_oracle/packet"
+}

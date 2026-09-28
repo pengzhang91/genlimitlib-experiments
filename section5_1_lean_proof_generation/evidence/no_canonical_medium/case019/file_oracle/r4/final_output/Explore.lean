@@ -1,0 +1,19 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.InfiniteContamination.theorem_6_5_lowerDensity_sufficiency_enumerated
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_upper
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower
+#check GenLimit.NoiseLossFeedback.finiteOmissionClass_uus
+#check GenLimit.NoiseLossFeedback.finiteOmissionClass
+#check GenLimit.Generic.elementGeneratorOfSet
+#check GenLimit.Generic.setOutput
+#check GenLimit.InfiniteContamination.lemma_6_9_finiteContamination_sufficiency
+#check GenLimit.KleinbergWei.naturalOrder
+#check GenLimit.PatientScope.relativeLowerDensity
+#check GenLimit.Generic.CorrectAt
+#check GenLimit.NoiseLossFeedback.outputAt

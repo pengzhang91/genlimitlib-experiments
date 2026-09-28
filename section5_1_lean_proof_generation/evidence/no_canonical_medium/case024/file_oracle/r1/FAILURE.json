@@ -1,0 +1,29 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 881.483151,
+    "entry_compile_exit": 1,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d"
+    },
+    "source_hashes": {
+      "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d",
+      "Checks.lean": "0baf1b8213077eaf0dfc24295cd183be99b23aa6af7c3fe2d3b8a5ee3f73ad6c",
+      "Explore.lean": "70db5a1e73be0a2b065f9f1aa2513c2bcbbb921eeeb7bf18cf7841752ac4c749",
+      "Helpers.lean": "6793c5e97c047c5273e561a1dc45d99c085a2ceba71d6c6252d3f456160284f1"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

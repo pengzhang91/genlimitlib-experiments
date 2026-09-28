@@ -1,0 +1,10 @@
+import Stage3Model
+#check Fin.lastCases
+#check Fin.lastCases_last
+#check Fin.lastCases_castSucc
+#check Fin.cases
+#check Fin.last
+#check Fin.castSucc
+#check Fin.divNat
+#check Nat.even_iff
+#check Nat.even_iff_exists_two_mul

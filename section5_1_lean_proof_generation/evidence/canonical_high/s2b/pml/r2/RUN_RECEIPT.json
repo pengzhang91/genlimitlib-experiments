@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_delta_v1_r2",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "pml_delta_v1_r2",
+  "final_output_files": 7,
+  "formal_run_id": "pml_delta_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14822898,
+      "path": "lean2paper_delta_v1/cohort/arms/pml/logs/pml_delta_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "da0c67990583c0e7118bcd007aa549bd854c7a38d506181eed3b3c9033f6a414"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_high/s2b/pml/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_high/s2b/pml/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_high/s2b/pml/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 7,
+  "source_bundle": "lean2paper_delta_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_delta_v1/cohort/arms/pml/logs/pml_delta_v1_r2/proxy_requests.jsonl",
+      "sha256": "d50907030d3c8d89593f6358aa7ba016ac9cb8eefb08918ee982fbfb1a1928cb"
+    },
+    "routing_audit": {
+      "path": "lean2paper_delta_v1/cohort/arms/pml/logs/pml_delta_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "ce7324b8432084991f9d67101c108040ed60995f4da65f89310e9a35249fd519"
+    },
+    "status": {
+      "path": "lean2paper_delta_v1/cohort/arms/pml/logs/pml_delta_v1_r2/STATUS.json",
+      "sha256": "8d254d4e9611ca4b7038637c2cfb6bb0a853fad55fab0e5365b26926f03ac479"
+    },
+    "validation": {
+      "path": "lean2paper_delta_v1/cohort/arms/pml/results/pml_delta_v1_r2/VALIDATION.json",
+      "sha256": "b279d3b44001bb5dd087ce8e89e8487fc7756e3adfe160090349ec31fcdeee98"
+    }
+  },
+  "task": "s2b"
+}

@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/.lake/
+/section5_2_math_reading.zip
+
+# Complete omitted excerpts are local restoration inputs, not release files.
+/private_inputs/
+**/private-excerpts*.json

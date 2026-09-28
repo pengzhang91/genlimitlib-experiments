@@ -1,0 +1,11 @@
+import Stage3Model
+#check Nat.find_min'
+#check Finset.card_image_iff
+#check Finset.card_image_le
+#check Finset.card_union_le
+#check Finset.card_range
+#check Finset.card_le_card
+#check Finset.exists_mem_not_mem_of_card_lt_card
+#check Finset.exists_of_card_lt_of_maps_to
+#check Finset.card_image_of_injective
+#check Finset.image_injective

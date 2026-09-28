@@ -1,0 +1,15 @@
+import Stage3Model
+import Mathlib.Order.OrderIsoNat
+#check Set.infinite_range_of_injective
+#check Set.Infinite.mono
+#check Set.toFinite
+#check Nat.orderEmbeddingOfSet_range
+#check Nat.Subtype.orderIsoOfNat
+#check Equiv.injective
+#check Fintype.card_le_of_injective
+#check Fin.exists_neq
+#check Finset.exists_mem_notMem_of_card_lt_card
+#check OrderIso.le_iff_le
+#check OrderIso.monotone
+#check StrictMono.monotone
+#check Nat.le_of_lt_succ

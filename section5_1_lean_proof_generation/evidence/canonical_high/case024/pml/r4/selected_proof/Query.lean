@@ -1,0 +1,10 @@
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+#check Fin.sum_univ_eq_sum_range
+#check Finset.sum_le_sum_of_subset_of_nonneg
+#check Finset.single_le_sum
+#check Finset.range_mono
+#check Finset.sum_range_mono
+#check Nat.mul_lt_mul
+#check Nat.mul_lt_mul_of_pos_right
+#check Set.Infinite.exists_notMem_finset
+#check Fin.last

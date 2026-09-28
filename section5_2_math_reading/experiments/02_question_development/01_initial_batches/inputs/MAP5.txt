@@ -1,0 +1,223 @@
+-- CROSS-PAPER MAP for the cluster {P02, P06, P12, P17, P19}
+-- Typed relations between the five formalized developments.
+-- Ownership is decided by which development DECLARES a name; a name declared by
+-- more than one development is recorded as a shared name, not as reuse.
+-- Section A: declarations that one development reuses from another.
+
+REUSE  P02 uses P12's  mk
+       abbrev mk (query : (t : ℕ) → (Fin (t + 1) → α) → (Fin t → Bool) → α) (output : (t : ℕ) → (Fin (t + 1) → α) → (Fin (t + 1) → Bool) → ℕ) : FeedbackIdentifier α
+REUSE  P02 uses P12's  output
+       abbrev output (identifier : FeedbackIdentifier α)
+REUSE  P02 uses P19's  observed
+       def observed (stream : GenLimit.Generic.Stream α) (t : ℕ) : Finset α
+REUSE  P06 uses P02's  HasClosureDimension
+       abbrev HasClosureDimension {α : Type*} (H : GenLimit.Generic.LanguageClass α) (d : ℕ) : Prop
+REUSE  P06 uses P02's  IsFiniteCover
+       abbrev IsFiniteCover {α : Type*} (H : GenLimit.Generic.LanguageClass α) {n : ℕ} (classes : Fin n → GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P06 uses P02's  IsNondecreasingCover
+       abbrev IsNondecreasingCover {α : Type*} (H : GenLimit.Generic.LanguageClass α) (classes : ℕ → GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P06 uses P02's  NonuniformlyGeneratable
+       abbrev NonuniformlyGeneratable {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P06 uses P02's  UUS
+       abbrev UUS {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P06 uses P02's  commonCore
+       abbrev commonCore {α : Type*} (H : GenLimit.Generic.LanguageClass α) (S : Finset α) : GenLimit.Generic.Language α
+REUSE  P06 uses P02's  enumeration_misses_finset
+       theorem enumeration_misses_finset [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) : ∃ k, infiniteEnumeration C hC k ∉ S
+REUSE  P06 uses P02's  infiniteEnumeration
+       def infiniteEnumeration [Countable α] (C : Set α) (hC : C.Infinite) : ℕ → α
+REUSE  P06 uses P02's  infiniteEnumeration_injective
+       theorem infiniteEnumeration_injective [Countable α] (C : Set α) (hC : C.Infinite) : Function.Injective (infiniteEnumeration C hC)
+REUSE  P06 uses P02's  infiniteEnumeration_mem
+       theorem infiniteEnumeration_mem [Countable α] (C : Set α) (hC : C.Infinite) (k : ℕ) : infiniteEnumeration C hC k ∈ C
+REUSE  P06 uses P02's  infiniteEnumeration_surjective
+       theorem infiniteEnumeration_surjective [Countable α] (C : Set α) (hC : C.Infinite) {x : α} (hx : x ∈ C) : ∃ k, infiniteEnumeration C hC k = x
+REUSE  P06 uses P02's  infiniteSetEquiv
+       def infiniteSetEquiv [Countable α] (C : Set α) (hC : C.Infinite) : ℕ ≃ C
+REUSE  P06 uses P02's  progress
+       def progress [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) : ℕ
+REUSE  P06 uses P02's  progress_le_of_not_mem
+       theorem progress_le_of_not_mem [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) {k : ℕ} (hk : infiniteEnumeration C hC k ∉ S) : progress C hC S ≤ k
+REUSE  P06 uses P02's  progress_spec
+       theorem progress_spec [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) : infiniteEnumeration C hC (progress C hC S) ∉ S
+REUSE  P06 uses P12's  output
+       abbrev output (identifier : FeedbackIdentifier α)
+REUSE  P06 uses P19's  observed
+       def observed (stream : GenLimit.Generic.Stream α) (t : ℕ) : Finset α
+REUSE  P12 uses P02's  ClosureDimensionAtMost
+       abbrev ClosureDimensionAtMost {α : Type*} (H : GenLimit.Generic.LanguageClass α) (d : ℕ) : Prop
+REUSE  P12 uses P02's  HasClosureDimension
+       abbrev HasClosureDimension {α : Type*} (H : GenLimit.Generic.LanguageClass α) (d : ℕ) : Prop
+REUSE  P12 uses P02's  HasFiniteClosureDimension
+       abbrev HasFiniteClosureDimension {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P02's  IsNondecreasingCover
+       abbrev IsNondecreasingCover {α : Type*} (H : GenLimit.Generic.LanguageClass α) (classes : ℕ → GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P02's  NonuniformlyGeneratable
+       abbrev NonuniformlyGeneratable {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P02's  UUS
+       abbrev UUS {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P02's  UniformlyGeneratable
+       abbrev UniformlyGeneratable {α : Type*} (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P02's  commonCore
+       abbrev commonCore {α : Type*} (H : GenLimit.Generic.LanguageClass α) (S : Finset α) : GenLimit.Generic.Language α
+REUSE  P12 uses P02's  commonCore_subset_of_mem_versionSpace
+       theorem commonCore_subset_of_mem_versionSpace {H : GenLimit.Generic.LanguageClass α} {S : Finset α} {L : GenLimit.Generic.Language α} (hL : L ∈ versionSpace H S) : commonCore H S ⊆ L
+REUSE  P12 uses P02's  infiniteEnumeration
+       def infiniteEnumeration [Countable α] (C : Set α) (hC : C.Infinite) : ℕ → α
+REUSE  P12 uses P02's  infiniteEnumeration_injective
+       theorem infiniteEnumeration_injective [Countable α] (C : Set α) (hC : C.Infinite) : Function.Injective (infiniteEnumeration C hC)
+REUSE  P12 uses P02's  infiniteEnumeration_mem
+       theorem infiniteEnumeration_mem [Countable α] (C : Set α) (hC : C.Infinite) (k : ℕ) : infiniteEnumeration C hC k ∈ C
+REUSE  P12 uses P02's  progress
+       def progress [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) : ℕ
+REUSE  P12 uses P02's  progress_spec
+       theorem progress_spec [Countable α] (C : Set α) (hC : C.Infinite) (S : Finset α) : infiniteEnumeration C hC (progress C hC S) ∉ S
+REUSE  P12 uses P02's  sample_subset_of_streamIn
+       theorem sample_subset_of_streamIn {stream : GenLimit.Generic.Stream α} {L : GenLimit.Generic.Language α} (hstream : GenLimit.Generic.StreamIn stream L) (t : ℕ) : (↑(GenLimit.Generic.sample stream t) : Set α) ⊆ L
+REUSE  P12 uses P02's  uniform_generatability_iff_finite_closure_dimension
+       theorem uniform_generatability_iff_finite_closure_dimension [Nonempty α] [Countable α] {H : GenLimit.Generic.LanguageClass α} (hUUS : UUS H) : UniformlyGeneratable H ↔ HasFiniteClosureDimension H
+REUSE  P12 uses P02's  uniform_implies_nonuniform
+       theorem uniform_implies_nonuniform {H : GenLimit.Generic.LanguageClass α} (h : UniformlyGeneratable H) : NonuniformlyGeneratable H
+REUSE  P12 uses P02's  versionSpace
+       abbrev versionSpace {α : Type*} (H : GenLimit.Generic.LanguageClass α) (S : Finset α) : Set (GenLimit.Generic.Language α)
+REUSE  P12 uses P06's  HasFiniteNoise
+       abbrev HasFiniteNoise (stream : GenLimit.Generic.Stream α) (L : GenLimit.Generic.Language α) : Prop
+REUSE  P12 uses P06's  NoisyPresentation
+       abbrev NoisyPresentation (stream : GenLimit.Generic.Stream α) (L : GenLimit.Generic.Language α) : Prop
+REUSE  P12 uses P06's  UniformNoiseIndependentGeneratable
+       def UniformNoiseIndependentGeneratable (H : GenLimit.Generic.LanguageClass α) : Prop
+REUSE  P12 uses P06's  theorem_3_1
+       theorem theorem_3_1 [Countable α] [Infinite α] {H : GenLimit.Generic.LanguageClass α} (hUUS : GenLimit.Generic.UUS H) : UniformNoiseIndependentGeneratable H ↔ (commonIntersection H).Infinite
+REUSE  P12 uses P19's  MissingAtMost
+       abbrev MissingAtMost (S L : Set α) (i : ℕ) : Prop
+REUSE  P12 uses P19's  missingAtMost_mono
+       theorem missingAtMost_mono {S L : Set α} {i j : ℕ} (hij : i ≤ j) (h : MissingAtMost S L i) : MissingAtMost S L j
+REUSE  P12 uses P19's  missingAtMost_zero_iff_subset
+       theorem missingAtMost_zero_iff_subset (S L : Set α) : MissingAtMost S L 0 ↔ S ⊆ L
+REUSE  P12 uses P19's  observed
+       def observed (stream : GenLimit.Generic.Stream α) (t : ℕ) : Finset α
+REUSE  P12 uses P19's  renameGenerator
+       abbrev renameGenerator (e : α ≃ β) (gen : GenLimit.Generic.Generator α) : GenLimit.Generic.Generator β
+REUSE  P12 uses P19's  renameStream
+       abbrev renameStream (e : α ≃ β) (stream : GenLimit.Generic.Stream α) : GenLimit.Generic.Stream β
+REUSE  P17 uses P12's  output
+       abbrev output (identifier : FeedbackIdentifier α)
+REUSE  P17 uses P12's  prefixThenTarget
+       abbrev prefixThenTarget [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Stream α
+REUSE  P17 uses P12's  prefixThenTarget_injective
+       theorem prefixThenTarget_injective [Countable α] {n : ℕ} {xs : Fin n → α} (hxs : Function.Injective xs) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Function.Injective (prefixThenTarget xs L hrest)
+REUSE  P17 uses P12's  prefixThenTarget_prefix
+       theorem prefixThenTarget_prefix [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) (k : Fin n) : prefixThenTarget xs L hrest k = xs k
+REUSE  P17 uses P12's  query
+       abbrev query (identifier : FeedbackIdentifier α)
+REUSE  P17 uses P12's  range_prefixThenTarget_eq_prefix_union
+       theorem range_prefixThenTarget_eq_prefix_union [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Set.range (prefixThenTarget xs L hrest) = (sequenceSample xs : Set α) ∪ L
+REUSE  P19 uses P06's  HasNoiseAtMost
+       abbrev HasNoiseAtMost (stream : GenLimit.Generic.Stream α) (L : GenLimit.Generic.Language α) (n : ℕ) : Prop
+REUSE  P19 uses P06's  equivFin_symm_value_injective
+       theorem equivFin_symm_value_injective (S : Finset α) : Function.Injective (fun i : Fin S.card => (S.equivFin.symm i).1)
+REUSE  P19 uses P06's  finite_noisyClosureDimensions_imply_uniform_noiseDependent
+       theorem finite_noisyClosureDimensions_imply_uniform_noiseDependent [Nonempty α] {H : GenLimit.Generic.LanguageClass α} (hdim : ∀ n : ℕ, FiniteNoisyClosureDimensionAt H n) : UniformNoiseDependentGeneratable H
+REUSE  P19 uses P06's  negativePart
+       def negativePart (S : Finset α) (L : GenLimit.Generic.Language α) : Finset α
+REUSE  P19 uses P06's  noisyVersionSpace
+       def noisyVersionSpace (H : GenLimit.Generic.LanguageClass α) (S : Finset α) (n : ℕ) : Set (GenLimit.Generic.Language α)
+REUSE  P19 uses P06's  positivePart
+       def positivePart (S : Finset α) (L : GenLimit.Generic.Language α) : Finset α
+REUSE  P19 uses P06's  sequenceSample_card_of_injective
+       theorem sequenceSample_card_of_injective {n : ℕ} (xs : Fin n → α) (hxs : Function.Injective xs) : (GenLimit.Generic.sequenceSample xs).card = n
+REUSE  P19 uses P06's  sequenceSample_equivFin_symm
+       theorem sequenceSample_equivFin_symm (S : Finset α) : GenLimit.Generic.sequenceSample (fun i : Fin S.card => (S.equivFin.symm i).1) = S
+REUSE  P19 uses P12's  output
+       abbrev output (identifier : FeedbackIdentifier α)
+REUSE  P19 uses P12's  prefixThenTarget
+       abbrev prefixThenTarget [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Stream α
+REUSE  P19 uses P12's  prefixThenTarget_injective
+       theorem prefixThenTarget_injective [Countable α] {n : ℕ} {xs : Fin n → α} (hxs : Function.Injective xs) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Function.Injective (prefixThenTarget xs L hrest)
+REUSE  P19 uses P12's  prefixThenTarget_prefix
+       theorem prefixThenTarget_prefix [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) (k : Fin n) : prefixThenTarget xs L hrest k = xs k
+REUSE  P19 uses P12's  prefixThenTarget_sample
+       theorem prefixThenTarget_sample [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : sample (prefixThenTarget xs L hrest) n = sequenceSample xs
+REUSE  P19 uses P12's  range_prefixThenTarget_eq_prefix_union
+       theorem range_prefixThenTarget_eq_prefix_union [Countable α] {n : ℕ} (xs : Fin n → α) (L : Set α) (hrest : (L \ (sequenceSample xs : Set α)).Infinite) : Set.range (prefixThenTarget xs L hrest) = (sequenceSample xs : Set α) ∪ L
+
+-- Section A2: names declared independently by more than one development.
+-- These are NOT reuse: each development has its own definition under its own namespace.
+
+SHARED CorrectAt  declared separately by P12, P19
+       P12: def CorrectAt (gen : Generator α) (L : Language α) (stream : Stream α) (t : ℕ) : Prop
+       P19: def CorrectAt (gen : GenLimit.Generic.Generator α) (L : GenLimit.Generic.Language α) (stream : GenLimit.Generi
+SHARED FiniteNoisyClosureDimensionAt  declared separately by P06, P19
+       P06: def FiniteNoisyClosureDimensionAt (H : GenLimit.Generic.LanguageClass α) (n : ℕ) : Prop
+       P19: def FiniteNoisyClosureDimensionAt (C : GenLimit.Generic.LanguageClass α) (i : ℕ) : Prop
+SHARED IsNoisyLimitGenerator  declared separately by P06, P12
+       P06: def IsNoisyLimitGenerator (gen : GenLimit.Generic.Generator α) (H : GenLimit.Generic.LanguageClass α) : Prop
+       P12: def IsNoisyLimitGenerator (gen : Generator α) (C : LanguageClass α) : Prop
+SHARED IsNonuniformGenerator  declared separately by P02, P12
+       P02: abbrev IsNonuniformGenerator {α : Type*} (gen : GenLimit.Generic.Generator α) (H : GenLimit.Generic.LanguageCl
+       P12: def IsNonuniformGenerator (gen : GenLimit.Generic.Generator α) (C : GenLimit.Generic.LanguageClass α) : Prop
+SHARED IsNonuniformNoiseDependentGenerator  declared separately by P06, P19
+       P06: def IsNonuniformNoiseDependentGenerator (gen : GenLimit.Generic.Generator α) (H : GenLimit.Generic.LanguageCla
+       P19: def IsNonuniformNoiseDependentGenerator (gen : GenLimit.Generic.Generator α) (C : GenLimit.Generic.LanguageCla
+SHARED IsUniformNoiseDependentGenerator  declared separately by P06, P19
+       P06: def IsUniformNoiseDependentGenerator (gen : GenLimit.Generic.Generator α) (H : GenLimit.Generic.LanguageClass 
+       P19: def IsUniformNoiseDependentGenerator (gen : GenLimit.Generic.Generator α) (C : GenLimit.Generic.LanguageClass 
+SHARED NoisilyGeneratableInLimit  declared separately by P06, P12
+       P06: def NoisilyGeneratableInLimit (H : GenLimit.Generic.LanguageClass α) : Prop
+       P12: def NoisilyGeneratableInLimit (C : LanguageClass α) : Prop
+SHARED NoisyClosureWitnessAt  declared separately by P06, P19
+       P06: def NoisyClosureWitnessAt (H : GenLimit.Generic.LanguageClass α) (n d : ℕ) : Prop
+       P19: def NoisyClosureWitnessAt (C : GenLimit.Generic.LanguageClass α) (i d : ℕ) : Prop
+SHARED NonuniformNoiseDependentGeneratable  declared separately by P06, P19
+       P06: def NonuniformNoiseDependentGeneratable (H : GenLimit.Generic.LanguageClass α) : Prop
+       P19: def NonuniformNoiseDependentGeneratable (C : GenLimit.Generic.LanguageClass α) : Prop
+SHARED UniformNoiseDependentGeneratable  declared separately by P06, P19
+       P06: def UniformNoiseDependentGeneratable (H : GenLimit.Generic.LanguageClass α) : Prop
+       P19: def UniformNoiseDependentGeneratable (C : GenLimit.Generic.LanguageClass α) : Prop
+SHARED noisyClosure  declared separately by P06, P19
+       P06: def noisyClosure (H : GenLimit.Generic.LanguageClass α) (S : Finset α) (n : ℕ) : Option (GenLimit.Generic.Lang
+       P19: def noisyClosure (C : GenLimit.Generic.LanguageClass α) (S : Set α) (i : ℕ) : GenLimit.Generic.Language α
+SHARED noisyCommonCore  declared separately by P06, P19
+       P06: def noisyCommonCore (H : GenLimit.Generic.LanguageClass α) (S : Finset α) (n : ℕ) : GenLimit.Generic.Language 
+       P19: def noisyCommonCore (C : GenLimit.Generic.LanguageClass α) (S : Set α) (i : ℕ) : GenLimit.Generic.Language α
+SHARED outputAt  declared separately by P12, P19
+       P12: abbrev outputAt (gen : Generator α) (stream : Stream α) (t : ℕ) : α
+       P19: def outputAt (gen : GenLimit.Generic.Generator α) (stream : GenLimit.Generic.Stream α) (t : ℕ) : α
+SHARED theorem_3_10  declared separately by P02, P06
+SHARED theorem_3_3  declared separately by P02, P06
+       P02: theorem theorem_3_3 [Nonempty α] [Countable α] {H : GenLimit.Generic.LanguageClass α} (hUUS : UUS H) : Uniform
+       P06: theorem theorem_3_3 [Countable α] [Nonempty α] {H : GenLimit.Generic.LanguageClass α} (hUUS : GenLimit.Generic
+SHARED theorem_4_7  declared separately by P12, P19
+       P12: theorem theorem_4_7 [Countable α] (C : LanguageClass α) (hCountable : C.Countable) : GeneratableInLimitWithout
+       P19: theorem theorem_4_7 [Countable α] [Nonempty α] {C : GenLimit.Generic.LanguageClass α} (hInfinite : AllLanguage
+SHARED theorem_5_1  declared separately by P02, P17
+       P02: theorem theorem_5_1 [Nonempty α] [Countable α] [Countable ι] {H : MulticlassHypothesisClass α ι} (hPUUS : PUUS
+
+-- Section B: machine-checked cross-paper specializations (proved for this study).
+-- These are kernel-checked theorems relating declarations that live in different papers.
+
+theorem versionSpace_antitone (H : LanguageClass α) {S T : Finset α} (h : S ⊆ T) : versionSpace H T ⊆ versionSpace H S
+theorem commonCore_monotone (H : LanguageClass α) {S T : Finset α} (h : S ⊆ T) : commonCore H S ⊆ commonCore H T
+theorem subset_commonCore (H : LanguageClass α) (S : Finset α) : (↑S : Set α) ⊆ commonCore H S
+theorem commonCore_subset_of_mem (H : LanguageClass α) (S : Finset α) {L : Language α} (hL : L ∈ versionSpace H S) : commonCore H S ⊆ L
+theorem commonCore_eq_univ_of_empty (H : LanguageClass α) (S : Finset α) (h : versionSpace H S = ∅) : commonCore H S = Set.univ
+theorem noisyVersionSpace_zero_eq_versionSpace (H : LanguageClass α) (S : Finset α) : noisyVersionSpace H S 0 = versionSpace H S
+theorem noisyCommonCore_zero_eq_commonCore (H : LanguageClass α) (S : Finset α) : noisyCommonCore H S 0 = commonCore H S
+theorem noisyVersionSpace_mono (H : LanguageClass α) (S : Finset α) {m n : ℕ} (h : m ≤ n) : noisyVersionSpace H S m ⊆ noisyVersionSpace H S n
+theorem noisyCommonCore_antitone (H : LanguageClass α) (S : Finset α) {m n : ℕ} (h : m ≤ n) : noisyCommonCore H S n ⊆ noisyCommonCore H S m
+theorem versionSpace_subset_noisyVersionSpace (H : LanguageClass α) (S : Finset α) (n : ℕ) : versionSpace H S ⊆ noisyVersionSpace H S n
+theorem noisyCommonCore_subset_commonCore (H : LanguageClass α) (S : Finset α) (n : ℕ) : noisyCommonCore H S n ⊆ commonCore H S
+theorem noisyClosureWitnessAt_zero_iff (H : LanguageClass α) (d : ℕ) : NoisyClosureWitnessAt H 0 d ↔ ∃ S : Finset α, S.card = d ∧ IsClosureWitness H S
+theorem noisyClosureWitnessAt_mono (H : LanguageClass α) {m n : ℕ} (hmn : m ≤ n) (d : ℕ) (h : NoisyClosureWitnessAt H m d) : NoisyClosureWitnessAt H n d
+theorem finiteNoisyClosureDimensionAt_zero_iff (H : LanguageClass α) : FiniteNoisyClosureDimensionAt H 0 ↔ HasFiniteClosureDimension H
+theorem finiteNoisyClosureDimensionAt_antitone (H : LanguageClass α) {m n : ℕ} (hmn : m ≤ n) (h : FiniteNoisyClosureDimensionAt H n) : FiniteNoisyClosureDimensionAt H m
+theorem uniform_implies_nonuniform (H : LanguageClass α) (h : UniformlyGeneratable H) : NonuniformlyGeneratable H
+theorem closure_witness_subset (H : LanguageClass α) {S T : Finset α} (hST : S ⊆ T) (hT : IsClosureWitness H T) : IsClosureWitness H S
+
+-- Section C: dependency structure (Lean import edges).
+
+
+DEPENDS  P12 imports P02 and P06
+DEPENDS  P19 imports P06
+DEPENDS  P06, P12, P19 all build on the shared Core interface
+DEPENDS  P17 shares the ordered-density interface used by P19

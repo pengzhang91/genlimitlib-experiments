@@ -1,0 +1,10 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+#check Finset.sum_attach
+#check Finset.attach_map_val
+#check Finset.sum_subtype
+#check Finset.sum_attach
+#check Finset.sum_range_succ
+#check Fin.sum_univ_eq_sum_range
+#check Fin.sum_univ_succAbove
+#check Fin.sum_univ_castSucc

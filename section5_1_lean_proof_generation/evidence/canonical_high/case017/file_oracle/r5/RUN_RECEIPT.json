@@ -1,0 +1,48 @@
+{
+  "arm": "PML-FileOracle",
+  "attempt_id": "file_oracle_case017_delta_v1_r5",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "file_oracle_case017_delta_v1_r5",
+  "final_output_files": 6,
+  "formal_run_id": "file_oracle_case017_delta_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14836908,
+      "path": "lean2paper_case017_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_case017_delta_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "94dcb4494374841ad98f7918367b305c0bf4bdf8bba2c5f17ad5a22494b29b53"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_high/case017/file_oracle/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_high/case017/file_oracle/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_high/case017/file_oracle/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_case017_delta_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_case017_delta_v1_r5/proxy_requests.jsonl",
+      "sha256": "7beed9c083d841f266d71b40d07d3c45e1d5816e060714ab720e8997d8fda4c7"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_case017_delta_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "d7b6ea575e8db634104d1254d2e554ad7679ea1664dc10c53ab6a9668b287397"
+    },
+    "status": {
+      "path": "lean2paper_case017_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_case017_delta_v1_r5/STATUS.json",
+      "sha256": "775c0e64fbf736395345f405b264b0ea859a224abf16b4a115c46a15ebb79e8f"
+    },
+    "validation": {
+      "path": "lean2paper_case017_delta_v1_r3r5/cohort/arms/file_oracle/results/file_oracle_case017_delta_v1_r5/VALIDATION.json",
+      "sha256": "8e1ec5bc7ba076de6c1fdc84365917f8f1f2889eb93b84ed103658da374c1124"
+    }
+  },
+  "task": "case017"
+}

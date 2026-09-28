@@ -1,0 +1,27 @@
+import Stage3Model
+import Mathlib.Data.Nat.Nth
+import Mathlib.Analysis.SpecialFunctions.Log.Base
+open Set Filter
+#check Set.infinite_range_of_injective
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset_of_card_lt
+#check Finset.exists_not_mem
+#check Finset.card_image_le
+#check Finset.card_biUnion_le
+#check Nat.nth
+#check Nat.nth_strictMono
+#check Nat.range_nth_of_infinite
+#check Filter.Tendsto.limsup_eq
+#check Real.tendsto_logb_atTop
+#check Real.tendsto_logb_div_rpow_atTop
+#check Real.tendsto_log_div_rpow_atTop
+#check Nat.log2_le_logb
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_nhds.div_atTop
+#check tendsto_one_div_atTop_nhds_zero_nat
+#check Set.not_countable_univ
+#check not_countable_univ
+#check Set.Countable.preimage
+#check Set.Countable.image
+#check Set.countable_iff_exists_injective
+#check Set.countable_coe_iff

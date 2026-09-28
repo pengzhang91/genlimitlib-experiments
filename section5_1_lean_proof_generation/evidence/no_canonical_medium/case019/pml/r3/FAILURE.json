@@ -1,0 +1,44 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 1009.945307,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case019Formalization.lean": "e7cdc2c2b56f789c6819aae6ec1ce065e25699ca590c07a39bc10ec10a5dbf49"
+    },
+    "source_hashes": {
+      "Case019Formalization.lean": "e7cdc2c2b56f789c6819aae6ec1ce065e25699ca590c07a39bc10ec10a5dbf49",
+      "Check.lean": "cf900679ef9cc681dd2ddd4b51dd9d5aab47972a250e2a30a2b677f04cc62331",
+      "PatientAdapter.lean": "1c74ce92f1b6f392062ef1a158dec5cd8b2b603d296fe76ae06f4978903cd163",
+      "Probe.lean": "2dcb614316ab0f342a778ab0fa636e589f95c6a5e48cf923f021c8fcfd61d436"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

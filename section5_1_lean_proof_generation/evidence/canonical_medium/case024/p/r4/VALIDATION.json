@@ -1,0 +1,72 @@
+{
+  "author_lean_size": {
+    "bytes": 23291,
+    "files": 3,
+    "lines": 560,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0.02279569022357464,
+    "elapsed_seconds": 5400.022796,
+    "exit_code": -9,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 287,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 287
+      },
+      "total_upstream_usd": 5.090519299999998,
+      "unverifiable": 0
+    },
+    "run_id": "p_case024_reasoning_medium_v1_r4",
+    "state": "TIMEOUT"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": false
+    }
+  },
+  "checkpoints": [
+    {
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 5400.022796,
+      "entry_compile_exit": 1,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "30777573956b6813c2493e1fc933affcc892bacf41d5162f1d2be948c2f3b444"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "30777573956b6813c2493e1fc933affcc892bacf41d5162f1d2be948c2f3b444",
+        "Explore.lean": "4180f9e2ebd0d14d8807739f48189c08cd09022844c67e2a9824fc3fb65b55fe",
+        "Tiny.lean": "406e883497148b018e7444bc92b58748b78249319d964de2ca65faad98d75761"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": []
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "p_case024_reasoning_medium_v1_r4",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

@@ -1,0 +1,14 @@
+{
+  "p_s2b_nocanonical_v1_r1": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-21T03:41:43.069617+00:00",
+    "source_template": "run_001_v3"
+  },
+  "p_s2b_nocanonical_v1_r2": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-21T03:41:43.069657+00:00",
+    "source_template": "run_001_v3"
+  }
+}

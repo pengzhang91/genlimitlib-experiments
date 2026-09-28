@@ -1,0 +1,77 @@
+{
+  "schema": "lean2paper.reasoning_medium.recovery_submission.v1",
+  "recorded_local": "2026-09-23T13:27:00-05:00",
+  "purpose": "Complete author waves cancelled by earlier wrapper or routing-audit infrastructure outcomes without rerunning completed scientific author attempts.",
+  "author_resources_per_task": {
+    "partition": "cpu",
+    "cpus": 1,
+    "memory": "8G",
+    "slurm_time_limit": "01:35:00",
+    "scientific_author_budget_seconds": 5400
+  },
+  "final_verification_resources": {
+    "partition": "cpu",
+    "cpus": 1,
+    "memory": "8G",
+    "slurm_time_limit": "00:30:00",
+    "model_calls": 0
+  },
+  "chains": {
+    "s2b": {
+      "prerequisite_finalizer": "SLURM_JOB_001",
+      "r4_effective_tasks": {
+        "P": "SLURM_JOB_009_0",
+        "PML": "SLURM_JOB_009_1",
+        "PML-FileOracle": "SLURM_JOB_006_2"
+      },
+      "duplicate_launches_rejected_before_author": [
+        "SLURM_JOB_006_0",
+        "SLURM_JOB_006_1",
+        "SLURM_JOB_009_2"
+      ],
+      "cancelled_unsatisfiable_chains": [
+        "SLURM_JOB_007",
+        "SLURM_JOB_008",
+        "SLURM_JOB_010",
+        "SLURM_JOB_011"
+      ],
+      "r5_array": "SLURM_JOB_018",
+      "final_verification": "SLURM_JOB_019",
+      "final_verification_outcome": "FAILED_BEFORE_RESULT_AUDIT: the pre-run verifier counted author-generated output .olean files as frozen local inputs",
+      "postrun_final_verification": "SLURM_JOB_020",
+      "postrun_final_verification_outcome": "FAILED_AFTER_EVIDENCE_SCAN: retained the earlier R1-R2-only assertion expecting six runs instead of the completed fifteen-run cohort",
+      "postrun_final_verification_retry": "SLURM_JOB_021",
+      "postrun_final_verification_retry_outcome": "FAILED_SOURCE_INTEGRITY_GATE: direct edit of a frozen verifier was rejected; the edit was reverted byte-for-byte",
+      "external_compatibility_final_verification": "SLURM_JOB_022",
+      "external_compatibility_verifier": "reports/reasoning_medium_v1/verify_s2b_complete_15.py",
+      "external_compatibility_packager": "reports/reasoning_medium_v1/package_s2b_complete_15.sh",
+      "external_compatibility_verifier_sha256": "97477908a9a80159e6a87945d710913c19a46fa4406a8849af57ced738012cbb",
+      "external_compatibility_packager_sha256": "5799536f89bf597a5ae9fe98afc900d33bf52267bc65f694d500016db91cce66",
+      "external_compatibility_final_verification_outcome": "COMPLETED: source manifest, prepared cohort, fifteen terminal runs, fifteen routing audits, independent validations, and result archive all passed",
+      "postrun_verifier": "lean2paper_s2b_reasoning_medium_v1/scripts/package_results_postrun.sh",
+      "author_runs_repeated_for_final_verification_repair": 0
+    },
+    "case017": {
+      "completed_prerequisite_finalizers": [
+        "SLURM_JOB_002",
+        "SLURM_JOB_003"
+      ],
+      "r3_array": "SLURM_JOB_012",
+      "r4_array": "SLURM_JOB_013",
+      "r5_array": "SLURM_JOB_014",
+      "final_verification": "SLURM_JOB_015"
+    },
+    "case024": {
+      "completed_prerequisite_finalizers": [
+        "SLURM_JOB_004",
+        "SLURM_JOB_005"
+      ],
+      "r5_array": "SLURM_JOB_016",
+      "final_verification": "SLURM_JOB_017"
+    }
+  },
+  "remaining_author_runs_submitted": 18,
+  "scientific_inputs_changed": false,
+  "model_settings_changed": false,
+  "slurm_job_id_redaction": "Concrete Slurm scheduler identifiers were replaced by stable file-local labels; equality and array-task suffix relationships are preserved."
+}

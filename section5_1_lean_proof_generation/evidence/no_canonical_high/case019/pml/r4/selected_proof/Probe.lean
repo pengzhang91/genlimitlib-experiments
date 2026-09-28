@@ -1,0 +1,9 @@
+import Stage3Model
+#check div_le_div_of_nonneg_left
+#check div_le_div_iff_of_pos_left
+#check div_le_div_iff₀
+#check div_le_iff₀
+#check le_div_iff₀
+#check Filter.eventually_gt_atTop
+#check tendsto_const_nhds.div_atTop
+#check Filter.Tendsto.div_atTop

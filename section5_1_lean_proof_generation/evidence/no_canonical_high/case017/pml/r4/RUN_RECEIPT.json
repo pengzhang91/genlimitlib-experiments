@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case017_nocanonical_v1_r4_transport_retry1",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "pml_case017_nocanonical_v1_r4",
+  "final_output_files": 5,
+  "formal_run_id": "pml_case017_nocanonical_v1_r4",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14831957,
+      "path": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1/cohort/arms/pml/logs/pml_case017_nocanonical_v1_r4/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "a35ef88acfe4594ce667cc24db6106c3589fcff6f523dcb59095ef7736383942"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 4,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case017/pml/r4/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case017/pml/r4/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case017/pml/r4/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1/cohort/arms/pml/logs/pml_case017_nocanonical_v1_r4/proxy_requests.jsonl",
+      "sha256": "b171ae2203ab5b10add893937c7ec0de12e24b554e49bccbae54048e37689e4a"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1/cohort/arms/pml/logs/pml_case017_nocanonical_v1_r4/ROUTING_AUDIT.json",
+      "sha256": "48f1edd6a70a82974ccf16567e14125ad1e5016b433a0b112c1bb82e0050fa4c"
+    },
+    "status": {
+      "path": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1/cohort/arms/pml/logs/pml_case017_nocanonical_v1_r4/STATUS.json",
+      "sha256": "2d48d9c2d663354398034b7d8ac036a4d1d61165d02874e1ba311688fd3238bf"
+    },
+    "validation": {
+      "path": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1/cohort/arms/pml/results/pml_case017_nocanonical_v1_r4/VALIDATION.json",
+      "sha256": "f689e33c08bc3e69bc2e3cf36c56d8841675a9d611d64acbb542192dbf83bc3e"
+    }
+  },
+  "task": "case017"
+}

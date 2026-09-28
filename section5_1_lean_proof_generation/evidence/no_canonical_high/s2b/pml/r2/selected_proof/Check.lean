@@ -1,0 +1,9 @@
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+open Filter
+#check Tendsto.const_mul
+#check Tendsto.mul_const
+#check Tendsto.add
+#check tendsto_inverse_atTop_nhds_zero_nat
+#check GenLimit.InfiniteContamination.tendsto_sparseSqrt_add_one_div
+#check squeeze_zero
+#check Filter.Tendsto.limsup_eq

@@ -1,0 +1,15 @@
+import Stage3Model
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_image_of_injective
+#check Finset.card_image_iff
+#check Finset.card_sdiff_add_card_inter
+#check Finset.card_union_le
+#check Finset.card_filter_le
+#check Finset.card_bij
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_attach
+#check Finset.card_range
+#check Finset.card_congr

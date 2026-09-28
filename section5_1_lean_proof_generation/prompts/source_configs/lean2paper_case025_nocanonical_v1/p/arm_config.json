@@ -1,0 +1,19 @@
+{
+  "adds": [],
+  "canonical_trim": [],
+  "cohort": "case025_nocanonical_v1",
+  "condition": "P",
+  "design_note": "Case 025 is stated over shared definition-only vocabulary. This arm supplies the papers plus only the exact eight-source stripped vocabulary needed to state the target. The estimand is the effect of the other arm's bundled research library, supplementary statement cards, and navigation material; it is not the isolated effect of proved declarations.",
+  "must_be_absent": [
+    "research/",
+    "supplement/",
+    "RESEARCH_MODULES.tsv"
+  ],
+  "run_ids": [
+    "p_case025_nocanonical_v1_r1",
+    "p_case025_nocanonical_v1_r2"
+  ],
+  "source_run": "run_001",
+  "source_template": "templates/p/packet",
+  "vocabulary": "stripped"
+}

@@ -1,0 +1,13 @@
+import Stage3Model
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check Filter.liminf_le_liminf
+#check liminf_le_liminf
+#check tendsto_const_nhds.div_atTop
+#check tendsto_natCast_atTop_atTop
+#check GenLimit.PatientScope.prefixCount_mono
+#check GenLimit.PatientScope.tendsto_prefixCount_atTop
+#check Nat.unpair_pair
+#check Nat.pair_unpair
+#check Set.Finite.toFinset
+#check Encodable.encodek

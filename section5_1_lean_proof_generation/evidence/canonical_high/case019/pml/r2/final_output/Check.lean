@@ -1,0 +1,11 @@
+import Case019Helpers
+#check Finset.card_Ico
+#check Nat.card_Ico
+#check Filter.Tendsto.const_mul_atTop
+#check Filter.Tendsto.pos_mul_atTop
+#check tendsto_natCast_atTop_atTop
+#check tendsto_nat_nhds_top
+#check liminf_const
+#check Filter.liminf_const
+#check Finset.card_filter_le_iff
+#check Finset.card_filter_le

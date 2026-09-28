@@ -1,0 +1,231 @@
+{
+  "author_lean_size": {
+    "bytes": 56906,
+    "files": 14,
+    "lines": 1364,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 2192.092459,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 156,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 156
+      },
+      "total_upstream_usd": 4.077631800000002,
+      "unverifiable": 0
+    },
+    "run_id": "file_oracle_case019_nocanonical_v1_r2",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "38c325b31dacc7ce29cdb0cbfd1ed029fe0eecf3d50b42f7a6a7e28c59013703",
+      "within_word_limit": true,
+      "words": 67
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 44910,
+    "files": 8,
+    "lines": 1060,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 2070.724575225264,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "Check.lean": "12825f0e69c80b22a5f41d6652248f10a271c833b79207e398b8e072e97fd194",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "Probe.lean": "6d5eaaebd51f46e6dc4530a36545047e946cd78fce7a32ab1f413004d351cb0c",
+        "Probe2.lean": "0258947904fcb7820a0619ec22850a83cc23f98b1e5075e8d7ac8578d0c0e455",
+        "Probe3.lean": "75528791ff9da3b56907af32d5e0b57de996ab01a2b4c56d674ccbbd50cc64db",
+        "Probe4.lean": "324f9927b1fa4ef4c4a8ec668f334d1d8d65ad130bd0bfa37e9a69117e1f7b68",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62",
+        "SeparationScratch.lean": "343a8e4a917e596d02187c69321bd03fd5bb0806cfbb198763fea65b51e32113"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 2179.941075325012,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "Check.lean": "12825f0e69c80b22a5f41d6652248f10a271c833b79207e398b8e072e97fd194",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "Probe.lean": "6d5eaaebd51f46e6dc4530a36545047e946cd78fce7a32ab1f413004d351cb0c",
+        "Probe2.lean": "0258947904fcb7820a0619ec22850a83cc23f98b1e5075e8d7ac8578d0c0e455",
+        "Probe3.lean": "75528791ff9da3b56907af32d5e0b57de996ab01a2b4c56d674ccbbd50cc64db",
+        "Probe4.lean": "324f9927b1fa4ef4c4a8ec668f334d1d8d65ad130bd0bfa37e9a69117e1f7b68",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62",
+        "SeparationScratch.lean": "343a8e4a917e596d02187c69321bd03fd5bb0806cfbb198763fea65b51e32113"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 2192.092459,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+        "Check.lean": "12825f0e69c80b22a5f41d6652248f10a271c833b79207e398b8e072e97fd194",
+        "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+        "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+        "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+        "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+        "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+        "Probe.lean": "6d5eaaebd51f46e6dc4530a36545047e946cd78fce7a32ab1f413004d351cb0c",
+        "Probe2.lean": "0258947904fcb7820a0619ec22850a83cc23f98b1e5075e8d7ac8578d0c0e455",
+        "Probe3.lean": "75528791ff9da3b56907af32d5e0b57de996ab01a2b4c56d674ccbbd50cc64db",
+        "Probe4.lean": "324f9927b1fa4ef4c4a8ec668f334d1d8d65ad130bd0bfa37e9a69117e1f7b68",
+        "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+        "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62",
+        "SeparationScratch.lean": "343a8e4a917e596d02187c69321bd03fd5bb0806cfbb198763fea65b51e32113"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 40,
+    "failed_checker_command_events_to_first_pass": 26,
+    "first_valid_observed_pass_seconds": 2070.724575225264,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 2191.6100958753377,
+        "usage": {
+          "cache_write_input_tokens": 578834,
+          "cached_input_tokens": 9390654,
+          "input_tokens": 9979901,
+          "output_tokens": 73159,
+          "reasoning_output_tokens": 23811
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "file_oracle_case019_nocanonical_v1_r2",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

@@ -1,0 +1,429 @@
+% Chapter 2. Adapted from the archived sharp_log_coefficient.tex (2026-09-18).
+% Full proofs retained; concentration and unrelated extensions omitted.
+\section{The exact logarithmic cost of representative generation}
+\label{gm:chapter}
+\newcommand{\gmip}[2]{\langle #1,#2\rangle}
+\newcommand{\gmpos}[1]{\left(#1\right)_+}
+
+\subsection{Motivation and source problems}
+A representative generator should produce new valid points while preserving the proportions of groups in its observed data. These demands can conflict even when the target is known. Suppose a group contains exactly $B$ target points, all of which have already appeared. After $t\ge B$ observations its empirical share is $B/t$, but no fresh valid point can carry that share. Matching it within $\alpha$ forces at least $(B/t-\alpha)_+$ probability of an invalid or already observed output. Summing these obligations gives a logarithmic cost as the tolerance shrinks.
+
+This chapter combines the representation objective of \emph{Representative Language Generation} by \citet{P09} with the cumulative-error question of \emph{Mistake-Bounded Language Generation} by \citet{P29}. The protocol change is explicit: the latter requires freshness at every round and counts invalid outputs; here representation is required at every round, and an output is charged if it is invalid \emph{or already observed}. Thus the temporary conflict is measured, and successful outputs still satisfy both validity and freshness. This is a combined model, not an unchanged application of either source characterization.
+
+The result is an exact leading coefficient $\Gamma$ for the optimal total expected cost for each fixed finite target family and finite group family. It accounts jointly for exhausted group profiles and uncertainty about the true target. Two examples make the coefficient concrete: private target tails give $\Gamma=B(1-1/N)$, whereas parity profiles give $\Gamma=1$ despite exponentially many finite profile points. We also prove that deciding whether the coefficient is at least a given rational threshold is NP-complete for an explicit finite signature.
+
+\subsection{The model and the main theorem}
+Let $X$ be countably infinite, let $\mathcal H=(H_1,\ldots,H_N)$ be a finite nonempty list of infinite subsets of $X$, and let $\mathcal G=(G_1,\ldots,G_m)$ be a finite family of groups, with $m\ge1$. Points outside $\bigcup_iH_i$ are allowed in the universe. Write
+\[
+v(x)=\bigl(\mathbf 1\{x\in G_1\},\ldots,\mathbf 1\{x\in G_m\}\bigr)\in\{0,1\}^m.
+\]
+We allow the groups to leave points uncovered. If a covering family is required, as in \citet{P09}, append the universal group $X$; its constraint is automatic and its coordinate cancels from every profile displacement, leaving the minimax value and coefficient unchanged.
+
+The target $H_z$ is fixed and unknown. At round $t\ge1$, the learner has seen distinct positive observations $x_1,\ldots,x_t\in H_z$ and chooses a probability law $Q_t$ on $X$. The next observation can be selected after the adversary sees the current draw. No correctness feedback is supplied. Put
+\[
+S_t=\{x_1,\ldots,x_t\},\qquad p_t=\frac1t\sum_{x\in S_t}v(x).
+\]
+For a fixed $0<\alpha<1$, representation requires
+\begin{equation}\label{gm:eq:representation}
+\left\|\mathbb E_{Q_t}v-p_t\right\|_\infty\le\alpha
+\end{equation}
+at every positive history. A draw $Y_t$ is a mistake when $Y_t\notin H_z\setminus S_t$. Thus previously generated values can be repeated if they have not been observed; freshness concerns the input sample.
+
+Let $V(\alpha)$ be the infimum, over representative generators, of the supremum expected total number of mistakes over fixed targets and legal adaptive adversaries. The upper construction below is a deterministic function of positive history into finite-support laws. The lower bound also permits learners to retain previous random draws. We may require adversarial streams to be complete injective presentations, or allow arbitrary injective valid streams; all stated bounds hold under either convention.
+
+For nonempty $F\subseteq[N]$, let $K_F=\bigcap_{i\in F}H_i$. Define
+\[
+B_{\mathrm{fin}}=\max\bigl(\{0\}\cup
+\{|K_F|:F\ne\varnothing,\ K_F\text{ finite}\}\bigr).
+\]
+When $K_F$ is infinite, let $I_F$ be the profiles with infinite cells in $K_F$, and let $P_F$ be the profiles with nonempty finite cells. For $v\in P_F$ write $c_v=|\{x\in K_F:v(x)=v\}|$, with dependence on $F$ understood. Set
+\[
+B_{\mathrm{inf}}=\max_{F:K_F\text{ infinite}}\sum_{v\in P_F}c_v,
+\qquad T_0=\max\{1,B_{\mathrm{fin}}+1,mB_{\mathrm{inf}}\}.
+\]
+All these numbers are finite. At least one infinite intersection exists because each individual target is infinite.
+
+\begin{theorem}[Sharp logarithmic minimax law]\label{gm:thm:main}
+There is an explicitly defined rational number $\Gamma=\Gamma(\mathcal H,\mathcal G)$, given in Definition~\ref{gm:def:gamma}, such that
+\[
+0\le\Gamma\le B_{\mathrm{inf}},\qquad
+V(\alpha)=\Gamma\ln(1/\alpha)+O_{\mathcal H,\mathcal G}(1)
+\quad\text{as }\alpha\downarrow0.
+\]
+For every $0<\alpha<1$, a representative generator satisfies
+\begin{equation}\label{gm:eq:upper-main}
+\sum_{t\ge1}\Pr\{Y_t\notin H_z\setminus S_t\mid\mathcal F_t\}
+\le T_0-1+\Gamma\ln(1/\alpha)
+\end{equation}
+on every legal history, where $\mathcal F_t$ denotes information before the current draw. In particular the same expression bounds expected total mistakes.
+
+If $\Gamma>0$, there are explicitly obtainable constants $A,W>0$ such that, whenever $0<\alpha<\Gamma/(AW)$,
+\begin{equation}\label{gm:eq:lower-main}
+V(\alpha)\ge\Gamma\ln(1/\alpha)
+-\Gamma\left(1+\ln\frac{AW}{\Gamma}\right)+\alpha AW.
+\end{equation}
+Moreover $\Gamma=0$ exactly when every infinite target intersection has no nonempty finite profile cell.
+\end{theorem}
+The constant in the upper remainder is explicit. This matters because a general parametric linear-program argument would yield only an unspecified stabilization threshold. The binary profile structure provides the sharper bound through a simple absence-of-cancellation property.
+
+\subsection{The polyhedral coefficient}\label{gm:sec:coefficient}
+Fix $F\ne\varnothing$ with $K_F$ infinite. For a point $x\notin K_F$, let $J_F(x)=\{i\in F:x\in H_i\}$. Let $O_F$ be the finite set of realized pairs $(v(x),J_F(x))$ outside $K_F$. Every such $J_F(x)$ is a proper subset of $F$.
+
+\begin{definition}[The coefficient]\label{gm:def:gamma}
+For an anchor $u\in I_F$, a vector $a\in\R^m$ and a probability vector $\mu\in\Delta(F)$ are feasible when
+\begin{align}
+\gmip{a}{w-u}&\le0 &&(w\in I_F),\label{gm:eq:dual-infinite}\\
+\gmip{a}{v-u}&\le1 &&(v\in P_F),\label{gm:eq:dual-finite}\\
+\gmip{a}{w-u}&\le1-\sum_{i\in J}\mu_i &&((w,J)\in O_F).\label{gm:eq:dual-outside}
+\end{align}
+Set
+\[
+\Gamma_F=\max_{\substack{u\in I_F\\(a,\mu)\text{ feasible}}}
+\sum_{v\in P_F}c_v\gmpos{\gmip{a}{v-u}},
+\qquad
+\Gamma=\max_{F:K_F\text{ infinite}}\Gamma_F.
+\]
+\end{definition}
+The affine potential $\phi(x)=\gmip{a}{v(x)-u}$ is nonpositive on safe infinite cells. It is bounded by one on finite cells that might be exhausted, and by the $\mu$-average membership error outside the common core. Its positive empirical mass therefore certifies an unavoidable error cost.
+
+\begin{lemma}[Attainment, computation, and positivity]\label{gm:lem:coefficient}
+The maxima in Definition~\ref{gm:def:gamma} are attained, and $\Gamma$ is rational and computable from the realized joint group/target-membership profiles and their finite or infinite cardinalities. Also,
+\[
+0\le\Gamma_F\le\sum_{v\in P_F}c_v.
+\]
+If $v\in P_F$, then $\Gamma_F\ge c_v/|F|$. Consequently $\Gamma=0$ if and only if $B_{\mathrm{inf}}=0$.
+\end{lemma}
+\begin{proof}
+Replace the positive-part sum by the finite maximum, over $E\subseteq P_F$, of
+$\sum_{v\in E}c_v\gmip{a}{v-u}$.
+For fixed $F,u,E$, maximizing this expression under \eqref{gm:eq:dual-infinite}--\eqref{gm:eq:dual-outside} and $\mu\in\Delta(F)$ is a rational linear program. It is feasible at $a=0$ and its objective is bounded above by $\sum_{v\in E}c_v$. Finite linear-program attainment and rationality give the claims after taking the finite maxima. This is a finite procedure given the exact signature; it is not a procedure for discovering that signature from arbitrary membership programs.
+
+For positivity, fix a finite profile $v$ and let $b_j=2v_j-1$. This direction uniquely maximizes $\gmip b w$ at $w=v$ among all binary profiles, since
+$\gmip b{v-w}$ equals their Hamming distance. Choose $u\in I_F$ maximizing $\gmip b u$ there and put $d=\gmip b{v-u}>0$. Use $a=b/(|F|d)$ and the uniform prior on $F$. Then $\phi(v)=1/|F|$, every profile has potential at most $1/|F|$, and every outside-core point has average error at least $1/|F|$. Infinite core profiles have nonpositive potential. The pair is feasible, contributing at least $c_v/|F|$.
+\end{proof}
+
+\subsection{A tangent program for one sample}\label{gm:sec:tangent}
+Fix an infinite core $K_F$, a sample $S\subset K_F$, and an anchor $u\in I_F$. Let $s_v$ be the number of sampled points in finite core profile $v$, and put
+\[
+b=\sum_{v\in P_F}s_v,\qquad
+h=\sum_{v\in P_F}s_v(v-u).
+\]
+We use finitely many output types. An infinite or unexhausted finite core profile has a fresh representative with error vector zero. An exhausted finite profile has a stale representative with error vector one for every target in $F$. Finally, each outside-core type $(w,J)$ has error vector $d_i=\mathbf 1\{i\notin J\}$. Such points have never been observed because $S\subset K_F$.
+
+Write the feature and error vectors of a type as $w_j$ and $d_j\in\{0,1\}^F$. Delete types with $w_j=u$: they have zero displacement and nonnegative costs, while a safe fresh anchor is available separately. Consider
+\begin{equation}\label{gm:eq:primal}
+\begin{aligned}
+\text{minimize } &D\\
+\text{subject to }&q_j\ge0,\qquad
+\sum_jq_j(w_j-u)=h,\\
+&\sum_jq_jd_{j,i}\le D\qquad(i\in F),
+\end{aligned}
+\end{equation}
+where $D\in\R$. The constraints themselves imply $D\ge0$.
+
+\begin{lemma}[Tangent value and mass]\label{gm:lem:tangent}
+Program \eqref{gm:eq:primal} has an optimum with value at most $\Gamma_F$. Every feasible vector $q$ satisfies
+\begin{equation}\label{gm:eq:mass-bound}
+\sum_jq_j\le\|h\|_1\le mb.
+\end{equation}
+Moreover $\Gamma_F$ equals the maximum of these tangent values over all integer count vectors $0\le s_v\le c_v$ and anchors $u\in I_F$.
+\end{lemma}
+\begin{proof}
+Feasibility is immediate: for each finite profile, send $s_v$ units to its fresh type if the cell is unexhausted, and otherwise to its stale type. Because $u$ is binary, every vector $w_j-u$ has the same coordinatewise signs: nonnegative where $u$ is zero, and nonpositive where $u$ is one. Thus
+\[
+\sum_jq_j\|w_j-u\|_1
+=\left\|\sum_jq_j(w_j-u)\right\|_1=\|h\|_1.
+\]
+Every retained type has $\|w_j-u\|_1\ge1$, proving the first inequality in \eqref{gm:eq:mass-bound}; the second follows from $\|v-u\|_1\le m$. In particular feasible $q$ form a compact set, and the continuous objective $\max_i\sum_jq_jd_{j,i}$ attains its minimum.
+
+For clarity, the dual of \eqref{gm:eq:primal} is
+\begin{equation}\label{gm:eq:tangent-dual}
+\begin{aligned}
+\text{maximize }&\gmip a h\\
+\text{over }&\mu\in\Delta(F),\ a\in\R^m,\\
+\text{subject to }&\gmip a{w_j-u}\le\sum_i\mu_id_{j,i}\quad\text{for every type }j.
+\end{aligned}
+\end{equation}
+Indeed, assigning multipliers $\mu_i\ge0$ to the error constraints and $a$ to the displacement equality gives Lagrangian
+\[
+D\Bigl(1-\sum_i\mu_i\Bigr)+\gmip a h
++\sum_jq_j\Bigl(\sum_i\mu_id_{j,i}-\gmip a{w_j-u}\Bigr).
+\]
+Its infimum over free $D$ and nonnegative $q$ is finite precisely under the displayed dual constraints. Finite linear-program duality applies.
+
+Every dual-feasible pair satisfies Definition~\ref{gm:def:gamma}. A positive potential on a finite profile is possible only when that cell is exhausted, in which case $s_v=c_v$. Therefore
+\[
+\gmip a h=\sum_vs_v\gmip a{v-u}
+\le\sum_vc_v\gmpos{\gmip a{v-u}}\le\Gamma_F.
+\]
+This proves the value bound. Conversely choose a maximizing pair for $\Gamma_F$ and exhaust exactly its positive-potential finite profiles, leaving the other finite counts zero. That pair is feasible for the resulting tangent dual, and its objective is $\Gamma_F$. Hence equality is attained for some count vector.
+\end{proof}
+The mass bound is the essential geometric step. It turns an infinitesimal replacement into an actual probability law after at most $mb$ observations. No limiting approximation or unproved algorithmic certificate is involved.
+
+\subsection{Proof of the upper bound}
+Before time $T_0$, use the empirical law. It is exactly representative and costs at most one mistake per round. At $t\ge T_0$, let $F$ be the version space of targets containing $S_t$. It is nonempty and its core is infinite, since it contains $t>B_{\mathrm{fin}}$ distinct points. Its finite sample count is $b\le B_{\mathrm{inf}}$.
+
+For each anchor $u\in I_F$, take an optimal tangent flow $q^u$. Since its total mass is at most $mb\le t$, assign mass $q_j^u/t$ to a realizing point of each type, and put the remaining mass on a fresh anchor point. Call this law $Q_t^u$. Its feature mean is
+\begin{equation}\label{gm:eq:anchor-mean}
+u+\frac ht=
+\frac{\sum_vs_vv+(t-b)u}{t},
+\end{equation}
+and its error probability is at most $\Gamma_F/t$ for every target in $F$.
+
+If $t>b$, mix these laws with weights $n_u/(t-b)$, where $n_u$ counts observations in infinite core profile $u$. The resulting law $R_t$ matches $p_t$ exactly. When $t=b$, expression \eqref{gm:eq:anchor-mean} is independent of the anchor, so choose any one. In either case every consistent target has error probability at most $\Gamma/t$.
+
+Let $A_t$ be the corresponding mixture of fresh anchor points. It is valid and fresh for every consistent target. Its mean differs from $p_t$ by at most $b/t\le B_{\mathrm{inf}}/t$ in each coordinate: only the finite-profile portion of the sample has been replaced. If $B_{\mathrm{inf}}=0$, the construction is already exactly representative and error-free from $T_0$ onward. Otherwise set
+\[
+\lambda_t=\min\{1,\alpha t/B_{\mathrm{inf}}\},\qquad
+Q_t=(1-\lambda_t)R_t+\lambda_tA_t.
+\]
+The feature change is at most $\alpha$, and the error probability for every consistent target is at most
+\begin{equation}\label{gm:eq:pointwise-error}
+\Gamma\gmpos{\frac1t-\frac\alpha{B_{\mathrm{inf}}}}.
+\end{equation}
+This is a pointwise guarantee at every history, so it survives adaptive choices of later observations.
+
+Put $B=B_{\mathrm{inf}}>0$. The positive summand in \eqref{gm:eq:pointwise-error} decreases in $t$. Since $T_0\ge B$, its sum from $T_0$ is at most its sum from $B$, which is bounded by its first value plus the integral from $B$ to $B/\alpha$:
+\begin{align*}
+\sum_{t\ge T_0}\Gamma\gmpos{1/t-\alpha/B}
+&\le\Gamma\left[\ln(1/\alpha)-(1-\alpha)(1-1/B)\right]\\
+&\le\Gamma\ln(1/\alpha).
+\end{align*}
+Adding the first $T_0-1$ rounds proves \eqref{gm:eq:upper-main}. Empirical fallback extends the law to histories outside the legal protocol.
+
+\subsection{Proof of the matching lower bound}
+Assume $\Gamma>0$. Choose an attaining $F,u,a,\mu$, and let
+\[
+E=\{v\in P_F:\gmip a{v-u}>0\},\qquad
+W=\sum_{v\in E}c_v,\qquad A=\|a\|_1.
+\]
+Both $W$ and $A$ are positive. First present all $W$ points in these cells, then distinct points from the infinite core cell $u$. This prefix is legal for every target in $F$, and at each $t\ge W$ its empirical potential $\phi(x)=\gmip a{v(x)-u}$ is $\Gamma/t$.
+
+For any output point $y$, its potential is bounded above by its $\mu$-average mistake indicator. An observed point has mistake indicator one and potential at most one. A fresh point inside $K_F$ has nonpositive potential, since every positive-potential finite cell has been exhausted. A point outside $K_F$ was not observed, and \eqref{gm:eq:dual-outside} bounds its potential by its average target-membership error. Consequently every representative output law has average mistake probability at least
+\[
+\Gamma/t-\alpha A.
+\]
+Along the common prefix, the learner receives the same observations under all targets in $F$, and no correctness feedback. Thus its output-law distribution is the same under all of them, even if the learner retains previous randomness. Averaging over the fixed prior $\mu$ lower-bounds the worst target's expected total mistakes.
+
+Use the common prefix through $\lfloor\Gamma/(\alpha A)\rfloor$. For complete presentations, extend this finite prefix separately to an enumeration of each target. Those later observations cannot remove the mistakes already forced. For $\alpha<\Gamma/(AW)$, decreasing-sum comparison gives
+\begin{align*}
+V(\alpha)&\ge\sum_{t=W}^{\infty}\gmpos{\Gamma/t-\alpha A}\\
+&\ge\int_W^{\Gamma/(\alpha A)}(\Gamma/x-\alpha A)\,dx\\
+&=\Gamma\ln(1/\alpha)-\Gamma\left(1+\ln\frac{AW}{\Gamma}\right)+\alpha AW.
+\end{align*}
+This proves \eqref{gm:eq:lower-main}. Since every binary profile difference has infinity norm at most one, $AW\ge\Gamma$. Lemma~\ref{gm:lem:coefficient} handles the zero case and completes Theorem~\ref{gm:thm:main}.
+
+\subsection{Two exact minimax families}
+\subsubsection{Private target tails: the price of unresolved ambiguity}
+Fix $N\ge2$ and $B\ge1$. Take pairwise disjoint sets $G,R,P_1,\ldots,P_N$, with $|G|=B$ and the others infinite. Let
+\[
+X=G\cup R\cup\bigcup_{i=1}^NP_i,\qquad
+H_i=G\cup R\cup P_i,
+\qquad G_1=G\cup\bigcup_{i=1}^NP_i.
+\]
+Each individual target has two infinite group-profile cells. If it were known, it would permit exactly representative fresh generation at every round. The obstruction arises only while the target is ambiguous.
+
+\begin{proposition}[Exact private-tail value]\label{gm:prop:private}
+For this one-group family and every $0<\alpha<1$,
+\[
+V(\alpha)=\left(1-\frac1N\right)
+\sum_{t=B}^{\infty}\gmpos{B/t-\alpha},
+\qquad \Gamma=B\left(1-\frac1N\right).
+\]
+\end{proposition}
+\begin{proof}
+Until a private point appears, all targets remain possible. If $G$ is not exhausted, each observed profile has a fresh common-core representative, so the learner can be exactly representative without errors. Once $G$ is exhausted, place group mass $(B/t-\alpha)_+$ uniformly on one fresh point from each of the $N$ private tails, and use a fresh point of $R$ for the remaining mass. This is representative and has mistake probability $(1-1/N)(B/t-\alpha)_+$ for every target. If a private point is observed, it identifies the target; its two infinite profile cells then permit exact fresh representation forever. The exhaustion time of $G$ is at least $B$, proving the upper bound.
+
+For the lower bound, present $G$ first, then shared $R$ points through the positive part of the displayed series. Under a uniform target, each fresh group point has average error $1-1/N$, and each stale group point has error one. Representation forces group mass at least $(B/t-\alpha)_+$. Summing proves the lower bound; the common prefix can subsequently be completed to each target.
+
+For a subfamily $F$ of size at least two, the core is $G\cup R$. Its anchor is zero, and the constraints on the scalar $a$ are $a\le1-\mu_i$ for $i\in F$. The optimum prior is uniform, giving $\Gamma_F=B(1-1/|F|)$. Singleton subfamilies have no finite profile cells. Maximizing gives the stated $\Gamma$.
+\end{proof}
+Thus the cost of preserving representation is not merely the sum of a target-identification term and a known-target penalty. Every individual target here has zero known-target penalty, yet their ambiguity creates a logarithmic cost with a precise dependence on $N$.
+
+\subsubsection{Parity profiles: many exceptions, one logarithmic obstruction}
+Fix $m\ge1$, and take a singleton class whose target equals $X$. Give every even-parity profile in $\{0,1\}^m$ an infinite cell and every odd-parity profile exactly one point. The groups test the coordinates.
+
+\begin{proposition}[Exact parity value]\label{gm:prop:parity}
+This family has $B_{\mathrm{inf}}=2^{m-1}$ but
+\[
+V(\alpha)=\sum_{t=1}^{\infty}\gmpos{1/t-m\alpha},\qquad \Gamma=1.
+\]
+For comparison, let $D_n$ be the worst, over samples of size $n$, minimum group discrepancy of a fresh law. Then
+\[
+D_n=\frac1{mn}\qquad(n\ge1).
+\]
+Thus the exact fresh-discrepancy coefficient $1/m$ is different from the exact cumulative-mistake coefficient one.
+\end{proposition}
+\begin{proof}
+Before any odd point is observed, all sample mass can be moved within its infinite even-profile cell. Suppose exactly one odd point $v$ has been observed. Its empirical mass is $1/t$. Transfer up to $m\alpha$ of this mass uniformly to the $m$ even neighbors of $v$, which all have fresh representatives. Each coordinate changes by at most $\alpha$, leaving stale mass $(1/t-m\alpha)_+$. All other sample mass moves within infinite cells.
+
+If at least two distinct odd points have been observed, their empirical profile average belongs to the convex hull of even profiles. Indeed, any two distinct odd vertices have a midpoint equal to the midpoint of two even vertices: flip one differing coordinate in both. Averaging these midpoint representations over all pairs reproduces the average of all observed odd vertices. All their empirical mass can therefore be realized on fresh even points without error. This proves the upper bound for every observation order.
+
+For the lower bound, first observe an odd point $v$, then distinct points from one even neighbor through time $\lfloor1/(m\alpha)\rfloor$ when that time is positive. The affine potential
+\[
+\phi(w)=1-\operatorname{Ham}(v,w)
+\]
+is one at $v$, zero at its even neighbors, and nonpositive on every other fresh profile. Its empirical average is $1/t$, and the linear part has $\ell_1$ norm $m$. Thus representation forces mistake probability at least $(1/t-m\alpha)_+$. Afterwards complete the target presentation. If $m\alpha\ge1$, the upper bound is already zero, and the same exact formula holds. The case $m=1$ needs no two-odd-point case, since there is only one odd point; both remaining arguments apply unchanged.
+
+For $D_n$, transferring the entire mass of a sole observed odd point to its even neighbors changes each coordinate by $1/(mn)$, while samples with zero or at least two odd points allow exact fresh matching. The same potential, with the sample consisting of one odd point and $n-1$ neighbor-profile points, forces discrepancy at least $1/(mn)$. Finally the exact mistake series has leading term $\ln(1/\alpha)$ for fixed $m$, so Theorem~\ref{gm:thm:main} gives $\Gamma=1$.
+\end{proof}
+This is an exponential separation between finite-profile counting and the logarithmic mistake coefficient. It also rules out simply replacing the count by the earlier discrepancy coefficient: instantaneous approximation and cumulative mistakes require different normalizations.
+
+\subsection{Computational complexity of the coefficient}\label{gm:sec:complexity}
+
+\subsubsection{The coefficient as a finite input problem}
+Consider one known countably infinite target $X$ and finitely many binary groups, represented by a map $v:X\to\{0,1\}^m$. Suppose the profile-zero cell is infinite and every other realized profile has a finite positive cardinality. Write $\mathcal P$ for those finite profiles and $c_v$ for their cardinalities. The sharp logarithmic coefficient in this special case is
+\begin{equation}\label{gm:eq:coefficient}
+\Gamma(\mathcal P,c)=
+\max_{a\in\R^m:\ a\cdot v\le1\ \forall v\in\mathcal P}
+\sum_{v\in\mathcal P}c_v\gmpos{a\cdot v}.
+\end{equation}
+There are no outside-target points, and the only infinite-cell anchor is zero. The vector $a$ is unrestricted in sign. Negative coordinates are needed in the reduction below.
+
+The input lists the binary profiles and their positive integer cardinalities, together with a rational threshold $K$. Absent profiles are understood to have empty cells. Every such list has a countably infinite realization: create $c_v$ distinct points at each listed profile and countably infinitely many zero-profile points. Thus the reduction concerns realizable group systems, rather than arbitrary infeasible signatures.
+
+Our formulation permits the groups to leave some points uncovered. To impose the convention of \citet{P09} that the groups cover the universe, append the universal group $X$. Its representation constraint is automatic, and its coordinate cancels from every profile displacement, so both the minimax problem and $\Gamma$ are unchanged. The infinite anchor then has one nonzero coordinate. The covered version of the hardness result has finite profile Hamming weight at most four, and Hamming distance at most three from that infinite anchor.
+
+\begin{theorem}\label{gm:thm:complexity}
+Deciding whether $\Gamma(\mathcal P,c)\ge K$ is NP-complete. NP-hardness holds even when every finite profile has at most three nonzero entries and all cell cardinalities are bounded by a polynomial in the number of listed profiles. Consequently exact evaluation, or additive approximation with error strictly less than $1/2$, is NP-hard on these instances.
+
+The threshold problem for the general finite-class coefficient is also in NP when its input is an explicit joint group/target-membership signature with finite cardinalities and infinite-cell flags. Hence that general threshold problem is NP-complete as well.
+\end{theorem}
+The finite cardinalities in the construction can be expanded into individual points with only polynomial growth. The hardness therefore does not arise from encoding an exponentially large finite cell by a short integer.
+
+\subsubsection{An exact maximum-cut reduction}
+Let $G=(\{1,\ldots,n\},E)$ be a finite simple undirected graph, write $e=|E|$, and set
+\[
+M=2e+1.
+\]
+Use $2n+3$ profile coordinates, labelled
+\[
+x_1,\ldots,x_n,\quad y_1,\ldots,y_n,\quad d,f,c.
+\]
+The same labels will denote the corresponding coordinates of the potential vector $a$. A set of coordinate labels denotes its binary incidence profile. Include the following finite cells:
+
+\begin{table}[tbp]
+\centering
+\caption{Finite profile cells in the maximum-cut reduction. The zero-profile cell is infinite.}
+\label{gm:tab:hardness}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Profiles & Number & Cardinality of each cell\\
+\midrule
+$\{d\},\ \{f\},\ \{c,d,f\}$ & $3$ & $M$\\
+$\{x_i,y_i\}$ for $i\in[n]$ & $n$ & $M$\\
+$\{x_i\},\ \{y_i\}$ for $i\in[n]$ & $2n$ & $1$\\
+$\{x_i,y_j,c\},\ \{x_j,y_i,c\}$ for $\{i,j\}\in E$ & $2e$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{table}
+Also include the infinite zero-profile cell. All listed finite profiles are distinct and have Hamming weight at most three. Call the first two rows the heavy profiles; there are $n+3$ of them.
+
+\begin{lemma}[Exact identity]\label{gm:lem:identity}
+For this instance,
+\begin{equation}\label{gm:eq:identity}
+\Gamma=M(n+3)+n+\operatorname{MaxCut}(G).
+\end{equation}
+\end{lemma}
+
+\begin{proof}[Lower bound]
+Take any cut, encoded by $x_i\in\{0,1\}$. Set
+\[
+y_i=1-x_i,\qquad d=f=1,\qquad c=-1.
+\]
+Each heavy profile has potential exactly one. Each singleton $x_i$ or $y_i$ has potential at most one. The two profiles associated with an edge have potentials $x_i-x_j$ and $x_j-x_i$, both at most one. Thus the potential is feasible in \eqref{gm:eq:coefficient}. Its heavy contribution is $M(n+3)$, its singleton contribution is $n$, and its two edge positive parts sum to $|x_i-x_j|$. A maximum cut proves the lower bound in \eqref{gm:eq:identity}.
+\end{proof}
+
+\begin{proof}[Upper bound]
+Let $a$ be any feasible potential. Write $z_h$ for its value on heavy profile $h$, and define the total heavy deficit
+\[
+\sigma=\sum_{h\ \mathrm{heavy}}\bigl(1-(z_h)_+\bigr).
+\]
+Every $z_h\le1$, so each deficit lies in $[0,1]$. The heavy part of the objective is exactly $M(n+3)-M\sigma$.
+
+The singleton constraints imply $x_i,y_i\le1$, and the heavy pair constraint implies $x_i+y_i\le1$. Hence
+\begin{equation}\label{gm:eq:singleton-bound}
+(x_i)_++(y_i)_+\le1.
+\end{equation}
+If both are nonnegative this follows from their sum; otherwise the positive one is at most one. Each oriented edge profile contributes at most one by feasibility. If $\sigma\ge1$, the full objective is therefore at most
+\[
+M(n+3)-M+n+2e
+<M(n+3)+n\le M(n+3)+n+\operatorname{MaxCut}(G).
+\]
+
+It remains to consider $\sigma<1$. Every heavy profile then has strictly positive potential. We can write its deficits as
+\begin{align*}
+d&=1-\delta_d,& f&=1-\delta_f,& c+d+f&=1-\delta_0,\\
+x_i+y_i&=1-\delta_i&&&&(i\in[n]),
+\end{align*}
+where all $\delta$'s are nonnegative and sum to $\sigma$. In particular
+\[
+c=-1+\delta_d+\delta_f-\delta_0.
+\]
+Set $\bar x_i=\max\{x_i,0\}$. Then $0\le\bar x_i\le1$, $x_i\le\bar x_i$, and
+\begin{equation}\label{gm:eq:complement-bound}
+y_i\le1-\bar x_i.
+\end{equation}
+Indeed, if $x_i\ge0$, then $y_i=1-\delta_i-x_i\le1-x_i$; if $x_i<0$, the singleton constraint $y_i\le1$ gives the claim. For every oriented edge,
+\begin{align*}
+x_i+y_j+c
+&\le\bar x_i+(1-\bar x_j)-1+\delta_d+\delta_f\\
+&=\bar x_i-\bar x_j+\delta_d+\delta_f.
+\end{align*}
+Since $(u+v)_+\le(u)_++v$ for $v\ge0$, the two orientations of an edge have total positive part at most
+\[
+|\bar x_i-\bar x_j|+2(\delta_d+\delta_f).
+\]
+For every vector $\bar x\in[0,1]^n$,
+\begin{equation}\label{gm:eq:coarea}
+\sum_{\{i,j\}\in E}|\bar x_i-\bar x_j|\le\operatorname{MaxCut}(G).
+\end{equation}
+One proof chooses a uniform threshold $U\in[0,1]$ and cuts at $\{i:\bar x_i\ge U\}$. The expected cut size is the left-hand side, and every cut has size at most $\operatorname{MaxCut}(G)$.
+
+Combining \eqref{gm:eq:singleton-bound}--\eqref{gm:eq:coarea}, the objective is at most
+\begin{align*}
+M(n+3)-M\sigma+n+\operatorname{MaxCut}(G)+2e(\delta_d+\delta_f)
+&\le M(n+3)+n+\operatorname{MaxCut}(G)+(2e-M)\sigma\\
+&\le M(n+3)+n+\operatorname{MaxCut}(G).
+\end{align*}
+This proves the upper bound. It also shows that every maximizing potential has zero heavy deficit: the finite penalty forces all heavy profiles to have potential exactly one.
+\end{proof}
+
+\subsubsection{Completeness and the general signature}
+Unweighted maximum-cut threshold decision is NP-complete~\citep{GJS1976}. Lemma~\ref{gm:lem:identity} gives the many-one reduction
+\[
+\operatorname{MaxCut}(G)\ge k
+\quad\Longleftrightarrow\quad
+\Gamma\ge M(n+3)+n+k.
+\]
+There are $3n+3+2e$ finite profiles, $2n+3$ coordinates, and each cell has cardinality at most $2e+1$. The total number of finite points is
+\[
+(2e+1)(n+3)+2n+2e,
+\]
+which is polynomial in the graph size. This proves the claimed restricted NP-hardness. The identity also shows that an additive approximation with error less than $1/2$ determines $\operatorname{MaxCut}(G)$ by rounding after subtraction of the known offset.
+
+For membership in NP in the singleton case, guess a subset $\mathcal A\subseteq\mathcal P$ of profiles to contribute to the linear objective. The corresponding conditions are the rational linear inequalities
+\[
+a\cdot v\le1\quad(v\in\mathcal P),\qquad
+\sum_{v\in\mathcal A}c_v(a\cdot v)\ge K.
+\]
+If these inequalities hold, the positive-part objective is at least the selected sum, so $\Gamma\ge K$. Conversely, an attaining potential with $\Gamma\ge K$ supplies $\mathcal A$ consisting of its positive-potential profiles. A feasible rational linear system has a rational feasible point of polynomial bit length, so the guessed subset and such a point form a polynomial certificate. Equivalently, an NP verifier can guess the subset and test this linear program in polynomial time.
+
+For completeness, the same reasoning applies to the general coefficient. Its explicit input has one row for each realized pair of a group profile and a target-membership profile, marked by a finite integer cardinality or an infinite flag. A certificate first chooses a nonempty target subfamily $F$ and an infinite-cell anchor $u$. Scanning and grouping the input rows computes its infinite core profiles $I_F$, finite core profiles $P_F$ and their cardinalities $c_v$, and outside-core types $(w,J)$. It then guesses $\mathcal A\subseteq P_F$. The remaining feasibility problem is linear in a potential $a$ and a prior $\mu\in\Delta(F)$:
+\begin{align*}
+a\cdot(w-u)&\le0&&(w\in I_F),\\
+a\cdot(v-u)&\le1&&(v\in P_F),\\
+a\cdot(w-u)&\le1-\sum_{i\in J}\mu_i&&((w,J)\text{ an outside type}),\\
+\sum_{v\in\mathcal A}c_v\,a\cdot(v-u)&\ge K.
+\end{align*}
+All dimensions, coefficient lengths, and grouping operations are polynomial in the explicit input size. Feasibility can again be certified or tested in polynomial time after the discrete guesses. The finite union of these feasible cases is exactly the event $\Gamma\ge K$. This proves membership in NP and completes Theorem~\ref{gm:thm:complexity}.
+
+\subsubsection{Interpretation and limitations}
+The logarithmic coefficient remains finitely determined and exactly characterized. Computational hardness enters when the number of groups grows: choosing which profile potentials should be positive already encodes a cut problem. The reduction already uses one known target, no outside-target outputs, and finitely many profiles. Even sparse profiles suffice.
+
+The reduction rules out a general polynomial-time exact evaluator unless $\mathrm P=\mathrm{NP}$. It does not rule out efficient evaluation for fixed group dimension, special incidence structure, or useful approximation guarantees. Because the reduction has a large known additive offset, it does not by itself prove a constant-factor approximation barrier. Nor does coefficient hardness alone establish online running-time lower bounds for every generator that obtains a nonsharp mistake guarantee.
+
+
+
+\subsection{Scope of the minimax characterization}
+The asymptotic law fixes both the target family and the group family while $\alpha\downarrow0$; its additive constant need not be uniform in either family. The construction uses the exact joint profiles and their finite or infinite cardinalities. Consequently it is a semantic generator, rather than a polynomial membership-query algorithm. The complexity theorem concerns exact threshold evaluation of the sharp coefficient; it does not establish hardness of every useful generation guarantee or constant-factor inapproximability.

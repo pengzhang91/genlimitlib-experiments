@@ -1,0 +1,32 @@
+{
+  "p_case019_nocanonical_v1_r1": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T02:31:34.420863+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_nocanonical_v1_r2": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T02:31:34.420907+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_nocanonical_v1_r3": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T02:31:34.420913+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_nocanonical_v1_r4": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T02:31:34.420917+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_nocanonical_v1_r5": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T02:31:34.420920+00:00",
+    "source_template": "templates/p/packet"
+  }
+}

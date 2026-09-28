@@ -1,0 +1,15 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+#check Finset.exists_max_image
+#check Finset.card_erase_add_one
+#check Finset.card_erase_of_mem
+#check Finset.erase_subset
+#check Finset.mem_erase
+#check Finset.card_le_card_of_injOn
+#check Nat.find_spec
+#check Nat.find_min'
+#check Set.disjoint_left
+#check Finset.filter_filter
+#check Finset.card_filter_le
+#check Finset.card_image_of_injOn
+#check Finset.card_attach

@@ -1,0 +1,20 @@
+{
+  "p_case017_nocanonical_v1_r3": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-22T01:26:30.792887+00:00",
+    "source_template": "run_001_v3"
+  },
+  "p_case017_nocanonical_v1_r4": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-22T01:26:30.792933+00:00",
+    "source_template": "run_001_v3"
+  },
+  "p_case017_nocanonical_v1_r5": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-22T01:26:30.792939+00:00",
+    "source_template": "run_001_v3"
+  }
+}

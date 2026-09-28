@@ -1,0 +1,62 @@
+{
+  "campaign": "stage3-case024-delta-v1",
+  "cohort_label": "case024_delta_v1",
+  "replicates_per_arm": 2,
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "high",
+  "seconds_per_run": 5400,
+  "model_context_window": 1050000,
+  "lean_toolchain": "leanprover/lean4:v4.24.0",
+  "expected_codex_version": "codex-cli 0.155.1",
+  "transport": "openrouter-via-local-pinning-proxy",
+  "provider_pin": {
+    "only": [
+      "openai"
+    ],
+    "allow_fallbacks": false
+  },
+  "arms": {
+    "P": {
+      "slug": "p",
+      "run_ids": [
+        "p_case024_delta_v1_r1",
+        "p_case024_delta_v1_r2"
+      ],
+      "proxy_port": 19031,
+      "research_source_count": 0,
+      "vocabulary_source_count": 6
+    },
+    "PML": {
+      "slug": "pml",
+      "run_ids": [
+        "pml_case024_delta_v1_r1",
+        "pml_case024_delta_v1_r2"
+      ],
+      "proxy_port": 19032,
+      "research_source_count": 161,
+      "vocabulary_source_count": 0
+    },
+    "PML-FileOracle": {
+      "slug": "file_oracle",
+      "run_ids": [
+        "file_oracle_case024_delta_v1_r1",
+        "file_oracle_case024_delta_v1_r2"
+      ],
+      "proxy_port": 19033,
+      "research_source_count": 13,
+      "vocabulary_source_count": 0
+    }
+  },
+  "wave_schedule": [
+    [
+      "p_case024_delta_v1_r1",
+      "pml_case024_delta_v1_r1",
+      "file_oracle_case024_delta_v1_r1"
+    ],
+    [
+      "p_case024_delta_v1_r2",
+      "pml_case024_delta_v1_r2",
+      "file_oracle_case024_delta_v1_r2"
+    ]
+  ]
+}

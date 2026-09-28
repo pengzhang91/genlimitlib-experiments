@@ -1,0 +1,94 @@
+\section*{Comparison tables}
+\addcontentsline{toc}{section}{Comparison tables}
+Tables~\ref{tab:contributions}--\ref{tab:evidence} summarize the mathematical results, their assumptions, and the scope of available verification. The list below also includes the two tables appearing in the main text.
+\begingroup
+\renewcommand{\listtablename}{List of tables}
+\listoftables
+\endgroup
+\vspace{5pt}
+\begin{table}[H]
+\centering\small
+\caption{The five findings and their source relationships.}\label{tab:contributions}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.17\textwidth}>{\raggedright\arraybackslash}p{.20\textwidth}Y@{}}
+\toprule
+\textbf{Finding} & \textbf{Starting point} & \textbf{Additional result and category}\\
+\midrule
+Overlapping groups & \citet{P09} & Completed-cell characterization, exact two-block discrepancy formula, and sharp square-root rate. Structural refinement and sharp quantitative theorem.\\
+\addlinespace
+Exact mistake coefficient & \citet{P09,P29} & An explicit coefficient for the minimax logarithmic law, with exact examples and evaluation hardness. Two-paper synthesis, minimax characterization, and complexity.\\
+\addlinespace
+Metric generation & \citet{P21} & Finite-intersection classification and equivalence to properness of the completion. Geometric characterization informed by a correction to covering conventions.\\
+\addlinespace
+Contrastive ambiguity & \citet{P14,P28} & Realization of arbitrary ambiguity complexes, exact list widths, and hypergraph-coloring decomposition. Two-paper synthesis and combinatorial separation.\\
+\addlinespace
+Sparse holes & \citet{P10}; see also \citet{P07,P23} & Dense-target impossibility, vanishing-error guarantees, and strict randomization advantage under a known rate. Probabilistic refinement and separation.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\small
+\caption{Model assumptions that determine the meaning of each theorem.}\label{tab:contracts}
+\begin{tabularx}{\textwidth}{@{}p{.19\textwidth}Y Y@{}}
+\toprule
+\textbf{Finding} & \textbf{Input and structure} & \textbf{Output and success}\\
+\midrule
+Overlapping groups & One countably infinite target; finite distinct samples; finite dual VC dimension. Sharp rate uses two dual-VC-one blocks and linear completed-cell growth. & A probability law on unobserved target points; discrepancy is worst error over group masses. General infima need not be attained.\\
+\addlinespace
+Exact mistake coefficient & Fixed finite target class and finite groups; distinct positive observations; target fixed before private randomness; observation order may adapt. & Representation at every round. A draw outside the target or inside the observed sample costs one. Constants in the asymptotic law depend on the fixed instance.\\
+\addlinespace
+Metric generation & Countable metric universe and countable classes of unbounded targets; positive input and output scales; thresholds measured by ambient covering numbers. & A target point farther than the output scale from the observed sample. Threshold may depend on target and scales, but not on the particular stream.\\
+\addlinespace
+Contrastive ambiguity & Unordered pairs with exactly one positive endpoint; complete presentations cover the positive side. Threshold results count distinct unordered edges. & A list containing the true original support eventually, or after the specified threshold. Exact formulas apply to the constructed classes.\\
+\addlinespace
+Sparse holes & Natural-number universe; no feedback; arbitrary measurable private tape. Bad target and increasing full text are fixed before the tape is realized. & Realized output is valid and unobserved. The known-envelope result permits target-dependent probability-one sets of successful tapes.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\vspace{6pt}
+\begin{table}[H]
+\centering\small
+\caption{Which conclusions are different, even when they sound similar.}\label{tab:distinctions}
+\begin{tabularx}{\textwidth}{@{}p{.27\textwidth}Y@{}}
+\toprule
+\textbf{Distinction} & \textbf{Why it matters}\\
+\midrule
+Small discrepancy vs. an optimizer & Approaching an infimum does not imply some distribution attains it. The proofs retain slack where needed.\\
+\addlinespace
+Freshness as constraint vs. mistake & Section~\ref{gm:chapter} charges outputs already present in the input sample; this makes immediate representation feasible in depleted groups.\\
+\addlinespace
+Eventual list width vs. threshold width & Complete contrastive coverage can eventually reveal information that an arbitrarily long finite prefix hides.\\
+\addlinespace
+Vanishing errors vs. finitely many errors & An error probability and an empirical error fraction can both tend to zero while infinitely many errors occur almost surely.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\clearpage
+\begin{table}[H]
+\centering\small
+\caption{Proof status and provenance of this edition.}\label{tab:evidence}
+\begin{tabularx}{\textwidth}{@{}p{.19\textwidth}Y Y@{}}
+\toprule
+\textbf{Finding} & \textbf{Mathematical proof in these notes} & \textbf{Formal and archival evidence}\\
+\midrule
+Overlapping groups & Completed-cell iff, exact two-block formula, upper bound, and matching sharpness example. & Later overlap manuscript and audit records. Related finite-profile tools occur in Lean; the complete section is not claimed as formally certified.\\
+\addlinespace
+Exact mistake coefficient & Matching minimax bounds, explicit examples, and evaluation complexity. & September 18 coefficient manuscript and written audit notes. No Lean certificate for the full logarithmic law.\\
+\addlinespace
+Metric generation & Finite-intersection iff and equivalence with proper completion, including the negative construction. & September 18 classification manuscript. Covering and fresh-core diagnostics have Lean checks; the full classification is written mathematics.\\
+\addlinespace
+Contrastive ambiguity & Realization, exact eventual and threshold widths, sharp factor two, and coloring theorem. & F04/F13/F14; \texttt{Round2ContrastiveComplex.lean} has archived successful checks for realization and width equivalences. Coloring is a written consequence.\\
+\addlinespace
+Sparse holes & Fixed-target diagonalization, vanishing error, inner-cover necessity, and known-envelope separation. & F18/F19 in the September 13 collection, with written AI audit records. Probability layer is not Lean-certified.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection*{Source trail and audit}
+This edition consolidates the September 13 \emph{Natural-language proofs}, \emph{Readable finding guide}, and \emph{Ranked discoveries} collection with the September 18 contextual manuscripts \texttt{overlap\_\allowbreak characterization.tex}, \texttt{sharp\_log\_\allowbreak coefficient.tex}, and \texttt{metric\_\allowbreak classification.tex}. The September 19 overlap proof refinements supply the sharp two-block argument. Those files record the wider exploration and additional results not selected here. The section sources retained alongside these notes permit later editing and theorem-level comparison.
+
+A successful archived Lean check certifies the declarations that were checked under their stated definitions. It does not certify neighboring prose, a changed protocol, or the complete collection. The distinctions in Table~\ref{tab:evidence} are therefore part of the notes' mathematical specification.
+
+The five findings were reviewed in a fresh proof-by-proof audit. The review checked the separation and attainment arguments, the minimax dual programs and fixed-target lower bound, the all-scale metric scheduler, the distinction between complete contrastive presentations and finite prefixes, and the measurable fixed-target extraction in the sparse-hole diagonal. It found no material mathematical defect in the stated results. The revision clarifies the positive-supremum attainment claim, integer sample counts, and several presentation and probability conventions.
+
+Supplementary finite checks compared the overlap formula with primal linear programs on 160 instances, checked the minimax constructions through 3,450 linear-program solves, and enumerated all 126 simplicial complexes with one to four vertices. These diagnostics support the review but do not replace the proofs. The accompanying audit records give their precise scope and reproducible code where retained. No new Lean build was performed for this edition; the complete collection is not claimed to be formally certified. The review also does not establish comprehensive literature priority.

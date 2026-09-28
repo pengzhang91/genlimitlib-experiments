@@ -1,0 +1,18 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.MinimalPairClasses
+
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.InfiniteContamination.exists_finiteExpansion_index_for_stream
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower
+#check GenLimit.NoiseLossFeedback.finiteOmissionClass_uus
+#check GenLimit.UnionClosedness.theorem43FirstClass_uncountable
+#check Set.Countable.mono
+#check Set.Countable.of_union_left
+#check Set.Countable.of_union_right
+#check GenLimit.Generic.output
+#check GenLimit.Generic.Generator
+#check GenLimit.InfiniteContamination.FiniteNoiseFiniteOmissionEnumeration
+#check GenLimit.Generic.injectiveValueContaminatedPresentationAtMost_iff

@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_s2b_nocanonical_v1_r1",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "pml_s2b_nocanonical_v1_r1",
+  "final_output_files": 7,
+  "formal_run_id": "pml_s2b_nocanonical_v1_r1",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14434242,
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r1/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "1f24baccd6c98c00cfdde75756dbbccbdcb7ecce8b54884a6ab067d95b8f67ca"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 1,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/s2b/pml/r1/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/s2b/pml/r1/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/s2b/pml/r1/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 8,
+  "source_bundle": "lean2paper_s2b_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r1/proxy_requests.jsonl",
+      "sha256": "231989d3c3a9f30a07cc7dd16714e1f077f8c2ee6ce0a05acb5414e71955b654"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r1/ROUTING_AUDIT.json",
+      "sha256": "1c944bf6c56925f5e6bda47b7bf28b028355d06698c4b109699777789956ecd5"
+    },
+    "status": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_v1_r1/STATUS.json",
+      "sha256": "3b560835e6c7a6a25ced2f8e4fab8982254760196082d13f14ce93f6d100df5b"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_nocanonical_v1/cohort/arms/pml/results/pml_s2b_nocanonical_v1_r1/VALIDATION.json",
+      "sha256": "7b6d9cf221ade0d0dbe7a99d0cf7188e7df5d86fb4d1aac8d4996273aa694fef"
+    }
+  },
+  "task": "s2b"
+}

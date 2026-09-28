@@ -1,0 +1,10 @@
+import Stage3Model
+#check Function.Injective.countable
+#check Function.Injective.encodable
+#check Countable.of_injective
+#check Encodable.ofInjective
+#check Odd.not_even
+#check Even.not_odd
+#check Nat.even_iff
+#check Nat.not_even_iff_odd
+#check Nat.pow_succ

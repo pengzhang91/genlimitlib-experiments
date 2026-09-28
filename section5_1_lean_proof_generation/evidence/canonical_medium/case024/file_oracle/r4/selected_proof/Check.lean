@@ -1,0 +1,9 @@
+import Helpers
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_ne
+#check Set.Infinite.mono
+#check Fin.last
+#check Fin.last_val
+#check Fin.ext
+#check StrictMono.injective
+#check GenLimit.InfiniteContamination.sparseBetweenSquares_strictMono

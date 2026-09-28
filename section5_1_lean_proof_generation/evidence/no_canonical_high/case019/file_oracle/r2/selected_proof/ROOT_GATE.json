@@ -1,0 +1,30 @@
+{
+  "target_kernel_pass": true,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+    "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62",
+    "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+    "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+    "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+    "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+    "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+    "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993"
+  },
+  "exact_target_compile_exit": 0,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "stage3_result": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {},
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

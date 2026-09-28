@@ -1,0 +1,28 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 698.240866,
+    "entry_compile_exit": 1,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a"
+    },
+    "source_hashes": {
+      "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a",
+      "Helpers.lean": "6182df3ab2d8d46f4d4bd128702151f95647a30e8d55412a23028c195a9879d1",
+      "Probe.lean": "f9d1ed2b7d998422fa92a276dac23270c74552c6bd2e0ea139111adf66f9fb65"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

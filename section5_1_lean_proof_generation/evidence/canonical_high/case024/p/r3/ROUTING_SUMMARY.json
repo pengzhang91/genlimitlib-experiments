@@ -1,0 +1,14 @@
+{
+  "calls": 71,
+  "models": {
+    "openai/gpt-5.6-sol-20260709": 71
+  },
+  "pass": true,
+  "providers": {
+    "OpenAI": 71
+  },
+  "schema_version": 1,
+  "source_sha256": "89f32d22cacfa9e5fd928bd7923b985662d8e2dae06c2872360cee11c47d07a8",
+  "total_upstream_usd": 1.9131872000000005,
+  "unverifiable": 0
+}

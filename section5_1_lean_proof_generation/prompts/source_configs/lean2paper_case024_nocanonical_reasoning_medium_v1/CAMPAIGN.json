@@ -1,0 +1,99 @@
+{
+  "ablation": {
+    "canonical_full_proof": "absent",
+    "canonical_medium_comparison_bundle": "lean2paper_case024_reasoning_medium_v1",
+    "factorial_cell": {
+      "canonical_full_proof": "absent",
+      "reasoning_effort": "medium"
+    },
+    "intended_changes": [
+      "Remove CANONICAL_FULL_PROOF.md and direct author-facing references to it.",
+      "Use medium rather than high model reasoning effort relative to the high/no-canonical cohort."
+    ],
+    "no_canonical_high_comparison_bundle": "lean2paper_case024_nocanonical_v1"
+  },
+  "arms": {
+    "P": {
+      "proxy_port": 19341,
+      "research_source_count": 0,
+      "run_ids": [
+        "p_case024_nocanonical_reasoning_medium_v1_r1",
+        "p_case024_nocanonical_reasoning_medium_v1_r2",
+        "p_case024_nocanonical_reasoning_medium_v1_r3",
+        "p_case024_nocanonical_reasoning_medium_v1_r4",
+        "p_case024_nocanonical_reasoning_medium_v1_r5"
+      ],
+      "slug": "p",
+      "vocabulary_source_count": 6
+    },
+    "PML": {
+      "proxy_port": 19342,
+      "research_source_count": 161,
+      "run_ids": [
+        "pml_case024_nocanonical_reasoning_medium_v1_r1",
+        "pml_case024_nocanonical_reasoning_medium_v1_r2",
+        "pml_case024_nocanonical_reasoning_medium_v1_r3",
+        "pml_case024_nocanonical_reasoning_medium_v1_r4",
+        "pml_case024_nocanonical_reasoning_medium_v1_r5"
+      ],
+      "slug": "pml",
+      "vocabulary_source_count": 0
+    },
+    "PML-FileOracle": {
+      "proxy_port": 19343,
+      "research_source_count": 13,
+      "run_ids": [
+        "file_oracle_case024_nocanonical_reasoning_medium_v1_r1",
+        "file_oracle_case024_nocanonical_reasoning_medium_v1_r2",
+        "file_oracle_case024_nocanonical_reasoning_medium_v1_r3",
+        "file_oracle_case024_nocanonical_reasoning_medium_v1_r4",
+        "file_oracle_case024_nocanonical_reasoning_medium_v1_r5"
+      ],
+      "slug": "file_oracle",
+      "vocabulary_source_count": 0
+    }
+  },
+  "campaign": "stage3-case024-nocanonical-reasoning-medium-v1",
+  "cohort_label": "case024_nocanonical_reasoning_medium_v1",
+  "expected_codex_version": "codex-cli 0.155.1",
+  "lean_toolchain": "leanprover/lean4:v4.24.0",
+  "model": "openai/gpt-5.6-sol",
+  "model_context_window": 1050000,
+  "provider_pin": {
+    "allow_fallbacks": false,
+    "only": [
+      "openai"
+    ]
+  },
+  "reasoning_effort": "medium",
+  "replicates_per_arm": 5,
+  "seconds_per_run": 5400,
+  "transport": "openrouter-via-local-pinning-proxy",
+  "wave_schedule": [
+    [
+      "p_case024_nocanonical_reasoning_medium_v1_r1",
+      "pml_case024_nocanonical_reasoning_medium_v1_r1",
+      "file_oracle_case024_nocanonical_reasoning_medium_v1_r1"
+    ],
+    [
+      "p_case024_nocanonical_reasoning_medium_v1_r2",
+      "pml_case024_nocanonical_reasoning_medium_v1_r2",
+      "file_oracle_case024_nocanonical_reasoning_medium_v1_r2"
+    ],
+    [
+      "p_case024_nocanonical_reasoning_medium_v1_r3",
+      "pml_case024_nocanonical_reasoning_medium_v1_r3",
+      "file_oracle_case024_nocanonical_reasoning_medium_v1_r3"
+    ],
+    [
+      "p_case024_nocanonical_reasoning_medium_v1_r4",
+      "pml_case024_nocanonical_reasoning_medium_v1_r4",
+      "file_oracle_case024_nocanonical_reasoning_medium_v1_r4"
+    ],
+    [
+      "p_case024_nocanonical_reasoning_medium_v1_r5",
+      "pml_case024_nocanonical_reasoning_medium_v1_r5",
+      "file_oracle_case024_nocanonical_reasoning_medium_v1_r5"
+    ]
+  ]
+}

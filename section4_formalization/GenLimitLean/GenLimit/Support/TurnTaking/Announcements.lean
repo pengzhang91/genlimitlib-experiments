@@ -1,0 +1,176 @@
+import GenLimit.Core.Basic
+import Mathlib.Data.Nat.Find
+
+/-!
+# Turn-taking announcements and fresh plays
+
+In each round the adversary speaks before the generator.  These definitions
+record which party first announces a value and the freshness properties used
+by turn-taking generation arguments.  They allow arbitrary repetitions unless
+`FreshPlay` is assumed explicitly.
+
+The API is shared by the P30 and P39 developments; neither paper owns these
+basic notions.
+-/
+
+namespace GenLimit
+
+/-- Values announced by the adversary before any earlier generator output. -/
+def AdversaryFirst (adversary generator : ℕ → ℕ) : Set ℕ :=
+  {x | ∃ t, adversary t = x ∧ ∀ s, s < t → generator s ≠ x}
+
+/-- Values announced by the generator before any adversary announcement up to
+and including the same round. -/
+def GeneratorFirst (adversary generator : ℕ → ℕ) : Set ℕ :=
+  {x | ∃ t, generator t = x ∧ ∀ s, s ≤ t → adversary s ≠ x}
+
+/-- First time at which a stream announces `x`, defaulting to `0` when `x`
+does not occur.  Clients normally use this only after establishing range
+membership. -/
+noncomputable def firstAnnouncementTime
+    (announcer : ℕ → ℕ) (x : ℕ) : ℕ := by
+  classical
+  exact if h : ∃ t, announcer t = x then Nat.find h else 0
+
+theorem firstAnnouncementTime_spec
+    {announcer : ℕ → ℕ} {x : ℕ} (hx : x ∈ Set.range announcer) :
+    announcer (firstAnnouncementTime announcer x) = x := by
+  classical
+  simp only [firstAnnouncementTime]
+  split
+  · exact Nat.find_spec ‹∃ t, announcer t = x›
+  · exact False.elim (‹¬ ∃ t, announcer t = x› hx)
+
+theorem firstAnnouncementTime_min
+    {announcer : ℕ → ℕ} {x t : ℕ} (hx : x ∈ Set.range announcer)
+    (ht : announcer t = x) :
+    firstAnnouncementTime announcer x ≤ t := by
+  classical
+  simp only [firstAnnouncementTime]
+  split
+  · exact Nat.find_min' ‹∃ q, announcer q = x› ht
+  · exact False.elim (‹¬ ∃ q, announcer q = x› hx)
+
+theorem firstAnnouncementTime_not_mem_sample
+    {announcer : ℕ → ℕ} {x : ℕ} (hx : x ∈ Set.range announcer) :
+    x ∉ sample announcer (firstAnnouncementTime announcer x) := by
+  intro hmem
+  rw [mem_sample_iff] at hmem
+  obtain ⟨s, hs, hseq⟩ := hmem
+  exact (Nat.not_lt_of_ge (firstAnnouncementTime_min hx hseq)) hs
+
+/-- Pair a value with the generator output immediately before its first
+announcement by the other stream. -/
+noncomputable def predecessorPartner
+    (announcer generator : ℕ → ℕ) (x : ℕ) : ℕ :=
+  generator (firstAnnouncementTime announcer x - 1)
+
+/-- Predecessor pairing is injective on any range subset whose first
+announcement times are positive.  Positivity removes the ambiguity of
+truncated subtraction at time zero. -/
+theorem predecessorPartner_injOn
+    {announcer generator : ℕ → ℕ} {S : Set ℕ}
+    (hgenerator : Function.Injective generator)
+    (hrange : S ⊆ Set.range announcer)
+    (hpositive : ∀ x, x ∈ S → 0 < firstAnnouncementTime announcer x) :
+    Set.InjOn (predecessorPartner announcer generator) S := by
+  intro x hx y hy hxy
+  have hpred :
+      firstAnnouncementTime announcer x - 1 =
+        firstAnnouncementTime announcer y - 1 := by
+    apply hgenerator
+    exact hxy
+  have htime :
+      firstAnnouncementTime announcer x =
+        firstAnnouncementTime announcer y := by
+    have hxpos := hpositive x hx
+    have hypos := hpositive y hy
+    omega
+  calc
+    x = announcer (firstAnnouncementTime announcer x) :=
+      (firstAnnouncementTime_spec (hrange hx)).symm
+    _ = announcer (firstAnnouncementTime announcer y) := by rw [htime]
+    _ = y := firstAnnouncementTime_spec (hrange hy)
+
+theorem adversaryFirst_disjoint_generatorFirst
+    (adversary generator : ℕ → ℕ) :
+    Disjoint (AdversaryFirst adversary generator)
+      (GeneratorFirst adversary generator) := by
+  rw [Set.disjoint_left]
+  intro x hxA hxD
+  obtain ⟨t, hat, hnoG⟩ := hxA
+  obtain ⟨s, hgs, hnoA⟩ := hxD
+  by_cases hst : s < t
+  · exact hnoG s hst hgs
+  · exact hnoA t (Nat.le_of_not_gt hst) hat
+
+/-- Every value ever announced by the adversary has a first-announcing
+party, even when the adversary does not enumerate the whole universe. -/
+theorem range_subset_first_announcements
+    (adversary generator : ℕ → ℕ) :
+    Set.range adversary ⊆
+      AdversaryFirst adversary generator ∪
+        GeneratorFirst adversary generator := by
+  classical
+  intro x hx
+  let t := Nat.find hx
+  have hat : adversary t = x := Nat.find_spec hx
+  have htmin : ∀ q, adversary q = x → t ≤ q := by
+    intro q hq
+    exact Nat.find_min' hx hq
+  by_cases hgen : ∃ s, s < t ∧ generator s = x
+  · obtain ⟨s, hst, hgs⟩ := hgen
+    refine Set.mem_union_right _ ⟨s, hgs, ?_⟩
+    intro q hqs haq
+    exact (Nat.not_lt_of_ge (htmin q haq)) (lt_of_le_of_lt hqs hst)
+  · refine Set.mem_union_left _ ⟨t, hat, ?_⟩
+    intro s hst hgs
+    exact hgen ⟨s, hst, hgs⟩
+
+/-- If the adversary eventually announces every value, every value has a
+unique first-announcing party. -/
+theorem adversaryFirst_union_generatorFirst
+    {adversary generator : ℕ → ℕ}
+    (hsurj : Function.Surjective adversary) :
+    AdversaryFirst adversary generator ∪
+        GeneratorFirst adversary generator = Set.univ := by
+  apply Set.eq_univ_of_forall
+  intro x
+  exact range_subset_first_announcements adversary generator
+    ⟨Classical.choose (hsurj x), Classical.choose_spec (hsurj x)⟩
+
+/-- Exact presentations of the normalized target `Set.univ` satisfy the
+surjectivity premise of the first-announcement partition. -/
+theorem first_announcement_partition_of_presents_univ
+    {adversary generator : ℕ → ℕ}
+    (hP : Presents adversary Set.univ) :
+    AdversaryFirst adversary generator ∪
+        GeneratorFirst adversary generator = Set.univ := by
+  apply adversaryFirst_union_generatorFirst
+  intro x
+  have hx : x ∈ Set.range adversary := by
+    rw [hP]
+    exact Set.mem_univ x
+  exact hx
+
+/-- Freshness properties of a play in which the adversary moves before the
+generator in each round. -/
+structure FreshPlay (adversary generator : ℕ → ℕ) : Prop where
+  fresh_adversary : ∀ t s, s ≤ t → adversary s ≠ generator t
+  fresh_generator : ∀ t s, s < t → generator s ≠ generator t
+
+namespace FreshPlay
+
+theorem generator_injective
+    {adversary generator : ℕ → ℕ}
+    (P : FreshPlay adversary generator) :
+    Function.Injective generator := by
+  intro s t hst
+  by_contra hne
+  rcases lt_or_gt_of_ne hne with hlt | hgt
+  · exact P.fresh_generator t s hlt hst
+  · exact P.fresh_generator s t hgt hst.symm
+
+end FreshPlay
+
+end GenLimit

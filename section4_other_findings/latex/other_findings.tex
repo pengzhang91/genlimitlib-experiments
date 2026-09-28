@@ -1,0 +1,60 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype,mathtools}
+\usepackage[margin=1in,footskip=28pt]{geometry}
+\usepackage{booktabs,array,tabularx,enumitem,graphicx}
+\usepackage{needspace,float}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{linkblue}{RGB}{28,53,103}
+\hypersetup{colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,
+ pdftitle={Other Findings},
+ pdfsubject={Representation, minimax mistakes, metric generation, contrastive learning, and randomization},
+ bookmarksnumbered=true}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{2pt plus .5pt minus .5pt}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=2pt,topsep=4pt,leftmargin=1.7em}
+\renewcommand{\arraystretch}{1.17}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diam}{diam}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\pagestyle{plain}
+\setcounter{tocdepth}{1}
+\begin{document}
+\section*{Other Findings}
+\tableofcontents
+\vspace{12pt}
+\noindent These notes record five additional theoretical findings developed from the language-generation library. Each finding gives the motivation, source papers, result, and proof. The comparison tables collect their relationships and assumptions; the mathematical audit corrections are incorporated throughout.
+
+\smallskip
+\noindent\textit{Notation.} We use $\N=\{0,1,2,\ldots\}$, $[n]=\{1,\ldots,n\}$, and $x_+=\max\{x,0\}$. In the representative-generation sections, $\Delta(A)$ denotes countably additive probability laws on $A$. Each finding specifies its own observation and success conventions.
+\clearpage
+\input{01_overlap.tex}
+\input{02_gamma.tex}
+\input{03_metric.tex}
+\input{04_contrastive.tex}
+\input{05_sparse_holes.tex}
+\clearpage
+\input{06_tables.tex}
+\clearpage
+\input{07_references.tex}
+\end{document}

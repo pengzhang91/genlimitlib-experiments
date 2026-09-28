@@ -1,0 +1,567 @@
+{
+  "by_arm": {
+    "P": {
+      "author_elapsed_seconds": {
+        "mean": 1076.9174512,
+        "median": 1105.979415,
+        "sum": 5384.587256
+      },
+      "author_window": {
+        "ended_utc": "2026-09-20T16:43:45.139437+00:00",
+        "started_utc": "2026-09-20T07:19:46.394603+00:00",
+        "wall_seconds_including_inter_wave_and_inter_batch_gaps": 33838.744834
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_cost_to_first_valid_usd": {
+        "mean": 1.3052390600000001,
+        "observations": 5,
+        "sum": 6.5261953
+      },
+      "successful_first_valid_seconds": {
+        "mean": 1007.1511579031561,
+        "median": 1033.8437670166604,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 927486,
+        "cached_input_tokens": 16477522,
+        "input_tokens": 17424944,
+        "output_tokens": 179120,
+        "reasoning_output_tokens": 59216
+      },
+      "total_api_calls": 297,
+      "total_api_cost_usd": 7.445291399999999
+    },
+    "PML": {
+      "author_elapsed_seconds": {
+        "mean": 707.553231,
+        "median": 626.620555,
+        "sum": 3537.766155
+      },
+      "author_window": {
+        "ended_utc": "2026-09-20T16:38:42.972842+00:00",
+        "started_utc": "2026-09-20T07:24:28.961724+00:00",
+        "wall_seconds_including_inter_wave_and_inter_batch_gaps": 33254.011118
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_cost_to_first_valid_usd": {
+        "mean": 1.04927858,
+        "observations": 5,
+        "sum": 5.2463929
+      },
+      "successful_first_valid_seconds": {
+        "mean": 632.461083553321,
+        "median": 543.992966044927,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 878878,
+        "cached_input_tokens": 9802509,
+        "input_tokens": 10693636,
+        "output_tokens": 155000,
+        "reasoning_output_tokens": 46668
+      },
+      "total_api_calls": 183,
+      "total_api_cost_usd": 5.7321948
+    },
+    "PML-FileOracle": {
+      "author_elapsed_seconds": {
+        "mean": 637.7234496,
+        "median": 584.729635,
+        "sum": 3188.617248
+      },
+      "author_window": {
+        "ended_utc": "2026-09-20T16:37:26.463542+00:00",
+        "started_utc": "2026-09-20T07:23:48.932940+00:00",
+        "wall_seconds_including_inter_wave_and_inter_batch_gaps": 33217.530602
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_cost_to_first_valid_usd": {
+        "mean": 0.6919299,
+        "observations": 5,
+        "sum": 3.4596495
+      },
+      "successful_first_valid_seconds": {
+        "mean": 585.917953003943,
+        "median": 531.3123981487006,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 400370,
+        "cached_input_tokens": 8206597,
+        "input_tokens": 8617167,
+        "output_tokens": 120746,
+        "reasoning_output_tokens": 39192
+      },
+      "total_api_calls": 150,
+      "total_api_cost_usd": 3.8701043999999993
+    }
+  },
+  "campaign": "stage3-case017-delta-v1-five-run-combined",
+  "decision_note": "The user requested three additional independent runs per arm after the Case 017 r1-r2 results were available. Five-run summaries are therefore descriptive and must not be presented as a preregistered fixed-sample analysis.",
+  "decision_timing": "after_r1_r2_results_observed",
+  "evidence": {
+    "continuation_results_summary_sha256": "279605de5d511e5df3938704836545c106939b0c9887c8c81396a618f34b0119",
+    "continuation_source_manifest_sha256": "ef521fed73956d540144a571f42e8e59eeacf515ecbee910da4263df6dd855ad",
+    "parent_results_summary_sha256": "3e76f0b488574ecef937ed15195834a241881b82db312374d4cddc5ba8510f65",
+    "parent_source_manifest_sha256": "063d42018c015443a10fdd35d6f992a81a9c5e4e6c991ba47343db38f9ed3136",
+    "scientific_protocol_identical_between_batches": true,
+    "templates_byte_identical_between_batches": true
+  },
+  "generated_utc": "2026-09-20T11:49:09.848790-05:00",
+  "interpretation": "Descriptive five-run summary; r3-r5 were requested after r1-r2 results were observed.",
+  "notes": {
+    "author_window": "Includes scheduler gaps between waves and the gap between the two-run and three-run batches; not an arm-efficiency endpoint.",
+    "primary_correctness": "Independent Lean validation only; no reviewer was run.",
+    "token_usage": "Full-run Codex usage observations; reasoning_output_tokens are a subset of output_tokens."
+  },
+  "overall": {
+    "author_elapsed_seconds": {
+      "mean": 807.3980439333333,
+      "median": 724.269899,
+      "sum": 12110.970658999999
+    },
+    "author_window": {
+      "ended_utc": "2026-09-20T16:43:45.139437+00:00",
+      "started_utc": "2026-09-20T07:19:46.394603+00:00",
+      "wall_seconds_including_inter_wave_and_inter_batch_gaps": 33838.744834
+    },
+    "primary_success_rate": 1.0,
+    "primary_successes": 15,
+    "runs": 15,
+    "successful_cost_to_first_valid_usd": {
+      "mean": 1.0154825133333332,
+      "observations": 15,
+      "sum": 15.232237699999999
+    },
+    "successful_first_valid_seconds": {
+      "mean": 741.8433981534733,
+      "median": 663.9651976511814,
+      "observations": 15
+    },
+    "tokens": {
+      "cache_write_input_tokens": 2206734,
+      "cached_input_tokens": 34486628,
+      "input_tokens": 36735747,
+      "output_tokens": 454866,
+      "reasoning_output_tokens": 145076
+    },
+    "total_api_calls": 630,
+    "total_api_cost_usd": 17.047590599999996
+  },
+  "reviewer_submitted": false,
+  "runs": [
+    {
+      "api_calls_to_first_valid": 90,
+      "api_cost_usd_to_first_valid": 2.0408284999999995,
+      "arm": "P",
+      "author_elapsed_seconds": 1424.993864,
+      "author_ended_utc": "2026-09-20T07:43:31.782974+00:00",
+      "author_started_utc": "2026-09-20T07:19:46.394603+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 106
+      },
+      "run_id": "p_case017_delta_v1_r1",
+      "seconds_to_first_valid": 1319.4009117097594,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 106,
+      "total_api_cost_usd": 2.2883260999999986,
+      "usage": {
+        "cache_write_input_tokens": 249175,
+        "cached_input_tokens": 6124163,
+        "input_tokens": 6380481,
+        "output_tokens": 42627,
+        "reasoning_output_tokens": 13745
+      },
+      "validation_sha256": "c25f4880ece97687d964db4be391dfe9f9ce790051a573887072701adcfab25d"
+    },
+    {
+      "api_calls_to_first_valid": 35,
+      "api_cost_usd_to_first_valid": 0.9333339000000002,
+      "arm": "P",
+      "author_elapsed_seconds": 724.269899,
+      "author_ended_utc": "2026-09-20T09:18:51.698266+00:00",
+      "author_started_utc": "2026-09-20T09:06:47.215694+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 38
+      },
+      "run_id": "p_case017_delta_v1_r2",
+      "seconds_to_first_valid": 684.1434620430082,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 38,
+      "total_api_cost_usd": 1.0003494000000002,
+      "usage": {
+        "cache_write_input_tokens": 92976,
+        "cached_input_tokens": 2111957,
+        "input_tokens": 2207517,
+        "output_tokens": 34035,
+        "reasoning_output_tokens": 11607
+      },
+      "validation_sha256": "e3d1c0ccccdcab4bf759aab7147adae7db6555cca80cf2a9b4d5f71eb464f30a"
+    },
+    {
+      "api_calls_to_first_valid": 42,
+      "api_cost_usd_to_first_valid": 1.0638568999999998,
+      "arm": "P",
+      "author_elapsed_seconds": 1160.834273,
+      "author_ended_utc": "2026-09-20T15:14:03.671717+00:00",
+      "author_started_utc": "2026-09-20T14:54:42.716360+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 50
+      },
+      "run_id": "p_case017_delta_v1_r3",
+      "seconds_to_first_valid": 1061.006906313356,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 50,
+      "total_api_cost_usd": 1.3466521999999994,
+      "usage": {
+        "cache_write_input_tokens": 192432,
+        "cached_input_tokens": 2617161,
+        "input_tokens": 2812928,
+        "output_tokens": 33547,
+        "reasoning_output_tokens": 11894
+      },
+      "validation_sha256": "6f2d55dd4e7d1556156c5041e99c2d891ff946c08555ca21d6309262f026593e"
+    },
+    {
+      "api_calls_to_first_valid": 44,
+      "api_cost_usd_to_first_valid": 1.0736281000000003,
+      "arm": "P",
+      "author_elapsed_seconds": 1105.979415,
+      "author_ended_utc": "2026-09-20T16:16:11.116404+00:00",
+      "author_started_utc": "2026-09-20T15:57:44.982463+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 50
+      },
+      "run_id": "p_case017_delta_v1_r4",
+      "seconds_to_first_valid": 1033.8437670166604,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 50,
+      "total_api_cost_usd": 1.3681248000000001,
+      "usage": {
+        "cache_write_input_tokens": 187486,
+        "cached_input_tokens": 2743899,
+        "input_tokens": 2934720,
+        "output_tokens": 34396,
+        "reasoning_output_tokens": 12011
+      },
+      "validation_sha256": "4c99d7ab83a404b3789df9e1e543ea47b9a12f9c7d6e2949f4edaa31729f47ff"
+    },
+    {
+      "api_calls_to_first_valid": 50,
+      "api_cost_usd_to_first_valid": 1.4145479000000003,
+      "arm": "P",
+      "author_elapsed_seconds": 968.509805,
+      "author_ended_utc": "2026-09-20T16:43:45.139437+00:00",
+      "author_started_utc": "2026-09-20T16:27:36.535957+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 53
+      },
+      "run_id": "p_case017_delta_v1_r5",
+      "seconds_to_first_valid": 937.3607424329966,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 53,
+      "total_api_cost_usd": 1.4418389,
+      "usage": {
+        "cache_write_input_tokens": 205417,
+        "cached_input_tokens": 2880342,
+        "input_tokens": 3089298,
+        "output_tokens": 34515,
+        "reasoning_output_tokens": 9959
+      },
+      "validation_sha256": "bf4af8860a40490d2f3870a116442b55b5d7efd6a2d52125190a152ee5395d5f"
+    },
+    {
+      "api_calls_to_first_valid": 28,
+      "api_cost_usd_to_first_valid": 1.1069116,
+      "arm": "PML",
+      "author_elapsed_seconds": 612.968266,
+      "author_ended_utc": "2026-09-20T07:34:42.873972+00:00",
+      "author_started_utc": "2026-09-20T07:24:28.961724+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 36
+      },
+      "run_id": "pml_case017_delta_v1_r1",
+      "seconds_to_first_valid": 543.992966044927,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 36,
+      "total_api_cost_usd": 1.2230974999999997,
+      "usage": {
+        "cache_write_input_tokens": 227169,
+        "cached_input_tokens": 1582595,
+        "input_tokens": 1812147,
+        "output_tokens": 33389,
+        "reasoning_output_tokens": 10709
+      },
+      "validation_sha256": "c08fbc19b30a61b3ea7cc7ebe001dec75ab1a096327a57c4ed44b832745f33ef"
+    },
+    {
+      "api_calls_to_first_valid": 43,
+      "api_cost_usd_to_first_valid": 1.4735542,
+      "arm": "PML",
+      "author_elapsed_seconds": 715.782736,
+      "author_ended_utc": "2026-09-20T09:19:19.218912+00:00",
+      "author_started_utc": "2026-09-20T09:07:22.389772+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 49
+      },
+      "run_id": "pml_case017_delta_v1_r2",
+      "seconds_to_first_valid": 649.9496716210124,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 49,
+      "total_api_cost_usd": 1.5707569,
+      "usage": {
+        "cache_write_input_tokens": 242595,
+        "cached_input_tokens": 2916127,
+        "input_tokens": 3161989,
+        "output_tokens": 37451,
+        "reasoning_output_tokens": 10790
+      },
+      "validation_sha256": "6bd4ef927d7534bdfb10cb0a006f32da1ad3489f28e5113683890ca7d9cef8dd"
+    },
+    {
+      "api_calls_to_first_valid": 25,
+      "api_cost_usd_to_first_valid": 0.6950468000000001,
+      "arm": "PML",
+      "author_elapsed_seconds": 599.689883,
+      "author_ended_utc": "2026-09-20T15:05:12.252061+00:00",
+      "author_started_utc": "2026-09-20T14:55:11.932607+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 31
+      },
+      "run_id": "pml_case017_delta_v1_r3",
+      "seconds_to_first_valid": 517.8897622167133,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 31,
+      "total_api_cost_usd": 0.8091308000000001,
+      "usage": {
+        "cache_write_input_tokens": 82134,
+        "cached_input_tokens": 1805599,
+        "input_tokens": 1889841,
+        "output_tokens": 23846,
+        "reasoning_output_tokens": 7911
+      },
+      "validation_sha256": "1aa9d661f0b54a5de561e646ca6b4a8eef72c457d6bfad4c2fa64b5ac5183a90"
+    },
+    {
+      "api_calls_to_first_valid": 41,
+      "api_cost_usd_to_first_valid": 1.3205417000000002,
+      "arm": "PML",
+      "author_elapsed_seconds": 982.704715,
+      "author_ended_utc": "2026-09-20T16:14:52.025319+00:00",
+      "author_started_utc": "2026-09-20T15:58:28.415851+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 44
+      },
+      "run_id": "pml_case017_delta_v1_r4",
+      "seconds_to_first_valid": 911.4431385030039,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 44,
+      "total_api_cost_usd": 1.3670277000000002,
+      "usage": {
+        "cache_write_input_tokens": 234411,
+        "cached_input_tokens": 2093481,
+        "input_tokens": 2330819,
+        "output_tokens": 35645,
+        "reasoning_output_tokens": 9822
+      },
+      "validation_sha256": "6e2ebc72bfce08065b5b9d576523800c68a5154c491b022311e6445750377633"
+    },
+    {
+      "api_calls_to_first_valid": 18,
+      "api_cost_usd_to_first_valid": 0.6503386,
+      "arm": "PML",
+      "author_elapsed_seconds": 626.620555,
+      "author_ended_utc": "2026-09-20T16:38:42.972842+00:00",
+      "author_started_utc": "2026-09-20T16:28:15.505679+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 23
+      },
+      "run_id": "pml_case017_delta_v1_r5",
+      "seconds_to_first_valid": 539.0298793809488,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 23,
+      "total_api_cost_usd": 0.7621819000000002,
+      "usage": {
+        "cache_write_input_tokens": 92569,
+        "cached_input_tokens": 1404707,
+        "input_tokens": 1498840,
+        "output_tokens": 24669,
+        "reasoning_output_tokens": 7436
+      },
+      "validation_sha256": "96fb3a72bb81e032733e334906fcdb0600428ce0c5bffcc926524ca4cf2d978b"
+    },
+    {
+      "api_calls_to_first_valid": 30,
+      "api_cost_usd_to_first_valid": 0.6831735999999998,
+      "arm": "PML-FileOracle",
+      "author_elapsed_seconds": 576.856809,
+      "author_ended_utc": "2026-09-20T07:33:26.006895+00:00",
+      "author_started_utc": "2026-09-20T07:23:48.932940+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 36
+      },
+      "run_id": "file_oracle_case017_delta_v1_r1",
+      "seconds_to_first_valid": 524.9908442399465,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 36,
+      "total_api_cost_usd": 0.7956051999999998,
+      "usage": {
+        "cache_write_input_tokens": 76560,
+        "cached_input_tokens": 1884696,
+        "input_tokens": 1963704,
+        "output_tokens": 22237,
+        "reasoning_output_tokens": 6831
+      },
+      "validation_sha256": "147ac4804eda13ac902d4b88214295f7ed9cbb15ebcbbce6a8e41beab6a675be"
+    },
+    {
+      "api_calls_to_first_valid": 26,
+      "api_cost_usd_to_first_valid": 0.7334879999999999,
+      "arm": "PML-FileOracle",
+      "author_elapsed_seconds": 737.648172,
+      "author_ended_utc": "2026-09-20T09:19:06.284747+00:00",
+      "author_started_utc": "2026-09-20T09:06:48.350937+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 30
+      },
+      "run_id": "file_oracle_case017_delta_v1_r2",
+      "seconds_to_first_valid": 663.9651976511814,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1",
+      "total_api_calls": 30,
+      "total_api_cost_usd": 0.8099523999999999,
+      "usage": {
+        "cache_write_input_tokens": 81392,
+        "cached_input_tokens": 1707162,
+        "input_tokens": 1790594,
+        "output_tokens": 26096,
+        "reasoning_output_tokens": 9286
+      },
+      "validation_sha256": "682759ae1b59ecfe23e71a30145c7292e94fc0410206cb7705dbff520df7da41"
+    },
+    {
+      "api_calls_to_first_valid": 23,
+      "api_cost_usd_to_first_valid": 0.6680008000000001,
+      "arm": "PML-FileOracle",
+      "author_elapsed_seconds": 494.989682,
+      "author_ended_utc": "2026-09-20T15:02:57.306024+00:00",
+      "author_started_utc": "2026-09-20T14:54:42.171775+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 26
+      },
+      "run_id": "file_oracle_case017_delta_v1_r3",
+      "seconds_to_first_valid": 463.081827302929,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 26,
+      "total_api_cost_usd": 0.7312604,
+      "usage": {
+        "cache_write_input_tokens": 82334,
+        "cached_input_tokens": 1424147,
+        "input_tokens": 1508249,
+        "output_tokens": 23706,
+        "reasoning_output_tokens": 6632
+      },
+      "validation_sha256": "4fbaebc7397cdedfeb6e4e15ae7258bf86ff50656589156ca8d95c2143eeb532"
+    },
+    {
+      "api_calls_to_first_valid": 31,
+      "api_cost_usd_to_first_valid": 0.8217559999999998,
+      "arm": "PML-FileOracle",
+      "author_elapsed_seconds": 794.39295,
+      "author_ended_utc": "2026-09-20T16:11:01.322734+00:00",
+      "author_started_utc": "2026-09-20T15:57:46.786033+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 35
+      },
+      "run_id": "file_oracle_case017_delta_v1_r4",
+      "seconds_to_first_valid": 746.2394976769574,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 35,
+      "total_api_cost_usd": 0.9092705999999998,
+      "usage": {
+        "cache_write_input_tokens": 86612,
+        "cached_input_tokens": 2051503,
+        "input_tokens": 2140495,
+        "output_tokens": 27768,
+        "reasoning_output_tokens": 10671
+      },
+      "validation_sha256": "8c035223335233b205ff20db3fba0ec81bc742a20dd5ce7f052adf5c6f5089c3"
+    },
+    {
+      "api_calls_to_first_valid": 19,
+      "api_cost_usd_to_first_valid": 0.5532311000000001,
+      "arm": "PML-FileOracle",
+      "author_elapsed_seconds": 584.729635,
+      "author_ended_utc": "2026-09-20T16:37:26.463542+00:00",
+      "author_started_utc": "2026-09-20T16:27:41.505770+00:00",
+      "author_state": "FINISHED",
+      "primary_success": true,
+      "routing_providers": {
+        "OpenAI": 23
+      },
+      "run_id": "file_oracle_case017_delta_v1_r5",
+      "seconds_to_first_valid": 531.3123981487006,
+      "selected_checkpoint": "0001",
+      "source_campaign": "stage3-case017-delta-v1-r3-r5",
+      "total_api_calls": 23,
+      "total_api_cost_usd": 0.6240158,
+      "usage": {
+        "cache_write_input_tokens": 73472,
+        "cached_input_tokens": 1139089,
+        "input_tokens": 1214125,
+        "output_tokens": 20939,
+        "reasoning_output_tokens": 5772
+      },
+      "validation_sha256": "8e1ec5bc7ba076de6c1fdc84365917f8f1f2889eb93b84ed103658da374c1124"
+    }
+  ],
+  "schema_version": 1
+}

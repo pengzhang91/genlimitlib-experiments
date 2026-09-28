@@ -1,0 +1,27 @@
+{
+  "01_overlap.tex": {
+    "protected_blocks": 17,
+    "unchanged_from_audited_edition": true,
+    "sha256": "79ea7ff2544066f1c92946f45a1106a40be62e4a42f6178f46c9ac91ca03dcc8"
+  },
+  "02_gamma.tex": {
+    "protected_blocks": 14,
+    "unchanged_from_audited_edition": true,
+    "sha256": "0b8303142b5d8a5f29e0c035a36a5032b0485fa744c904704738151268133313"
+  },
+  "03_metric.tex": {
+    "protected_blocks": 14,
+    "unchanged_from_audited_edition": true,
+    "sha256": "40d60aa5dded78beddae5aa1d06c9a873c0fdf69091c2f06feef2ba6f9e32e2e"
+  },
+  "04_contrastive.tex": {
+    "protected_blocks": 9,
+    "unchanged_from_audited_edition": true,
+    "sha256": "b71ca18f3a6bd87a97caa33c90070ee3627441594cb181ecb69d5390fea39359"
+  },
+  "05_sparse_holes.tex": {
+    "protected_blocks": 8,
+    "unchanged_from_audited_edition": true,
+    "sha256": "4b2ef075932e2cfdd649c153bb3d04cecec7038af58282d7f51643d614a49b1d"
+  }
+}

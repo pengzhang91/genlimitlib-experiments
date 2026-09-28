@@ -1,0 +1,204 @@
+{
+  "author_lean_size": {
+    "bytes": 34001,
+    "files": 12,
+    "lines": 807,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 967.01639,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 60,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 60
+      },
+      "total_upstream_usd": 1.4637682999999995,
+      "unverifiable": 0
+    },
+    "run_id": "p_case017_nocanonical_reasoning_medium_v1_r3",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "6333592c80cb13071b98b6f02aceb94977821e7fa274968d6d1d15547f3e8f87",
+      "within_word_limit": true,
+      "words": 76
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 29710,
+    "files": 1,
+    "lines": 659,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 935.2669193451293,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2"
+      },
+      "source_hashes": {
+        "AnalyticChecks.lean": "abf8ca90501b70149edeb9f02cc09e83992391abb4c084ec3d41d4cad71455e0",
+        "AnalyticChecks2.lean": "f1e1d2540ecbc1a3490f40ed46e47b68de1bf1957690f1a7cafa46496b1a50d1",
+        "BoundChecks.lean": "6207618963aa0d0423c5bf3fd6df39013cb7c4853905d0be5001c9a0e7e49ec2",
+        "CardChecks.lean": "838461814fc3d1cb29995b2db13b15b4b233aa3284ce55a321bf498f7b40a75c",
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2",
+        "Check.lean": "0c0d51de6996d0c16fa37c66a86fd687eec3839ad12862758e0c483d646f7cc8",
+        "Checks.lean": "c0d6c4a407531ea3a3581a527ae757a6fb8abe9e0703abbf947a1bdc0b74c5e5",
+        "DivChecks.lean": "fb676db347836e78f590c2ce159fe72b5532eb3dc7322f08e5ffce76378c76dd",
+        "EraseChecks.lean": "fd1cf02780c49c2872aad85597ab0e3c3e5c647bd4a7920b8ddeb0665c12d1a9",
+        "Explore.lean": "e68f44f8f700b71e19fd911541b1650c616dcb0dfc32669c47d946a4121dc5fd",
+        "MinChecks.lean": "6fa41a46559d5cd691db2f6033b1e8aafec9dabbae59df3384665b403e6132a7",
+        "WF.lean": "c22c6a2e058df0e7973e2f2159fe9e5ad38ccc73879f097a4899beba8456a918"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 960.0817859424278,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2"
+      },
+      "source_hashes": {
+        "AnalyticChecks.lean": "abf8ca90501b70149edeb9f02cc09e83992391abb4c084ec3d41d4cad71455e0",
+        "AnalyticChecks2.lean": "f1e1d2540ecbc1a3490f40ed46e47b68de1bf1957690f1a7cafa46496b1a50d1",
+        "BoundChecks.lean": "6207618963aa0d0423c5bf3fd6df39013cb7c4853905d0be5001c9a0e7e49ec2",
+        "CardChecks.lean": "838461814fc3d1cb29995b2db13b15b4b233aa3284ce55a321bf498f7b40a75c",
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2",
+        "Check.lean": "0c0d51de6996d0c16fa37c66a86fd687eec3839ad12862758e0c483d646f7cc8",
+        "Checks.lean": "c0d6c4a407531ea3a3581a527ae757a6fb8abe9e0703abbf947a1bdc0b74c5e5",
+        "DivChecks.lean": "fb676db347836e78f590c2ce159fe72b5532eb3dc7322f08e5ffce76378c76dd",
+        "EraseChecks.lean": "fd1cf02780c49c2872aad85597ab0e3c3e5c647bd4a7920b8ddeb0665c12d1a9",
+        "Explore.lean": "e68f44f8f700b71e19fd911541b1650c616dcb0dfc32669c47d946a4121dc5fd",
+        "MinChecks.lean": "6fa41a46559d5cd691db2f6033b1e8aafec9dabbae59df3384665b403e6132a7",
+        "WF.lean": "c22c6a2e058df0e7973e2f2159fe9e5ad38ccc73879f097a4899beba8456a918"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 967.01639,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2"
+      },
+      "source_hashes": {
+        "AnalyticChecks.lean": "abf8ca90501b70149edeb9f02cc09e83992391abb4c084ec3d41d4cad71455e0",
+        "AnalyticChecks2.lean": "f1e1d2540ecbc1a3490f40ed46e47b68de1bf1957690f1a7cafa46496b1a50d1",
+        "BoundChecks.lean": "6207618963aa0d0423c5bf3fd6df39013cb7c4853905d0be5001c9a0e7e49ec2",
+        "CardChecks.lean": "838461814fc3d1cb29995b2db13b15b4b233aa3284ce55a321bf498f7b40a75c",
+        "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2",
+        "Check.lean": "0c0d51de6996d0c16fa37c66a86fd687eec3839ad12862758e0c483d646f7cc8",
+        "Checks.lean": "c0d6c4a407531ea3a3581a527ae757a6fb8abe9e0703abbf947a1bdc0b74c5e5",
+        "DivChecks.lean": "fb676db347836e78f590c2ce159fe72b5532eb3dc7322f08e5ffce76378c76dd",
+        "EraseChecks.lean": "fd1cf02780c49c2872aad85597ab0e3c3e5c647bd4a7920b8ddeb0665c12d1a9",
+        "Explore.lean": "e68f44f8f700b71e19fd911541b1650c616dcb0dfc32669c47d946a4121dc5fd",
+        "MinChecks.lean": "6fa41a46559d5cd691db2f6033b1e8aafec9dabbae59df3384665b403e6132a7",
+        "WF.lean": "c22c6a2e058df0e7973e2f2159fe9e5ad38ccc73879f097a4899beba8456a918"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 39,
+    "failed_checker_command_events_to_first_pass": 27,
+    "first_valid_observed_pass_seconds": 935.2669193451293,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 966.6122214230709,
+        "usage": {
+          "cache_write_input_tokens": 210477,
+          "cached_input_tokens": 2786429,
+          "input_tokens": 3000921,
+          "output_tokens": 37226,
+          "reasoning_output_tokens": 9803
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "p_case017_nocanonical_reasoning_medium_v1_r3",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

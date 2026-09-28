@@ -1,0 +1,16 @@
+import Separation
+#check Set.Infinite.preimage
+#check Set.Finite.image
+#check Set.Infinite.mono
+#check Set.infinite_range_of_injective
+#check Function.Surjective.infinite_preimage
+#check Filter.liminf_le_liminf
+#check Filter.Tendsto.isBoundedUnder_ge
+#check isCoboundedUnder_ge_of_le
+#check GenLimit.PatientScope.prefixCount_le
+#check GenLimit.PatientScope.prefixCount_mono
+#check Nat.cast_div_le
+#check Nat.cast_sub
+#check Nat.cast_div
+#check Nat.div_le_iff_le_mul
+#check Nat.le_div_iff_mul_le

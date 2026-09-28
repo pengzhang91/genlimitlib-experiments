@@ -1,0 +1,11 @@
+import Stage3Model
+#check Nat.unpair
+#check Nat.pair
+#check Nat.pair_unpair
+#check Nat.unpair_pair
+#check Finset.card_filter_le_iff
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.bddAbove
+#check Set.Finite.toFinset
+#check Set.Finite.subset_bddAbove
+#check Set.Finite.exists_not_mem

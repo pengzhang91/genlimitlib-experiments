@@ -1,0 +1,12 @@
+import SeparationHelpers
+#check Set.countable_univ
+#check Set.countable_univ_iff
+#check Set.Finite.preimage
+#check Set.Finite.preimage_of_injOn
+#check Set.Finite.preimage_embedding
+#check Finset.finite_toSet
+#check GenLimit.NoiseLossFeedback.negativeCode_not_marker
+#check Set.disjoint_left
+#check Set.infinite_range_of_injective
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower
+#check GenLimit.NoiseLossFeedback.CorrectAt

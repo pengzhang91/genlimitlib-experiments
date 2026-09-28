@@ -1,0 +1,36 @@
+{
+  "arm": "P",
+  "attempt_id": "p_s2b_nocanonical_v1_r4",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_s2b_nocanonical_v1_r4",
+  "final_output_files": 4,
+  "formal_run_id": "p_s2b_nocanonical_v1_r4",
+  "lean_success": false,
+  "original_validation_primary_success": false,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 4,
+  "schema_version": 1,
+  "selected_checkpoint": null,
+  "selected_checkpoint_metadata": [],
+  "selected_proof_files": 0,
+  "source_bundle": "lean2paper_s2b_nocanonical_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/p/logs/p_s2b_nocanonical_v1_r4/proxy_requests.jsonl",
+      "sha256": "a81aee3f7c68c35bdf0352b7674e5270e408eecf55d9cec3b409d1f0a9e1661a"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/p/logs/p_s2b_nocanonical_v1_r4/ROUTING_AUDIT.json",
+      "sha256": "d9476b01258342ecc6e80136ea2a0e0044d904e0cc458f9195a142a57a463d4a"
+    },
+    "status": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/p/logs/p_s2b_nocanonical_v1_r4/STATUS.json",
+      "sha256": "f8a52d113a671962b02786e3fb6e610b06b1c90fd86b07ed3871f59ae4eebdd9"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_nocanonical_v1_r3r5/cohort/arms/p/results/p_s2b_nocanonical_v1_r4/VALIDATION.json",
+      "sha256": "2af2e88601f8fad0e528de7116d450286555bf5d1f7db0b7ae349471ab0145db"
+    }
+  },
+  "task": "s2b"
+}

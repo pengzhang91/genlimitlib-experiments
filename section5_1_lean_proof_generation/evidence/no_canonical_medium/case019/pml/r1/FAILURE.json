@@ -1,0 +1,55 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 2318.432564,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case019Formalization.lean": "d86026e7d2adecdaeba67f7f6ac5226cac0d142bd47e5daa9865a31b4e112eaf",
+      "CountableClause.lean": "d7f2781ea2cd990ce1d08e9c8d1b62ebbe88105ad1872976286839c037210381",
+      "CountablePartial.lean": "65d1310dd6a5216f208e3d816e5170f683194791426ebb416c62b96e1e6acbf6",
+      "DensityTransfer.lean": "b4adf87b86e706c325be6d68db23b5dff3e2a42a3c2cf42189359742537f70ca",
+      "Helpers.lean": "606409ac4c33b1204e3f695ccd39c8af75536b813d673da4a6bbbf315ed086ca",
+      "PatientAdapter.lean": "10b7a0c54d975664fc3b621dde27508bdb8bbc050aa5c1a7297666b1d189b6b8",
+      "SeparationPartial.lean": "e86db0cfbd41b21c7bc6e87b73b43bd9b0b0d4831383e9f6c0b26dd27fccaa74"
+    },
+    "source_hashes": {
+      "Case019Formalization.lean": "d86026e7d2adecdaeba67f7f6ac5226cac0d142bd47e5daa9865a31b4e112eaf",
+      "Check.lean": "7960cc79d73194638f6970952439e2cef3310bc2843731ae62a712a1e6156c0b",
+      "CountableClause.lean": "d7f2781ea2cd990ce1d08e9c8d1b62ebbe88105ad1872976286839c037210381",
+      "CountablePartial.lean": "65d1310dd6a5216f208e3d816e5170f683194791426ebb416c62b96e1e6acbf6",
+      "DensityTransfer.lean": "b4adf87b86e706c325be6d68db23b5dff3e2a42a3c2cf42189359742537f70ca",
+      "Helpers.lean": "606409ac4c33b1204e3f695ccd39c8af75536b813d673da4a6bbbf315ed086ca",
+      "PatientAdapter.lean": "10b7a0c54d975664fc3b621dde27508bdb8bbc050aa5c1a7297666b1d189b6b8",
+      "Probe.lean": "273b9e265de82ff89f7db357c8d549330a17b48e1183861749273336f18caa96",
+      "SeparationPartial.lean": "e86db0cfbd41b21c7bc6e87b73b43bd9b0b0d4831383e9f6c0b26dd27fccaa74"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

@@ -1,0 +1,13 @@
+import Stage3Model
+#check Filter.Eventually.forall_finset
+#check Filter.eventually_all
+#check Filter.eventually_atTop.2
+#check Filter.eventually_atTop.1
+#check Finset.eventually_all
+#check Set.not_subset
+#check Set.not_subset_iff_exists_mem_not_mem
+#check Set.Finite.exists_le
+#check Finset.max'
+#check Finset.max'_mem
+#check Finset.le_max'
+#check Set.Finite.bddAbove

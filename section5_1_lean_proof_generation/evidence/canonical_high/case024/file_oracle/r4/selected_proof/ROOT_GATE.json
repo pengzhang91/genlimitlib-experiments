@@ -1,0 +1,24 @@
+{
+  "target_kernel_pass": true,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "Case024Helpers.lean": "a7ce013ec7638f63935c6a33f5bbe120264846bf79167fe21dfa4f48ba123e81",
+    "Case024Formalization.lean": "a24a54813c3fa1905d11868edf55fbf442d3bb5a67604129bbb63d61896b9ada"
+  },
+  "exact_target_compile_exit": 0,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "stage3_result": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {},
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

@@ -1,0 +1,9 @@
+import Stage3Model
+import Mathlib.Tactic
+open Filter
+#check limsup_le_of_le
+#check Filter.Eventually.of_forall
+#check Set.ncard_eq_toFinset_card
+#check Set.Finite.ncard_eq_toFinset_card
+#check Set.Finite.toFinite
+#check Set.Finite.fintype

@@ -1,0 +1,11 @@
+import Stage3Model
+#check Set.Finite.of_finite_image
+#check Set.Finite.preimage
+#check Set.Finite.preimage_of_injOn
+#check Set.Finite.bddAbove
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.exists_le
+#check Set.Finite.image
+#check Set.Finite.subset
+#check Set.Finite.finset_bddAbove
+#check Set.Finite.isBoundedUnder_le

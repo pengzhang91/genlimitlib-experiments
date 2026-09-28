@@ -1,0 +1,26 @@
+import Mathlib
+open Filter
+open scoped Topology
+#check limsup_le_limsup
+#check limsup_le_of_le
+#check le_limsup_of_le
+#check limsup_const
+#check Filter.EventuallyLE
+#check isBoundedUnder_le
+#check isCoboundedUnder_le
+#check isBounded_le_def
+#check isCobounded_le_def
+#check Filter.Tendsto.limsup_eq
+#check tendsto_of_tendsto_of_tendsto_of_le_of_le'
+#check Finset.card_filter_le
+#check Set.Finite.subset
+#check Set.Finite.toFinset
+#check Set.finite_range_iff
+#check Set.range_comp
+#check Set.range_subset_iff
+#check MeasureTheory.integral_congr_ae
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integral_const
+#check MeasureTheory.integrable_const
+#check MeasureTheory.Integrable.integral_eq_zero
+#check MeasureTheory.Integrable.integral_eq_zero_of_ae

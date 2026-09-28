@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{result}{Theorem}
+\newtheorem{suppthm}{Theorem}[subsection]
+\newtheorem{supplem}[suppthm]{Lemma}
+\newtheorem{suppcor}[suppthm]{Corollary}
+\newtheorem{suppprop}[suppthm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{suppdef}[suppthm]{Definition}
+\theoremstyle{remark}
+\newtheorem{suppremark}[suppthm]{Remark}
+\theoremstyle{plain}
+\title{GenLimitLib: Theoretical Findings and Written Proofs}
+\author{}
+\date{September 25, 2026}
+\begin{document}
+\maketitle
+\setcounter{section}{3}
+\section{Theoretical Findings}
+\label{sec:our-results}
+We present three mathematical case studies developed while building and working
+with GenLimitLib: a proof repair, a characterization of proper generation
+under replay, and an exact mistake--convergence tradeoff for a special family.
+The appendix gives the research workflow and complete written proofs; the
+accompanying repository contains their Lean verification.
+\input{results_connections.tex}
+\input{results_math.tex}
+\appendix
+\input{appendix_proof_guide.tex}
+\input{appendix_replay.tex}
+\input{appendix_p29_frontier.tex}
+\bibliographystyle{plainnat}
+\bibliography{section4-references}
+\end{document}

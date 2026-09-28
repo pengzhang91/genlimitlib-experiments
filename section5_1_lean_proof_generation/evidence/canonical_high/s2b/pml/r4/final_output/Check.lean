@@ -1,0 +1,9 @@
+import Stage3Model
+#check dvd_pow
+#check dvd_pow_self
+#check Nat.dvd_pow
+#check Nat.two_dvd_ne_two_dvd_add_one
+#check Set.Infinite.exists_notMem_finset
+#check Finset.disjoint_left
+#check Fin.snoc_last
+#check Fin.snoc_castSucc

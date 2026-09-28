@@ -1,0 +1,4 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+#check Filter.isCoboundedUnder_ge_of_le
+#check Filter.isCoboundedUnder_le_of_le
+#check Filter.isCoboundedUnder_ge_of_ge

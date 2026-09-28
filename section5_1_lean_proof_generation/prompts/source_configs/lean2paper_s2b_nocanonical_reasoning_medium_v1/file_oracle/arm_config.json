@@ -1,0 +1,21 @@
+{
+  "cohort": "s2b_nocanonical_reasoning_medium_v1",
+  "condition": "PML-FileOracle",
+  "design_note": "Post-hoc file-oracle ceiling. Relative to the frozen PML packet, the author receives the same inputs except that the 161-file research library is replaced by the four-file source/import closure selected from the successful run_003_v3 proof, with matching compiled modules and a mechanically regenerated manifest. No declaration names, usage hints, proof order, or oracle declaration sheet are supplied.",
+  "research_modules": [
+    "GenLimit.Core.Basic",
+    "GenLimit.Core.OrderedDensity",
+    "GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality",
+    "GenLimit.Paper39_DenseGeneration.Abstract.Density"
+  ],
+  "run_ids": [
+    "file_oracle_s2b_nocanonical_reasoning_medium_v1_r1",
+    "file_oracle_s2b_nocanonical_reasoning_medium_v1_r2",
+    "file_oracle_s2b_nocanonical_reasoning_medium_v1_r3",
+    "file_oracle_s2b_nocanonical_reasoning_medium_v1_r4",
+    "file_oracle_s2b_nocanonical_reasoning_medium_v1_r5"
+  ],
+  "source_arm": "pml",
+  "source_run": "pml_s2b_nocanonical_reasoning_medium_v1_r1",
+  "source_template": "run_005_v1"
+}

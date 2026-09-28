@@ -1,0 +1,26 @@
+{
+  "target_kernel_pass": false,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "Greedy.lean": "454554df5dbb9442db22f40ff111cf8a81e7c70ab297cd34c1afcbb2c229f14f",
+    "Partial.lean": "8fe1923f46052a5fab7e678e00c1c0e560dd47498d2d7ae166540186a9ecf5fd",
+    "DensityPartial.lean": "aa2f9939fd2b4d2c5d5e6fc2ae9d71e80684147709d20dc9d2fb34d9665c213f",
+    "Case019Formalization.lean": "52cbdf9f281253589ee65a09aad896a048de14b6dc6241c86bd2ccdbe849b330"
+  },
+  "exact_target_compile_exit": 1,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {
+    "controller_exact_target": [
+      "sorryAx"
+    ]
+  },
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

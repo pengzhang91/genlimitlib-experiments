@@ -1,0 +1,509 @@
+{
+  "arms_per_task": 3,
+  "audited_utc": "2026-09-23T23:55:23.602346+00:00",
+  "bundles": [
+    {
+      "arms": [
+        {
+          "arm": "p",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 16
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "p_s2b_nocanonical_reasoning_medium_v1_r1",
+            "p_s2b_nocanonical_reasoning_medium_v1_r2",
+            "p_s2b_nocanonical_reasoning_medium_v1_r3",
+            "p_s2b_nocanonical_reasoning_medium_v1_r4",
+            "p_s2b_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "pml",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 186
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "pml_s2b_nocanonical_reasoning_medium_v1_r1",
+            "pml_s2b_nocanonical_reasoning_medium_v1_r2",
+            "pml_s2b_nocanonical_reasoning_medium_v1_r3",
+            "pml_s2b_nocanonical_reasoning_medium_v1_r4",
+            "pml_s2b_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "file_oracle",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 29
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "file_oracle_s2b_nocanonical_reasoning_medium_v1_r1",
+            "file_oracle_s2b_nocanonical_reasoning_medium_v1_r2",
+            "file_oracle_s2b_nocanonical_reasoning_medium_v1_r3",
+            "file_oracle_s2b_nocanonical_reasoning_medium_v1_r4",
+            "file_oracle_s2b_nocanonical_reasoning_medium_v1_r5"
+          ]
+        }
+      ],
+      "author_budget_seconds": 5400,
+      "bundle": "lean2paper_s2b_nocanonical_reasoning_medium_v1",
+      "canonical_medium_comparison": "lean2paper_s2b_reasoning_medium_v1",
+      "model_calls": 0,
+      "no_canonical_high_comparison": "lean2paper_s2b_nocanonical_v1",
+      "planned_runs": 15,
+      "reasoning_effort": "medium",
+      "replicates_per_arm": 5,
+      "slurm_author_walltime": "01:35:00",
+      "source_manifest_sha256": "c0962cf3fdf84f9b0675eb8182a31a68879caafab9dde042bab41ad0838a713e",
+      "state": "PASS",
+      "statement_hashes": {
+        "file_oracle": {
+          "stage3_model_sha256": "49f170fc96d31344042ae6132c5ab56988ec40543f8e88187111a77ff999f793",
+          "target_template_sha256": "6416d071d49a857464b81958621c0db8ecb7dc5f1d8fc8903a377039cab23844",
+          "theorem_statement_sha256": "23a36dd98c9f8ffccc7f9c99a818be8601b386bb3cd798d3c0589700270cdff7"
+        },
+        "p": {
+          "stage3_model_sha256": "49f170fc96d31344042ae6132c5ab56988ec40543f8e88187111a77ff999f793",
+          "target_template_sha256": "6416d071d49a857464b81958621c0db8ecb7dc5f1d8fc8903a377039cab23844",
+          "theorem_statement_sha256": "23a36dd98c9f8ffccc7f9c99a818be8601b386bb3cd798d3c0589700270cdff7"
+        },
+        "pml": {
+          "stage3_model_sha256": "49f170fc96d31344042ae6132c5ab56988ec40543f8e88187111a77ff999f793",
+          "target_template_sha256": "6416d071d49a857464b81958621c0db8ecb7dc5f1d8fc8903a377039cab23844",
+          "theorem_statement_sha256": "23a36dd98c9f8ffccc7f9c99a818be8601b386bb3cd798d3c0589700270cdff7"
+        }
+      }
+    },
+    {
+      "arms": [
+        {
+          "arm": "p",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 18
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "p_case017_nocanonical_reasoning_medium_v1_r1",
+            "p_case017_nocanonical_reasoning_medium_v1_r2",
+            "p_case017_nocanonical_reasoning_medium_v1_r3",
+            "p_case017_nocanonical_reasoning_medium_v1_r4",
+            "p_case017_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "pml",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 186
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "pml_case017_nocanonical_reasoning_medium_v1_r1",
+            "pml_case017_nocanonical_reasoning_medium_v1_r2",
+            "pml_case017_nocanonical_reasoning_medium_v1_r3",
+            "pml_case017_nocanonical_reasoning_medium_v1_r4",
+            "pml_case017_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "file_oracle",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 35
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "file_oracle_case017_nocanonical_reasoning_medium_v1_r1",
+            "file_oracle_case017_nocanonical_reasoning_medium_v1_r2",
+            "file_oracle_case017_nocanonical_reasoning_medium_v1_r3",
+            "file_oracle_case017_nocanonical_reasoning_medium_v1_r4",
+            "file_oracle_case017_nocanonical_reasoning_medium_v1_r5"
+          ]
+        }
+      ],
+      "author_budget_seconds": 5400,
+      "bundle": "lean2paper_case017_nocanonical_reasoning_medium_v1",
+      "canonical_medium_comparison": "lean2paper_case017_reasoning_medium_v1",
+      "model_calls": 0,
+      "no_canonical_high_comparison": "lean2paper_case017_nocanonical_v1",
+      "planned_runs": 15,
+      "reasoning_effort": "medium",
+      "replicates_per_arm": 5,
+      "slurm_author_walltime": "01:35:00",
+      "source_manifest_sha256": "a177253f5d186b7f6717aa24d3ff1dc6769e2cbb33ade160301be694d440a793",
+      "state": "PASS",
+      "statement_hashes": {
+        "file_oracle": {
+          "stage3_model_sha256": "46d845fdc7580f4925043a06c5744d6a83de5d8f478c868d31eda06ae6bcdbcf",
+          "target_template_sha256": "6d20091dd811b3eb7b09c1a216defc2ec9cb83686a55f592c84e8dede9b6aeca",
+          "theorem_statement_sha256": "8cb1b320626596f9b4122a493d8fccfaea6019662666969a09aed1bcd274f052"
+        },
+        "p": {
+          "stage3_model_sha256": "46d845fdc7580f4925043a06c5744d6a83de5d8f478c868d31eda06ae6bcdbcf",
+          "target_template_sha256": "6d20091dd811b3eb7b09c1a216defc2ec9cb83686a55f592c84e8dede9b6aeca",
+          "theorem_statement_sha256": "8cb1b320626596f9b4122a493d8fccfaea6019662666969a09aed1bcd274f052"
+        },
+        "pml": {
+          "stage3_model_sha256": "46d845fdc7580f4925043a06c5744d6a83de5d8f478c868d31eda06ae6bcdbcf",
+          "target_template_sha256": "6d20091dd811b3eb7b09c1a216defc2ec9cb83686a55f592c84e8dede9b6aeca",
+          "theorem_statement_sha256": "8cb1b320626596f9b4122a493d8fccfaea6019662666969a09aed1bcd274f052"
+        }
+      }
+    },
+    {
+      "arms": [
+        {
+          "arm": "p",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 18
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "p_case019_nocanonical_reasoning_medium_v1_r1",
+            "p_case019_nocanonical_reasoning_medium_v1_r2",
+            "p_case019_nocanonical_reasoning_medium_v1_r3",
+            "p_case019_nocanonical_reasoning_medium_v1_r4",
+            "p_case019_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "pml",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 186
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "pml_case019_nocanonical_reasoning_medium_v1_r1",
+            "pml_case019_nocanonical_reasoning_medium_v1_r2",
+            "pml_case019_nocanonical_reasoning_medium_v1_r3",
+            "pml_case019_nocanonical_reasoning_medium_v1_r4",
+            "pml_case019_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "file_oracle",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 84
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "file_oracle_case019_nocanonical_reasoning_medium_v1_r1",
+            "file_oracle_case019_nocanonical_reasoning_medium_v1_r2",
+            "file_oracle_case019_nocanonical_reasoning_medium_v1_r3",
+            "file_oracle_case019_nocanonical_reasoning_medium_v1_r4",
+            "file_oracle_case019_nocanonical_reasoning_medium_v1_r5"
+          ]
+        }
+      ],
+      "author_budget_seconds": 5400,
+      "bundle": "lean2paper_case019_nocanonical_reasoning_medium_v1",
+      "canonical_medium_comparison": "lean2paper_case019_reasoning_medium_v1",
+      "model_calls": 0,
+      "no_canonical_high_comparison": "lean2paper_case019_nocanonical_v1",
+      "planned_runs": 15,
+      "reasoning_effort": "medium",
+      "replicates_per_arm": 5,
+      "slurm_author_walltime": "01:35:00",
+      "source_manifest_sha256": "6b6208e9a34d2915aaaa1f93b9c4b6b26e6be86d1c11359e70a4118143c80d1b",
+      "state": "PASS",
+      "statement_hashes": {
+        "file_oracle": {
+          "stage3_model_sha256": "575d5ec593adda0021118eeef9a80a3285721067c956bb5e190906d733727d5f",
+          "target_template_sha256": "32e980349b3c3e2234fe058669ac931fa0be469cbffe5b7c610df9ef7865c7bf",
+          "theorem_statement_sha256": "5597601556bfba01df654ae737fa75b20340f5b062ffed99a05e0df0ae49be75"
+        },
+        "p": {
+          "stage3_model_sha256": "575d5ec593adda0021118eeef9a80a3285721067c956bb5e190906d733727d5f",
+          "target_template_sha256": "32e980349b3c3e2234fe058669ac931fa0be469cbffe5b7c610df9ef7865c7bf",
+          "theorem_statement_sha256": "5597601556bfba01df654ae737fa75b20340f5b062ffed99a05e0df0ae49be75"
+        },
+        "pml": {
+          "stage3_model_sha256": "575d5ec593adda0021118eeef9a80a3285721067c956bb5e190906d733727d5f",
+          "target_template_sha256": "32e980349b3c3e2234fe058669ac931fa0be469cbffe5b7c610df9ef7865c7bf",
+          "theorem_statement_sha256": "5597601556bfba01df654ae737fa75b20340f5b062ffed99a05e0df0ae49be75"
+        }
+      }
+    },
+    {
+      "arms": [
+        {
+          "arm": "p",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 16
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "p_case024_nocanonical_reasoning_medium_v1_r1",
+            "p_case024_nocanonical_reasoning_medium_v1_r2",
+            "p_case024_nocanonical_reasoning_medium_v1_r3",
+            "p_case024_nocanonical_reasoning_medium_v1_r4",
+            "p_case024_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "pml",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 186
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "pml_case024_nocanonical_reasoning_medium_v1_r1",
+            "pml_case024_nocanonical_reasoning_medium_v1_r2",
+            "pml_case024_nocanonical_reasoning_medium_v1_r3",
+            "pml_case024_nocanonical_reasoning_medium_v1_r4",
+            "pml_case024_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "file_oracle",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 38
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "file_oracle_case024_nocanonical_reasoning_medium_v1_r1",
+            "file_oracle_case024_nocanonical_reasoning_medium_v1_r2",
+            "file_oracle_case024_nocanonical_reasoning_medium_v1_r3",
+            "file_oracle_case024_nocanonical_reasoning_medium_v1_r4",
+            "file_oracle_case024_nocanonical_reasoning_medium_v1_r5"
+          ]
+        }
+      ],
+      "author_budget_seconds": 5400,
+      "bundle": "lean2paper_case024_nocanonical_reasoning_medium_v1",
+      "canonical_medium_comparison": "lean2paper_case024_reasoning_medium_v1",
+      "model_calls": 0,
+      "no_canonical_high_comparison": "lean2paper_case024_nocanonical_v1",
+      "planned_runs": 15,
+      "reasoning_effort": "medium",
+      "replicates_per_arm": 5,
+      "slurm_author_walltime": "01:35:00",
+      "source_manifest_sha256": "22db0bf1b9093ff0021ad22b9d940c90d2d1eccef7848cfaa3eb29ed5cb0969b",
+      "state": "PASS",
+      "statement_hashes": {
+        "file_oracle": {
+          "stage3_model_sha256": "c4536ed9d16c7f65479a5d3a68b8af160235822b6ee39e1bfa8ec5821b267c4f",
+          "target_template_sha256": "a6199e98bb077632d05c6f7fe3d43ea9bde3f324e9821369e4db85fece7e0783",
+          "theorem_statement_sha256": "cb9e13bb9f80719bbd2b4f83a6b66a789e0a6489f96272e103e7f6ae57ca1d4d"
+        },
+        "p": {
+          "stage3_model_sha256": "c4536ed9d16c7f65479a5d3a68b8af160235822b6ee39e1bfa8ec5821b267c4f",
+          "target_template_sha256": "a6199e98bb077632d05c6f7fe3d43ea9bde3f324e9821369e4db85fece7e0783",
+          "theorem_statement_sha256": "cb9e13bb9f80719bbd2b4f83a6b66a789e0a6489f96272e103e7f6ae57ca1d4d"
+        },
+        "pml": {
+          "stage3_model_sha256": "c4536ed9d16c7f65479a5d3a68b8af160235822b6ee39e1bfa8ec5821b267c4f",
+          "target_template_sha256": "a6199e98bb077632d05c6f7fe3d43ea9bde3f324e9821369e4db85fece7e0783",
+          "theorem_statement_sha256": "cb9e13bb9f80719bbd2b4f83a6b66a789e0a6489f96272e103e7f6ae57ca1d4d"
+        }
+      }
+    },
+    {
+      "arms": [
+        {
+          "arm": "p",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md",
+              "THEOREM_STATEMENT.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 17
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "p_case025_nocanonical_reasoning_medium_v1_r1",
+            "p_case025_nocanonical_reasoning_medium_v1_r2",
+            "p_case025_nocanonical_reasoning_medium_v1_r3",
+            "p_case025_nocanonical_reasoning_medium_v1_r4",
+            "p_case025_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "pml",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md",
+              "THEOREM_STATEMENT.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 185
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "pml_case025_nocanonical_reasoning_medium_v1_r1",
+            "pml_case025_nocanonical_reasoning_medium_v1_r2",
+            "pml_case025_nocanonical_reasoning_medium_v1_r3",
+            "pml_case025_nocanonical_reasoning_medium_v1_r4",
+            "pml_case025_nocanonical_reasoning_medium_v1_r5"
+          ]
+        },
+        {
+          "arm": "file_oracle",
+          "canonical_medium_delta": {
+            "added": [],
+            "changed_only_to_remove_proof_cues": [
+              "SOURCE_CONFIG.md",
+              "TASK_STAGE3.md",
+              "THEOREM_STATEMENT.md"
+            ],
+            "removed": [
+              "CANONICAL_FULL_PROOF.md"
+            ],
+            "unchanged_scientific_input_files": 68
+          },
+          "high_no_canonical_scientific_inputs_byte_identical": true,
+          "run_ids": [
+            "file_oracle_case025_nocanonical_reasoning_medium_v1_r1",
+            "file_oracle_case025_nocanonical_reasoning_medium_v1_r2",
+            "file_oracle_case025_nocanonical_reasoning_medium_v1_r3",
+            "file_oracle_case025_nocanonical_reasoning_medium_v1_r4",
+            "file_oracle_case025_nocanonical_reasoning_medium_v1_r5"
+          ]
+        }
+      ],
+      "author_budget_seconds": 5400,
+      "bundle": "lean2paper_case025_nocanonical_reasoning_medium_v1",
+      "canonical_medium_comparison": "lean2paper_case025_reasoning_medium_v1",
+      "model_calls": 0,
+      "no_canonical_high_comparison": "lean2paper_case025_nocanonical_v1",
+      "planned_runs": 15,
+      "reasoning_effort": "medium",
+      "replicates_per_arm": 5,
+      "slurm_author_walltime": "01:35:00",
+      "source_manifest_sha256": "f9c666470d90c930c8cc5a6536ce10f81e68160d60a004a567ba991d8b8a66df",
+      "state": "PASS",
+      "statement_hashes": {
+        "file_oracle": {
+          "stage3_model_sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941",
+          "target_template_sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79",
+          "theorem_statement_sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+        },
+        "p": {
+          "stage3_model_sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941",
+          "target_template_sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79",
+          "theorem_statement_sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+        },
+        "pml": {
+          "stage3_model_sha256": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941",
+          "target_template_sha256": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79",
+          "theorem_statement_sha256": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd"
+        }
+      }
+    }
+  ],
+  "factorial_cell": {
+    "canonical_full_proof": "absent",
+    "reasoning_effort": "medium"
+  },
+  "model_calls": 0,
+  "planned_author_runs": 75,
+  "replicates_per_arm": 5,
+  "schema": "lean2paper.no-canonical-reasoning-medium.source-audit.v1",
+  "state": "PASS",
+  "tasks": 5
+}

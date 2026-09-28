@@ -1,0 +1,36 @@
+{
+  "arm": "PML-FileOracle",
+  "attempt_id": "file_oracle_case019_nocanonical_reasoning_medium_v1_r2",
+  "condition": "no_canonical_medium",
+  "evidence_directory_run_id": "file_oracle_case019_nocanonical_reasoning_medium_v1_r2",
+  "final_output_files": 7,
+  "formal_run_id": "file_oracle_case019_nocanonical_reasoning_medium_v1_r2",
+  "lean_success": false,
+  "original_validation_primary_success": false,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": null,
+  "selected_checkpoint_metadata": [],
+  "selected_proof_files": 0,
+  "source_bundle": "lean2paper_case019_nocanonical_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case019_nocanonical_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_reasoning_medium_v1_r2/proxy_requests.jsonl",
+      "sha256": "150eb081aebee1389757a1fbef7f813febeb8cd5a105ad540e1f9670ce91c670"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case019_nocanonical_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_reasoning_medium_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "7ebceede1e2988339d3ba8537d398a5decf99531966d8f0bf9c44bafe7c1d9b7"
+    },
+    "status": {
+      "path": "lean2paper_case019_nocanonical_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_reasoning_medium_v1_r2/STATUS.json",
+      "sha256": "3221f628158585564d53fe19d635c5abc7eb3572eaecadee3d3565b9cbf38352"
+    },
+    "validation": {
+      "path": "lean2paper_case019_nocanonical_reasoning_medium_v1/cohort/arms/file_oracle/results/file_oracle_case019_nocanonical_reasoning_medium_v1_r2/VALIDATION.json",
+      "sha256": "b1167991ba8c8fb61aec1a02d5dcc5c0dc0bdf9735ef4a53fbac8a71eb053aa0"
+    }
+  },
+  "task": "case019"
+}

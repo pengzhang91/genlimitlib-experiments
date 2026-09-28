@@ -1,0 +1,268 @@
+\section{Theoretical Findings: Research Workflow and Proofs}
+\label{app:proof-status}
+
+This appendix first describes the research design and workflow used to
+develop and check the findings in Section~\ref{sec:our-results}.
+Complete written proofs follow in the order of the three main-text cases.
+
+\input{supporting/appendix_research_workflow.tex}
+
+\paragraph{Overview of proofs and verification.}
+Table~\ref{tab:proof-guide} locates each proof and distinguishes the
+written arguments and their Lean verification.
+
+\begin{table}[ht]
+\centering
+\caption{Proofs of the featured findings and scope of formal verification.}
+\label{tab:proof-guide}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.47\linewidth}@{}}
+\toprule
+Finding & Proof & Lean scope \\
+\midrule
+Section~\ref{sec:precision}: local invariant repair & Appendix~\ref{app:pareto-repair} & Counterexample, corrected score bound, and the repaired generation guarantee, including repeated observations. \\
+Theorem~\ref{thm:proper-replay}: finite proper replay & Appendix~\ref{app:replay} & Three-language impossibility, both directions of the characterization, and finite-state consequences. \\
+Theorem~\ref{thm:staircase-frontier}: exact staircase frontier & Appendix~\ref{app:p29-frontier} & Exact guarantees, lower bounds for arbitrary deterministic generators, and Pareto optimality. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Proof materials.}
+The complete Lean sources, theorem-to-code correspondence, and reproducible
+verification commands accompany these written proofs in the
+anonymous artifact repository.
+The formalization concerns the deterministic mathematical models stated
+below; it does not assert effective oracle implementations or running-time
+bounds.
+
+\subsection{Identifying and repairing a proof gap in Pareto-optimal generation}
+\label{app:pareto-repair}
+
+In this subsection we give a repair to the proof of the generation-time
+theorem of \citet[][P13]{charikar2026pareto}. During formalization we
+found that published Claim~7 (arXiv Claim~3.2), used in published
+Theorem~8 (arXiv Theorem~4), can fail when Procedure~1 stores an empty
+subcollection to indicate that no candidate exists. We explain the
+claim's role, exhibit the failure, and prove the numerical bound needed
+to complete the generation argument. The repaired proof preserves the
+original algorithm and its generation-time guarantee. References below
+use the published ALT~2026 numbering.
+
+\subsubsection{The insertion procedure and the original claim}
+
+Let $L_1,L_2,\ldots$ be infinite languages over a countable universe $U$.
+Procedure~1 inserts these languages one at a time into a finite ordered
+list. It assigns each inserted language $L_i$ a nonnegative integer
+$m_i$ and a stored subcollection $C_i$; both remain fixed after that
+insertion. Here $m_i$ denotes the source paper's $m^*(L_i)$. The order,
+and hence the languages preceding $L_i$, can change when later languages
+are inserted.
+
+Identify a subcollection with its set of indices. For a finite
+index set $S$, write
+\[
+ I(D)=\bigcap_{j\in D}L_j,
+ \qquad
+ \mathcal C_i(S)=
+ \{D\subseteq S:i\in D\text{ and }I(D)\text{ is finite}\}.
+\]
+Thus a member of $\mathcal C_i(S)$ is a subcollection containing $L_i$
+whose intersection is finite. Define
+\[
+ M_i(S)=\max\bigl(\{0\}\cup
+       \{|I(D)|:D\in\mathcal C_i(S)\}\bigr).
+\]
+The maximum exists because $S$ has finitely many subcollections. If
+$\mathcal C_i(S)$ is nonempty, it is the largest finite intersection
+size attained by a candidate. If the candidate set is empty, its value
+is zero by convention. In particular, $M_i(S)=0$ does not distinguish
+an empty candidate set from a nonempty candidate set whose intersections
+are all empty.
+
+Suppose a new language $L_q$ is immediately to the right of $L_i$ during
+its insertion, and let $S_i$ consist of $i$ and all indices preceding
+$i$ in the old order. The procedure computes
+\[
+ m_{\mathrm{check}}=M_q(S_i\cup\{q\})
+\]
+and moves $q$ to the left of $i$ if
+$m_{\mathrm{check}}\le m_i$. It repeats this comparison while moving
+leftward. The checked maximum is recomputed in the relevant prefix;
+it need not equal the score eventually assigned to $q$. Once the
+insertion ends, let $S_q$ be the prefix through $q$. The procedure sets
+$m_q=M_q(S_q)$ and chooses $C_q\in\mathcal C_q(S_q)$ attaining this
+maximum if a candidate exists. Otherwise it sets $C_q=\varnothing$
+and $m_q=0$.
+
+Claim~7 asserts that the stored subcollection for an old language
+continues to be a maximizing candidate in its current prefix. In the
+notation above, its maximizing-witness assertion is
+\[
+ C_i\in\mathop{\rm arg\,max}_{D\in\mathcal C_i(S_i)} |I(D)|.
+\]
+The proof of Theorem~8 uses this assertion to bound the size of a finite
+intersection involving $L_i$. Specifically, the generator scans the
+ordered languages, retaining a language when it contains every observed
+point and its addition leaves the retained languages with an infinite
+intersection. To show that the true target $L_i$ is retained after more
+than $m_i$ distinct observations, the proof needs the implication
+\[
+ D\in\mathcal C_i(S_i)\quad\Longrightarrow\quad |I(D)|\le m_i.
+\]
+The assertion that the particular stored subcollection $C_i$ attains
+the maximum is stronger than this implication.
+
+\subsubsection{Failure of the maximizing-witness assertion}
+
+Let $A$ and $B$ be disjoint infinite languages, inserted in that order.
+At the first insertion, the only subcollection containing $A$ is
+$\{A\}$, whose intersection is infinite. There is therefore no
+candidate, and the procedure stores $C_A=\varnothing$ and $m_A=0$.
+
+When $B$ is inserted, the subcollection $\{A,B\}$ has empty
+intersection. It is a candidate for $B$ with score zero, whereas
+$\{B\}$ still has infinite intersection. Consequently the checked
+maximum is zero. The comparison $0\le m_A=0$ moves $B$ before $A$,
+giving the order $(B,A)$. The prefix through $A$ now contains both
+languages, and $\{A,B\}$ is a candidate for $A$ attaining the
+maximum zero. However, the stored subcollection for $A$ is still
+$\varnothing$. It does not contain $A$, so it is not a candidate and
+cannot belong to the displayed argmax.
+
+The failure is the identification of an empty stored subcollection
+with a maximizing candidate. The empty subcollection contains no
+languages; the candidate $\{A,B\}$ contains two languages whose
+intersection contains no points. Assigning score zero in both cases
+does not make the two subcollections interchangeable. The numerical
+inequality needed by Theorem~8 remains true in this execution: every
+candidate in the prefix through $A$ has intersection size at most
+$m_A=0$.
+The published induction controls the maximum value, but this alone
+does not ensure that the stored subcollection is still a candidate.
+
+\subsubsection{The corrected statement and its preservation}
+
+The repair replaces the assertion about a stored maximizing
+subcollection by an upper bound on every candidate's intersection
+size. The following lemma provides the induction step: it shows
+that the numerical bound persists when a new language enters an
+old language's prefix.
+
+\begin{supplem}[Preservation of the score bound]
+\label{lem:pareto-score-invariant}
+Let $S$ be a finite set of indices and let $b\in\mathbb N$.
+Suppose that every $D\in\mathcal C_i(S)$ satisfies $|I(D)|\le b$.
+If $q\notin S$ and $M_q(S\cup\{q\})\le b$, then every
+$D\in\mathcal C_i(S\cup\{q\})$ also satisfies $|I(D)|\le b$.
+\end{supplem}
+\begin{proof}
+Fix $D\in\mathcal C_i(S\cup\{q\})$. There are two cases.
+If $q\notin D$, then $D\subseteq S$, and it still contains $i$
+and has finite intersection. Thus $D\in\mathcal C_i(S)$, so the
+assumed bound gives $|I(D)|\le b$.
+
+If $q\in D$, then $D\subseteq S\cup\{q\}$ contains $q$ and has
+finite intersection. It is therefore also a candidate in the
+optimization defining $M_q(S\cup\{q\})$. Hence
+\[
+ |I(D)|\le M_q(S\cup\{q\})\le b.
+\]
+Both cases establish the required inequality. The argument includes
+$b=0$ and does not require a stored maximizing subcollection.
+\end{proof}
+
+\begin{suppprop}[Corrected form of Claim~7]
+At every completed insertion stage, let $L_i$ be an inserted language,
+let $m_i$ be its assigned score, and let $S_i$ be its current prefix,
+including $i$. Then
+\begin{equation}
+\label{app:pareto-corrected-bound}
+ \text{for every }D\subseteq S_i,\qquad
+ i\in D\text{ and }I(D)\text{ finite}
+ \quad\Longrightarrow\quad |I(D)|\le m_i.
+\end{equation}
+\end{suppprop}
+\begin{proof}
+We induct on the number of insertions. The assertion is vacuous
+before any language is inserted. Suppose it holds for the old
+order and insert $L_q$.
+For the new language, its assigned score is $m_q=M_q(S_q)$, so the
+bound follows directly from the definition of the maximum in its
+final prefix $S_q$. In particular, it is vacuous when there is no
+candidate and remains valid when the maximum is zero.
+
+Consider an old language $L_i$. If $q$ does not move to the left of
+$i$, its prefix and assigned score remain unchanged, and the
+inductive hypothesis applies. If $q$ moves to the left of $i$, let
+$S_i$ be its old prefix. The relative order of all old languages
+is unchanged, so its new prefix is exactly $S_i\cup\{q\}$.
+When $q$ crosses $i$, the procedure's comparison gives
+\[
+ M_q(S_i\cup\{q\})\le m_i.
+\]
+The inductive hypothesis bounds every $i$-candidate in $S_i$ by
+$m_i$. Applying Lemma~\ref{lem:pareto-score-invariant} with
+$b=m_i$ proves the bound in its new prefix. Subsequent movements
+of $q$ farther to the left change neither this set of indices nor
+$m_i$. This covers every old language and completes the induction.
+\end{proof}
+
+\subsubsection{Recovery of the generation-time guarantee}
+
+For completeness, we give the step connecting the corrected bound
+to the original generation algorithm. Let $H\subseteq L_i$ be the
+finite set of distinct observations from the target $L_i$, and suppose
+that $i$ is included in the finite list currently being scanned and
+that $|H|\ge m_i+1$. Let $B$ be the indices retained before the
+scan reaches $i$. Every retained language contains $H$, and every
+index in $B$ precedes $i$. Consequently
+\[
+ B\cup\{i\}\subseteq S_i,
+ \qquad
+ H\subseteq I(B\cup\{i\}).
+\]
+The target satisfies the sample-consistency test because
+$H\subseteq L_i$. If the scan rejected it, its intersection with
+the previously retained languages would be finite. Then
+$B\cup\{i\}$ would be an $i$-candidate, and
+\eqref{app:pareto-corrected-bound} would imply
+\[
+ m_i+1\le |H|
+       \le |I(B\cup\{i\})|
+       \le m_i,
+\]
+a contradiction. Thus the scan retains $L_i$.
+
+The scan never removes a retained language and only adds a language
+when the common intersection remains infinite. Its final
+intersection is therefore infinite and, because it includes $L_i$
+among the intersected languages, is a subset of $L_i$. Removing
+the finite observed set leaves a point in $L_i\setminus H$.
+The original generator's choice of such a point is consequently a
+fresh target output.
+
+In Theorem~8, the generator considers the first $f(r)$ languages
+after $r$ observations, where $f$ is nondecreasing and unbounded.
+Observations may repeat; let $H_r$ be the set of distinct points
+observed by round $r$. Write $g(i)=\min\{r:f(r)\ge i\}$ for
+the first round at which $L_i$ is included. If
+\[
+ |H_r|\ge t_i:=\max\{g(i),m_i+1\},
+\]
+then $r\ge |H_r|\ge g(i)$, so $f(r)\ge i$, and $|H_r|>m_i$.
+The target is therefore under consideration and the preceding
+argument guarantees a fresh target output. This proves the same
+bound in terms of distinct observations as in the source paper,
+including presentations with repetitions.
+The score assignments, insertion comparisons, greedy
+scan, and output rule all remain unchanged. Only the intermediate
+proof assertion is replaced.
+
+\paragraph{Formal verification.}
+GenLimitLib checks the two-language counterexample, the corrected
+score bound through successive insertions, target retention, and the
+resulting generation-time guarantee. The accompanying Lean development
+also proves the version above with repeated observations, retaining the
+original scheduler based on the total number of rounds. The repository
+maps these statements to P13's existing modules and the additional proof
+in \nolinkurl{Section4/InvariantRepair.lean}.

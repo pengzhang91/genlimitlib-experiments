@@ -1,0 +1,14 @@
+{
+  "pml_case025_delta_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T17:55:59.346986+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case025_delta_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T17:55:59.347022+00:00",
+    "source_template": "templates/pml/packet"
+  }
+}

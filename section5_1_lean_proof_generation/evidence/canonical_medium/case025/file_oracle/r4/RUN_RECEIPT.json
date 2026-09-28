@@ -1,0 +1,48 @@
+{
+  "arm": "PML-FileOracle",
+  "attempt_id": "file_oracle_case025_reasoning_medium_v1_r4",
+  "condition": "canonical_medium",
+  "evidence_directory_run_id": "file_oracle_case025_reasoning_medium_v1_r4",
+  "final_output_files": 5,
+  "formal_run_id": "file_oracle_case025_reasoning_medium_v1_r4",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 15684241,
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case025_reasoning_medium_v1_r4/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "b0b9b504ccaf6b90a3c0e31e3f7f095f0d92c4fafe1bf80ac62c024672c8f5e2"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 4,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_medium/case025/file_oracle/r4/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_medium/case025/file_oracle/r4/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_medium/case025/file_oracle/r4/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case025_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case025_reasoning_medium_v1_r4/proxy_requests.jsonl",
+      "sha256": "4c108326a28995dcab3a739cfb4dd4e732f98893a6042d8a6d36f15f6b22adf9"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case025_reasoning_medium_v1_r4/ROUTING_AUDIT.json",
+      "sha256": "2b98b828a6cb7de8ea02aa671aec93dfabf23073fc6318fb4c6b28b3e70902ad"
+    },
+    "status": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/file_oracle/logs/file_oracle_case025_reasoning_medium_v1_r4/STATUS.json",
+      "sha256": "755d0a5677aef289a8bab2efba474f24b1c41faf479d1a0a3668216fd2770454"
+    },
+    "validation": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/file_oracle/results/file_oracle_case025_reasoning_medium_v1_r4/VALIDATION.json",
+      "sha256": "1ddfbaa55960d1226d1a759bde71bb0eacdd2ea0864764cfe0e958e0092a724a"
+    }
+  },
+  "task": "case025"
+}

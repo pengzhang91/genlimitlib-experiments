@@ -1,0 +1,67 @@
+# GenLimitLib: proofs and experiments
+
+Research materials for **GenLimitLib: A Formal Library for Language Generation
+in the Limit and AI-Assisted Mathematical Research**, by **Shuangping Li**
+(Yale University) and **Peng Zhang** (Rutgers University).
+
+The experiment repository is
+[genlimitlib-experiments](https://github.com/pengzhang91/genlimitlib-experiments).
+The accompanying library is available at
+[generation-in-the-limit-lib](https://github.com/pengzhang91/generation-in-the-limit-lib).
+This artifact contains the formalization, supplementary mathematical findings,
+and the two experiment packages:
+
+- `section4_formalization/`: Lean 4 sources, written proofs, theorem maps, and
+  verification records for Section 4.
+- `section4_other_findings/`: five additional mathematical findings, complete
+  proofs, LaTeX sources, audit notes, and finite diagnostic checks.
+- `section5_1_lean_proof_generation/`: the complete 300-run Lean
+  proof-generation experiment release.
+- `section5_2_math_reading/`: the mathematical-reading experiment release,
+  including public prompt presentations, saved responses, sources, and offline reproduction.
+
+Each module has its own README and integrity records. No network access is
+needed for the two experiment-data verification workflows. Rebuilding the Lean
+formalization requires the pinned Lean toolchain and Mathlib dependencies.
+
+Verify the complete downloaded release first with:
+
+```bash
+shasum -a 256 -c SHA256SUMS
+```
+
+## Verification entry points
+
+```bash
+(cd section4_formalization && python3 VERIFY_RELEASE.py)
+(cd section4_other_findings && shasum -a 256 -c SHA256SUMS)
+(cd section5_1_lean_proof_generation && python3 VERIFY_INVENTORY.py)
+(cd section5_1_lean_proof_generation && shasum -a 256 -c SHA256SUMS)
+(cd section5_2_math_reading && shasum -a 256 -c SHA256SUMS)
+recount_dir=$(mktemp -d)
+python3 section5_2_math_reading/scripts/reproduce_appendix_c.py \
+  --output "$recount_dir/recount.json"
+```
+
+The reconstruction outputs go to a temporary directory so the frozen release
+files remain unchanged. These checks validate saved records and reconstruct
+reported mathematical-reading statistics; they do not rerun model inference or
+guarantee identical responses from a fresh run. See
+[REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the scope of each workflow.
+
+## Licenses and provenance
+
+Project-owned code is licensed under [Apache-2.0](LICENSE-CODE), and
+project-owned documentation and experimental data under
+[CC BY 4.0](LICENSE-DATA.md), subject to the scope in [LICENSE.md](LICENSE.md).
+Existing upstream licenses and third-party rights are preserved. Paper excerpts
+are excluded from our license grant; their sources and unresolved redistribution
+questions are recorded in
+[the source-rights register](section5_2_math_reading/THIRD_PARTY_NOTICES.md).
+
+This is a separate public distribution. Selected reading-experiment excerpts
+are represented by exact boundary snippets and source locators. The original
+experiment used the complete excerpts. Saved responses, question wording,
+answers, Lean sources, and numerical results are preserved. See
+[PUBLIC_RELEASE.md](PUBLIC_RELEASE.md) for omissions and the optional full-input
+audit, and [ANONYMIZATION.md](ANONYMIZATION.md) for earlier review-time redactions.

@@ -1,0 +1,15 @@
+import Helpers
+#check Finset.single_le_sum
+#check Finset.sum_le_sum_of_subset_of_nonneg
+#check Fin.sum_univ_succ
+#check Fin.sum_univ_castSucc
+#check Fin.sum_univ_two
+#check Nat.le_mul_of_pos_left
+#check Nat.le_mul_of_pos_right
+#check Nat.mul_le_mul_left
+#check Set.infinite_mono
+#check Set.Infinite.mono
+#check Finset.mem_image
+#check Finset.mem_image_of_mem
+#check Finset.image_subset_iff
+#check Finset.coe_image

@@ -1,0 +1,11 @@
+import S2BFormalization
+#check Countable.of_injective
+#check Set.Countable.to_countable
+#check Set.countable_range_iff
+#check Set.countable_range
+#check Set.Countable.image
+#check Set.Countable.preimage
+#check Function.Injective.countable_iff
+#check Set.range_subset_iff
+#check Set.range_subset_iff
+#check SetCoe.ext

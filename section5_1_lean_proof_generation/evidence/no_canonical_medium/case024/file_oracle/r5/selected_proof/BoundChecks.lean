@@ -1,0 +1,14 @@
+import Stage3Model
+open Filter
+#check isBoundedUnder_le
+#check isCoboundedUnder_le
+#check isBounded_le_def
+#check isCobounded_le_def
+#check isBoundedUnder_of
+#check isCoboundedUnder_of
+#check bddAbove_def
+#check bddBelow_def
+#check Finset.filter_subset_filter
+#check Finset.filter_subset
+#check GenLimit.mem_sample_iff
+#check Nat.lt_of_lt_of_le

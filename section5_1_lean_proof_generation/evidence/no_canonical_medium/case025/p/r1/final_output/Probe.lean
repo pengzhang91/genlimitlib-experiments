@@ -1,0 +1,11 @@
+import Stage3Model
+#print GenLimit.PatientScope.relativeLowerDensity
+#print GenLimit.PatientScope.prefixCount
+#check Filter.liminf_const
+#check Filter.le_liminf
+#check Filter.liminf_le
+#check Set.infinite_univ
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset
+#check Nat.find
+#check Classical.choose

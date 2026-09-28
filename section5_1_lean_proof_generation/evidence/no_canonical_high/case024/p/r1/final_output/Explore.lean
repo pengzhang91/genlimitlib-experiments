@@ -1,0 +1,50 @@
+import Stage3Model
+import Mathlib.Data.Nat.Nth
+import Mathlib.Data.Nat.Sqrt
+import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
+
+open Filter MeasureTheory
+open scoped Topology
+
+#check Nat.nth_mem_of_infinite
+#check Nat.nth_injective
+#check Nat.nth_count
+#check Nat.count_nth_of_infinite
+#check Nat.sqrt_le
+#check Nat.le_sqrt
+#check Nat.sqrt_lt
+#check Nat.sqrt_eq
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check Filter.Tendsto.div_atTop
+#check Filter.Tendsto.limsup_eq
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integral_congr_ae
+#check MeasureTheory.integral_const
+#check measureReal_univ_eq_one
+#check Set.Infinite.exists_not_mem_finset
+#check Set.infinite_range_of_injective
+#check Set.infinite_univ
+#check Finset.card_image_iff
+#check Finset.card_le_card
+#check Finset.filter_subset
+#check Nat.cast_div
+#check Nat.sqrt_le_sqrt
+#check Nat.sqrt_monotone
+#check Nat.cast_sqrt_le
+#check Nat.cast_sqrt
+#check squeeze_zero'
+#check squeeze_zero
+#check tendsto_of_tendsto_of_tendsto_of_le_of_le'
+#check tendsto_inv_atTop_zero
+#check Filter.Tendsto.inv₀
+#check Nat.sqrt_pos
+#check Nat.sq_sqrt
+#check div_le_div_iff₀
+#check one_div
+#check Filter.Tendsto.add
+#check Filter.Tendsto.const_div_atTop
+#check Nat.even_or_odd
+#check Nat.even_or_odd'
+#check Nat.two_mul_div_two_add_mod
+#check Nat.mod_two_eq_zero_or_one

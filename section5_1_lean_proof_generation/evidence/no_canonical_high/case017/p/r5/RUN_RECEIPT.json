@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case017_nocanonical_v1_r5",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case017_nocanonical_v1_r5",
+  "final_output_files": 5,
+  "formal_run_id": "p_case017_nocanonical_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 9974398,
+      "path": "lean2paper_case017_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case017_nocanonical_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "b20fb43214540432438d92ffe281250f9bcff2ff26d41bf5e0485be492c4bc97"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case017/p/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case017/p/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case017/p/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case017_nocanonical_v1_r5/proxy_requests.jsonl",
+      "sha256": "3c6ae4a42e69e0a6cc26c98fa80421f391a39c4c5eb8237d316af121187befee"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case017_nocanonical_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "7fdc9efa058fae05d06c8daf073d5cdb2fcd1b20e3291e7f298dba6d53c99617"
+    },
+    "status": {
+      "path": "lean2paper_case017_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case017_nocanonical_v1_r5/STATUS.json",
+      "sha256": "17c370799ef251c3d317dfa3fd101771381f62c3a2c5d81727f88d6b60f7c7a4"
+    },
+    "validation": {
+      "path": "lean2paper_case017_nocanonical_v1_r3r5/cohort/arms/p/results/p_case017_nocanonical_v1_r5/VALIDATION.json",
+      "sha256": "7a896050d9f6253d8d2c8f4b0aacb1808499739144fbc3f032a187705f1fc1b9"
+    }
+  },
+  "task": "case017"
+}

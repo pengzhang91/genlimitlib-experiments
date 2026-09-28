@@ -1,0 +1,12 @@
+import Stage3Model
+import Mathlib.Tactic
+#check Set.countable_coe_iff
+#check Set.to_countable
+#check Countable.of_injective
+#check Function.Injective.countable
+#check Set.Countable.image
+#check Set.Countable.of_subset
+#check Set.countable_range
+#check Set.range_comp
+#check Set.image_image
+#check SetCoe.ext

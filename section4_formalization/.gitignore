@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+GenLimitLean/.lake/
+manuscript/section4/*.aux
+manuscript/section4/*.bbl
+manuscript/section4/*.blg
+manuscript/section4/*.fdb_latexmk
+manuscript/section4/*.fls
+manuscript/section4/*.log
+manuscript/section4/*.out

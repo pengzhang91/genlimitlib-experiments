@@ -1,0 +1,14 @@
+{
+  "file_oracle_s2b_nocanonical_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-21T03:42:36.274906+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_s2b_nocanonical_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-21T03:42:36.274928+00:00",
+    "source_template": "run_005_v1"
+  }
+}

@@ -1,0 +1,16 @@
+import Stage3Model
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+#check GenLimit.NoiseLossFeedback.CorrectAt
+#check GenLimit.NoiseLossFeedback.outputAt
+#check Set.Countable.image
+#check Set.Countable.mono
+#check Set.countable_range
+#check Set.SurjOn.countable
+#check Set.Countable.of_surjective
+#check Set.countable_univ
+#check countable_iff_exists_surjective
+#check Set.preimage_image_eq
+#check GenLimit.UnionClosedness.negativeCode_injective
+#check GenLimit.UnionClosedness.negativeCode_mem
+#check GenLimit.UnionClosedness.positiveTail

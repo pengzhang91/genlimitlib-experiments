@@ -1,0 +1,22 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import Mathlib.Logic.Equiv.Finset
+import Mathlib.Data.Nat.Pairing
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+
+#check Nat.pair
+#check Nat.unpair
+#check Nat.unpair_pair
+#check Encodable.encode
+#check Encodable.decode
+#check Encodable.encodek
+#check Encodable.encode_injective
+#check Encodable.decode_encode
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.bddAbove
+#check Set.Finite.isBounded_under_le
+#check Filter.Tendsto.liminf_eq
+#check liminf_add_le
+#check le_liminf_add
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.PatientScope.tendsto_prefixCount_atTop

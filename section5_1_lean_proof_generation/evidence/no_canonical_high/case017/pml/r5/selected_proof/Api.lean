@@ -1,0 +1,12 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.TargetDensity
+#check Finset.card_union_of_disjoint
+#check Finset.card_union_of_disjoint
+#check Finset.disjoint_left
+#check GenLimit.PatientScope.mem_prefixFinset
+#check GenLimit.PatientScope.lowerDensity_half_of_target_counting
+#check Set.disjoint_sdiff_right
+#check Set.diff_union_inter
+#check Set.inter_union_diff
+#check Nat.find_spec
+#check Nat.find_min'

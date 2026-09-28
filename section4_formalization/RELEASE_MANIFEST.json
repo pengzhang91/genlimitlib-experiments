@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "module": "section4_formalization",
+  "release_kind": "public_documentation_frozen_review_payload",
+  "lean_version": "4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "section4_modules": 20,
+  "written_findings": 3,
+  "formal_runs": 1,
+  "lean_verification_status": "passed",
+  "verification_basis": "historical completed source-repository build and axiom audit; frozen Lean sources unchanged in the public documentation update",
+  "excluded": [
+    "source-control history and remotes",
+    "private manuscript synchronization records",
+    "unrelated human-audit and whole-library registry records",
+    "local caches and compiled artifacts"
+  ]
+}

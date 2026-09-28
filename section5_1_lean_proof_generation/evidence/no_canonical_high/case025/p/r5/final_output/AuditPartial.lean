@@ -1,0 +1,2 @@
+import Case025Formalization
+#print axioms stage3_finite_noise_transfer

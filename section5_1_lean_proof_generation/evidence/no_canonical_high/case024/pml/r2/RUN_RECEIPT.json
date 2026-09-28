@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case024_nocanonical_v1_r2",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "pml_case024_nocanonical_v1_r2",
+  "final_output_files": 5,
+  "formal_run_id": "pml_case024_nocanonical_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 22311557,
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/pml/logs/pml_case024_nocanonical_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "901ab2d90b2066d8af334b31315a90183af196507b0149069c9caa4528d12b94"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case024/pml/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case024/pml/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case024/pml/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_case024_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/pml/logs/pml_case024_nocanonical_v1_r2/proxy_requests.jsonl",
+      "sha256": "4cb59c6c09b2e3d9916adc2a8041b93922509be32a20aaa8c09775600cac5690"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/pml/logs/pml_case024_nocanonical_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "2491b471c56d5fe0f70c95c581649266523fd3df27138a9b2ab4c947d980bbe7"
+    },
+    "status": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/pml/logs/pml_case024_nocanonical_v1_r2/STATUS.json",
+      "sha256": "dcb9bc019b475c838cf5dd1dbee94dbe4651a21213f8c1260011f4e589a5b84d"
+    },
+    "validation": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/pml/results/pml_case024_nocanonical_v1_r2/VALIDATION.json",
+      "sha256": "b9800bbaf0b20e9a73392971675b5929235f38e7205438d56dcbc5ba9591c934"
+    }
+  },
+  "task": "case024"
+}

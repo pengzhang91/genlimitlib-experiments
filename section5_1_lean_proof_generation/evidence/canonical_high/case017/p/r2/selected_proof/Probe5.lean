@@ -1,0 +1,9 @@
+import Stage3Model
+open Filter
+#check Filter.isBoundedUnder_of_eventually_ge
+#check Filter.isBoundedUnder_of_eventually_le
+#check Filter.IsBoundedUnder.isCoboundedUnder_ge
+#check div_le_one
+#check div_le_one₀
+#check div_le_one_of_le₀
+#check div_nonneg

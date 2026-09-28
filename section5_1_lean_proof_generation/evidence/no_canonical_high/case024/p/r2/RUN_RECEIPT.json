@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case024_nocanonical_v1_r2",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case024_nocanonical_v1_r2",
+  "final_output_files": 6,
+  "formal_run_id": "p_case024_nocanonical_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 22352033,
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/p/logs/p_case024_nocanonical_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "ebad27da4a8a473159c5f704d80b501e97cf2895d7035737a5057ec60f963a1e"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case024/p/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case024/p/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case024/p/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_case024_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/p/logs/p_case024_nocanonical_v1_r2/proxy_requests.jsonl",
+      "sha256": "c94d2242cde5d337355a5578dc0b0d0308292b38f20b003415c2e64cbfcfa4e1"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/p/logs/p_case024_nocanonical_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "d754d071990ed378e7b720f9ede73b3770cb9f22d22fe46cea3ecc6b7e3e5d3d"
+    },
+    "status": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/p/logs/p_case024_nocanonical_v1_r2/STATUS.json",
+      "sha256": "8dee17fda90d1bd2fe30bd946b30a187d6b30b399b51b98866b6676a226c7bfe"
+    },
+    "validation": {
+      "path": "lean2paper_case024_nocanonical_v1/cohort/arms/p/results/p_case024_nocanonical_v1_r2/VALIDATION.json",
+      "sha256": "80e0f6525bde547ca4f1c0b2d9816e2068ede914c28d93ad57341e982ceb2416"
+    }
+  },
+  "task": "case024"
+}

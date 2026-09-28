@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case025_nocanonical_v1_r5",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "pml_case025_nocanonical_v1_r5",
+  "final_output_files": 5,
+  "formal_run_id": "pml_case025_nocanonical_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 15641650,
+      "path": "lean2paper_case025_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_case025_nocanonical_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "0fa918794b780a75a6ead1604c8ac94ed04c1e47d627582225eb375fe914507d"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case025/pml/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case025/pml/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case025/pml/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case025_nocanonical_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case025_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_case025_nocanonical_v1_r5/proxy_requests.jsonl",
+      "sha256": "f68bcce973370535f4dafacf8274d96624ed8904621ce4405f5f605ae5571343"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case025_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_case025_nocanonical_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "a8c992466858b48992e6a4c6836692047b48994214b61785d721692e3964737f"
+    },
+    "status": {
+      "path": "lean2paper_case025_nocanonical_v1_r3r5/cohort/arms/pml/logs/pml_case025_nocanonical_v1_r5/STATUS.json",
+      "sha256": "ec1ff7b2dd209a9a407304322209bee2ce4ad89c22363d25935c87ca1dde0068"
+    },
+    "validation": {
+      "path": "lean2paper_case025_nocanonical_v1_r3r5/cohort/arms/pml/results/pml_case025_nocanonical_v1_r5/VALIDATION.json",
+      "sha256": "2dc91208ecaa6a460f11bc173b8bee5dbb2433670d47b2aa59d91b7964c44cb2"
+    }
+  },
+  "task": "case025"
+}

@@ -1,0 +1,23 @@
+{
+  "campaign": "stage3-s2b-delta-v1-r3-r5",
+  "combined_target_replicates_per_arm": 5,
+  "continuation_replicates": [
+    3,
+    4,
+    5
+  ],
+  "decision_note": "The five-replicate target and the plan to run r1-r2 first, followed by r3-r5, were discussed before the formal r1-r2 results were observed.",
+  "parent_archive": {
+    "name": "lean2paper_delta_v1.tar.zst",
+    "sha256": "c6e4e7217357feb32a81711c713de5ea800744fe72280953fdc93342d738b427"
+  },
+  "parent_source_manifest_sha256": "139551762db209fd41d32382d0d9178c3a99be83f2ac63d9c8606d01796f213b",
+  "resource_change": {
+    "continuation_request_per_job": {
+      "cpus": 1,
+      "memory_gib": 8
+    },
+    "justification": "Completed r1-r2 author jobs used 2.3-3.5 GiB MaxRSS and averaged less than one CPU; the smaller request is nonbinding and improves scheduler placement.",
+    "scientific_protocol_changed": false
+  }
+}

@@ -1,0 +1,14 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.TargetDensity
+import GenLimit.Paper39_DenseGeneration.Abstract.Announcements
+#check Finset.le_sup
+#check Finset.card_le_card_of_injOn
+#check Finset.card_union_le
+#check Fintype.card_le_of_injective
+#check Filter.liminf_le_liminf
+#check Set.Infinite.exists_notMem_finset
+#check Finset.card_image_le
+#check Finset.card_image_iff
+#check Finset.card_congr
+#check Set.ncard_le_ncard
+#check Set.encard_le_encard

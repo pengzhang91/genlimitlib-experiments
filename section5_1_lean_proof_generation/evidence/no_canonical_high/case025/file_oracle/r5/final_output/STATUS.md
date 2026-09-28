@@ -1,0 +1,5 @@
+Overall outcome: COMPLETE
+
+The exact declaration `stage3_result : Stage3Case025.MainClaim` is proved in `Case025Formalization.lean` and passes the supplied entry-point checker. The proof closes the indexed family under finite set extensions, runs `GenLimit.PatientMachine.patientScope_generation_and_lowerDensity` on the resulting exact presentation, and packages the patient-machine output as the required presenter-first online generator. Local checked lemmas establish prefix causality, remove the finitely many contaminating values from eventual novelty, and transfer ambient-prefix relative lower density from a finite target extension back to the original infinite target via a vanishing finite-count error.
+
+Material declarations used include `GenLimit.PatientMachine.patientScope_generation_and_lowerDensity`, `GenLimit.PatientScope.tendsto_prefixCount_atTop`, `GenLimit.PatientScope.prefixCount_mono`, `Nat.pair`/`Nat.unpair`, and `Encodable.encode`/`Encodable.decode`. The accepted axiom audit contains only `propext`, `Classical.choice`, and `Quot.sound`.

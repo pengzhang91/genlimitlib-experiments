@@ -1,0 +1,22 @@
+{
+  "elapsed_seconds": 2070.724575225264,
+  "kind": "observed_gate",
+  "matches_logged_gate": true,
+  "source_hashes": {
+    "Case019Formalization.lean": "572c467067c7873675f44d9d7be25869a21e3674467fed870df080794f996993",
+    "Check.lean": "12825f0e69c80b22a5f41d6652248f10a271c833b79207e398b8e072e97fd194",
+    "CountableMain.lean": "311842c29a5fcebae1b6c7a319d29e23b57a3a1ab8930d44a34a56cb156e70a5",
+    "CountableScratch.lean": "0d6263142ead891348366bbc2e6bbb38206d3d7f3036c26773489606ad189d5c",
+    "DensityScratch.lean": "a8da62d7b27f1564249f282a1fa4ae880b97d5db3ca60fb43c9aa8cdc2b2b11e",
+    "DensityTransfer.lean": "8f82f7cb4cd6f93cb9765d30ff7e3c7405ba52d8e8b6283a301dc3af1d931e6a",
+    "PackagingScratch.lean": "8e0064a25c4a7497d393bb55a1ffa76173dd26dd16f00d96ea25ad491c6e29e6",
+    "Probe.lean": "6d5eaaebd51f46e6dc4530a36545047e946cd78fce7a32ab1f413004d351cb0c",
+    "Probe2.lean": "0258947904fcb7820a0619ec22850a83cc23f98b1e5075e8d7ac8578d0c0e455",
+    "Probe3.lean": "75528791ff9da3b56907af32d5e0b57de996ab01a2b4c56d674ccbbd50cc64db",
+    "Probe4.lean": "324f9927b1fa4ef4c4a8ec668f334d1d8d65ad130bd0bfa37e9a69117e1f7b68",
+    "RecursiveSweep.lean": "5ec133f56929d9a16c698a58125b7411148ec18b035d1ca2a29f94d335c8b94c",
+    "SeparationMain.lean": "41091d38368334569ff96f197b8181372bde7f63337a3cc0c670993facebaf62",
+    "SeparationScratch.lean": "343a8e4a917e596d02187c69321bd03fd5bb0806cfbb198763fea65b51e32113"
+  },
+  "stable_capture": true
+}

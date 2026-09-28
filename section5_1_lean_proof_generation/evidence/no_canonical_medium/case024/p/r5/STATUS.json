@@ -1,0 +1,21 @@
+{
+  "author_budget_seconds": 5400,
+  "deadline_overshoot_seconds": 0,
+  "elapsed_seconds": 558.323125,
+  "exit_code": 0,
+  "formal_run_id": "p_case024_nocanonical_reasoning_medium_v1_r5",
+  "monitor_errors": [],
+  "monitor_finished": true,
+  "recorded_run_id": "p_case024_nocanonical_reasoning_medium_v1_r5",
+  "routing_audit": {
+    "calls": 25,
+    "pass": true,
+    "providers": {
+      "OpenAI": 25
+    },
+    "total_upstream_usd": 0.5459290000000001,
+    "unverifiable": 0
+  },
+  "schema_version": 1,
+  "state": "FINISHED"
+}

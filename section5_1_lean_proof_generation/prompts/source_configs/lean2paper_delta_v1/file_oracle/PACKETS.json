@@ -1,0 +1,14 @@
+{
+  "file_oracle_delta_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-20T00:54:34.418006+00:00",
+    "source_template": "run_005_v1"
+  },
+  "file_oracle_delta_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-20T00:54:34.418033+00:00",
+    "source_template": "run_005_v1"
+  }
+}

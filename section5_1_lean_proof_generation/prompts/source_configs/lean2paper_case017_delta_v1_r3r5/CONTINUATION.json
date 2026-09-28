@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-20T13:31:53Z",
+  "campaign": "stage3-case017-delta-v1-r3-r5",
+  "combined_target_replicates_per_arm": 5,
+  "continuation_replicates": [
+    3,
+    4,
+    5
+  ],
+  "decision_timing": "after_r1_r2_results_observed",
+  "decision_note": "The user requested three additional independent runs per arm after the Case 017 r1-r2 results were available. Five-run summaries are therefore descriptive and must not be presented as a preregistered fixed-sample analysis.",
+  "parent_bundle_basename": "lean2paper_case017_delta_v1",
+  "parent_source_archive": {
+    "name": "lean2paper_case017_delta_v1.tar.zst",
+    "sha256": "b6a008cc963f126ca612bc8570c35b1cc67ca2ab85ef59ea9d3709c9d32c933c"
+  },
+  "parent_source_manifest_sha256": "063d42018c015443a10fdd35d6f992a81a9c5e4e6c991ba47343db38f9ed3136",
+  "parent_results_summary_sha256": "3e76f0b488574ecef937ed15195834a241881b82db312374d4cddc5ba8510f65",
+  "parent_result_archive": {
+    "name": "case017_delta_v1_results_20260920T093500Z.tar.zst",
+    "sha256": "bb22ed25d956068b69feecbf5b0cf8ad8cac0beb3e0d649a27c963e609e2e289"
+  },
+  "parent_validation_sha256": {
+    "file_oracle_case017_delta_v1_r1": "147ac4804eda13ac902d4b88214295f7ed9cbb15ebcbbce6a8e41beab6a675be",
+    "file_oracle_case017_delta_v1_r2": "682759ae1b59ecfe23e71a30145c7292e94fc0410206cb7705dbff520df7da41",
+    "p_case017_delta_v1_r1": "c25f4880ece97687d964db4be391dfe9f9ce790051a573887072701adcfab25d",
+    "p_case017_delta_v1_r2": "e3d1c0ccccdcab4bf759aab7147adae7db6555cca80cf2a9b4d5f71eb464f30a",
+    "pml_case017_delta_v1_r1": "c08fbc19b30a61b3ea7cc7ebe001dec75ab1a096327a57c4ed44b832745f33ef",
+    "pml_case017_delta_v1_r2": "6bd4ef927d7534bdfb10cb0a006f32da1ad3489f28e5113683890ca7d9cef8dd"
+  },
+  "resource_change": {
+    "request_per_job": {
+      "cpus": 1,
+      "memory_gib": 8
+    },
+    "scientific_protocol_changed": false
+  },
+  "reviewer_submitted": false
+}

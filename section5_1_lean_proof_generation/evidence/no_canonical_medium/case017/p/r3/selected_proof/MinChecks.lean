@@ -1,0 +1,12 @@
+import Stage3Model
+#check Nat.find_min'
+#check Nat.find_min
+#check Finset.max'
+#check Finset.le_max'
+#check Finset.max'_mem
+#check Finset.exists_max_image
+#check Finset.sup'
+#check Finset.max'_le_iff
+#check GenLimit.sample
+#check Finset.mem_image
+#check Finset.mem_union

@@ -1,0 +1,13 @@
+import Stage3Model
+#check isBoundedUnder_le_of_eventually_le
+#check isBoundedUnder_ge_of_eventually_le
+#check isCoboundedUnder_le_of_eventually_le
+#check isCoboundedUnder_ge_of_eventually_le
+#check Filter.isBoundedUnder_le_of
+#check Filter.isBoundedUnder_ge_of
+#check Filter.isCoboundedUnder_le_of
+#check Filter.isCoboundedUnder_ge_of
+#check isBounded_le_def
+#check isBounded_ge_def
+#check IsBoundedUnder
+#check IsCoboundedUnder

@@ -1,0 +1,11 @@
+{
+  "elapsed_seconds": 414.4515135609545,
+  "kind": "observed_gate",
+  "matches_logged_gate": true,
+  "source_hashes": {
+    "Case024Formalization.lean": "3d5dd6b007f40ffba4de9cbabd6e27139c969a55d25c25137c2e45a639cd6863",
+    "Helpers.lean": "33f40544110e5109a0465a79b3c7f2e614ac79b44e8a44a3c6642149580fd4a1",
+    "Probe.lean": "3a2b6da1632827b1db328120c14e7cf0d1f78bb25ebd23adca04add56d19788c"
+  },
+  "stable_capture": true
+}

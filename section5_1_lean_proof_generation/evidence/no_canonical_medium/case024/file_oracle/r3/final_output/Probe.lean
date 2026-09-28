@@ -1,0 +1,9 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_not_subset
+#check Fin.sum_univ_succ
+#check Fin.sum_univ_castSucc
+#check Fin.sum_univ_two
+#check Finset.sum_le_sum
+#check Finset.sum_le_sum_of_subset_of_nonneg

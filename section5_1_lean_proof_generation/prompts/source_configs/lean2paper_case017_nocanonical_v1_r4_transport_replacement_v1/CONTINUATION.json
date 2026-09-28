@@ -1,0 +1,36 @@
+{
+  "campaign": "stage3-case017-nocanonical-v1-r3-r5",
+  "combined_target_replicates_per_arm": 5,
+  "continuation_replicates": [
+    3,
+    4,
+    5
+  ],
+  "created_utc": "2026-09-21T14:55:54.953115+00:00",
+  "decision_note": "The user requested three additional independent runs per arm after the Case 017 no-canonical-proof r1-r2 results were observed. Five-run summaries are descriptive and must not be presented as a preregistered fixed-sample analysis.",
+  "decision_timing": "after_r1_r2_results_observed",
+  "parent_bundle_basename": "lean2paper_case017_nocanonical_v1",
+  "parent_result_archive": {
+    "name": "case017_nocanonical_v1_results_20260921T141501Z.tar.zst",
+    "sha256": "f691fe60a3ecd28458666d8aab3c34bac6d42f8e71cbc71152d13de1681b190b"
+  },
+  "parent_results_summary_sha256": "2e1e126f616c0a07b9a6d616940aed9ac0d38a32330d89685d8ea9f4e3ce2662",
+  "parent_source_archive": null,
+  "parent_source_manifest_sha256": "bc30dee980ebf68121433377f327e7e2dd7f786ed611b0cfa53f6067bb046f9b",
+  "parent_validation_sha256": {
+    "file_oracle_case017_nocanonical_v1_r1": "a95b66a8bbfa61af976912bbc0aa24f7d84e3243999c5f716434154c281ac76c",
+    "file_oracle_case017_nocanonical_v1_r2": "3f01731817a82fbf6077d2fbca0f77b40538ba727ee947eaf7e8485f7f4885bc",
+    "p_case017_nocanonical_v1_r1": "e08d9edf72bfe72b8568d9f64f917e4b71929504613cb92855e95fa30f895907",
+    "p_case017_nocanonical_v1_r2": "decfe1000da167e3684301480cc644057c5c8d904699806111e95daf4279932b",
+    "pml_case017_nocanonical_v1_r1": "91debb25115e605cc68a956d8417f7493991aebbef87402a7a8e6f026af046c6",
+    "pml_case017_nocanonical_v1_r2": "e3597f38a70c7170b18d0c3201e4bbf2ac0720e3d609467527faf8f72484d434"
+  },
+  "resource_change": {
+    "request_per_job": {
+      "cpus": 1,
+      "memory_gib": 8
+    },
+    "scientific_protocol_changed": false
+  },
+  "reviewer_submitted": false
+}

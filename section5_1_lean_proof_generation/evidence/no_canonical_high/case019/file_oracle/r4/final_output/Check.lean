@@ -1,0 +1,10 @@
+import Stage3Model
+open Filter
+#check tendsto_nat_div_atTop_atTop
+#check Nat.tendsto_div_atTop
+#check tendsto_nat_floor_atTop
+#check tendsto_atTop_mono'
+#check tendsto_atTop.2
+#check tendsto_atTop.1
+#check Nat.exists_infinite_primes
+#check exists_nat_gt

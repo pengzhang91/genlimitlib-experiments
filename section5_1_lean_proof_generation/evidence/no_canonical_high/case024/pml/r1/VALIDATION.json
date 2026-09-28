@@ -1,0 +1,177 @@
+{
+  "author_lean_size": {
+    "bytes": 12977,
+    "files": 2,
+    "lines": 338,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 434.076409,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 23,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 23
+      },
+      "total_upstream_usd": 0.8788983000000001,
+      "unverifiable": 0
+    },
+    "run_id": "pml_case024_nocanonical_v1_r1",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "d6aef03bed6dd9b7d2e7b350db67f47fec27945dd9253f8ac19de2230916b4a9",
+      "within_word_limit": true,
+      "words": 87
+    }
+  },
+  "certified_lean_size": {
+    "bytes": 12977,
+    "files": 2,
+    "lines": 338,
+    "scope": "Author source closure of selected certified checkpoint, excluding frozen research library."
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0001",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 383.9828595309518,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "0002",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 420.58307750476524,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    },
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "stage3_result": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 0,
+      "checkpoint": "final",
+      "dependency_analysis_exit": 0,
+      "elapsed_seconds": 434.076409,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 0,
+      "inadmissible_axioms": {},
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "3c01d464fd651e8253b3abd7fb184e9a051e74f25a9219f9c8c75842b8cc0c79",
+        "Case024Helpers.lean": "40299c5bef34e1fa23fa702aeaed46302f170d91a11f1088601bbd68ad9c8ba5"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": true
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": 6,
+    "failed_checker_command_events_to_first_pass": 3,
+    "first_valid_observed_pass_seconds": 383.9828595309518,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 433.6759716779925,
+        "usage": {
+          "cache_write_input_tokens": 193589,
+          "cached_input_tokens": 887939,
+          "input_tokens": 1083027,
+          "output_tokens": 21434,
+          "reasoning_output_tokens": 6609
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": true,
+  "partial_review_eligible": false,
+  "primary_success": true,
+  "run_id": "pml_case024_nocanonical_v1_r1",
+  "selected_checkpoint": "0001",
+  "semantic_review_required": false,
+  "target_kernel_pass": true
+}

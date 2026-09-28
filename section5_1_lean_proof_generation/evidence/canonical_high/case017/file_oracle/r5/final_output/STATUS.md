@@ -1,0 +1,5 @@
+Overall outcome: COMPLETE
+
+The exact declaration `stage3_result : Stage3Case017.MainClaim` is implemented in `Case017Formalization.lean` and checked successfully. The proof constructs one family-dependent online generator, proves stabilization of the finite-family information core, establishes eventual novel target-valid generation for every compatible target, and proves both required relative lower-density bounds. The half-density term is obtained from a checked finite-prefix pairing argument and the supplied `GenLimit.PatientScope.partialDensity_of_counting`; the missing-core term follows from eventual announcement and monotonicity of relative lower density.
+
+Materially used declarations and sources include `Stage3Model.lean`, the canonical proof, `GeneratorFirst`, `NovelGeneratesInLimit`, `relativeLowerDensity`, `prefixCount`, `partialDensity_of_counting`, and the finite-family definitions in the exact model. The checked result depends only on the permitted axioms `propext`, `Classical.choice`, and `Quot.sound`.

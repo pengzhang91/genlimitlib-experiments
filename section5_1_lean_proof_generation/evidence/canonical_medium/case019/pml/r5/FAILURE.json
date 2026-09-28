@@ -1,0 +1,48 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 1141.626829,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case019Countable.lean": "ad2155685ae921a97ac22268f8e2d44481c340fd446db0483e473d72d3ec48ee",
+      "Case019Formalization.lean": "7425059e8bdc7e3bcfc6ca8b4b217e3118a90cc2bcf46732f5d3ec2ec43ba829",
+      "Case019Helpers.lean": "bb8ca6b27a20f981325b3f330eafd88893be8066a39534ceed13fa5420b9ff0e",
+      "Case019PatientBridge.lean": "8fa8b78ae2bf7d60605116194684f60203cc5a8dd91ffc7a2d1e25292b33fd2e"
+    },
+    "source_hashes": {
+      "Case019Countable.lean": "ad2155685ae921a97ac22268f8e2d44481c340fd446db0483e473d72d3ec48ee",
+      "Case019Formalization.lean": "7425059e8bdc7e3bcfc6ca8b4b217e3118a90cc2bcf46732f5d3ec2ec43ba829",
+      "Case019Helpers.lean": "bb8ca6b27a20f981325b3f330eafd88893be8066a39534ceed13fa5420b9ff0e",
+      "Case019PatientBridge.lean": "8fa8b78ae2bf7d60605116194684f60203cc5a8dd91ffc7a2d1e25292b33fd2e",
+      "Check.lean": "daf5958b4f05df42d613b38d542c6a621a88f73f4aec6527b38deb8dec39e7c6"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

@@ -1,0 +1,5 @@
+Overall outcome: COMPLETE
+
+The exact declaration `stage3_result : Stage3Case017.MainClaim` is implemented in `Case017Formalization.lean` and checked through the supplied entry-point checker. The proof constructs one noncomputable family-dependent online generator, proves stabilization of the finite version-space intersection to the information core, establishes eventual novelty and simultaneous validity for every compatible target, and proves both requested relative lower-density bounds. The half-core bound uses a checked finite-prefix pairing argument plus `GenLimit.PatientScope.partialDensity_of_counting`; the never-presented-core bound follows from eventual coverage and monotonicity of relative lower density.
+
+Material sources and declarations used: `Stage3Model.lean`, `CANONICAL_FULL_PROOF.md`, `GenLimit.GeneratorFirst`, `GenLimit.NovelGeneratesInLimit`, `GenLimit.PatientScope.relativeLowerDensity`, `GenLimit.PatientScope.partialDensity_of_counting`, and prefix-count lemmas from the supplied Paper 39 modules. The checked theorem depends only on the permitted axioms `propext`, `Classical.choice`, and `Quot.sound`.

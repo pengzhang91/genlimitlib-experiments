@@ -1,0 +1,14 @@
+{
+  "p_case017_delta_v1_r1": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-20T06:17:05.023570+00:00",
+    "source_template": "run_001_v3"
+  },
+  "p_case017_delta_v1_r2": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-20T06:17:05.023626+00:00",
+    "source_template": "run_001_v3"
+  }
+}

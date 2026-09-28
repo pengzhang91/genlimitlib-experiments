@@ -1,0 +1,58 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "stage3_result": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 1700.132022,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 0,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ],
+      "stage3_result": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case019Formalization.lean": "2a2b0a37788bae3ff8e870fe2e0741c1ddbb9ad520adb56fc54a6daf4a36d33e"
+    },
+    "source_hashes": {
+      "AuditPartial.lean": "44fb08dbb495e6a80766715d779b70a6036017c7d05b13575cce30f4cb46b207",
+      "Case019Formalization.lean": "2a2b0a37788bae3ff8e870fe2e0741c1ddbb9ad520adb56fc54a6daf4a36d33e",
+      "Check.lean": "7c05d2171311950b51ff5109d502b1f3d14207842a79aafc930c72e47daeb897",
+      "DensityScratch.lean": "f64152252c683f6ffac2d2b0b1c53cea531022bcf038bfbb5f9d0acc07bfc81f",
+      "Names.lean": "378215cb50c83dee88dda6f5789f997f0743cb66c391fe269a0cf903fd348652",
+      "NegativeScratch.lean": "4974b2c25df67b18bdc267979173a9c4b6217a2b869a7aa859ef07bb252db2c9",
+      "PositiveScratch.lean": "44d75e47fedc6ede3276463c7eec7c8daad53e89a1425144fdf0e9d9a8a64ff2",
+      "Scratch.lean": "f26c76db48c9798298382db090979ba34a4dc166e4a26bebdf3ec445f879de84",
+      "UncountableScratch.lean": "bea96a431679e45b91dde9753424e7608c9d24a94b3e54a84dc2d28d8c6670eb"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

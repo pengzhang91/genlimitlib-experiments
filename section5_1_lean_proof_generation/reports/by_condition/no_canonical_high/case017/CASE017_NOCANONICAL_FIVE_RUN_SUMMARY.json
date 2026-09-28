@@ -1,0 +1,666 @@
+{
+  "all_attempts_reported_api_calls": 662,
+  "all_attempts_reported_api_cost_lower_bound_usd": 16.9736745,
+  "by_arm": {
+    "P": {
+      "author_elapsed_seconds": {
+        "mean": 1225.3168802,
+        "median": 1072.771078,
+        "sum": 6126.584401
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_first_valid_seconds": {
+        "mean": 1159.6450611646287,
+        "median": 978.7551076160744,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 603809,
+        "cached_input_tokens": 17476768,
+        "input_tokens": 18097196,
+        "output_tokens": 165691,
+        "reasoning_output_tokens": 54736
+      },
+      "total_api_calls": 318,
+      "total_api_cost_usd": 6.6950240999999995
+    },
+    "PML": {
+      "author_elapsed_seconds": {
+        "mean": 705.103176,
+        "median": 652.678879,
+        "sum": 3525.51588
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_first_valid_seconds": {
+        "mean": 638.1990563445725,
+        "median": 611.4723614780232,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 941589,
+        "cached_input_tokens": 7239740,
+        "input_tokens": 8191405,
+        "output_tokens": 142806,
+        "reasoning_output_tokens": 41080
+      },
+      "total_api_calls": 152,
+      "total_api_cost_usd": 5.2501325
+    },
+    "PML-FileOracle": {
+      "author_elapsed_seconds": {
+        "mean": 713.2528118,
+        "median": 722.935809,
+        "sum": 3566.264059
+      },
+      "primary_success_rate": 1.0,
+      "primary_successes": 5,
+      "runs": 5,
+      "successful_first_valid_seconds": {
+        "mean": 638.428420583927,
+        "median": 614.4189107902348,
+        "observations": 5
+      },
+      "tokens": {
+        "cache_write_input_tokens": 407882,
+        "cached_input_tokens": 9406402,
+        "input_tokens": 9825368,
+        "output_tokens": 125725,
+        "reasoning_output_tokens": 47549
+      },
+      "total_api_calls": 163,
+      "total_api_cost_usd": 4.1804034
+    }
+  },
+  "campaign": "stage3-case017-nocanonical-v1-five-run-with-transport-replacement",
+  "decision_timing": "after_r1_r2_results_observed",
+  "excluded_attempt_note": "The reported original API cost is a lower bound: the timed-out upstream request has no generation receipt, so its true charge cannot be proven absent. Its tokens and elapsed time are not included in selected-run aggregates.",
+  "excluded_attempts": [
+    {
+      "api_calls_to_first_valid": 25,
+      "api_cost_usd_to_first_valid": 0.7537324999999999,
+      "arm": "PML",
+      "attempt_id": "SLURM_JOB_001_1",
+      "author_elapsed_seconds": 1428.793835,
+      "author_ended_utc": "2026-09-22T00:49:24.650864+00:00",
+      "author_started_utc": "2026-09-22T00:25:35.032200+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "f1a951af2e8bd8835e9e49c25720e4488ef36512a269340d4f75ed3eaa46b8c4",
+        "status": "de05380e02ef598a36e7d356970d2d27fd7e1cceeadbbda9bd7563e5ba2c8452",
+        "validation": "b06c6714dd0e1f2a72394a5aad4187825c40db03f7816b14004411050ae0bc7a"
+      },
+      "primary_success": true,
+      "routing_pass": false,
+      "routing_providers": {
+        "OpenAI": 28
+      },
+      "routing_unverifiable": 1,
+      "run_id": "pml_case017_nocanonical_v1_r4",
+      "seconds_to_first_valid": 1358.5100264768116,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 29,
+      "total_api_cost_usd": 0.8481145,
+      "usage": {
+        "cache_write_input_tokens": 95225,
+        "cached_input_tokens": 1898970,
+        "input_tokens": 1996099,
+        "output_tokens": 22645,
+        "reasoning_output_tokens": 7418
+      }
+    }
+  ],
+  "generated_utc": "2026-09-21T21:20:51.282252-05:00",
+  "interpretation": "Descriptive five-run strict-routing summary. R3–R5 were requested after R1–R2 results were observed. Original PML R4 passed Lean but has an unverifiable upstream request and is excluded; its fresh independent replacement is used for the R4 strict-routing slot. This substitution was decided after the incident and is not preregistered.",
+  "observed_attempts_including_excluded": 16,
+  "original_routing_incident_sha256": "808430bba6d0abd7a05996574659db321b870d6115d280f21c72cfd323fe58f6",
+  "overall": {
+    "author_elapsed_seconds": {
+      "mean": 881.2242893333333,
+      "median": 774.12446,
+      "sum": 13218.36434
+    },
+    "primary_success_rate": 1.0,
+    "primary_successes": 15,
+    "runs": 15,
+    "successful_first_valid_seconds": {
+      "mean": 812.0908460310427,
+      "median": 737.7136943419464,
+      "observations": 15
+    },
+    "tokens": {
+      "cache_write_input_tokens": 1953280,
+      "cached_input_tokens": 34122910,
+      "input_tokens": 36113969,
+      "output_tokens": 434222,
+      "reasoning_output_tokens": 143365
+    },
+    "total_api_calls": 633,
+    "total_api_cost_usd": 16.12556
+  },
+  "replacement_plan_sha256": "498ab8d141a00afa8f9b279de654b7daad262c1ded9e7adde7d4edc291f072f7",
+  "reviewer_submitted": false,
+  "runs": [
+    {
+      "api_calls_to_first_valid": 36,
+      "api_cost_usd_to_first_valid": 0.9440383999999996,
+      "arm": "P",
+      "attempt_id": "p_case017_nocanonical_v1_r1",
+      "author_elapsed_seconds": 1072.771078,
+      "author_ended_utc": "2026-09-21T12:49:16.861293+00:00",
+      "author_started_utc": "2026-09-21T12:31:24.005317+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "8f1f976ef83d3f172076334ea854c0de683c07bc3f0789e15e0e36fab78e3a76",
+        "status": "63b3c03e50d227f0c27681059fee431680b82c3d73d3591f4e646227b8c483c4",
+        "validation": "e08d9edf72bfe72b8568d9f64f917e4b71929504613cb92855e95fa30f895907"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 42
+      },
+      "routing_unverifiable": 0,
+      "run_id": "p_case017_nocanonical_v1_r1",
+      "seconds_to_first_valid": 978.7551076160744,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 42,
+      "total_api_cost_usd": 1.0744793999999995,
+      "usage": {
+        "cache_write_input_tokens": 92582,
+        "cached_input_tokens": 2641762,
+        "input_tokens": 2737200,
+        "output_tokens": 30896,
+        "reasoning_output_tokens": 11019
+      }
+    },
+    {
+      "api_calls_to_first_valid": 71,
+      "api_cost_usd_to_first_valid": 1.2049126000000003,
+      "arm": "P",
+      "attempt_id": "p_case017_nocanonical_v1_r2",
+      "author_elapsed_seconds": 1730.834868,
+      "author_ended_utc": "2026-09-21T14:07:13.933985+00:00",
+      "author_started_utc": "2026-09-21T13:38:22.975451+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "4e284b12668d7143ba7c2fbe37193556e509dc7bad986a3de27f7b6ce74bcede",
+        "status": "54dd3d0064f1e7f098a5f3afbbc71fabe955918b7a425815f953d18c0b2257ec",
+        "validation": "decfe1000da167e3684301480cc644057c5c8d904699806111e95daf4279932b"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 76
+      },
+      "routing_unverifiable": 0,
+      "run_id": "p_case017_nocanonical_v1_r2",
+      "seconds_to_first_valid": 1637.3530080378987,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 76,
+      "total_api_cost_usd": 1.3104654000000004,
+      "usage": {
+        "cache_write_input_tokens": 86536,
+        "cached_input_tokens": 3869347,
+        "input_tokens": 3956111,
+        "output_tokens": 31980,
+        "reasoning_output_tokens": 10674
+      }
+    },
+    {
+      "api_calls_to_first_valid": 33,
+      "api_cost_usd_to_first_valid": 0.8400508999999998,
+      "arm": "P",
+      "attempt_id": "p_case017_nocanonical_v1_r3",
+      "author_elapsed_seconds": 783.797704,
+      "author_ended_utc": "2026-09-21T21:07:34.993051+00:00",
+      "author_started_utc": "2026-09-21T20:54:31.038959+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "4938d06aee60fa16ebd887fce6628309c955e3d8d5d49785e85a5426a8d00cf3",
+        "status": "b50cf5ed8cc24f5bdd5e82a84a10119da6b52977afcabec5b238d58b26ab63c4",
+        "validation": "2f98fb3c324bf5be32c54912a42c107327c287c0f80b91ff8f696575764e3024"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 37
+      },
+      "routing_unverifiable": 0,
+      "run_id": "p_case017_nocanonical_v1_r3",
+      "seconds_to_first_valid": 737.7136943419464,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 37,
+      "total_api_cost_usd": 0.9418329999999998,
+      "usage": {
+        "cache_write_input_tokens": 92438,
+        "cached_input_tokens": 2061280,
+        "input_tokens": 2156234,
+        "output_tokens": 29345,
+        "reasoning_output_tokens": 10607
+      }
+    },
+    {
+      "api_calls_to_first_valid": 110,
+      "api_cost_usd_to_first_valid": 2.237384,
+      "arm": "P",
+      "attempt_id": "p_case017_nocanonical_v1_r4",
+      "author_elapsed_seconds": 1765.056291,
+      "author_ended_utc": "2026-09-22T00:53:55.679098+00:00",
+      "author_started_utc": "2026-09-22T00:24:30.446354+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "886232d832bbc5ba288cc7fc338882218d32ea3d06166a30784b225a224c1b9f",
+        "status": "7fc498adb5c74cf744fb15fac1b67bddadb1980154ff95cf319d89a1eb8e25aa",
+        "validation": "cffd180a1085030ae91ba59ec325f5d57a87f7d41a6531302855cd77e2915083"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 120
+      },
+      "routing_unverifiable": 0,
+      "run_id": "p_case017_nocanonical_v1_r4",
+      "seconds_to_first_valid": 1703.4725449131802,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 120,
+      "total_api_cost_usd": 2.3833498,
+      "usage": {
+        "cache_write_input_tokens": 240262,
+        "cached_input_tokens": 6577474,
+        "input_tokens": 6825831,
+        "output_tokens": 45101,
+        "reasoning_output_tokens": 13626
+      }
+    },
+    {
+      "api_calls_to_first_valid": 40,
+      "api_cost_usd_to_first_valid": 0.9117965,
+      "arm": "P",
+      "attempt_id": "p_case017_nocanonical_v1_r5",
+      "author_elapsed_seconds": 774.12446,
+      "author_ended_utc": "2026-09-22T01:14:19.518460+00:00",
+      "author_started_utc": "2026-09-22T01:01:25.275423+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "7fdc9efa058fae05d06c8daf073d5cdb2fcd1b20e3291e7f298dba6d53c99617",
+        "status": "17c370799ef251c3d317dfa3fd101771381f62c3a2c5d81727f88d6b60f7c7a4",
+        "validation": "7a896050d9f6253d8d2c8f4b0aacb1808499739144fbc3f032a187705f1fc1b9"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 43
+      },
+      "routing_unverifiable": 0,
+      "run_id": "p_case017_nocanonical_v1_r5",
+      "seconds_to_first_valid": 740.9309509140439,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 43,
+      "total_api_cost_usd": 0.9848965,
+      "usage": {
+        "cache_write_input_tokens": 91991,
+        "cached_input_tokens": 2326905,
+        "input_tokens": 2421820,
+        "output_tokens": 28369,
+        "reasoning_output_tokens": 8810
+      }
+    },
+    {
+      "api_calls_to_first_valid": 40,
+      "api_cost_usd_to_first_valid": 1.3031146,
+      "arm": "PML",
+      "attempt_id": "pml_case017_nocanonical_v1_r1",
+      "author_elapsed_seconds": 956.988477,
+      "author_ended_utc": "2026-09-21T12:47:48.244128+00:00",
+      "author_started_utc": "2026-09-21T12:31:50.668529+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "4fdfcfb758260e6c063f35e9251b2fa6be6be11de65e2039b72009b93c2712ab",
+        "status": "ff4eda255699707462586d3c145674f5fd576cf9c53b386beb69a4d9eaf41ff5",
+        "validation": "91debb25115e605cc68a956d8417f7493991aebbef87402a7a8e6f026af046c6"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 43
+      },
+      "routing_unverifiable": 0,
+      "run_id": "pml_case017_nocanonical_v1_r1",
+      "seconds_to_first_valid": 902.0490575479344,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 43,
+      "total_api_cost_usd": 1.3633747,
+      "usage": {
+        "cache_write_input_tokens": 243277,
+        "cached_input_tokens": 2096121,
+        "input_tokens": 2342257,
+        "output_tokens": 33024,
+        "reasoning_output_tokens": 9145
+      }
+    },
+    {
+      "api_calls_to_first_valid": 22,
+      "api_cost_usd_to_first_valid": 1.0102362999999999,
+      "arm": "PML",
+      "attempt_id": "pml_case017_nocanonical_v1_r2",
+      "author_elapsed_seconds": 859.744849,
+      "author_ended_utc": "2026-09-21T13:53:13.975460+00:00",
+      "author_started_utc": "2026-09-21T13:38:52.974524+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "bb4e76671c209c5e2a65e86885c16bc8b4e3d38205748aa507090b99156ddfb9",
+        "status": "6fb563a12d90cd71363349363ae309f61fa959e1bee37bbaacac25d1d73295f0",
+        "validation": "e3597f38a70c7170b18d0c3201e4bbf2ac0720e3d609467527faf8f72484d434"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 25
+      },
+      "routing_unverifiable": 0,
+      "run_id": "pml_case017_nocanonical_v1_r2",
+      "seconds_to_first_valid": 812.7397510721348,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 25,
+      "total_api_cost_usd": 1.0406624,
+      "usage": {
+        "cache_write_input_tokens": 212012,
+        "cached_input_tokens": 1045912,
+        "input_tokens": 1259559,
+        "output_tokens": 29818,
+        "reasoning_output_tokens": 8337
+      }
+    },
+    {
+      "api_calls_to_first_valid": 18,
+      "api_cost_usd_to_first_valid": 0.6467224,
+      "arm": "PML",
+      "attempt_id": "pml_case017_nocanonical_v1_r3",
+      "author_elapsed_seconds": 526.361947,
+      "author_ended_utc": "2026-09-21T21:04:26.761551+00:00",
+      "author_started_utc": "2026-09-21T20:55:39.249746+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "79feb05bc5c0df58cf76d91660a4243d4482fd937ec30af725a11123c2d513f1",
+        "status": "28b78f49d00e664a9db238d1aaaf384ddf2555238f1d8d730c71b80bdb33a08f",
+        "validation": "d5a4870b0b8b035b39d24a863532871a8adf110d111f46a5547db9b2f75e76ab"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 27
+      },
+      "routing_unverifiable": 0,
+      "run_id": "pml_case017_nocanonical_v1_r3",
+      "seconds_to_first_valid": 416.6488184980117,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 27,
+      "total_api_cost_usd": 0.9630488,
+      "usage": {
+        "cache_write_input_tokens": 194910,
+        "cached_input_tokens": 1215809,
+        "input_tokens": 1412490,
+        "output_tokens": 22907,
+        "reasoning_output_tokens": 6617
+      }
+    },
+    {
+      "api_calls_to_first_valid": 30,
+      "api_cost_usd_to_first_valid": 1.1238557,
+      "arm": "PML",
+      "attempt_id": "pml_case017_nocanonical_v1_r4_transport_retry1",
+      "author_elapsed_seconds": 652.678879,
+      "author_ended_utc": "2026-09-22T01:56:49.911959+00:00",
+      "author_started_utc": "2026-09-22T01:45:56.613896+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "48f1edd6a70a82974ccf16567e14125ad1e5016b433a0b112c1bb82e0050fa4c",
+        "status": "2d48d9c2d663354398034b7d8ac036a4d1d61165d02874e1ba311688fd3238bf",
+        "validation": "f689e33c08bc3e69bc2e3cf36c56d8841675a9d611d64acbb542192dbf83bc3e"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 33
+      },
+      "routing_unverifiable": 0,
+      "run_id": "pml_case017_nocanonical_v1_r4",
+      "seconds_to_first_valid": 611.4723614780232,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r4_transport_replacement_v1",
+      "total_api_calls": 33,
+      "total_api_cost_usd": 1.1633677,
+      "usage": {
+        "cache_write_input_tokens": 211849,
+        "cached_input_tokens": 1575936,
+        "input_tokens": 1789964,
+        "output_tokens": 31420,
+        "reasoning_output_tokens": 8605
+      }
+    },
+    {
+      "api_calls_to_first_valid": 18,
+      "api_cost_usd_to_first_valid": 0.5923436999999999,
+      "arm": "PML",
+      "attempt_id": "pml_case017_nocanonical_v1_r5",
+      "author_elapsed_seconds": 529.741728,
+      "author_ended_utc": "2026-09-22T01:11:01.291325+00:00",
+      "author_started_utc": "2026-09-22T01:02:10.817555+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "e872cebfda21da3b51f2348bf4779ea6df9c17ef948c16bf6d5dc7b5dd7f3ba4",
+        "status": "b5c10eb7143dc60b9da23d84d23f0faa2ed3b5233ba541e8b70d7eb9c364e3f0",
+        "validation": "6eafe19d3c6e420629076e2e0fff34ca1e35674ef1838d8396c8a775d9092ecc"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 24
+      },
+      "routing_unverifiable": 0,
+      "run_id": "pml_case017_nocanonical_v1_r5",
+      "seconds_to_first_valid": 448.0852931267582,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 24,
+      "total_api_cost_usd": 0.7196788999999998,
+      "usage": {
+        "cache_write_input_tokens": 79541,
+        "cached_input_tokens": 1305962,
+        "input_tokens": 1387135,
+        "output_tokens": 25637,
+        "reasoning_output_tokens": 8376
+      }
+    },
+    {
+      "api_calls_to_first_valid": 21,
+      "api_cost_usd_to_first_valid": 0.6435493,
+      "arm": "PML-FileOracle",
+      "attempt_id": "file_oracle_case017_nocanonical_v1_r1",
+      "author_elapsed_seconds": 756.852091,
+      "author_ended_utc": "2026-09-21T12:44:01.878726+00:00",
+      "author_started_utc": "2026-09-21T12:31:24.912124+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "8f99b70471ceb551428c1385e929d22b2843430980c7c5ff662528f70c493e43",
+        "status": "9fb38a1a72f7352d01e21dc9a30070b8bc0dc6cd6d5eaff9140ba8dd63a974b6",
+        "validation": "a95b66a8bbfa61af976912bbc0aa24f7d84e3243999c5f716434154c281ac76c"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 26
+      },
+      "routing_unverifiable": 0,
+      "run_id": "file_oracle_case017_nocanonical_v1_r1",
+      "seconds_to_first_valid": 707.2237463672645,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 26,
+      "total_api_cost_usd": 0.7431323000000002,
+      "usage": {
+        "cache_write_input_tokens": 84183,
+        "cached_input_tokens": 1491444,
+        "input_tokens": 1577395,
+        "output_tokens": 23085,
+        "reasoning_output_tokens": 8012
+      }
+    },
+    {
+      "api_calls_to_first_valid": 28,
+      "api_cost_usd_to_first_valid": 0.7205717000000001,
+      "arm": "PML-FileOracle",
+      "attempt_id": "file_oracle_case017_nocanonical_v1_r2",
+      "author_elapsed_seconds": 722.935809,
+      "author_ended_utc": "2026-09-21T13:50:26.722732+00:00",
+      "author_started_utc": "2026-09-21T13:38:23.608680+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "2e783ca977f11c592b9be5533f5d4c5a8a4debbffab350b4c7dabe4839a14de0",
+        "status": "b657740101bcffd697c7e821b75815b50d550a29eb4e15eec82a4bad39e8271d",
+        "validation": "3f01731817a82fbf6077d2fbca0f77b40538ba727ee947eaf7e8485f7f4885bc"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 37
+      },
+      "routing_unverifiable": 0,
+      "run_id": "file_oracle_case017_nocanonical_v1_r2",
+      "seconds_to_first_valid": 588.6865329099819,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1",
+      "total_api_calls": 37,
+      "total_api_cost_usd": 0.8873136,
+      "usage": {
+        "cache_write_input_tokens": 80498,
+        "cached_input_tokens": 2132183,
+        "input_tokens": 2215197,
+        "output_tokens": 25460,
+        "reasoning_output_tokens": 10229
+      }
+    },
+    {
+      "api_calls_to_first_valid": 22,
+      "api_cost_usd_to_first_valid": 0.6590837999999999,
+      "arm": "PML-FileOracle",
+      "attempt_id": "file_oracle_case017_nocanonical_v1_r3",
+      "author_elapsed_seconds": 672.219931,
+      "author_ended_utc": "2026-09-21T21:05:46.733288+00:00",
+      "author_started_utc": "2026-09-21T20:54:34.329544+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "16c56325340f9fd435f683a5e58eb4cade62400ec308b7c668cea080a61c9b34",
+        "status": "31439d92f856bd492b1d97ce200fb06a54f0a8c7ff98d38ab4e2262c6c6b49c8",
+        "validation": "8774e6625547d32a43a7083575ed9ec7630e3310727ec22edf8220eeac1dd71c"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 26
+      },
+      "routing_unverifiable": 0,
+      "run_id": "file_oracle_case017_nocanonical_v1_r3",
+      "seconds_to_first_valid": 614.4189107902348,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 26,
+      "total_api_cost_usd": 0.7326841999999998,
+      "usage": {
+        "cache_write_input_tokens": 78816,
+        "cached_input_tokens": 1415241,
+        "input_tokens": 1495825,
+        "output_tokens": 24906,
+        "reasoning_output_tokens": 10087
+      }
+    },
+    {
+      "api_calls_to_first_valid": 21,
+      "api_cost_usd_to_first_valid": 0.5498561,
+      "arm": "PML-FileOracle",
+      "attempt_id": "file_oracle_case017_nocanonical_v1_r4",
+      "author_elapsed_seconds": 552.879821,
+      "author_ended_utc": "2026-09-22T00:33:45.435564+00:00",
+      "author_started_utc": "2026-09-22T00:24:32.383850+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "8ed7d96ad589eb387ef9c481417d3424d5baad562a98504bfb7ab13c1305fe17",
+        "status": "ef57d2be46a5b2c2f6e38ed8cf6c8afbf33372c3b957d661ad2155ef8facf72b",
+        "validation": "ea7fbeca6df1554c064605edc1e4f8b78d5b64de1a6a79bf4ae89a547561b729"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 27
+      },
+      "routing_unverifiable": 0,
+      "run_id": "file_oracle_case017_nocanonical_v1_r4",
+      "seconds_to_first_valid": 474.07920108316466,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 27,
+      "total_api_cost_usd": 0.6578512000000001,
+      "usage": {
+        "cache_write_input_tokens": 68774,
+        "cached_input_tokens": 1256121,
+        "input_tokens": 1326731,
+        "output_tokens": 23102,
+        "reasoning_output_tokens": 7567
+      }
+    },
+    {
+      "api_calls_to_first_valid": 43,
+      "api_cost_usd_to_first_valid": 1.0707920000000002,
+      "arm": "PML-FileOracle",
+      "attempt_id": "file_oracle_case017_nocanonical_v1_r5",
+      "author_elapsed_seconds": 861.376407,
+      "author_ended_utc": "2026-09-22T01:15:51.784578+00:00",
+      "author_started_utc": "2026-09-22T01:01:30.290806+00:00",
+      "author_state": "FINISHED",
+      "evidence_sha256": {
+        "routing": "190f0ec4d152cef2cfe28bc3bdb947e7d64719ee1851374feff66a42497d61ee",
+        "status": "b4219116830bab7bdd1574d84ee58ee00a482fdbd4bb16dfe0d929b186620722",
+        "validation": "281ca6ad410ea374c041911fc1715604df1b91115123f43ea1a2f6ab25c1cc3a"
+      },
+      "primary_success": true,
+      "routing_pass": true,
+      "routing_providers": {
+        "OpenAI": 47
+      },
+      "routing_unverifiable": 0,
+      "run_id": "file_oracle_case017_nocanonical_v1_r5",
+      "seconds_to_first_valid": 807.7337117689895,
+      "selected_checkpoint": "0001",
+      "source_bundle": "lean2paper_case017_nocanonical_v1_r3r5",
+      "total_api_calls": 47,
+      "total_api_cost_usd": 1.1594221,
+      "usage": {
+        "cache_write_input_tokens": 95611,
+        "cached_input_tokens": 3111413,
+        "input_tokens": 3210220,
+        "output_tokens": 29172,
+        "reasoning_output_tokens": 11654
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scientific_protocol_identical_between_batches": true,
+  "source_manifest_sha256": {
+    "r1_r2": "bc30dee980ebf68121433377f327e7e2dd7f786ed611b0cfa53f6067bb046f9b",
+    "r3_r5_and_replacement": "4b172d42d836c2d82cd8af5b5d1141e020911478d048afb6e187421e8bbc53f7"
+  },
+  "slurm_job_id_redaction": "Concrete Slurm scheduler identifiers were replaced by stable file-local labels; equality and array-task suffix relationships are preserved."
+}

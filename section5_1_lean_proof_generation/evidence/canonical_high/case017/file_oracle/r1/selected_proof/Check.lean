@@ -1,0 +1,11 @@
+import Stage3Model
+#check Nat.lt_wfRel
+#check Nat.lt_wfRel.wf
+#check WellFounded.fix
+#check WellFounded.fix_eq
+#check Nat.rec
+#check Set.Infinite.exists_notMem_finset
+#check Finset.univ.image
+#check Nat.find_spec
+#check Filter.Eventually
+#check Set.Infinite.exists_not_mem_finset

@@ -1,0 +1,14 @@
+{
+  "file_oracle_case024_nocanonical_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-22T02:10:58.890877+00:00",
+    "source_template": "templates/file_oracle/packet"
+  },
+  "file_oracle_case024_nocanonical_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-22T02:10:58.890922+00:00",
+    "source_template": "templates/file_oracle/packet"
+  }
+}

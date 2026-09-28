@@ -1,0 +1,17 @@
+import output.RecursiveSweep
+#check Set.Finite.preimage
+#check Set.Finite.preimage_of_injective
+#check Set.Finite.preimage_image
+#check Set.Finite.bddAbove
+#check Set.Finite.exists_le
+#check Set.Finite.exists_gt
+#check Set.Finite.eventually
+#check Filter.Finite.eventually_atTop
+#check Set.Finite.subset_bddAbove
+#check Set.finite_range_iff
+#check Set.Finite.image
+#check Function.Injective.infinite_iff
+#check Set.Finite.of_finite_image
+#check Finset.exists_max_image
+#check Set.Finite.toFinset
+#check Filter.eventually_atTop.2

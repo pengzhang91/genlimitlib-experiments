@@ -1,0 +1,15 @@
+import Stage3Model
+#check Nat.pow_right_injective
+#check Nat.pow_left_injective
+#check Nat.strictMono_pow
+#check strictMono_nat_of_lt_succ
+#check Countable.of_injective_forall_mem
+#check Function.Injective.countable
+#check Infinite.of_injective_forall_mem
+#check Infinite.of_injective
+#check Set.Countable.to_subtype
+#check SetCoe.ext
+#check Subtype.ext_iff
+#check Nat.even_pow
+#check Even.pow
+#check Nat.not_even_iff_odd

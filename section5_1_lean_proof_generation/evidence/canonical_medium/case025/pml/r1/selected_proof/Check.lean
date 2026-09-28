@@ -1,0 +1,15 @@
+import Helpers
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+open Filter
+#check Set.Finite.eventually_not_mem
+#check Set.Finite.compl_mem_cofinite
+#check Set.Finite.toFinite
+#check Set.Finite.image
+#check Set.Finite.preimage
+#check Finset.max'
+#check Finset.le_max'
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.bddAbove
+#check bddAbove_def
+#check Set.Finite.isBounded_under_le
+#check Filter.Tendsto.natCast_atTop

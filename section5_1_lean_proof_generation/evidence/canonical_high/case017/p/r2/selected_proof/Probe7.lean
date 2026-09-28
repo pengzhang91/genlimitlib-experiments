@@ -1,0 +1,12 @@
+import Stage3Model
+#check Set.Infinite.exists_finset_card_gt
+#check Set.Infinite.exists_finset_card_eq
+#check Set.Infinite.exists_subset_card_eq
+#check Set.infinite_iff_unbounded_card
+#check Set.infinite_iff_unbounded_card_subtype
+#check Filter.tendsto_atTop.2
+#check Filter.tendsto_atTop.1
+#check Filter.eventually_lt_of_lt_liminf
+#check Filter.le_liminf_iff
+#check lt_of_lt_of_le
+#check Filter.isCoboundedUnder_ge_of_le

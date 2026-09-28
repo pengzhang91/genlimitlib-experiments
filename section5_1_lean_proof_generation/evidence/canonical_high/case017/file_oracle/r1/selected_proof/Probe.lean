@@ -1,0 +1,7 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+open Filter
+open scoped Topology
+#check isCoboundedUnder_ge_of_le
+#check isBoundedUnder_of_eventually_ge
+#check liminf_le_liminf
+#print isCoboundedUnder_ge_of_le

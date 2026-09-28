@@ -1,0 +1,10 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+#check Nat.find_congr
+#check Finset.filter_congr
+#check dite_congr
+#check if_congr
+#check congrArg
+#check propext
+#check GenLimit.PatientMachine.Decision.ext
+#check GenLimit.PatientMachine.State.ext

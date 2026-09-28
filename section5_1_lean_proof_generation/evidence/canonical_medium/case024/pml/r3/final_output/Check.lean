@@ -1,0 +1,10 @@
+import Stage3Model
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integrable_const
+#check Set.disjoint_compl_right
+#check Set.disjoint_compl_left
+#check Set.disjoint_left
+#check Finset.card_union_le
+#check Nat.eq_of_mul_self_eq_mul_self
+#check strictMono_nat_of_lt_succ
+#check Fin.last

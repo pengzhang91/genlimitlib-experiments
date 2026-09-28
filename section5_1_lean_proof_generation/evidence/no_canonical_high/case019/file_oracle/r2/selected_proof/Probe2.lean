@@ -1,0 +1,26 @@
+import Stage3Model
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+import Mathlib
+open Filter
+open scoped Topology
+#check Nat.div_le_iff_le_mul
+#check Nat.lt_div_iff_mul_lt
+#check Nat.div_add_mod
+#check Nat.div_mul_le_self
+#check Nat.sub_lt_div
+#check tendsto_natCast_div_add_atTop
+#check tendsto_natCast_div_natCast
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check squeeze_zero
+#check Filter.Tendsto.squeeze
+#check liminf_le_liminf
+#check GenLimit.PatientScope.prefixCount_le
+#check GenLimit.PatientScope.prefixCount_mono
+#check Finset.card_filter_le
+#check Finset.card_image_le
+#check Finset.card_le_card
+#check Finset.max'_mem
+#check Finset.le_max'
+#check Set.Countable.range
+#check Set.Countable.preimage

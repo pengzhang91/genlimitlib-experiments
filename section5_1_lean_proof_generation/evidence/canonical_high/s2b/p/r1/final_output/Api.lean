@@ -1,0 +1,30 @@
+import Stage3Model
+import Mathlib.Data.Nat.Nth
+import Mathlib.Algebra.Ring.Parity
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+import Mathlib.Data.Real.Sqrt
+open Set Filter
+open scoped Topology
+#check Real.nat_sqrt_le_real_sqrt
+#check Real.sqrt_le_sqrt
+#check Real.sqrt_le_left
+#check Real.sqrt_le_iff
+#check Real.sqrt_mul
+#check Real.sqrt_div
+#check tendsto_one_div_atTop_nhds_zero_nat
+#check Filter.Tendsto.sqrt
+#check squeeze_zero
+#check Filter.Tendsto.limsup_eq
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_nhds.div_atTop
+#check tendsto_inv_atTop_zero.comp
+#check Nat.cast_div
+#check Nat.cast_add
+#check Nat.cast_mul
+#check div_le_div_of_nonneg_right
+#check div_le_div_of_nonneg_right
+#check div_le_div_iff₀
+#check Real.sqrt_le_sqrt
+#check Real.sq_sqrt
+#check Real.sqrt_sq_eq_abs
+#check Real.sqrt_nonneg

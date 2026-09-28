@@ -1,0 +1,11 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.Density
+import Mathlib.Data.Nat.Nth
+#check Nat.le_log2
+#check Nat.log2_eq_log_two
+#check Nat.log_monotone
+#check Nat.log_mul_base
+#check Nat.log_mono_right
+#check Nat.tendsto_add_atTop_nat
+#check GenLimit.tendsto_countingError_div
+#check Filter.Tendsto.congr'

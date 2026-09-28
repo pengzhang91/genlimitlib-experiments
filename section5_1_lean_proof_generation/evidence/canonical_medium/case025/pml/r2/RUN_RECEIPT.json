@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case025_reasoning_medium_v1_r2",
+  "condition": "canonical_medium",
+  "evidence_directory_run_id": "pml_case025_reasoning_medium_v1_r2",
+  "final_output_files": 5,
+  "formal_run_id": "pml_case025_reasoning_medium_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 15723544,
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/pml/logs/pml_case025_reasoning_medium_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "a8e3c35369ca075343063ca59ae80c423cb5cfcdfc7b2f4ffd2af7d8e8bd8c79"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_medium/case025/pml/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_medium/case025/pml/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_medium/case025/pml/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case025_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/pml/logs/pml_case025_reasoning_medium_v1_r2/proxy_requests.jsonl",
+      "sha256": "f376a2e59aa629c757bf3a27e9c4a5051637af7f5f285deb49151416e71ff56b"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/pml/logs/pml_case025_reasoning_medium_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "835ad6cb40a052a4c24de31ac54333843d4ac7ec162183a38febd980bbe01dba"
+    },
+    "status": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/pml/logs/pml_case025_reasoning_medium_v1_r2/STATUS.json",
+      "sha256": "c8c4c17ae2db3c326931e9cf02fc433ac35c4ffe58085b64456818d715442209"
+    },
+    "validation": {
+      "path": "lean2paper_case025_reasoning_medium_v1/cohort/arms/pml/results/pml_case025_reasoning_medium_v1_r2/VALIDATION.json",
+      "sha256": "a3d5fa8f8a0408292493beb9fb6b867c80302d3a2477500dfe3258bf4fbf370d"
+    }
+  },
+  "task": "case025"
+}

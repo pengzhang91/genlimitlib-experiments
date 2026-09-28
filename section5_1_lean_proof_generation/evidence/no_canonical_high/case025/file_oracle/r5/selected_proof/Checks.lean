@@ -1,0 +1,15 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+#check Nat.find_congr
+#check Nat.find_eq_iff
+#check Nat.find_min'
+#check Set.Finite.exists_le
+#check Finset.exists_nat_subset_range
+#check Filter.EventuallyLE.liminf_le_liminf
+#check liminf_le_liminf
+#check tendsto_const_nhds.div_atTop
+#check tendsto_natCast_atTop_atTop
+#check Filter.Tendsto.liminf_add
+#check Filter.Tendsto.liminf_eq
+#check Set.Finite.bddAbove
+#check Set.Finite.exists_nat_gt

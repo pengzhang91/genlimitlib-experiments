@@ -1,0 +1,11 @@
+import Mathlib
+#check le_liminf_mul
+#check Filter.liminf_le_liminf
+#check eventually_lt_nhds
+#check Filter.Tendsto.eventually
+#check Filter.isBoundedUnder_of_eventually_ge
+#check Filter.isCoboundedUnder_ge_of_eventually_le
+#check Filter.liminf_const
+#check Filter.Tendsto.liminf_eq
+#check Filter.Tendsto.limsup_eq
+#check liminf_add_le

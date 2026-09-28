@@ -1,0 +1,106 @@
+\section{Contrastive ambiguity and exact list learning}
+\label{ca:chapter}
+\subsection{Motivation and source papers}
+A contrastive observation says that exactly one of two points belongs to the target, but hides which one. How much uncertainty can survive an entire sequence of such observations? If a short list of hypotheses is enough, does that mean the class splits into equally few ordinary identification problems?
+
+These questions combine the list-learning objective of \citet{P14} with the contrastive observation model of \citet{P28}. The latter supplies the common-crossing geometry; the former motivates the comparison between list size and decomposition into identifiable subclasses. The findings below realize arbitrary finite-face ambiguity patterns on countable vertex sets, compute two exact list widths, and identify subclass decomposition with hypergraph coloring. These formulas concern the constructed families, rather than all contrastive classes.
+
+The central example is particularly simple: a class can require only two eventual guesses, yet need arbitrarily many subclasses if each subclass must be identifiable with one guess. Its difficulty is entirely due to contrastive identification: ordinary full-positive-text identification and fresh generation remain easy.
+
+\subsection{Observation and success conventions}
+The distinction between the input promises matters throughout this section. A \emph{full positive text} for a support $L$ has range exactly $L$. A \emph{partial positive text} has infinite range contained in $L$, and need not cover $L$. A \emph{contrastive presentation} consists of unordered pairs of distinct points, each pair having exactly one endpoint in $L$, and its endpoints must cover every point of $L$. A deterministic $k$-list learner returns a finite set of at most $k$ target names on every finite history. The empty list is permitted. Lists name the original supports; on histories outside the stated promise a learner may return the empty list. Success means that the true support belongs to every sufficiently late output list; the whole list need not stabilize. All classes are extensional, so different names below denote different supports.
+
+\subsection{Every countable simplicial complex is realizable}
+Let $V$ be a nonempty countable vertex set and let $K$ be an abstract simplicial complex of finite subsets of $V$: it contains $\varnothing$ and every singleton, and is closed under taking subsets. Its faces form a countable set. Take disjoint infinite blocks
+\[
+X=\bigsqcup_{\sigma\in K}B_\sigma,
+\qquad B_\sigma=\{(\sigma,n):n\in\N\},
+\qquad C=B_\varnothing.
+\]
+For each $v\in V$ define
+\[
+N_v=\bigcup_{\substack{\sigma\in K\\v\in\sigma}}B_\sigma,
+\qquad h_v=X\setminus N_v,
+\qquad \mathcal H_K=\{h_v:v\in V\}.
+\]
+Every $h_v$ contains the infinite common positive block $C$ and excludes $B_{\{v\}}$. The supports are distinct and incomparable: if $u\ne v$, then $B_{\{u\}}\subseteq h_v\setminus h_u$, and conversely.
+
+For a support $h$ write
+\[
+\Delta(h)=\{\{x,y\}:x\ne y,\ \text{exactly one of }x,y\text{ lies in }h\},
+\qquad
+\Gamma(F)=\bigcap_{h\in F}\Delta(h).
+\]
+A finite nonempty family $F$ is \emph{jointly presentable} if there is one contrastive presentation valid for every member. These are the nonempty faces of the confusability complex of \citet{P28}.
+
+\begin{theorem}[Exact complex realization]\label{thm:ca:realization}
+For every finite nonempty $F\subseteq V$, the family $\{h_v:v\in F\}$ is jointly presentable if and only if $F\in K$. Thus every countable abstract simplicial complex is exactly the finite-face contrastive confusability complex of a countable antichain of infinite proper supports with a common infinite positive core.
+\end{theorem}
+\begin{proof}
+Suppose first that a shared presentation exists. Fix $c\in C$. Coverage forces $c$ to appear in an edge $\{c,y\}$. Since $c$ is positive for every target, $y$ must be negative for every $h_v$ with $v\in F$. If $y\in B_\sigma$, this means $F\subseteq\sigma$. Downward closure gives $F\in K$.
+
+Conversely, let $F\in K$ be nonempty. We will cover $U=\bigcup_{v\in F}h_v$ by common crossing edges. Given $x\in U$, let $x\in B_\sigma$ and put $\tau=F\setminus\sigma$. The fact that $x$ is positive for at least one target says $\tau\ne\varnothing$. Since $\tau\subseteq F$, it is a face. Choose $y\in B_\tau$. For every $v\in F$, the point $x$ is negative exactly when $v\in\sigma$, and $y$ is negative exactly when $v\in F\setminus\sigma$. These conditions are complementary on $F$. The blocks are distinct: $\tau$ is nonempty and disjoint from $\sigma$. Therefore $\{x,y\}$ is an edge crossing every target in the family. Enumerate the countable set $U$ and emit one such edge for each point. Every positive point of every target is covered, as required.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:ca:realization} controls higher-order faces, not just pairs. A complex may contain every pair of a vertex set while omitting any chosen higher-dimensional faces, subject only to downward closure. Such nonflag behavior is relevant because shared contrastive presentations have genuinely higher-order obstructions.
+\end{remark}
+
+\subsection{Three distinct complexity measures}
+Define the rank and two-face union bound by
+\[
+r(K)=\sup_{\sigma\in K}|\sigma|,
+\qquad
+b(K)=\sup_{\sigma,\tau\in K}|\sigma\cup\tau|.
+\]
+Both take values in $\N\cup\{\infty\}$. Downward closure implies
+\begin{equation}\label{eq:ca:symdiff}
+b(K)=\sup_{\sigma,\tau\in K}|\sigma\mathbin{\triangle}\tau|.
+\end{equation}
+Indeed, a symmetric difference is contained in the union. In the other direction replace $\tau$ by the face $\tau\setminus\sigma$; its symmetric difference with $\sigma$ is $\sigma\cup\tau$. Consequently $r(K)\le b(K)\le2r(K)$ whenever $r(K)$ is finite.
+
+A \emph{nonuniform distinct-edge $k$-list guarantee} uses one learner and a finite threshold $d_v$ for each target: every finite crossing history for $h_v$ with at least $d_v$ distinct unordered edges must return a list containing $h_v$. A uniform guarantee uses one threshold for the entire class. These conditions quantify over finite crossing histories, as do the distinct-edge generation predicates of \citet{P28}. They are stronger than eventual correctness on complete presentations.
+
+\begin{theorem}[Exact eventual and threshold widths]\label{thm:ca:widths}
+For every positive integer $k$:
+\begin{enumerate}
+\item $\mathcal H_K$ is eventually contrastive $k$-list identifiable if and only if $r(K)\le k$. When this holds, the whole list can stabilize.
+\item $\mathcal H_K$ has a nonuniform distinct-edge $k$-list guarantee if and only if it has a uniform one, and these hold if and only if $b(K)\le k$. In the positive case, one edge suffices uniformly.
+\end{enumerate}
+Moreover $\mathcal H_K$ is identifiable from full positive texts and is uniformly contrastively generatable from time zero, with optional avoidance of its own earlier outputs.
+\end{theorem}
+\begin{proof}
+For the first lower bound, any face with $k+1$ vertices supplies a presentation shared by $k+1$ distinct targets, by Theorem~\ref{thm:ca:realization}. Taking the maximum of their success times forces all names into one eventual list. If $r(K)>k$, downward closure supplies such a face.
+
+For the first upper bound, wait until an observed edge involves $C$. Full positive-side coverage guarantees that this happens on every valid presentation. The other endpoint belongs to some $B_\sigma$ with $\sigma\ne\varnothing$. This edge crosses exactly the targets named by $\sigma$, since the endpoint in $C$ is positive for all targets. Store and output that fixed set of names forever. It contains the true target and has size at most $r(K)$. Before that event return a fixed singleton. This also proves whole-list stabilization.
+
+For the threshold upper bound, an edge between $B_\sigma$ and $B_\tau$ crosses $h_v$ exactly when $v\in\sigma\mathbin{\triangle}\tau$. Thus the first edge reveals a fixed candidate set of size at most $b(K)$. Output and retain that set; on a valid history it is nonempty and contains the target.
+
+For necessity, suppose $D=\sigma\mathbin{\triangle}\tau$ has more than $k$ vertices. The distinct infinite blocks $B_\sigma$ and $B_\tau$ contain arbitrarily many distinct unordered edges between them, all of which cross every target named by $D$. If target-dependent thresholds existed, take at least $\max_{v\in D}d_v$ distinct such edges. The resulting one history requires every name in $D$ simultaneously, a contradiction. Each finite history used here extends separately to a full presentation of every target in $D$: append an enumeration of that target paired with a fixed negative point. A shared complete presentation for $D$ is not needed for this finite-prefix argument.
+
+For full-positive-text identification enumerate $V$ and select the least target consistent with the observed sample. On a full text for $h_v$, every earlier wrong $h_u$ is eventually eliminated by a point of $B_{\{u\}}\subseteq h_v\setminus h_u$. There are only finitely many earlier names. Finally, a generator may always choose an element of the infinite common block $C$ outside the finitely many observed endpoints and, if desired, outside all its previous outputs. This succeeds on every history.
+\end{proof}
+
+\begin{corollary}[Sharp factor two]\label{cor:ca:two}
+For every integer $r\ge1$ and every integer $b$ with $r\le b\le2r$, there is a finite class with exact eventual contrastive list width $r$ and exact nonuniform and uniform distinct-edge list width $b$. It is full-positive-text identifiable and uniformly contrastively generatable from time zero. All supports can be finite unions of residue classes of $\N$, hence unary regular languages.
+\end{corollary}
+\begin{proof}
+Take $r$-element sets $A$ and $B$ whose union has size $b$, allowing $A=B$ when $b=r$. Set $V=A\cup B$, and let $K$ consist of all subsets of either set. Its rank is $r$. Every union of two faces lies in the union of the facets, and the two facets attain size $b$, so its two-face union bound is $b$. Apply Theorem~\ref{thm:ca:widths}. Since $K$ is finite, replace its face blocks by distinct residue classes modulo $|K|$. The same membership and crossing calculations hold.
+\end{proof}
+
+\subsection{Hypergraph decomposition is a third invariant}
+For $j\ge1$, let $\mathcal E_{j+1}(K)$ be the $(j+1)$-uniform hypergraph on $V$ whose edges are the $(j+1)$-element faces of $K$. A weak coloring has no monochromatic hyperedge.
+
+\begin{theorem}[Exact subclass decomposition]\label{thm:ca:coloring}
+The minimum number of eventually contrastive $j$-list-identifiable subclasses covering $\mathcal H_K$ equals the weak chromatic number of $\mathcal E_{j+1}(K)$. In particular, for $j=1$ any countable graph can be realized as the obstruction to decomposing the class into contrastively identifiable subclasses.
+\end{theorem}
+\begin{proof}
+For $W\subseteq V$, the subclass $\{h_v:v\in W\}$ is eventually contrastive $j$-list identifiable exactly when every face of $K$ contained in $W$ has size at most $j$. Necessity follows from the shared-presentation lower bound. For sufficiency use the first-$C$ learner from Theorem~\ref{thm:ca:widths}, but return $\sigma\cap W$ after an edge between $C$ and $B_\sigma$. This is a face contained in $W$, so it has size at most $j$, and it contains the target. Thus every color class gives an admissible subclass in a cover. Conversely, from any finite or countable cover assign to each vertex the least covering index that contains it. A monochromatic $(j+1)$-face would lie in one admissible subclass, contradicting the characterization. Countably many singleton subclasses always provide a cover, so these possibilities exhaust the minimum.
+\end{proof}
+
+For example, for $m\ge2$, take all singletons and all pairs of an $m$-vertex complete graph, with no larger faces. The eventual list width is two, but covering by single-identifiable subclasses requires $m$ pieces. The countably infinite complete graph makes the required number countably infinite. This disproves the direct contrastive analog of the full-positive-text $k$-way stratification theorem of \citet{P14}, even though the entire constructed class is already identifiable from ordinary full positive texts.
+
+
+\subsection{What the finding contributes}
+The three quantities separate three questions. The rank $r(K)$ measures ambiguity along a complete presentation. The two-face union bound $b(K)$ measures ambiguity after an arbitrarily long finite prefix. The weak chromatic number measures how many simpler problems are needed to cover the class. Their differences are exact and already occur for finite families of unary regular languages.
+

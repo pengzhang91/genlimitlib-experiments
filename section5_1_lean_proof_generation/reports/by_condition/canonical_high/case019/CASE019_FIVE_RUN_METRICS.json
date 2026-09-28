@@ -1,0 +1,480 @@
+{
+  "artifacts": {
+    "censored_attempt": {
+      "bytes": 1403,
+      "path": "case019_aborted_attempts/pml_case019_delta_v1_r3_jobSLURM_JOB_025/ATTEMPT.json",
+      "sha256": "e8655f5f1e30f9b38283d98bd54e4b5717fc4a65abfd3f1b1c6b2697b17d0c74"
+    },
+    "design_freezes": [
+      {
+        "bytes": 39305,
+        "path": "lean2paper_case019_delta_v1/cohort/arms/p/control/design_freeze.json",
+        "sha256": "e889bac89fe1ebddd8eaa576f8f3b60eb6d43fde5270ebaea81ff70e75882312"
+      },
+      {
+        "bytes": 354278,
+        "path": "lean2paper_case019_delta_v1/cohort/arms/pml/control/design_freeze.json",
+        "sha256": "18677fddff267783a103200521715d5d509f3609ab28183939c487d9bd6f88d0"
+      },
+      {
+        "bytes": 151057,
+        "path": "lean2paper_case019_delta_v1/cohort/arms/file_oracle/control/design_freeze.json",
+        "sha256": "3bf7d11a719c8f24bb13d60e8d4abe595f8cb910d670b14f33d4639c34dab623"
+      }
+    ],
+    "preparation_record": {
+      "bytes": 887,
+      "path": "lean2paper_case019_delta_v1/cohort/PREPARATION.json",
+      "sha256": "f06de9582d97566a6a7fa162e505d1a9f52a67ad72b3213ec2765814fcd0aefa"
+    },
+    "result_archives": [
+      {
+        "bytes": 24197404,
+        "path": "lean2paper_case019_delta_v1/result_archives/case019_delta_v1_results_20260921T021543Z.tar.zst",
+        "sha256": "6602ff7422688c809d92e6e8e10030d2871d45eb3642caea83f2d55328d4ff7b"
+      }
+    ],
+    "source_archive": {
+      "bytes": 5764888,
+      "path": "lean2paper_case019_delta_v1.tar.zst",
+      "sha256": "7f676e7659f02dd39e411555e583b7f23e630a90e461ec6d78c851e7f922b817"
+    },
+    "source_manifest": {
+      "bytes": 76124,
+      "path": "lean2paper_case019_delta_v1/SOURCE_MANIFEST.json",
+      "sha256": "7d2a58e1775a838ba6d7a8c184d80f4564460dae45699853bd0b4eb17645ede1"
+    },
+    "submission_record": {
+      "bytes": 6271,
+      "path": "case019_delta_v1_logs/SUBMISSION.json",
+      "sha256": "f25668de0850e86f850d6e9909f5e40941bc903e6c23ab3605d8c24a52a7eee6"
+    }
+  },
+  "by_arm": {
+    "P": {
+      "author_elapsed_seconds": {
+        "count": 5,
+        "maximum": 2048.341753,
+        "mean": 1215.4159382,
+        "median": 837.485677,
+        "minimum": 479.858602,
+        "sample_stdev": 726.6189909004436,
+        "sum": 6077.079691
+      },
+      "cache_hit_fraction_of_input": 0.952764261978722,
+      "cache_write_input_tokens": 752463,
+      "cached_input_tokens": 15541080,
+      "failures": 5,
+      "first_valid_seconds_successes": {
+        "count": 0,
+        "maximum": null,
+        "mean": null,
+        "median": null,
+        "minimum": null,
+        "sample_stdev": null,
+        "sum": 0.0
+      },
+      "input_tokens": 16311569,
+      "model_calls": 267,
+      "output_tokens": 178201,
+      "reasoning_output_tokens": 81893,
+      "reuse": {
+        "author_logical_declarations": 0,
+        "mean_author_root_lines": null,
+        "pooled_reuse_share": null,
+        "research_logical_declarations": 0,
+        "valid_runs": 0
+      },
+      "runs": 5,
+      "success_rate": 0.0,
+      "success_rate_wilson_95": [
+        0.0,
+        0.43448246478317476
+      ],
+      "successes": 0,
+      "successful_cost_to_first_valid_usd": 0,
+      "total_tokens": 16489770,
+      "total_upstream_usd": 6.807435499999999
+    },
+    "PML": {
+      "author_elapsed_seconds": {
+        "count": 5,
+        "maximum": 2554.605121,
+        "mean": 1688.042217,
+        "median": 1733.179854,
+        "minimum": 616.429291,
+        "sample_stdev": 710.8168058889144,
+        "sum": 8440.211085
+      },
+      "cache_hit_fraction_of_input": 0.9029637165031675,
+      "cache_write_input_tokens": 3463327,
+      "cached_input_tokens": 32570555,
+      "failures": 2,
+      "first_valid_seconds_successes": {
+        "count": 3,
+        "maximum": 2503.5717993108556,
+        "mean": 1879.96258313853,
+        "median": 1644.5009340739343,
+        "minimum": 1491.8150160307996,
+        "sample_stdev": 545.4306447784774,
+        "sum": 5639.8877494155895
+      },
+      "input_tokens": 36070724,
+      "model_calls": 559,
+      "output_tokens": 355266,
+      "reasoning_output_tokens": 104788,
+      "reuse": {
+        "author_logical_declarations": 276,
+        "mean_author_root_lines": 1142.3333333333333,
+        "pooled_reuse_share": 0.8552700576822234,
+        "research_logical_declarations": 1631,
+        "valid_runs": 3
+      },
+      "runs": 5,
+      "success_rate": 0.6,
+      "success_rate_wilson_95": [
+        0.2307242812760128,
+        0.882379225767352
+      ],
+      "successes": 3,
+      "successful_cost_to_first_valid_usd": 12.197931199999998,
+      "total_tokens": 36425990,
+      "total_upstream_usd": 18.798772500000002
+    },
+    "PML-FileOracle": {
+      "author_elapsed_seconds": {
+        "count": 5,
+        "maximum": 2663.251743,
+        "mean": 2213.2722172,
+        "median": 2157.623546,
+        "minimum": 1905.255414,
+        "sample_stdev": 279.71638214754614,
+        "sum": 11066.361086
+      },
+      "cache_hit_fraction_of_input": 0.9047338814754748,
+      "cache_write_input_tokens": 3691184,
+      "cached_input_tokens": 35455161,
+      "failures": 0,
+      "first_valid_seconds_successes": {
+        "count": 5,
+        "maximum": 2568.1250110240653,
+        "mean": 2148.163314872887,
+        "median": 2088.9191867951304,
+        "minimum": 1862.304885905236,
+        "sample_stdev": 261.09855724008514,
+        "sum": 10740.816574364435
+      },
+      "input_tokens": 39188497,
+      "model_calls": 639,
+      "output_tokens": 397065,
+      "reasoning_output_tokens": 125163,
+      "reuse": {
+        "author_logical_declarations": 457,
+        "mean_author_root_lines": 1068.4,
+        "pooled_reuse_share": 0.8557449494949495,
+        "research_logical_declarations": 2711,
+        "valid_runs": 5
+      },
+      "runs": 5,
+      "success_rate": 1.0,
+      "success_rate_wilson_95": [
+        0.5655175352168251,
+        1.0
+      ],
+      "successes": 5,
+      "successful_cost_to_first_valid_usd": 20.081152399999997,
+      "total_tokens": 39585562,
+      "total_upstream_usd": 20.373946199999995
+    }
+  },
+  "campaign_wall_span": {
+    "earliest_author_start_utc": "2026-09-20T21:05:43.703462+00:00",
+    "latest_author_end_utc": "2026-09-21T02:02:25.637540+00:00",
+    "seconds_including_interwave_gaps": 17801.934078
+  },
+  "generated_utc": "2026-09-21T02:25:33.164552+00:00",
+  "overall": {
+    "author_elapsed_seconds": {
+      "count": 15,
+      "maximum": 2663.251743,
+      "mean": 1705.5767908,
+      "median": 1945.146524,
+      "minimum": 479.858602,
+      "sample_stdev": 703.9433124036216,
+      "sum": 25583.651862000002
+    },
+    "cache_hit_fraction_of_input": 0.9125922796996728,
+    "cache_write_input_tokens": 7906974,
+    "cached_input_tokens": 83566796,
+    "failures": 7,
+    "first_valid_seconds_successes": {
+      "count": 8,
+      "maximum": 2568.1250110240653,
+      "mean": 2047.588040472503,
+      "median": 2067.625637924066,
+      "minimum": 1491.8150160307996,
+      "sample_stdev": 378.44622449491345,
+      "sum": 16380.704323780024
+    },
+    "input_tokens": 91570790,
+    "model_calls": 1465,
+    "output_tokens": 930532,
+    "reasoning_output_tokens": 311844,
+    "reuse": {
+      "author_logical_declarations": 733,
+      "mean_author_root_lines": 1096.125,
+      "pooled_reuse_share": 0.8555665024630542,
+      "research_logical_declarations": 4342,
+      "valid_runs": 8
+    },
+    "runs": 15,
+    "success_rate": 0.5333333333333333,
+    "success_rate_wilson_95": [
+      0.30116980025498397,
+      0.7519046463426261
+    ],
+    "successes": 8,
+    "successful_cost_to_first_valid_usd": 32.27908359999999,
+    "total_tokens": 92501322,
+    "total_upstream_usd": 45.9801542
+  },
+  "preparation_audit": {
+    "arms": {
+      "P": {
+        "compiled_seed_packets": 1,
+        "design_freeze_path": "lean2paper_case019_delta_v1/cohort/arms/p/control/design_freeze.json",
+        "design_freeze_sha256": "e889bac89fe1ebddd8eaa576f8f3b60eb6d43fde5270ebaea81ff70e75882312",
+        "distinct_frozen_input_manifests": 1,
+        "lean_sources_per_packet": 11,
+        "olean_artifacts_per_packet": 10,
+        "prepared_cache": {
+          "eligible": false,
+          "hit": false,
+          "key": null,
+          "note": "not a 161-source PML tree",
+          "packet": "p_case019_delta_v1_r1",
+          "publication": "not eligible"
+        },
+        "replicates": 5
+      },
+      "PML": {
+        "compiled_seed_packets": 1,
+        "design_freeze_path": "lean2paper_case019_delta_v1/cohort/arms/pml/control/design_freeze.json",
+        "design_freeze_sha256": "18677fddff267783a103200521715d5d509f3609ab28183939c487d9bd6f88d0",
+        "distinct_frozen_input_manifests": 1,
+        "lean_sources_per_packet": 164,
+        "olean_artifacts_per_packet": 163,
+        "prepared_cache": {
+          "eligible": true,
+          "hit": true,
+          "key": "a3379519d96f32ba60a82a9eb1ff8f7ae0650177a47cb1bad745902b0e54de72",
+          "note": "validated content-addressed cache",
+          "packet": "pml_case019_delta_v1_r1",
+          "publication": "cache entry already exists"
+        },
+        "replicates": 5
+      },
+      "PML-FileOracle": {
+        "compiled_seed_packets": 1,
+        "design_freeze_path": "lean2paper_case019_delta_v1/cohort/arms/file_oracle/control/design_freeze.json",
+        "design_freeze_sha256": "3bf7d11a719c8f24bb13d60e8d4abe595f8cb910d670b14f33d4639c34dab623",
+        "distinct_frozen_input_manifests": 1,
+        "lean_sources_per_packet": 62,
+        "olean_artifacts_per_packet": 61,
+        "prepared_cache": {
+          "eligible": false,
+          "hit": false,
+          "key": null,
+          "note": "not a 161-source PML tree",
+          "packet": "file_oracle_case019_delta_v1_r1",
+          "publication": "not eligible"
+        },
+        "replicates": 5
+      }
+    },
+    "model_calls_during_preparation": 0,
+    "preparation_path": "lean2paper_case019_delta_v1/cohort/PREPARATION.json",
+    "preparation_sha256": "f06de9582d97566a6a7fa162e505d1a9f52a67ad72b3213ec2765814fcd0aefa",
+    "state": "PREPARED"
+  },
+  "protocol": {
+    "campaign": "stage3-case019-delta-v1",
+    "expected_codex_version": "codex-cli 0.155.1",
+    "lean_toolchain": "leanprover/lean4:v4.24.0",
+    "model": "openai/gpt-5.6-sol",
+    "model_context_window": 1050000,
+    "provider_pin": {
+      "allow_fallbacks": false,
+      "only": [
+        "openai"
+      ]
+    },
+    "reasoning_effort": "high",
+    "seconds_per_run": 5400,
+    "transport": "openrouter-via-local-pinning-proxy"
+  },
+  "run_routing_audit_sha256": {
+    "file_oracle_case019_delta_v1_r1": "bb0dbda45f3ba2da10a9807d27eb490a5ea9f7474eb9fa95ca211347a0d8b524",
+    "file_oracle_case019_delta_v1_r2": "e86ebf0bfc3654df1f99a4b373178e5cf819ff2b9981d356dd73fc9cd578ffd4",
+    "file_oracle_case019_delta_v1_r3": "33c3fe91ebeb91476477ec6abb627776c0fbe2eb6108152576003480a152abd2",
+    "file_oracle_case019_delta_v1_r4": "993149a67f9d5fe1839fe38fe3e469b805f8fc10d9a4f1c6b0c8863044d8e1d6",
+    "file_oracle_case019_delta_v1_r5": "a73f867e72e68f8acab5e6be5fe72696e238b8c0d35008739d2a7df787851825",
+    "p_case019_delta_v1_r1": "e061b735a9706a115b224ba68dd6b021504164950ae4368b3d5895f563f333d5",
+    "p_case019_delta_v1_r2": "79488500bcb291ad99c2f9c9f5415d12c403a248ecf78beaab1ca3763f6a8475",
+    "p_case019_delta_v1_r3": "a56a02f4b317e41a51ec50063105b8e6240340c4c5954e986282522361a25097",
+    "p_case019_delta_v1_r4": "e3da55d05e49408ce01cae38463f6afdf68bddae593d6bb3701c0ecb74fcfff0",
+    "p_case019_delta_v1_r5": "8659115ceed40606cd3f1fb1367551fdb1e4d1a61e3249345c484338dc27eef8",
+    "pml_case019_delta_v1_r1": "704c14ef0dba5094ee968e99265f12c22b72e8ab810b2cede87e0d2a861510c5",
+    "pml_case019_delta_v1_r2": "13e9ec78e4009bc3bb429ca8334711c454a4207fea2ab517b07489f7242fe76b",
+    "pml_case019_delta_v1_r3": "f4ae95eb0c0ffb40d735e9a0ccb158b152c4fcd9421e7bb030bd61527bd6aa21",
+    "pml_case019_delta_v1_r4": "846693e94430b0ec857217acd9c2c54a3e6d20023d87f7d1241add91c454be40",
+    "pml_case019_delta_v1_r5": "f661435e70c76800708e6042008e629422d279d1451865d6e99879abb23f15d8"
+  },
+  "run_validation_sha256": {
+    "file_oracle_case019_delta_v1_r1": "312b70949dd967b49bbe78cca8cd1b3e75d27197ca1baeebe0ba76fb331d1501",
+    "file_oracle_case019_delta_v1_r2": "bbc1f5282769bbcdc531b7e1dc28fab3f6f8a3a9ad55521b58688fb3d510be6d",
+    "file_oracle_case019_delta_v1_r3": "6196fed6c9d95122a2e11c87517d537c0a4b5cae968191b2abb7602c4b0caaba",
+    "file_oracle_case019_delta_v1_r4": "373380e39d0062043ef3ef87cc858e27af4eaedc4a311ca92c0fa77b9259613a",
+    "file_oracle_case019_delta_v1_r5": "0edb73bd58ff7a1ec2e0a3e17774aff74e1c554a3e3f6679bb7f7967397ef8ec",
+    "p_case019_delta_v1_r1": "19eb7a1944c458c7e0f5f82f50edbdf031c4dd83a8cbbbe8a6b9db8f2706d2ef",
+    "p_case019_delta_v1_r2": "60325295a566e12ff71cfa4376bcb7548197d9f33cd787e76b6c9bf5e489071f",
+    "p_case019_delta_v1_r3": "476b93d168247fc13cb8f1787612defc40c3f215aa4e79ab6bc18db546385905",
+    "p_case019_delta_v1_r4": "938b791343819d26fdec2d28bed18500425749574bc5db36322be41ededa1051",
+    "p_case019_delta_v1_r5": "66c2d5e60a138fe8355115ba671a665c7055f74cb7ff0685d794e41e86536343",
+    "pml_case019_delta_v1_r1": "e21db5c678914b0ae1e0ec722eb7f964adec399cbefd4b38238daf52ee89c906",
+    "pml_case019_delta_v1_r2": "c414712f314d649099d1ca2c3e5ab41ce25e9008e08e814d751a1360f2959a2e",
+    "pml_case019_delta_v1_r3": "7a0fc60b8920f9b495ea5be7e7a0fa6a5289050dad0cdf810873e3aa848bb474",
+    "pml_case019_delta_v1_r4": "cd049d49d750fa29451d2043ed87caf2cc7f5f4b2dfbe4d31cff9ba59056b312",
+    "pml_case019_delta_v1_r5": "2edb2a1777e58256476fb21a8b9583ea8123ab656d896a9465c3642e75c8087f"
+  },
+  "schema_version": 1,
+  "submission": {
+    "attempt_history": [
+      {
+        "cancelled_dependents": [
+          "SLURM_JOB_002",
+          "SLURM_JOB_003",
+          "SLURM_JOB_004",
+          "SLURM_JOB_005",
+          "SLURM_JOB_006",
+          "SLURM_JOB_007"
+        ],
+        "cause": "Task-specific preflight retained two Case 025 declaration names after the namespace migration.",
+        "model_calls": 0,
+        "preserved_failed_cohort": "${REPO_ROOT}/case019_delta_v1_logs/failed-cohort-SLURM_JOB_001",
+        "repair": "All three arms now probe Stage3Case019.CountableHalfDensity and Stage3Case019.UncountableSeparation.",
+        "setup_job_id": "SLURM_JOB_001",
+        "state": "FAILED_PREFLIGHT_ZERO_MODEL_CALLS"
+      },
+      {
+        "cancelled_dependents": [
+          "SLURM_JOB_009",
+          "SLURM_JOB_010",
+          "SLURM_JOB_011",
+          "SLURM_JOB_012",
+          "SLURM_JOB_013",
+          "SLURM_JOB_014"
+        ],
+        "cause": "A runtime OPENROUTER_NETWORK_PROBE.json left by the first setup attempt was accidentally included when source metadata was regenerated; the second setup legitimately overwrote its timestamp and the final source-integrity gate rejected the change after all three arm preflights passed.",
+        "model_calls": 0,
+        "preserved_failed_cohort": "${REPO_ROOT}/case019_delta_v1_logs/failed-cohort-SLURM_JOB_008/cohort",
+        "preserved_runtime_probe": "${REPO_ROOT}/case019_delta_v1_logs/failed-cohort-SLURM_JOB_008/OPENROUTER_NETWORK_PROBE.json",
+        "repair": "Preserved the prepared cohort and probe receipt, excluded the runtime probe from frozen source metadata, rebuilt a result-free archive, and independently re-extracted and verified all 405 frozen source files.",
+        "setup_job_id": "SLURM_JOB_008",
+        "state": "FAILED_FINAL_SOURCE_IMMUTABILITY_ZERO_MODEL_CALLS"
+      },
+      {
+        "cancelled_dependents": [
+          "SLURM_JOB_016",
+          "SLURM_JOB_017",
+          "SLURM_JOB_018",
+          "SLURM_JOB_019",
+          "SLURM_JOB_020",
+          "SLURM_JOB_021"
+        ],
+        "cause": "The resubmission omitted STAGE3_PREPARED_TEMPLATE_CACHE, so the 161-file PML arm began a redundant cold compile even though the validated content-addressed cache entry was present on shared NVMe.",
+        "model_calls": 0,
+        "preserved_failed_cohort": "${REPO_ROOT}/case019_delta_v1_logs/failed-cohort-SLURM_JOB_015/cohort",
+        "preserved_runtime_probe": "${REPO_ROOT}/case019_delta_v1_logs/failed-cohort-SLURM_JOB_015/OPENROUTER_NETWORK_PROBE.json",
+        "repair": "Cancelled during setup before any author run, preserved the partial cohort and runtime probe, reverified the 405-file source, and resubmitted with ${SHARED_NVME_ROOT}/lean2paper/prepared_template_cache explicitly exported.",
+        "setup_job_id": "SLURM_JOB_015",
+        "state": "OPERATOR_CANCELLED_ZERO_MODEL_CALLS"
+      },
+      {
+        "api_cost_usd": 6.468074999999999,
+        "author_telemetry_seconds": 3453.143187,
+        "cancelled_dependents": [
+          "SLURM_JOB_026",
+          "SLURM_JOB_027",
+          "SLURM_JOB_028"
+        ],
+        "cause": "The first author chain requested a 60-minute Slurm allocation while the frozen prompt/controller budget was 5,400 seconds. Slurm killed the controller before its own timeout and finalization path.",
+        "job_id": "SLURM_JOB_025_1",
+        "model_calls": 186,
+        "official_sample": false,
+        "preserved_attempt": "${REPO_ROOT}/case019_aborted_attempts/pml_case019_delta_v1_r3_jobSLURM_JOB_025",
+        "repair": "Preserve and exclude the censored attempt, retain completed P and FileOracle r3, and run one clean replacement PML r3 with enough Slurm time to cover the frozen 90-minute author budget plus controller overhead.",
+        "routing_audit_pass": true,
+        "run_id": "pml_case019_delta_v1_r3",
+        "state": "SLURM_TIMEOUT_INFRASTRUCTURE_CENSORED"
+      }
+    ],
+    "authorization": "User explicitly requested five independent runs per arm for Case 019.",
+    "campaign": "stage3-case019-delta-v1",
+    "jobs": {
+      "verify_and_package": "SLURM_JOB_028",
+      "wave1_r1": "SLURM_JOB_023",
+      "wave2_r2": "SLURM_JOB_024",
+      "wave3_r3": "SLURM_JOB_025",
+      "wave4_r4": "SLURM_JOB_026",
+      "wave5_r5": "SLURM_JOB_027"
+    },
+    "packaging_safeguard": {
+      "dependency": "afterany:SLURM_JOB_032",
+      "job_id": "SLURM_JOB_033",
+      "model_calls": 0,
+      "reason": "The running verification job's 15-minute limit could not be extended by the submitting user while zstd -19 was active, so a 30-minute conditional recovery job was queued. The primary archive and checksum completed successfully; the safeguard verified that checksum and exited without repackaging.",
+      "state": "COMPLETED_NO_OP"
+    },
+    "recovery_jobs": {
+      "dependency_chain": "afterok:SLURM_JOB_029 -> afterok:SLURM_JOB_030 -> afterok:SLURM_JOB_031 -> verify",
+      "pml_r3_clean_replacement": "SLURM_JOB_029",
+      "verify_and_package": "SLURM_JOB_032",
+      "wave4_r4": "SLURM_JOB_030",
+      "wave5_r5": "SLURM_JOB_031"
+    },
+    "recovery_resources": {
+      "author_controller_budget": "01:30:00",
+      "controller_overhead_allowance": "00:05:00",
+      "cpus_per_task": 1,
+      "memory": "8G",
+      "run_partition": "cpu",
+      "slurm_run_time_limit": "01:35:00",
+      "verify_partition": "cpu-interactive",
+      "verify_time_limit": "00:15:00"
+    },
+    "resources": {
+      "cpus_per_task": 1,
+      "memory": "8G",
+      "run_partition": "cpu",
+      "run_time_limit": "01:00:00",
+      "setup_partition": "cpu-interactive",
+      "verify_partition": "cpu-interactive",
+      "verify_time_limit": "00:15:00"
+    },
+    "schedule": "The original three arms ran in parallel within each wave. After the infrastructure-censored PML r3, the already completed P and FileOracle r3 outcomes are retained; only clean PML r3 is replaced. Once it completes, r4 and r5 again run all three arms in parallel, sequential by wave, followed by zero-model-call verification and packaging.",
+    "schema_version": 4,
+    "setup": {
+      "compile_policy": "Compile one seed packet per arm, then copy its validated Lean environment and compiled artifacts to the other four byte-identical replicate packets.",
+      "job_id": "SLURM_JOB_022",
+      "model_calls": 0,
+      "state": "COMPLETED"
+    },
+    "source_archive": {
+      "path": "${REPO_ROOT}/lean2paper_case019_delta_v1.tar.zst",
+      "sha256": "7f676e7659f02dd39e411555e583b7f23e630a90e461ec6d78c851e7f922b817"
+    }
+  },
+  "task": "Case 019 half density and adjacent finite-noise separation",
+  "slurm_job_id_redaction": "Concrete Slurm scheduler identifiers were replaced by stable file-local labels; equality and array-task suffix relationships are preserved."
+}

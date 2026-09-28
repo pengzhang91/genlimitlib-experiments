@@ -1,0 +1,5 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+#check GenLimit.PatientScope.partialDensity_of_counting
+#check Finset.card_le_card_of_injOn
+#check Finset.card_sdiff_add_card_inter
+#check Finset.card_sdiff_le

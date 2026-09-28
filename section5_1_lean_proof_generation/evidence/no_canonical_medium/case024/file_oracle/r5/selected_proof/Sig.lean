@@ -1,0 +1,9 @@
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+open Filter
+#check squeeze_zero'
+#check squeeze_zero
+#check Finset.sum_le_sum_of_subset_of_nonneg
+#check Set.infinite_compl
+#check Set.Finite.infinite_compl
+#check Set.Finite.compl_infinite
+#check Set.infinite_cofinite

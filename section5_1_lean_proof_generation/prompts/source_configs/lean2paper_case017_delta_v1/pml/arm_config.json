@@ -1,0 +1,15 @@
+{
+  "adds": [],
+  "canonical_trim": [],
+  "cohort": "case017_delta_v1",
+  "condition": "PML",
+  "design_note": "Case 017 is stated over shared research-library vocabulary. This arm supplies the full research-library closure together with supplementary statement cards and navigation material. The estimand is the effect of that bundled resource relative to the paper-only arm with minimal stripped vocabulary; it is not the isolated effect of proved declarations.",
+  "must_be_absent": [],
+  "run_ids": [
+    "pml_case017_delta_v1_r1",
+    "pml_case017_delta_v1_r2"
+  ],
+  "source_run": "run_003",
+  "source_template": "run_003_v2",
+  "vocabulary": "full"
+}

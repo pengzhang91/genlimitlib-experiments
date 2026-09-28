@@ -1,0 +1,32 @@
+{
+  "pml_case024_reasoning_medium_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-23T06:46:44.966221+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case024_reasoning_medium_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-23T06:46:44.966250+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case024_reasoning_medium_v1_r3": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-23T06:46:44.966254+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case024_reasoning_medium_v1_r4": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-23T06:46:44.966257+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case024_reasoning_medium_v1_r5": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-23T06:46:44.966259+00:00",
+    "source_template": "templates/pml/packet"
+  }
+}

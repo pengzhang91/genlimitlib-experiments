@@ -1,0 +1,20 @@
+{
+  "file_oracle_case024_delta_v1_r3": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-20T18:40:13.350859+00:00",
+    "source_template": "templates/file_oracle/packet"
+  },
+  "file_oracle_case024_delta_v1_r4": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-20T18:40:13.350891+00:00",
+    "source_template": "templates/file_oracle/packet"
+  },
+  "file_oracle_case024_delta_v1_r5": {
+    "author_output_empty": true,
+    "condition": "PML-FileOracle",
+    "created_utc": "2026-09-20T18:40:13.350895+00:00",
+    "source_template": "templates/file_oracle/packet"
+  }
+}

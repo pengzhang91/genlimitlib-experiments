@@ -1,0 +1,150 @@
+{
+  "author_lean_size": {
+    "bytes": 17175,
+    "files": 4,
+    "lines": 433,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 881.483151,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 38,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 38
+      },
+      "total_upstream_usd": 0.9746776999999999,
+      "unverifiable": 0
+    },
+    "run_id": "file_oracle_case024_nocanonical_reasoning_medium_v1_r1",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "62b47dbcd10fd5044928ae476855b72139c3097eb43b76307a25b3e112fb0e5f",
+      "within_word_limit": true,
+      "words": 143
+    }
+  },
+  "checkpoints": [
+    {
+      "checker_exit": 2,
+      "checkpoint": "0001",
+      "elapsed_seconds": 778.371936774347,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d",
+        "Checks.lean": "0baf1b8213077eaf0dfc24295cd183be99b23aa6af7c3fe2d3b8a5ee3f73ad6c",
+        "Explore.lean": "70db5a1e73be0a2b065f9f1aa2513c2bcbbb921eeeb7bf18cf7841752ac4c749",
+        "Helpers.lean": "6793c5e97c047c5273e561a1dc45d99c085a2ceba71d6c6252d3f456160284f1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "0002",
+      "elapsed_seconds": 869.4479892039672,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d",
+        "Checks.lean": "0baf1b8213077eaf0dfc24295cd183be99b23aa6af7c3fe2d3b8a5ee3f73ad6c",
+        "Explore.lean": "70db5a1e73be0a2b065f9f1aa2513c2bcbbb921eeeb7bf18cf7841752ac4c749",
+        "Helpers.lean": "6793c5e97c047c5273e561a1dc45d99c085a2ceba71d6c6252d3f456160284f1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "0003",
+      "elapsed_seconds": 869.4479892039672,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d",
+        "Checks.lean": "0baf1b8213077eaf0dfc24295cd183be99b23aa6af7c3fe2d3b8a5ee3f73ad6c",
+        "Explore.lean": "70db5a1e73be0a2b065f9f1aa2513c2bcbbb921eeeb7bf18cf7841752ac4c749",
+        "Helpers.lean": "6793c5e97c047c5273e561a1dc45d99c085a2ceba71d6c6252d3f456160284f1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 881.483151,
+      "entry_compile_exit": 1,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "08826b5984fe38e6dbc2c7a7baffd0373b62459939f8ce151410d695912d479d",
+        "Checks.lean": "0baf1b8213077eaf0dfc24295cd183be99b23aa6af7c3fe2d3b8a5ee3f73ad6c",
+        "Explore.lean": "70db5a1e73be0a2b065f9f1aa2513c2bcbbb921eeeb7bf18cf7841752ac4c749",
+        "Helpers.lean": "6793c5e97c047c5273e561a1dc45d99c085a2ceba71d6c6252d3f456160284f1"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 881.0395713350736,
+        "usage": {
+          "cache_write_input_tokens": 91635,
+          "cached_input_tokens": 2477361,
+          "input_tokens": 2571580,
+          "output_tokens": 24495,
+          "reasoning_output_tokens": 7210
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "file_oracle_case024_nocanonical_reasoning_medium_v1_r1",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

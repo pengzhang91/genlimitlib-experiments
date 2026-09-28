@@ -1,0 +1,10 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+#check Finset.max'
+#check Finset.max'_mem
+#check Finset.le_max'
+#check Finset.exists_max_image
+#check Finset.card_erase_add_one
+#check Finset.card_erase_of_mem
+#check Finset.card_le_card_of_injOn
+#check Finset.card_filter_le_iff
+#check Finset.filter_filter

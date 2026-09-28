@@ -1,0 +1,36 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case019_nocanonical_v1_r2",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case019_nocanonical_v1_r2",
+  "final_output_files": 6,
+  "formal_run_id": "p_case019_nocanonical_v1_r2",
+  "lean_success": false,
+  "original_validation_primary_success": false,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": null,
+  "selected_checkpoint_metadata": [],
+  "selected_proof_files": 0,
+  "source_bundle": "lean2paper_case019_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/p/logs/p_case019_nocanonical_v1_r2/proxy_requests.jsonl",
+      "sha256": "6cf6da6f240ba7a4e87af5d9a707e6247d8671c9cf4013627d3551faf1674532"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/p/logs/p_case019_nocanonical_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "8764864e9c4b2a45cd355558af40bb3a6fa4a9962dc394f069cc684786f951af"
+    },
+    "status": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/p/logs/p_case019_nocanonical_v1_r2/STATUS.json",
+      "sha256": "71531eeb92fb8d7de8118038f2ee4d857cde5bbfc9334c09a7838f854aa9ba45"
+    },
+    "validation": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/p/results/p_case019_nocanonical_v1_r2/VALIDATION.json",
+      "sha256": "e6ead1bdb7759d430a6d09d33ad8520821bba64b0fcc689a17e77cc994e45e22"
+    }
+  },
+  "task": "case019"
+}

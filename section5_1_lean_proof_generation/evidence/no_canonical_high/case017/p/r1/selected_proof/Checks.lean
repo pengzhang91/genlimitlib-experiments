@@ -1,0 +1,17 @@
+import Stage3Model
+import Mathlib
+#check Set.infinite_range_of_injective
+#check Set.finite_Iic
+#check Set.Finite.subset
+#check Set.range_comp
+#check Set.range_add
+#check Set.nat_set_has_max_iff_bddAbove
+#check Set.Finite.image
+#check Set.Finite.range
+#check Set.range_infinite_iff_nonempty
+#check Finset.card_image_iff
+#check Finset.card_image_le
+#check Finset.card_congr
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn

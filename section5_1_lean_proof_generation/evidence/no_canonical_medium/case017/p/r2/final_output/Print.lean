@@ -1,0 +1,9 @@
+import Stage3Model
+#print Filter.IsBoundedUnder
+#print Filter.IsCoboundedUnder
+#print Bornology.IsBounded
+#check Filter.isBoundedUnder_le_of
+#check Filter.isBoundedUnder_ge_of
+#check Filter.isCoboundedUnder_le_of
+#check Filter.isCoboundedUnder_ge_of
+#check Filter.isBoundedUnder_le

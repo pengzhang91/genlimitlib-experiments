@@ -1,0 +1,20 @@
+{
+  "elapsed_seconds": 2568.1250110240653,
+  "kind": "observed_gate",
+  "matches_logged_gate": true,
+  "source_hashes": {
+    "Case019Formalization.lean": "1efaff750cf70a0dae8c5c697bbd6351f22809bf318f7bb8d728593217853ce9",
+    "Check.lean": "9583d0ea95aa50f42e3fa29e20227c25be1898600ebb6d18624d263d60d5f0ef",
+    "Check2.lean": "4279bc8c9d0eb94d61b21fadcb0b365d6db61d6a4757f7f80f3e5bb77bf64907",
+    "Check3.lean": "cc6519f7ac6ee8aef91e42dbc139775f9e326d226d7ee4b752d15b63ee9ef6ba",
+    "Countable.lean": "1606c82163100674e5637183380a0100274e689a16433db5c752d134efeff6b0",
+    "Explore.lean": "14639a6200066f019bd2297f7481bccd33a11c8c132941ef344c8b97629f77e2",
+    "Helpers.lean": "6017da8367692ac7c0b00412a00f3df118956abadbb54e7a300c55cb62b914c4",
+    "Probe.lean": "ee6325be33deae8101c8a3e8bebda3c3e0c5a0e6fe57fd58718a5ed51a0c172b",
+    "Probe2.lean": "818ac47bd7e527040894d9b7d5230bc99ded3f188ad0bda54935a35a9fb0ef18",
+    "Probe3.lean": "40a068238ca09c7048245e17d77f32d8e475c2028d1a867d7a3dcd2eb67f6dfd",
+    "Probe4.lean": "4a7d34636e5cfd00b6e3f37d8e7fa98bc93cade8428fac1824171d80024bcabd",
+    "Sep.lean": "b19a6e40905f132d2506a00c7bb83aa44f1193fc8e76d8b65ba4c83b1c28b2e4"
+  },
+  "stable_capture": true
+}

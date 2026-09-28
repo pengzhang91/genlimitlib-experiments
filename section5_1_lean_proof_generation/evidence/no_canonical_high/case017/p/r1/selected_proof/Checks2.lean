@@ -1,0 +1,17 @@
+import Stage3Model
+import Mathlib
+open Filter
+#check eventually_lt_of_lt_liminf
+#check le_liminf_of_le
+#check le_liminf_iff
+#check tendsto_natCast_atTop_atTop
+#check Set.Finite.toFinset
+#check Set.Finite.toFinset_card
+#check Set.Finite.coe_toFinset
+#check Finset.card_attach
+#check Nat.cast_le
+#check Nat.cast_le.mpr
+#check div_le_div_of_nonneg_right
+#check div_le_div₀
+#check Filter.EventuallyLE.div
+#check Filter.EventuallyLE.div_const

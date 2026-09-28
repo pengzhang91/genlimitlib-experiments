@@ -1,0 +1,10 @@
+import Stage3Model
+#check Nat.even_iff
+#check Nat.odd_iff
+#check Even.not_odd
+#check Odd.not_even
+#check even_pow
+#check Nat.even_pow
+#check Fin.lastCases_last
+#check Fin.lastCases_castSucc
+#check Fin.lastCases

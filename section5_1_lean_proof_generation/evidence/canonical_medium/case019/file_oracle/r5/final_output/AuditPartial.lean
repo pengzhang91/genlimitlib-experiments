@@ -1,0 +1,4 @@
+import Case019Formalization
+#print axioms stage3_countable_half_density
+#print axioms Stage3Case019Proof.finiteOmissionClass_not_countable
+#print axioms Stage3Case019Proof.negative_part

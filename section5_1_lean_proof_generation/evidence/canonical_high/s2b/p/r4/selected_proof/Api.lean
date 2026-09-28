@@ -1,0 +1,21 @@
+import Stage3Model
+import Mathlib.Data.Nat.Sqrt
+import Mathlib.Analysis.SpecificLimits.Basic
+open Set Filter
+#check Metric.tendsto_atTop
+#check Metric.tendsto_atTop.2
+#check tendsto_atTop.2
+#check tendsto_atTop_iff_nat
+#check tendsto_order
+#check Real.norm_eq_abs
+#check abs_lt
+#check Nat.exists_infinite_primes
+#check exists_nat_gt
+#check exists_nat_one_div_lt
+#check exists_nat_gt_inv
+#check Archimedean.arch
+#check one_div_lt
+#check Nat.cast_pos
+#check Nat.cast_le
+#check Nat.cast_div
+#check Nat.cast_sqrt

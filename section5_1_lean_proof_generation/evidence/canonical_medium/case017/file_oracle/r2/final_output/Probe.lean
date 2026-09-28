@@ -1,0 +1,14 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+#check Fin.lastCases
+#check Fin.lastCases_last
+#check Fin.lastCases_castSucc
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Finite.exists_nat_gt
+#check Nat.sInf_mem
+#check Nat.sInf_le
+#check Filter.liminf_le_liminf
+#check GenLimit.PatientScope.partialDensity_of_counting
+#check Set.infinite_coe_iff
+#check Finset.exists_max_image

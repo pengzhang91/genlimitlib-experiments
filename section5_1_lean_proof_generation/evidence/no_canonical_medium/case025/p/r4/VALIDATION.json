@@ -1,0 +1,102 @@
+{
+  "author_lean_size": {
+    "bytes": 13449,
+    "files": 3,
+    "lines": 326,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 791.710858,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 58,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 58
+      },
+      "total_upstream_usd": 1.4565959000000002,
+      "unverifiable": 0
+    },
+    "run_id": "p_case025_nocanonical_reasoning_medium_v1_r4",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "03bb8634fda524e69e70a71b3439837bcad8665e83ffd26e9c1a7de7bf65f1af",
+      "within_word_limit": true,
+      "words": 155
+    }
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 791.710858,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 1,
+      "inadmissible_axioms": {
+        "controller_exact_target": [
+          "sorryAx"
+        ]
+      },
+      "inventory_analysis_exit": 0,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case025Formalization.lean": "5e94b6769dfd5ada594a93d2d61f0d484725c8361b8a0c0c28489c4f5cdeac1b",
+        "Helpers.lean": "8bb60ba0bbbc0c7e33ec638f70ae3df3d4d483659330ee6c675ef1239e52ac88"
+      },
+      "source_hashes": {
+        "Case025Formalization.lean": "5e94b6769dfd5ada594a93d2d61f0d484725c8361b8a0c0c28489c4f5cdeac1b",
+        "Check.lean": "58bb9345179382bdc15d3b7b32055ddd600a67bbda52d16cbbca7fdc0eacd980",
+        "Helpers.lean": "8bb60ba0bbbc0c7e33ec638f70ae3df3d4d483659330ee6c675ef1239e52ac88"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 791.2651220066473,
+        "usage": {
+          "cache_write_input_tokens": 223507,
+          "cached_input_tokens": 2974152,
+          "input_tokens": 3201538,
+          "output_tokens": 29524,
+          "reasoning_output_tokens": 10248
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "p_case025_nocanonical_reasoning_medium_v1_r4",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

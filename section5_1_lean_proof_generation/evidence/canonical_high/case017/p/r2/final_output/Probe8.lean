@@ -1,0 +1,11 @@
+import Stage3Model
+open Filter
+#check Filter.Tendsto.eventually_lt_const
+#check Filter.Tendsto.const_lt_eventually
+#check Filter.Tendsto.eventually_lt_const'
+#check Filter.Tendsto.eventually_const_lt
+#check tendsto_order
+#check Metric.tendsto_atTop
+#check Metric.tendsto_nhds
+#check eventually_lt_nhds
+#check eventually_abs_lt

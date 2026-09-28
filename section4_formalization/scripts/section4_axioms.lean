@@ -1,0 +1,20 @@
+import Section4
+
+#print axioms GenLimit.ParetoGeneration.literal_claim_3_2_counterexample
+#print axioms GenLimit.ParetoGeneration.maxScoreBound_persists_insert
+#print axioms GenLimit.ParetoGeneration.InsertionSplit.orderMaxScoreBounds
+#print axioms GenLimit.ParetoGeneration.target_selected_in_greedyListScan
+#print axioms Section4.InvariantRepair.published_theorem_8_with_repetitions
+#print axioms Section4.Replay.triangle_transfer
+#print axioms Section4.Replay.finite_replay_characterization
+#print axioms Section4.Replay.finite_replay_characterization_profiles
+#print axioms Section4.Replay.finite_state_replay_corollary
+#print axioms Section4.Staircase.Family.exact_staircase_frontier
+#print axioms Section4.Staircase.Family.mistakeBound_iff_complete
+#print axioms Section4.Staircase.Family.deadlineBound_iff_complete
+#print axioms Section4.Staircase.Realization.exact_staircase_frontier
+#print axioms Section4.Staircase.Realization.every_history_completes
+#print axioms Section4.Staircase.Family.extreme_profiles
+#print axioms Section4.Staircase.exists_representation
+#print axioms Section4.Staircase.abstract_exact_frontier
+#print axioms Section4.Staircase.abstract_exact_staircase_frontier

@@ -1,0 +1,9 @@
+import Mathlib
+open Filter
+#check isCoboundedUnder_le_of_eventually_le
+#check isCobounded_le
+#check isCoboundedUnder_le
+#check isCoboundedUnder_le_of_le
+#check isBoundedUnder_le_of_eventually_le
+#check isBounded_le
+#check eventually_ge_atTop

@@ -1,0 +1,2 @@
+# Offline Section 5.2 reproduction uses only the Python 3 standard library.
+# No pip packages, model downloads, network access, or GPU are required.

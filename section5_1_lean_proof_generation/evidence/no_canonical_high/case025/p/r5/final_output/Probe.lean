@@ -1,0 +1,10 @@
+import Helpers
+open Filter
+#check eventually_lt_of_lt_liminf
+#check le_liminf_of_le
+#check isBoundedUnder_of_eventually_ge
+#check tendsto_natCast_atTop_iff
+#check Filter.Tendsto.const_div_atTop
+#check Metric.tendsto_atTop
+#check tendsto_order
+#check Filter.Eventually.filter_mono

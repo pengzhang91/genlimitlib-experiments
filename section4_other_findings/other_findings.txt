@@ -1,0 +1,2080 @@
+Other Findings
+==============
+
+CONTENTS
+========
+
+1. Fresh representation: the exact obstruction and a sharp two-block bound (p. 2)
+
+2. The exact logarithmic cost of representative generation (p. 9)
+
+3. Metric generation detects properness of the completion (p. 19)
+
+4. Contrastive ambiguity and exact list learning (p. 24)
+
+5. Sparse holes and the limits of randomization (p. 28)
+
+Comparison tables (p. 33)
+
+References (p. 36)
+
+These notes record five additional theoretical findings developed from the language-generation
+library. Each finding gives the motivation, source papers, result, and proof. The comparison tables
+collect their relationships and assumptions; the mathematical audit corrections are incorporated
+throughout.
+
+Notation. We use ℕ={0,1,2,…}, [n]={1,…,n}, and x_{+}=max{x,0}. In the representative-generation
+sections, Δ(A) denotes countably additive probability laws on A. Each finding specifies its own
+observation and success conventions.
+
+1. Fresh representation: the exact obstruction and a sharp two-block bound
+==========================================================================
+
+1.1. Motivation and source problem
+----------------------------------
+
+Representative language generation asks for new valid examples whose group proportions resemble
+those of the observed examples (Peale et al., 2025). Overlapping groups create a difficulty that
+disjoint groups conceal: preserving each marginal separately may require placing mass in an
+intersection that the observations have already exhausted. The question here is when this is the
+only kind of obstruction, and how quickly its effect vanishes with sample size.
+
+This finding has two parts. First, for a test family of finite dual VC dimension, uniformly accurate
+fresh approximation is possible exactly when every fixed number of completed tests has uniformly
+bounded finite cells. Second, when the tests split into two families of dual VC dimension at most
+one, an exact Boolean bottleneck formula gives the optimal coefficient 1/sqrt(2) in the square-root
+rate under linear cell growth. The second hypothesis is stronger than merely having dual VC
+dimension two.
+
+The source problem and group-matching objective come from Peale et al. (2025). The results below
+concern the existence of fresh probability laws on a known countably infinite target after arbitrary
+finite samples. They do not assume independent observations or claim an efficient algorithm for
+learning an unknown target. The findings are the particular characterizations and sharp bounds;
+their proofs use classical separation, VC approximation, and finite-tree rounding tools.
+
+1.2. Model and statements
+-------------------------
+
+Let L be countably infinite and let A be a family of subsets of L, called tests. We may adjoin the
+empty test without changing any quantity below. Its pointwise completion is
+
+    K=overline(A) ⊆ {0,1}^{L}.
+
+This is closure of individual tests, not Boolean closure. The space K is compact and metrizable. The
+dual VC dimension is the VC dimension of the point profiles: a finite collection of tests is
+shattered if every binary membership pattern on it is realized by a point of L.
+
+A completed cell of arity at most r is a set
+
+    C(J,σ)={x ∈ L:1_{A}(x)=σ_{A} for every A ∈ J}, J ⊆ K, |J| ≤ r.
+
+Define its finite-cell capacity by
+
+    overline(B)_{r}=sup{|C(J,σ)|:0<|C(J,σ)|<∞, |J| ≤ r}, r ≥ 1,
+
+with empty supremum zero. The value may be infinite.
+
+For a finite forbidden set F and a probability law μ supported on F, put
+
+    e_{F}(μ)=inf_{Q ∈ Δ(L ∖ F)} sup_{A ∈ A}|μ(A)-Q(A)|.
+
+All probabilities are countably additive. For a finite nonempty sample S, let P_{S} be its uniform
+law and define
+
+    e_{L}(S)=e_{S}(P_{S}), E_{L}(n)=sup_{S ⊂ L finite; |S| ≥ n}e_{L}(S).
+
+Freshness excludes all of F, including any additional forbidden points of zero μ-mass. The
+definition uses an infimum and does not presume an optimizer exists.
+
+Theorem 1.1 (Completed-cell characterization).
+If the dual VC dimension of A is finite, then
+
+    E_{L}(n) → 0 ⇔ overline(B)_{r}<∞ for every fixed integer r ≥ 1.
+
+More quantitatively, write v for a finite upper bound on the dual VC dimension and
+Π_{v}(r)=Σ_{j=0}^{min(v,r)}binom(r, j). For every 0<η<1 there is an integer m=m(v,η), independent of
+the target and its probability laws, such that, with r=2m,
+
+    [1.1] E_{L}(n) ≤ 2η+(Π_{v}(r)overline(B)_{r})/(n).
+
+Theorem 1.2 (Sharp square-root bound).
+Suppose A=A_{1} ∪ A_{2}, each block has dual VC dimension at most one, and
+
+    overline(B)_{r} ≤ C_{0}r (r ≥ 1), C_{0}>0.
+
+Then
+
+    [1.2] E_{L}(n) ≤ sqrt((C_{0})/(2n)) (n ≥ 2C_{0}).
+
+The coefficient 1/sqrt(2) is optimal, even in one fixed countable target with C_{0}=1 and with the
+tests in each block pairwise disjoint.
+
+The proofs follow in full. The quantitative bound in Theorem 1.1 is a general-purpose bound, whereas
+Theorem 1.2 uses the special two-block structure to obtain the sharp rate and constant.
+
+1.3. Completion and finite signed witnesses
+-------------------------------------------
+
+Lemma 1.3 (Completion preserves the problem).
+Completion preserves dual VC dimension and, for any two countably additive probabilities P,Q on L,
+
+    sup_{A ∈ A}|P(A)-Q(A)| =sup_{A ∈ K}|P(A)-Q(A)|.
+
+Restricting the infimum defining e_{F}(μ) to finite-support fresh laws does not change its value.
+
+Proof.
+Enumerate L. For A ∈ K, choose original tests agreeing with A on the first j points. Their
+indicators converge pointwise to 1_{A}. Dominated convergence for P and Q proves the equality of
+suprema. If completed tests shatter a finite set of test coordinates, choose one point for each
+pattern and approximate each test on that finite witness set. The original tests then realize the
+same patterns, proving preservation of dual dimension. Finally, truncate a countable fresh law and
+move its remaining mass to a fixed fresh point. Every test probability changes by at most that
+remaining mass, which tends to zero.
+
+End of proof.
+
+For x ∈ L, define the continuous evaluation f_{x}(A)=1_{A}(x) on K. The probability profile
+f_{μ}(A)=μ(A) is continuous: it is the uniformly convergent sum Σ_{x}μ{x}f_{x}. For a potential h:L
+→ ℝ, write
+
+    G_{F,μ}(h)=𝔼_{μ} h-sup_{y ∉ F}h(y).
+
+Lemma 1.4 (Separation).
+The discrepancy has the representation
+
+    [1.3] e_{F}(μ)=sup_{‖λ‖_{TV} ≤ 1} G_{F,μ}(x ↦ ∫_{K}f_{x} dλ),
+
+where λ ranges over finite signed regular Borel measures on K.
+
+Proof.
+In the Banach space C(K) with its supremum norm, let H be the norm-closed convex hull of {f_{y}:y ∉
+F}. Finite convex combinations are exactly the profiles of finite-support fresh laws. Lemma 1.3
+shows that their distance from f_{μ} is e_{F}(μ). The Hahn–Banach distance formula for a closed
+convex set expresses this distance as the supremum of ℓ(f_{μ})-sup_{g ∈  H}ℓ(g) over continuous
+linear functionals of norm at most one. The Riesz representation theorem identifies those
+functionals with the signed regular measures in the display, with functional norm equal to total
+variation. A linear functional has the same supremum on a set and its closed convex hull, so its
+supremum on H is the fresh-point supremum in (1.3).
+
+End of proof.
+
+We include the classical VC sampling argument (Vapnik and Chervonenkis, 1971) needed to reduce these
+possibly non-atomic separators to finite tests. Signed-measure decomposition followed by dual-VC
+approximation is established machinery; Gurvits and Koiran use it for finite approximation of convex
+superpositions (Gurvits and Koiran, 1997). No compactness of output laws is assumed.
+
+Lemma 1.5 (Uniform finite approximation).
+Let R be a countable measurable range family of VC dimension at most v on a probability space with
+law π. For each 0<η<1, an empirical law π_{m} on m=m(v,η) points satisfies
+
+    sup_{R ∈ R}|π_{m}(R)-π(R)| ≤ η.
+
+One may choose any sufficiently large integer m satisfying
+
+    mη^{2} ≥ 2, 4Π_{v}(2m)e^{-mη^{2}/8}<1.
+
+Proof.
+The Sauer trace bound gives at most Π_{v}(k) different traces on k points. Its counting recurrence
+follows by separating traces according to the last coordinate: traces with both extensions have
+dimension at most v-1, while all prefixes have dimension at most v. Induction and the binomial
+recurrence give the bound, including the zero-coordinate and zero-dimension cases.
+
+Draw m independent points and an independent ghost sample of size m, with empirical laws
+π_{m},π'_{m}. If the first sample has error greater than η on some range, select the first such
+range in a fixed enumeration. Conditional Chebyshev, using variance at most 1/(4m), gives ghost
+error at most η/2 with probability at least 1/2. Thus
+
+    Pr(sup_{R}|π_{m}(R)-π(R)|>η) ≤ 2Pr(sup_{R}|π_{m}(R)-π'_{m}(R)|>η/2).
+
+Independently swap the two members of each pooled sample pair; this does not change their joint law.
+Conditional on the pooled points, a fixed trace gives an empirical difference m^{-1}Σ_{j=1}^{m}ε_{j}
+a_{j}, where the independent signs ε_{j} are symmetric and |a_{j}| ≤ 1. The exponential bound 𝔼
+e^{tε_{j} a_{j}} ≤ e^{t^{2}a_{j}^{2}/2}, followed by Markov's inequality with the optimal t, bounds
+its two-sided tail at η/2 by 2e^{-mη^{2}/8}. There are at most Π_{v}(2m) traces. A union bound
+therefore bounds the original bad-sample probability by 4Π_{v}(2m)e^{-mη^{2}/8}<1. Some sample is
+good. The stated integers exist because the trace bound is polynomial in m for fixed v and the
+exponential factor decays.
+
+End of proof.
+
+Corollary 1.6 (Finite signed witnesses suffice).
+If the dual VC dimension is at most v<∞, every λ in (1.3) can, for each 0<η<1, be replaced by a
+signed atomic measure supported on at most 2m(v,η) completed tests, with total variation at most
+one, such that its potential differs uniformly on L by at most η. Consequently e_{F}(μ) is the
+supremum of G_{F,μ}(h) over finite potentials
+
+    h=Σ_{A ∈ J}c_{A}1_{A}, J ⊆ K finite, Σ_{A ∈ J}|c_{A}| ≤ 1.
+
+Proof.
+Normalize the nonzero positive and negative parts of the Jordan decomposition of λ. Apply Lemma 1.5
+to each, with ranges R_{x}={A ∈ K:x ∈  A}. These ranges are clopen, indexed by countable L, and have
+VC dimension at most v. Multiply the two empirical measures by the original Jordan masses and
+subtract. Their total variation is at most the sum of those masses, at most one; their uniform
+potential error is at most η times that sum. A uniform potential error η changes both the μ-average
+and the fresh supremum by at most η, so it changes G_{F,μ} by at most 2η. Letting η tend to zero in
+(1.3) proves the assertion.
+
+End of proof.
+
+1.4. Proof of the completed-cell characterization
+-------------------------------------------------
+
+Proof of Theorem 1.1.
+Suppose first that overline(B)_{r}=∞ for some fixed r ≥ 1. There are arbitrarily large finite cells
+C=C(J,σ) with 1 ≤  |J| ≤  r. For the sample S=C, every fresh point differs from σ on at least one
+test. Hence every fresh law Q satisfies
+
+    Σ_{A ∈ J}|Q(A)-P_{C}(A)| =𝔼_{Q}Σ_{A ∈ J}1{1_{A}(x) ≠ σ_{A}} ≥ 1.
+
+Some completed test has discrepancy at least 1/r; completion preserves discrepancy. Since such
+samples have arbitrarily large size, E_{L}(n) ≥ 1/r for every n. Necessity does not require a VC
+hypothesis.
+
+For sufficiency fix η, put r=2m(v,η), and consider a sample S of size N. By Corollary 1.6, any unit
+separator has gap at most 2η plus the gap of a finite potential h using at most r completed tests
+and coefficient norm at most one. Those tests partition L into at most Π_{v}(r) nonempty cells. Move
+the empirical mass in each infinite cell to a fresh point in that same cell. Move the empirical mass
+in all finite cells to any fresh point. This produces a finite-support fresh law Q. The total
+empirical mass moved between distinct cells is at most
+
+    (Π_{v}(r)overline(B)_{r})/(N).
+
+Moving one unit of mass changes h by at most Σ_{A}|c_{A}| ≤ 1, while within-cell moves do not change
+it. Therefore
+
+    G_{S,P_{S}}(h) ≤ 𝔼_{P_{S}}h-𝔼_{Q}h ≤ (Π_{v}(r)overline(B)_{r})/(N).
+
+Take the supremum over separators and then over N ≥ n to obtain (1.1). If every overline(B)_{r} is
+finite, first choose η small and then n large. This proves convergence.
+
+End of proof.
+
+1.5. Boolean costs in a VC-one block
+------------------------------------
+
+For the remainder assume A=A_{1} ∪ A_{2} with both blocks of dual VC dimension at most one. Put
+K_{i}=overline(A_{i}); then K=K_{1} ∪ K_{2}. The full family has dual VC dimension at most two,
+because a shattered collection cannot contain two tests assigned to the same block.
+
+Let B_{i} be the algebra of finite Boolean combinations of tests in K_{i}. For U ∈ B_{i}, define
+
+    [1.4] γ_{i}(U)=inf{Σ_{A ∈ J}|c_{A}|: 1_{U}=c_{0}+Σ_{A ∈ J}c_{A}1_{A}, J ⊆ K_{i} finite}.
+
+The additive constant is free, since it cancels when comparing probabilities.
+
+Lemma 1.7 (Tree representation and integral cost).
+Every U ∈ B_{i} has an attained, nonnegative integer cost. It has cost zero exactly when U=∅ or U=L.
+An attaining representation is given by a binary labeling of a finite inclusion tree, with cost
+equal to the number of edges across which the label changes.
+
+Proof.
+Fix z ∈  L and finitely many tests from one block. Complement each test containing z, discard empty
+sets, and identify duplicates. The resulting sets all exclude z and are laminar: overlapping,
+nonnested sets would realize 11,10,01, while z realizes 00, contradicting dual VC dimension one.
+Form their inclusion tree with root L, attaching each set to its smallest strict superset. The
+residual atom of a vertex is its set minus its immediate children. These atoms partition L; some are
+empty and remain as vertices.
+
+For any node values p_{v}, the function taking value p_{v} on the residual atom at v is
+
+    [1.5] p_{root}+ Σ_{v ≠ root}(p_{v}-p_{parent(v)})1_{B_{v}}.
+
+Indeed, at an actual point only the sets along its root-to-atom path contribute, and their
+differences telescope. Replacing oriented indicators by original tests only changes coefficient
+signs and the free constant. A Boolean combination is constant on each residual atom, so binary node
+values representing it exist. Its cost is the number of crossing edges.
+
+Conversely, start with any real-coefficient representation of 1_{U}. Orientation and combining
+duplicates do not increase coefficient norm. Assign root-path sums to the nodes; their total edge
+variation is at most that norm. Clamp every node value to [0,1]. This preserves values on nonempty
+atoms and cannot increase variation. Thresholding these values at t ∈ (0,1) gives a binary
+representation of the same set U. If k(t) counts its crossing edges, then
+
+    ∫_{0}^{1} k(t) dt =Σ_{v ≠ root}|p_{v}-p_{parent(v)}|,
+
+because an edge is cut for an interval of thresholds whose length is its endpoint difference. Some
+threshold has integer cost no larger than the original norm. The nonempty set of all obtainable
+integer costs has a minimum, and this minimum is no larger than every real representation cost. It
+is itself an allowable representation cost, proving equality with (1.4) and attainment. A zero-edge
+binary labeling is constant on its tree. Conversely, the empty and full sets have free constant
+representations.
+
+End of proof.
+
+1.6. The exact exhausted-intersection bottleneck
+------------------------------------------------
+
+Theorem 1.8 (Exact two-block discrepancy).
+For every finite F and probability μ supported on F,
+
+    [1.6] e_{F}(μ)= sup_{U ∈ B_{1}, V ∈ B_{2}; U ∩ V ⊆ F, γ_{1}(U)+γ_{2}(V)>0} ((μ(U)+μ(V)-1)_{+})/(γ_{1}(U)+γ_{2}(V)).
+
+The empty supremum is zero. If this supremum is positive, it is attained by a pair U,V.
+
+The numerator is an unavoidable marginal deficit: fresh output cannot put total mass greater than
+one into two sets whose intersection has been exhausted. The denominator converts discrepancies of
+these Boolean sets into discrepancies of the original tests.
+
+Proof.
+Denote the right side by D. A fresh law satisfies Q(U)+Q(V) ≤ 1. If its test discrepancy is δ, the
+attained representations in Lemma 1.7 give |Q(U)-μ(U)| ≤ δγ_{1}(U) and its analogue for V. Thus
+every displayed ratio is at most δ. Taking infima gives D ≤  e_{F}(μ).
+
+For the reverse inequality, use Corollary 1.6. Assign each test in a finite unit-norm potential to
+one block and write h=f+g. Construct the two inclusion trees as in Lemma 1.7, with node potentials
+representing f and g. Their combined edge variation is at most one. Set
+
+    u=max_{x ∈ L}f(x), v=max_{x ∈ L}g(x), M=max_{y ∉ F}h(y), Δ=u+v-M ≥ 0.
+
+These maxima exist because the potentials take finitely many values. If Δ=0, the separator gap is
+nonpositive. Otherwise apply to every node, including those with empty atoms, the clamping maps
+
+    α=[(f-u+Δ)/(Δ)]_{0}^{1}, β=[(g-v+Δ)/(Δ)]_{0}^{1}, [a]_{0}^{1}=min{1,max{0,a}}.
+
+The display specifies the functions on actual atoms as well. Their combined tree variation is at
+most 1/Δ. On actual points the unclamped expressions are at most one, so clamping only increases
+them. Consequently
+
+    [1.7] G_{F,μ}(h) ≤ Δ(𝔼_{μ}α+𝔼_{μ}β-1).
+
+For fresh y, one has α(y)+β(y) ≤ 1: if either unclamped value is nonpositive, its clamped value is
+zero and the other is at most one; if both are positive, their sum is at most one by h(y) ≤ M.
+
+For 0<t<1, let U_{t}={α>t} and V_{t}={β ≥ 1-t}. They lie in their respective Boolean algebras and
+U_{t} ∩ V_{t} ⊆ F, since membership in both gives α+β>1. Thus
+
+    μ(U_{t})+μ(V_{t})-1 ≤ D(γ_{1}(U_{t})+γ_{2}(V_{t})).
+
+This also holds when both costs vanish: both sets are constant and cannot both be L, because L is
+infinite and their intersection is contained in finite F. Thresholding the node potentials bounds
+each Boolean cost by its tree boundary count. The edge identity used in Lemma 1.7 therefore yields
+
+    ∫_{0}^{1}(γ_{1}(U_{t})+γ_{2}(V_{t})) dt ≤ (1)/(Δ).
+
+All integrands take finitely many values; strict versus weak thresholds affect only finitely many
+endpoints. Integrating the preceding inequality and using ∫_{0}^{1}1_{{α>t}}dt=α and ∫_{0}^{1}1_{{β
+≥ 1-t}}dt=β in (1.7) gives G_{F,μ}(h) ≤ D. Finite signed witnesses suffice, so e_{F}(μ) ≤ D.
+
+Finally, there are finitely many trace pairs (U ∩ F,V ∩ F). Each fixes the numerator. For every
+attainable trace pair admitting a positive denominator, the possible denominators are positive
+integers and have an attained minimum. Taking the best ratio over these finitely many trace pairs
+proves positive bottleneck attainment. This is attainment of a dual witness; it is not by itself a
+proof that the primal fresh-law infimum is attained.
+
+End of proof.
+
+1.7. Boundary counting gives the sharp constant
+-----------------------------------------------
+
+Proof of the upper bound in Theorem 1.2.
+We first allow arbitrary μ, set ρ=max_{x}μ{x}, and write a=C_{0}ρ. Take an admissible pair in (1.6)
+with positive costs p=γ_{1}(U) and q=γ_{2}(V). Choose attaining binary tree representations. Remove
+crossing edges. Each component labeled one has at least one boundary edge, and their total boundary
+size is p; thus there are at most p such components. The corresponding assertions hold with q in the
+other tree.
+
+The union of residual atoms in a connected component is a completed cell with at most its boundary
+size in literals. To see this, if its highest vertex is a nonroot set A, the cell is A minus the
+sets at all downward exit edges. Its defining literals are the entering positive literal and the
+exit negative literals. If the component contains the root, omit the entering literal. Oriented sets
+are literals of original completed tests. This argument also handles empty atoms.
+
+Intersect every selected component cell from the first tree with every selected component cell from
+the second. The nonempty intersections partition U ∩ V and lie in finite F. If their component
+boundary sizes are b_{j} and c_{k}, their defining arities are at most b_{j}+c_{k}. Therefore
+
+    |U ∩ V| ≤ C_{0}Σ_{j,k}(b_{j}+c_{k}) ≤ C_{0}(qp+pq)=2C_{0}pq.
+
+Empty intersections may be retained in this upper bound. The numerator in (1.6) is at most both 1
+and μ(U ∩ V). Since pq ≤ (p+q)^{2}/4, putting s=p+q bounds the ratio by
+
+    min{(1)/(s),(2apq)/(s)} ≤ min{(1)/(s),(as)/(2)} ≤ sqrt(a/2).
+
+The last inequality follows by considering s below or above sqrt(2/a).
+
+If one cost is zero, only the case in which its set equals L can contribute a positive numerator.
+The other set is then contained in F. Its selected component cells have total boundary equal to its
+positive cost, so their total size is at most C_{0} times that cost. This branch's ratio is at most
+a. Consequently
+
+    e_{F}(μ) ≤ min{1,max{a,sqrt(a/2)}}.
+
+For the uniform law on a sample of size N ≥ n ≥ 2C_{0}, a=C_{0}/N ≤ 1/2, so a ≤ sqrt(a/2). Taking
+the supremum over those samples proves (1.2).
+
+End of proof.
+
+1.8. A single target witnessing optimality
+------------------------------------------
+
+Sharpness in Theorem 1.2. For every k ≥ 1, create k infinite private row reservoirs R_{k,i}, k
+infinite private column reservoirs T_{k,j}, and a two-point set F_{k,ij} for each pair 1 ≤ i,j ≤ k.
+All these sets, including sets from different values of k, are disjoint. Add an infinite background.
+Their union is one countable target L. Define row and column tests
+
+    U_{k,i}=R_{k,i} ⊔ ⋃_{j=1}^{k}F_{k,ij}, V_{k,j}=T_{k,j} ⊔ ⋃_{i=1}^{k}F_{k,ij}.
+
+Within each block the tests are pairwise disjoint, hence have dual VC dimension at most one. Each
+point belongs to at most two tests. Any sequence of distinct tests converges pointwise to the empty
+set, while a convergent sequence with a repeated test subsequence has that test as its limit. Thus
+completion adds only the empty test.
+
+A nonempty cell with no positive nonconstant literal contains the infinite background. A cell with
+exactly one positive test retains that test's entire private reservoir, unless it is inconsistent. A
+cell with two compatible positive tests is one pair set F_{k,ij}; additional negative literals
+either preserve or empty it, because its two points have identical profiles. Two positives from the
+same block, or from incompatible gadgets, give the empty cell. It follows that every nonempty finite
+completed cell has size two and least arity two. Hence overline(B)_{1}=0 and overline(B)_{r}=2 for r
+≥ 2, in particular overline(B)_{r} ≤ r.
+
+Take S_{k}=⋃_{i,j}F_{k,ij}, of size 2k^{2}. Its total empirical mass summed over the 2k local tests
+is two. Every fresh point belongs to at most one of those tests, so every fresh law has total local
+test mass at most one. At least one test therefore has discrepancy at least 1/(2k). Put mass 1/(2k)
+on one point from each private row and column reservoir. Each local test then has mass 1/(2k),
+compared with empirical mass 1/k; all other tests have mass zero under both laws. This fresh law
+attains error 1/(2k). Thus
+
+    e_{L}(S_{k})=(1)/(2k)=sqrt((1)/(2|S_{k}|))
+
+for every k in the same target, proving sharpness. At k=2, eight observed points have row and column
+proportions 1/2; every fresh distribution incurs error at least 1/4, and a four-point reservoir law
+achieves it.
+
+End of proof.
+
+1.9. Interpretation and scope
+-----------------------------
+
+Theorem 1.1 separates qualitative feasibility from quantitative rates. Finiteness of the capacity at
+each fixed arity is sufficient for convergence, whereas a prescribed growth bound yields an explicit
+rate. In the two-block setting, Theorem 1.8 further reduces discrepancy to exhausted intersections
+of Boolean sets. Their boundary costs control the finite intersection and give the optimal
+square-root constant. The argument allows arbitrary correlations between the two blocks.
+
+2. The exact logarithmic cost of representative generation
+==========================================================
+
+2.1. Motivation and source problems
+-----------------------------------
+
+A representative generator should produce new valid points while preserving the proportions of
+groups in its observed data. These demands can conflict even when the target is known. Suppose a
+group contains exactly B target points, all of which have already appeared. After t ≥ B observations
+its empirical share is B/t, but no fresh valid point can carry that share. Matching it within α
+forces at least (B/t-α)_{+} probability of an invalid or already observed output. Summing these
+obligations gives a logarithmic cost as the tolerance shrinks.
+
+This chapter combines the representation objective of Representative Language Generation by Peale et
+al. (2025) with the cumulative-error question of Mistake-Bounded Language Generation by Kleinberg et
+al. (2026). The protocol change is explicit: the latter requires freshness at every round and counts
+invalid outputs; here representation is required at every round, and an output is charged if it is
+invalid or already observed. Thus the temporary conflict is measured, and successful outputs still
+satisfy both validity and freshness. This is a combined model, not an unchanged application of
+either source characterization.
+
+The result is an exact leading coefficient Γ for the optimal total expected cost for each fixed
+finite target family and finite group family. It accounts jointly for exhausted group profiles and
+uncertainty about the true target. Two examples make the coefficient concrete: private target tails
+give Γ=B(1-1/N), whereas parity profiles give Γ=1 despite exponentially many finite profile points.
+We also prove that deciding whether the coefficient is at least a given rational threshold is
+NP-complete for an explicit finite signature.
+
+2.2. The model and the main theorem
+-----------------------------------
+
+Let X be countably infinite, let H=(H_{1},…,H_{N}) be a finite nonempty list of infinite subsets of
+X, and let G=(G_{1},…,G_{m}) be a finite family of groups, with m ≥ 1. Points outside ⋃_{i}H_{i} are
+allowed in the universe. Write
+
+    v(x)=(1{x ∈ G_{1}},…,1{x ∈ G_{m}}) ∈ {0,1}^{m}.
+
+We allow the groups to leave points uncovered. If a covering family is required, as in Peale et al.
+(2025), append the universal group X; its constraint is automatic and its coordinate cancels from
+every profile displacement, leaving the minimax value and coefficient unchanged.
+
+The target H_{z} is fixed and unknown. At round t ≥ 1, the learner has seen distinct positive
+observations x_{1},…,x_{t} ∈ H_{z} and chooses a probability law Q_{t} on X. The next observation
+can be selected after the adversary sees the current draw. No correctness feedback is supplied. Put
+
+    S_{t}={x_{1},…,x_{t}}, p_{t}=(1)/(t)Σ_{x ∈ S_{t}}v(x).
+
+For a fixed 0<α<1, representation requires
+
+    [2.1] ‖𝔼_{Q_{t}}v-p_{t}‖_{∞} ≤ α
+
+at every positive history. A draw Y_{t} is a mistake when Y_{t} ∉ H_{z} ∖ S_{t}. Thus previously
+generated values can be repeated if they have not been observed; freshness concerns the input
+sample.
+
+Let V(α) be the infimum, over representative generators, of the supremum expected total number of
+mistakes over fixed targets and legal adaptive adversaries. The upper construction below is a
+deterministic function of positive history into finite-support laws. The lower bound also permits
+learners to retain previous random draws. We may require adversarial streams to be complete
+injective presentations, or allow arbitrary injective valid streams; all stated bounds hold under
+either convention.
+
+For nonempty F ⊆ [N], let K_{F}=⋂_{i ∈ F}H_{i}. Define
+
+    B_{fin}=max({0} ∪ {|K_{F}|:F ≠ ∅, K_{F} finite}).
+
+When K_{F} is infinite, let I_{F} be the profiles with infinite cells in K_{F}, and let P_{F} be the
+profiles with nonempty finite cells. For v ∈ P_{F} write c_{v}=|{x ∈ K_{F}:v(x)=v}|, with dependence
+on F understood. Set
+
+    B_{inf}=max_{F:K_{F} infinite}Σ_{v ∈ P_{F}}c_{v}, T_{0}=max{1,B_{fin}+1,mB_{inf}}.
+
+All these numbers are finite. At least one infinite intersection exists because each individual
+target is infinite.
+
+Theorem 2.1 (Sharp logarithmic minimax law).
+There is an explicitly defined rational number Γ=Γ(H,G), given in Definition 2.2, such that
+
+    0 ≤ Γ ≤ B_{inf}, V(α)=Γln(1/α)+O_{H,G}(1) as α ↓ 0.
+
+For every 0<α<1, a representative generator satisfies
+
+    [2.2] Σ_{t ≥ 1}Pr{Y_{t} ∉ H_{z} ∖ S_{t} | F_{t}} ≤ T_{0}-1+Γln(1/α)
+
+on every legal history, where F_{t} denotes information before the current draw. In particular the
+same expression bounds expected total mistakes.
+
+If Γ>0, there are explicitly obtainable constants A,W>0 such that, whenever 0<α<Γ/(AW),
+
+    [2.3] V(α) ≥ Γln(1/α) -Γ(1+ln((AW)/(Γ)))+α AW.
+
+Moreover Γ=0 exactly when every infinite target intersection has no nonempty finite profile cell.
+
+The constant in the upper remainder is explicit. This matters because a general parametric
+linear-program argument would yield only an unspecified stabilization threshold. The binary profile
+structure provides the sharper bound through a simple absence-of-cancellation property.
+
+2.3. The polyhedral coefficient
+-------------------------------
+
+Fix F ≠ ∅ with K_{F} infinite. For a point x ∉ K_{F}, let J_{F}(x)={i ∈ F:x ∈ H_{i}}. Let O_{F} be
+the finite set of realized pairs (v(x),J_{F}(x)) outside K_{F}. Every such J_{F}(x) is a proper
+subset of F.
+
+Definition 2.2 (The coefficient).
+For an anchor u ∈  I_{F}, a vector a ∈ ℝ^{m} and a probability vector μ ∈ Δ(F) are feasible when
+
+    ⟨a, w-u⟩ ≤ 0 (w ∈ I_{F}), [2.4]
+    ⟨a, v-u⟩ ≤ 1 (v ∈ P_{F}), [2.5]
+    ⟨a, w-u⟩ ≤ 1-Σ_{i ∈ J}μ_{i} ((w,J) ∈ O_{F}). [2.6]
+
+Set
+
+    Γ_{F}=max_{u ∈ I_{F}; (a,μ) feasible} Σ_{v ∈ P_{F}}c_{v}(⟨a, v-u⟩)_{+}, Γ=max_{F:K_{F} infinite}Γ_{F}.
+
+The affine potential φ(x)=⟨a, v(x)-u⟩ is nonpositive on safe infinite cells. It is bounded by one on
+finite cells that might be exhausted, and by the μ-average membership error outside the common core.
+Its positive empirical mass therefore certifies an unavoidable error cost.
+
+Lemma 2.3 (Attainment, computation, and positivity).
+The maxima in Definition 2.2 are attained, and Γ is rational and computable from the realized joint
+group/target-membership profiles and their finite or infinite cardinalities. Also,
+
+    0 ≤ Γ_{F} ≤ Σ_{v ∈ P_{F}}c_{v}.
+
+If v ∈ P_{F}, then Γ_{F} ≥ c_{v}/|F|. Consequently Γ=0 if and only if B_{inf}=0.
+
+Proof.
+Replace the positive-part sum by the finite maximum, over E ⊆  P_{F}, of Σ_{v ∈  E}c_{v}⟨a, v-u⟩.
+For fixed F,u,E, maximizing this expression under (2.4)–(2.6) and μ ∈ Δ(F) is a rational linear
+program. It is feasible at a=0 and its objective is bounded above by Σ_{v ∈  E}c_{v}. Finite
+linear-program attainment and rationality give the claims after taking the finite maxima. This is a
+finite procedure given the exact signature; it is not a procedure for discovering that signature
+from arbitrary membership programs.
+
+For positivity, fix a finite profile v and let b_{j}=2v_{j}-1. This direction uniquely maximizes ⟨b,
+w⟩ at w=v among all binary profiles, since ⟨b, v-w⟩ equals their Hamming distance. Choose u ∈ I_{F}
+maximizing ⟨b, u⟩ there and put d=⟨b, v-u⟩>0. Use a=b/(|F|d) and the uniform prior on F. Then
+φ(v)=1/|F|, every profile has potential at most 1/|F|, and every outside-core point has average
+error at least 1/|F|. Infinite core profiles have nonpositive potential. The pair is feasible,
+contributing at least c_{v}/|F|.
+
+End of proof.
+
+2.4. A tangent program for one sample
+-------------------------------------
+
+Fix an infinite core K_{F}, a sample S ⊂ K_{F}, and an anchor u ∈ I_{F}. Let s_{v} be the number of
+sampled points in finite core profile v, and put
+
+    b=Σ_{v ∈ P_{F}}s_{v}, h=Σ_{v ∈ P_{F}}s_{v}(v-u).
+
+We use finitely many output types. An infinite or unexhausted finite core profile has a fresh
+representative with error vector zero. An exhausted finite profile has a stale representative with
+error vector one for every target in F. Finally, each outside-core type (w,J) has error vector
+d_{i}=1{i ∉ J}. Such points have never been observed because S ⊂ K_{F}.
+
+Write the feature and error vectors of a type as w_{j} and d_{j} ∈ {0,1}^{F}. Delete types with
+w_{j}=u: they have zero displacement and nonnegative costs, while a safe fresh anchor is available
+separately. Consider
+
+    [2.7] minimize D
+    subject to q_{j} ≥ 0, Σ_{j}q_{j}(w_{j}-u)=h,
+    Σ_{j}q_{j}d_{j,i} ≤ D (i ∈ F),
+
+where D ∈ ℝ. The constraints themselves imply D ≥ 0.
+
+Lemma 2.4 (Tangent value and mass).
+Program (2.7) has an optimum with value at most Γ_{F}. Every feasible vector q satisfies
+
+    [2.8] Σ_{j}q_{j} ≤ ‖h‖_{1} ≤ mb.
+
+Moreover Γ_{F} equals the maximum of these tangent values over all integer count vectors 0 ≤ s_{v} ≤
+c_{v} and anchors u ∈ I_{F}.
+
+Proof.
+Feasibility is immediate: for each finite profile, send s_{v} units to its fresh type if the cell is
+unexhausted, and otherwise to its stale type. Because u is binary, every vector w_{j}-u has the same
+coordinatewise signs: nonnegative where u is zero, and nonpositive where u is one. Thus
+
+    Σ_{j}q_{j}‖w_{j}-u‖_{1} =‖Σ_{j}q_{j}(w_{j}-u)‖_{1}=‖h‖_{1}.
+
+Every retained type has ‖w_{j}-u‖_{1} ≥ 1, proving the first inequality in (2.8); the second follows
+from ‖v-u‖_{1} ≤ m. In particular feasible q form a compact set, and the continuous objective
+max_{i}Σ_{j}q_{j}d_{j,i} attains its minimum.
+
+For clarity, the dual of (2.7) is
+
+    [2.9] maximize ⟨a, h⟩
+    over μ ∈ Δ(F), a ∈ ℝ^{m},
+    subject to ⟨a, w_{j}-u⟩ ≤ Σ_{i}μ_{i}d_{j,i} for every type j.
+
+Indeed, assigning multipliers μ_{i} ≥ 0 to the error constraints and a to the displacement equality
+gives Lagrangian
+
+    D(1-Σ_{i}μ_{i})+⟨a, h⟩ +Σ_{j}q_{j}(Σ_{i}μ_{i}d_{j,i}-⟨a, w_{j}-u⟩).
+
+Its infimum over free D and nonnegative q is finite precisely under the displayed dual constraints.
+Finite linear-program duality applies.
+
+Every dual-feasible pair satisfies Definition 2.2. A positive potential on a finite profile is
+possible only when that cell is exhausted, in which case s_{v}=c_{v}. Therefore
+
+    ⟨a, h⟩=Σ_{v}s_{v}⟨a, v-u⟩ ≤ Σ_{v}c_{v}(⟨a, v-u⟩)_{+} ≤ Γ_{F}.
+
+This proves the value bound. Conversely choose a maximizing pair for Γ_{F} and exhaust exactly its
+positive-potential finite profiles, leaving the other finite counts zero. That pair is feasible for
+the resulting tangent dual, and its objective is Γ_{F}. Hence equality is attained for some count
+vector.
+
+End of proof.
+
+The mass bound is the essential geometric step. It turns an infinitesimal replacement into an actual
+probability law after at most mb observations. No limiting approximation or unproved algorithmic
+certificate is involved.
+
+2.5. Proof of the upper bound
+-----------------------------
+
+Before time T_{0}, use the empirical law. It is exactly representative and costs at most one mistake
+per round. At t ≥ T_{0}, let F be the version space of targets containing S_{t}. It is nonempty and
+its core is infinite, since it contains t>B_{fin} distinct points. Its finite sample count is b ≤
+B_{inf}.
+
+For each anchor u ∈ I_{F}, take an optimal tangent flow q^{u}. Since its total mass is at most mb ≤
+t, assign mass q_{j}^{u}/t to a realizing point of each type, and put the remaining mass on a fresh
+anchor point. Call this law Q_{t}^{u}. Its feature mean is
+
+    [2.10] u+(h)/(t)= (Σ_{v}s_{v}v+(t-b)u)/(t),
+
+and its error probability is at most Γ_{F}/t for every target in F.
+
+If t>b, mix these laws with weights n_{u}/(t-b), where n_{u} counts observations in infinite core
+profile u. The resulting law R_{t} matches p_{t} exactly. When t=b, expression (2.10) is independent
+of the anchor, so choose any one. In either case every consistent target has error probability at
+most Γ/t.
+
+Let A_{t} be the corresponding mixture of fresh anchor points. It is valid and fresh for every
+consistent target. Its mean differs from p_{t} by at most b/t ≤ B_{inf}/t in each coordinate: only
+the finite-profile portion of the sample has been replaced. If B_{inf}=0, the construction is
+already exactly representative and error-free from T_{0} onward. Otherwise set
+
+    λ_{t}=min{1,α t/B_{inf}}, Q_{t}=(1-λ_{t})R_{t}+λ_{t}A_{t}.
+
+The feature change is at most α, and the error probability for every consistent target is at most
+
+    [2.11] Γ((1)/(t)-(α)/(B_{inf}))_{+}.
+
+This is a pointwise guarantee at every history, so it survives adaptive choices of later
+observations.
+
+Put B=B_{inf}>0. The positive summand in (2.11) decreases in t. Since T_{0} ≥ B, its sum from T_{0}
+is at most its sum from B, which is bounded by its first value plus the integral from B to B/α:
+
+    Σ_{t ≥ T_{0}}Γ(1/t-α/B)_{+} ≤ Γ[ln(1/α)-(1-α)(1-1/B)]
+    ≤ Γln(1/α).
+
+Adding the first T_{0}-1 rounds proves (2.2). Empirical fallback extends the law to histories
+outside the legal protocol.
+
+2.6. Proof of the matching lower bound
+--------------------------------------
+
+Assume Γ>0. Choose an attaining F,u,a,μ, and let
+
+    E={v ∈ P_{F}:⟨a, v-u⟩>0}, W=Σ_{v ∈ E}c_{v}, A=‖a‖_{1}.
+
+Both W and A are positive. First present all W points in these cells, then distinct points from the
+infinite core cell u. This prefix is legal for every target in F, and at each t ≥ W its empirical
+potential φ(x)=⟨a, v(x)-u⟩ is Γ/t.
+
+For any output point y, its potential is bounded above by its μ-average mistake indicator. An
+observed point has mistake indicator one and potential at most one. A fresh point inside K_{F} has
+nonpositive potential, since every positive-potential finite cell has been exhausted. A point
+outside K_{F} was not observed, and (2.6) bounds its potential by its average target-membership
+error. Consequently every representative output law has average mistake probability at least
+
+    Γ/t-α A.
+
+Along the common prefix, the learner receives the same observations under all targets in F, and no
+correctness feedback. Thus its output-law distribution is the same under all of them, even if the
+learner retains previous randomness. Averaging over the fixed prior μ lower-bounds the worst
+target's expected total mistakes.
+
+Use the common prefix through ⌊Γ/(α A)⌋. For complete presentations, extend this finite prefix
+separately to an enumeration of each target. Those later observations cannot remove the mistakes
+already forced. For α<Γ/(AW), decreasing-sum comparison gives
+
+    V(α) ≥ Σ_{t=W}^{∞}(Γ/t-α A)_{+}
+    ≥ ∫_{W}^{Γ/(α A)}(Γ/x-α A) dx
+    =Γln(1/α)-Γ(1+ln((AW)/(Γ)))+α AW.
+
+This proves (2.3). Since every binary profile difference has infinity norm at most one, AW ≥ Γ.
+Lemma 2.3 handles the zero case and completes Theorem 2.1.
+
+2.7. Two exact minimax families
+-------------------------------
+
+2.7.1. Private target tails: the price of unresolved ambiguity
+--------------------------------------------------------------
+
+Fix N ≥ 2 and B ≥ 1. Take pairwise disjoint sets G,R,P_{1},…,P_{N}, with |G|=B and the others
+infinite. Let
+
+    X=G ∪ R ∪ ⋃_{i=1}^{N}P_{i}, H_{i}=G ∪ R ∪ P_{i}, G_{1}=G ∪ ⋃_{i=1}^{N}P_{i}.
+
+Each individual target has two infinite group-profile cells. If it were known, it would permit
+exactly representative fresh generation at every round. The obstruction arises only while the target
+is ambiguous.
+
+Proposition 2.5 (Exact private-tail value).
+For this one-group family and every 0<α<1,
+
+    V(α)=(1-(1)/(N)) Σ_{t=B}^{∞}(B/t-α)_{+}, Γ=B(1-(1)/(N)).
+
+Proof.
+Until a private point appears, all targets remain possible. If G is not exhausted, each observed
+profile has a fresh common-core representative, so the learner can be exactly representative without
+errors. Once G is exhausted, place group mass (B/t-α)_{+} uniformly on one fresh point from each of
+the N private tails, and use a fresh point of R for the remaining mass. This is representative and
+has mistake probability (1-1/N)(B/t-α)_{+} for every target. If a private point is observed, it
+identifies the target; its two infinite profile cells then permit exact fresh representation
+forever. The exhaustion time of G is at least B, proving the upper bound.
+
+For the lower bound, present G first, then shared R points through the positive part of the
+displayed series. Under a uniform target, each fresh group point has average error 1-1/N, and each
+stale group point has error one. Representation forces group mass at least (B/t-α)_{+}. Summing
+proves the lower bound; the common prefix can subsequently be completed to each target.
+
+For a subfamily F of size at least two, the core is G ∪ R. Its anchor is zero, and the constraints
+on the scalar a are a ≤ 1-μ_{i} for i ∈ F. The optimum prior is uniform, giving Γ_{F}=B(1-1/|F|).
+Singleton subfamilies have no finite profile cells. Maximizing gives the stated Γ.
+
+End of proof.
+
+Thus the cost of preserving representation is not merely the sum of a target-identification term and
+a known-target penalty. Every individual target here has zero known-target penalty, yet their
+ambiguity creates a logarithmic cost with a precise dependence on N.
+
+2.7.2. Parity profiles: many exceptions, one logarithmic obstruction
+--------------------------------------------------------------------
+
+Fix m ≥ 1, and take a singleton class whose target equals X. Give every even-parity profile in
+{0,1}^{m} an infinite cell and every odd-parity profile exactly one point. The groups test the
+coordinates.
+
+Proposition 2.6 (Exact parity value).
+This family has B_{inf}=2^{m-1} but
+
+    V(α)=Σ_{t=1}^{∞}(1/t-mα)_{+}, Γ=1.
+
+For comparison, let D_{n} be the worst, over samples of size n, minimum group discrepancy of a fresh
+law. Then
+
+    D_{n}=(1)/(mn) (n ≥ 1).
+
+Thus the exact fresh-discrepancy coefficient 1/m is different from the exact cumulative-mistake
+coefficient one.
+
+Proof.
+Before any odd point is observed, all sample mass can be moved within its infinite even-profile
+cell. Suppose exactly one odd point v has been observed. Its empirical mass is 1/t. Transfer up to
+mα of this mass uniformly to the m even neighbors of v, which all have fresh representatives. Each
+coordinate changes by at most α, leaving stale mass (1/t-mα)_{+}. All other sample mass moves within
+infinite cells.
+
+If at least two distinct odd points have been observed, their empirical profile average belongs to
+the convex hull of even profiles. Indeed, any two distinct odd vertices have a midpoint equal to the
+midpoint of two even vertices: flip one differing coordinate in both. Averaging these midpoint
+representations over all pairs reproduces the average of all observed odd vertices. All their
+empirical mass can therefore be realized on fresh even points without error. This proves the upper
+bound for every observation order.
+
+For the lower bound, first observe an odd point v, then distinct points from one even neighbor
+through time ⌊1/(mα)⌋ when that time is positive. The affine potential
+
+    φ(w)=1-Ham(v,w)
+
+is one at v, zero at its even neighbors, and nonpositive on every other fresh profile. Its empirical
+average is 1/t, and the linear part has ℓ_{1} norm m. Thus representation forces mistake probability
+at least (1/t-mα)_{+}. Afterwards complete the target presentation. If mα ≥ 1, the upper bound is
+already zero, and the same exact formula holds. The case m=1 needs no two-odd-point case, since
+there is only one odd point; both remaining arguments apply unchanged.
+
+For D_{n}, transferring the entire mass of a sole observed odd point to its even neighbors changes
+each coordinate by 1/(mn), while samples with zero or at least two odd points allow exact fresh
+matching. The same potential, with the sample consisting of one odd point and n-1 neighbor-profile
+points, forces discrepancy at least 1/(mn). Finally the exact mistake series has leading term
+ln(1/α) for fixed m, so Theorem 2.1 gives Γ=1.
+
+End of proof.
+
+This is an exponential separation between finite-profile counting and the logarithmic mistake
+coefficient. It also rules out simply replacing the count by the earlier discrepancy coefficient:
+instantaneous approximation and cumulative mistakes require different normalizations.
+
+2.8. Computational complexity of the coefficient
+------------------------------------------------
+
+2.8.1. The coefficient as a finite input problem
+------------------------------------------------
+
+Consider one known countably infinite target X and finitely many binary groups, represented by a map
+v:X → {0,1}^{m}. Suppose the profile-zero cell is infinite and every other realized profile has a
+finite positive cardinality. Write P for those finite profiles and c_{v} for their cardinalities.
+The sharp logarithmic coefficient in this special case is
+
+    [2.12] Γ(P,c)= max_{a ∈ ℝ^{m}: a · v ≤ 1 ∀ v ∈ P} Σ_{v ∈ P}c_{v}(a · v)_{+}.
+
+There are no outside-target points, and the only infinite-cell anchor is zero. The vector a is
+unrestricted in sign. Negative coordinates are needed in the reduction below.
+
+The input lists the binary profiles and their positive integer cardinalities, together with a
+rational threshold K. Absent profiles are understood to have empty cells. Every such list has a
+countably infinite realization: create c_{v} distinct points at each listed profile and countably
+infinitely many zero-profile points. Thus the reduction concerns realizable group systems, rather
+than arbitrary infeasible signatures.
+
+Our formulation permits the groups to leave some points uncovered. To impose the convention of Peale
+et al. (2025) that the groups cover the universe, append the universal group X. Its representation
+constraint is automatic, and its coordinate cancels from every profile displacement, so both the
+minimax problem and Γ are unchanged. The infinite anchor then has one nonzero coordinate. The
+covered version of the hardness result has finite profile Hamming weight at most four, and Hamming
+distance at most three from that infinite anchor.
+
+Theorem 2.7.
+Deciding whether Γ(P,c) ≥  K is NP-complete. NP-hardness holds even when every finite profile has at
+most three nonzero entries and all cell cardinalities are bounded by a polynomial in the number of
+listed profiles. Consequently exact evaluation, or additive approximation with error strictly less
+than 1/2, is NP-hard on these instances.
+
+The threshold problem for the general finite-class coefficient is also in NP when its input is an
+explicit joint group/target-membership signature with finite cardinalities and infinite-cell flags.
+Hence that general threshold problem is NP-complete as well.
+
+The finite cardinalities in the construction can be expanded into individual points with only
+polynomial growth. The hardness therefore does not arise from encoding an exponentially large finite
+cell by a short integer.
+
+2.8.2. An exact maximum-cut reduction
+-------------------------------------
+
+Let G=({1,…,n},E) be a finite simple undirected graph, write e=|E|, and set
+
+    M=2e+1.
+
+Use 2n+3 profile coordinates, labelled
+
+    x_{1},…,x_{n}, y_{1},…,y_{n}, d,f,c.
+
+The same labels will denote the corresponding coordinates of the potential vector a. A set of
+coordinate labels denotes its binary incidence profile. Include the following finite cells:
+
+Table 1. Finite profile cells in the maximum-cut reduction. The zero-profile cell is infinite.
+
+  Profiles: {d}, {f}, {c,d,f}
+  Number: 3
+  Cardinality of each cell: M
+
+  Profiles: {x_{i},y_{i}} for i ∈ [n]
+  Number: n
+  Cardinality of each cell: M
+
+  Profiles: {x_{i}}, {y_{i}} for i ∈ [n]
+  Number: 2n
+  Cardinality of each cell: 1
+
+  Profiles: {x_{i},y_{j},c}, {x_{j},y_{i},c} for {i,j} ∈  E
+  Number: 2e
+  Cardinality of each cell: 1
+
+Also include the infinite zero-profile cell. All listed finite profiles are distinct and have
+Hamming weight at most three. Call the first two rows the heavy profiles; there are n+3 of them.
+
+Lemma 2.8 (Exact identity).
+For this instance,
+
+    [2.13] Γ=M(n+3)+n+MaxCut(G).
+
+Lower bound.
+Take any cut, encoded by x_{i} ∈ {0,1}. Set
+
+    y_{i}=1-x_{i}, d=f=1, c=-1.
+
+Each heavy profile has potential exactly one. Each singleton x_{i} or y_{i} has potential at most
+one. The two profiles associated with an edge have potentials x_{i}-x_{j} and x_{j}-x_{i}, both at
+most one. Thus the potential is feasible in (2.12). Its heavy contribution is M(n+3), its singleton
+contribution is n, and its two edge positive parts sum to |x_{i}-x_{j}|. A maximum cut proves the
+lower bound in (2.13).
+
+End of proof.
+
+Upper bound.
+Let a be any feasible potential. Write z_{h} for its value on heavy profile h, and define the total
+heavy deficit
+
+    σ=Σ_{h heavy}(1-(z_{h})_{+}).
+
+Every z_{h} ≤ 1, so each deficit lies in [0,1]. The heavy part of the objective is exactly
+M(n+3)-Mσ.
+
+The singleton constraints imply x_{i},y_{i} ≤ 1, and the heavy pair constraint implies x_{i}+y_{i} ≤
+1. Hence
+
+    [2.14] (x_{i})_{+}+(y_{i})_{+} ≤ 1.
+
+If both are nonnegative this follows from their sum; otherwise the positive one is at most one. Each
+oriented edge profile contributes at most one by feasibility. If σ ≥ 1, the full objective is
+therefore at most
+
+    M(n+3)-M+n+2e <M(n+3)+n ≤ M(n+3)+n+MaxCut(G).
+
+It remains to consider σ<1. Every heavy profile then has strictly positive potential. We can write
+its deficits as
+
+    d =1-δ_{d}, f =1-δ_{f}, c+d+f =1-δ_{0},
+    x_{i}+y_{i} =1-δ_{i} (i ∈ [n]),
+
+where all δ's are nonnegative and sum to σ. In particular
+
+    c=-1+δ_{d}+δ_{f}-δ_{0}.
+
+Set bar(x)_{i}=max{x_{i},0}. Then 0 ≤ bar(x)_{i} ≤ 1, x_{i} ≤ bar(x)_{i}, and
+
+    [2.15] y_{i} ≤ 1-bar(x)_{i}.
+
+Indeed, if x_{i} ≥ 0, then y_{i}=1-δ_{i}-x_{i} ≤ 1-x_{i}; if x_{i}<0, the singleton constraint y_{i}
+≤ 1 gives the claim. For every oriented edge,
+
+    x_{i}+y_{j}+c ≤ bar(x)_{i}+(1-bar(x)_{j})-1+δ_{d}+δ_{f}
+    =bar(x)_{i}-bar(x)_{j}+δ_{d}+δ_{f}.
+
+Since (u+v)_{+} ≤ (u)_{+}+v for v ≥ 0, the two orientations of an edge have total positive part at
+most
+
+    |bar(x)_{i}-bar(x)_{j}|+2(δ_{d}+δ_{f}).
+
+For every vector bar(x) ∈ [0,1]^{n},
+
+    [2.16] Σ_{{i,j} ∈ E}|bar(x)_{i}-bar(x)_{j}| ≤ MaxCut(G).
+
+One proof chooses a uniform threshold U ∈ [0,1] and cuts at {i:bar(x)_{i} ≥ U}. The expected cut
+size is the left-hand side, and every cut has size at most MaxCut(G).
+
+Combining (2.14)–(2.16), the objective is at most
+
+    M(n+3)-Mσ+n+MaxCut(G)+2e(δ_{d}+δ_{f}) ≤ M(n+3)+n+MaxCut(G)+(2e-M)σ
+    ≤ M(n+3)+n+MaxCut(G).
+
+This proves the upper bound. It also shows that every maximizing potential has zero heavy deficit:
+the finite penalty forces all heavy profiles to have potential exactly one.
+
+End of proof.
+
+2.8.3. Completeness and the general signature
+---------------------------------------------
+
+Unweighted maximum-cut threshold decision is NP-complete (Garey et al., 1976). Lemma 2.8 gives the
+many-one reduction
+
+    MaxCut(G) ≥ k ⇔ Γ ≥ M(n+3)+n+k.
+
+There are 3n+3+2e finite profiles, 2n+3 coordinates, and each cell has cardinality at most 2e+1. The
+total number of finite points is
+
+    (2e+1)(n+3)+2n+2e,
+
+which is polynomial in the graph size. This proves the claimed restricted NP-hardness. The identity
+also shows that an additive approximation with error less than 1/2 determines MaxCut(G) by rounding
+after subtraction of the known offset.
+
+For membership in NP in the singleton case, guess a subset A ⊆ P of profiles to contribute to the
+linear objective. The corresponding conditions are the rational linear inequalities
+
+    a · v ≤ 1 (v ∈ P), Σ_{v ∈ A}c_{v}(a · v) ≥ K.
+
+If these inequalities hold, the positive-part objective is at least the selected sum, so Γ ≥ K.
+Conversely, an attaining potential with Γ ≥ K supplies A consisting of its positive-potential
+profiles. A feasible rational linear system has a rational feasible point of polynomial bit length,
+so the guessed subset and such a point form a polynomial certificate. Equivalently, an NP verifier
+can guess the subset and test this linear program in polynomial time.
+
+For completeness, the same reasoning applies to the general coefficient. Its explicit input has one
+row for each realized pair of a group profile and a target-membership profile, marked by a finite
+integer cardinality or an infinite flag. A certificate first chooses a nonempty target subfamily F
+and an infinite-cell anchor u. Scanning and grouping the input rows computes its infinite core
+profiles I_{F}, finite core profiles P_{F} and their cardinalities c_{v}, and outside-core types
+(w,J). It then guesses A ⊆ P_{F}. The remaining feasibility problem is linear in a potential a and a
+prior μ ∈ Δ(F):
+
+    a · (w-u) ≤ 0 (w ∈ I_{F}),
+    a · (v-u) ≤ 1 (v ∈ P_{F}),
+    a · (w-u) ≤ 1-Σ_{i ∈ J}μ_{i} ((w,J) an outside type),
+    Σ_{v ∈ A}c_{v} a · (v-u) ≥ K.
+
+All dimensions, coefficient lengths, and grouping operations are polynomial in the explicit input
+size. Feasibility can again be certified or tested in polynomial time after the discrete guesses.
+The finite union of these feasible cases is exactly the event Γ ≥ K. This proves membership in NP
+and completes Theorem 2.7.
+
+2.8.4. Interpretation and limitations
+-------------------------------------
+
+The logarithmic coefficient remains finitely determined and exactly characterized. Computational
+hardness enters when the number of groups grows: choosing which profile potentials should be
+positive already encodes a cut problem. The reduction already uses one known target, no
+outside-target outputs, and finitely many profiles. Even sparse profiles suffice.
+
+The reduction rules out a general polynomial-time exact evaluator unless P=NP. It does not rule out
+efficient evaluation for fixed group dimension, special incidence structure, or useful approximation
+guarantees. Because the reduction has a large known additive offset, it does not by itself prove a
+constant-factor approximation barrier. Nor does coefficient hardness alone establish online
+running-time lower bounds for every generator that obtains a nonsharp mistake guarantee.
+
+2.9. Scope of the minimax characterization
+------------------------------------------
+
+The asymptotic law fixes both the target family and the group family while α ↓ 0; its additive
+constant need not be uniform in either family. The construction uses the exact joint profiles and
+their finite or infinite cardinalities. Consequently it is a semantic generator, rather than a
+polynomial membership-query algorithm. The complexity theorem concerns exact threshold evaluation of
+the sharp coefficient; it does not establish hardness of every useful generation guarantee or
+constant-factor inapproximability.
+
+3. Metric generation detects properness of the completion
+=========================================================
+
+3.1. Motivation and source
+--------------------------
+
+When examples live in a metric space, a new output can be different from every observation and still
+be arbitrarily close to something already seen. Metric language generation asks for a stronger form
+of novelty: the output must stay a prescribed positive distance from the whole observed sample. The
+amount of information in that sample is measured by a covering number. A thousand observations
+concentrated in one small ball may therefore count as less evidence than ten well-separated
+observations.
+
+The covering-threshold framework comes from On Generation in Metric Spaces by Li et al. (2026a). The
+finding developed here identifies a classical geometric property that the framework can detect. For
+a countable class of unbounded targets in a countable unbounded metric space, generation with a
+target-dependent threshold is possible at every positive pair of scales exactly when every nonempty
+finite intersection of targets is either unbounded or totally bounded. Consequently, the ability to
+generate for every countable such class is equivalent to properness of the metric completion.
+
+There is a concrete proof issue behind this connection. A ball cover may use centers outside the set
+it covers. Such centers cannot automatically be appended to a positive sample: to preserve every
+currently possible target, the new observations must belong to their common intersection. The
+library's diagnostic for this source paper isolates the distinction between ambient centers and
+internal centers. The proofs below work directly with legal positive samples and identify the
+obstruction that survives at all scales.
+
+The all-scale qualification is essential. We allow the output radius to be larger than the input
+radius, and require success for every positive pair. The result does not assert that each
+fixed-scale theorem in Li et al. (2026a) has the same characterization. Unboundedness of every
+target also matters: it ensures that every fixed finite input threshold can actually be reached.
+
+3.2. The semantic model
+-----------------------
+
+Fix a countably infinite set X with an unbounded metric m. A target is an unbounded subset of X, and
+a target class H is a collection of such subsets. A finite ordered history h=(x_{1},…,x_{t}) has
+observation set S(h)={x_{1},…,x_{t}}. Repetitions are permitted. It is positive for L when S(h) ⊆ L.
+A generator is a function from all finite histories to X; no computability or oracle-efficiency
+assumption is made.
+
+For a>0, write
+
+    B_{m}(x,a)={y ∈ X:m(x,y) ≤ a}, N_{m}(a;A)=min{|C|: C ⊆ X finite,
+    A ⊆ ⋃_{c ∈ C}B_{m}(c,a) }.
+
+Set N_{m}(a;A)=∞ when there is no finite cover, and N_{m}(a;∅)=0. Whenever finite covers exist, the
+minimum exists because their cardinalities are natural numbers. Centers are ambient points of X and
+need not belong to A. A set is totally bounded if N_{m}(a;A)<∞ for every a>0. It is bounded if it is
+contained in one ball of finite radius.
+
+Definition 3.1 (Uniform and nonuniform generation at all scales).
+For fixed input scale a>0 and output scale b>0, a generator g has a uniform threshold D ≥ 1 for H
+if, for every positive history,
+
+    [3.1] S(h) ⊆ L ∈ H, N_{m}(a;S(h)) ≥ D ⇒ g(h) ∈ L ∖ ⋃_{x ∈ S(h)}B_{m}(x,b).
+
+The class satisfies U_{m} if such a generator and threshold exist for every a,b>0. It satisfies
+NU_{m} if, for every a,b>0, there is one generator with a positive integer threshold D_{L} for each
+L ∈ H, satisfying the same implication with D_{L} in place of D. Initially the generator may depend
+on (a,b).
+
+Thus the nonuniform quantifiers are
+
+    ∀ a,b>0 ∃ g ∀ L ∈ H ∃ D_{L} ≥ 1 ∀ h: (3.1) holds with D_{L}.
+
+The true target may influence the threshold, but it cannot select a different generator. We will
+construct a single generator that in fact works for all scale pairs, after changing only the
+thresholds. The empty class is vacuous throughout; statements involving an enumeration will assume
+the class is nonempty.
+
+The model can equivalently be tested on finite prefixes of complete positive presentations. Every
+positive finite history extends to such a presentation: append an enumeration of its countable
+infinite target. Moreover, on any complete presentation of an unbounded target, N_{m}(a;S(h))
+eventually crosses every finite threshold. To see this, select as many target points as desired with
+pairwise distances greater than 2a. At each selection step, finitely many radius-2a balls form a
+bounded set and cannot cover the unbounded target. Once all selected points have appeared, every
+radius-a ball covers at most one of them.
+
+3.3. The geometric obstruction in a finite intersection
+-------------------------------------------------------
+
+Lemma 3.2 (Packing and legal covering centers).
+The following facts hold in any metric space.
+
+1. If N_{m}(a;A)=∞, then for every q ≥ 1 there are q points of A whose pairwise distances are
+greater than a. A radius-a/2 cover of those points needs at least q balls.
+
+2. If A is nonempty and totally bounded, then for every b>0 it has a finite radius-b cover whose
+centers belong to A.
+
+3. If A is unbounded and S is finite, then for every b>0 some point of A has distance greater than b
+from every point of S.
+
+Proof.
+For the first assertion, choose points greedily. If fewer than q chosen points already cover A by
+their radius-a balls, they give a finite cover, contrary to the premise. Otherwise choose a point
+outside those balls and continue. Two chosen points cannot belong to one radius-a/2 ball, since the
+triangle inequality would make their distance at most a.
+
+For the second assertion, take a finite ambient radius-b/2 cover of A. Discard every ball missing A,
+and choose a point of A in each remaining ball. If y and the chosen point lie in the same original
+ball, their distance is at most b. These chosen points are the required internal centers. This
+argument changes the radius; it does not justify moving ambient centers into A at the original
+radius without a loss.
+
+For the third assertion, a finite union of finite-radius balls is bounded. For example, its distance
+from one fixed center is bounded by the largest distance to the other finitely many centers plus b.
+It therefore cannot contain A. A point outside that union has the required distances.
+
+End of proof.
+
+For a nonempty finite family F ⊆ H, its common intersection A=⋂_{L ∈ F}L is a region where positive
+observations cannot distinguish the targets in F. If A is bounded but not totally bounded, it can
+supply arbitrarily much input-covering evidence while fitting inside a single sufficiently large
+output-neighborhood. This is the obstruction.
+
+Lemma 3.3 (A bounded, non-totally-bounded intersection prevents generation).
+If a nonempty finite subfamily F has a bounded intersection A that is not totally bounded, then H
+fails NU_{m}.
+
+Proof.
+Choose a>0 with N_{m}(a;A)=∞. The set A is nonempty; fix c ∈  A. Since A is bounded, choose b>0 such
+that A ⊆  B_{m}(c,b).
+
+Suppose a generator satisfies the nonuniform guarantee at input scale a/2 and output scale b. Let D
+be the maximum of its finitely many thresholds D_{L}, L ∈ F. By Lemma 3.2, select D pairwise
+more-than-a separated points of A. Form a history containing these points and c. It is positive for
+every target in F, and its input cover number is at least D. Thus its one output must belong to
+every target in F, hence to A. However, the observed point c makes every point of A non-novel at
+radius b. This contradicts (3.1). The history extends to a complete presentation for each possible
+target, so imposing that extension requirement does not remove the contradiction.
+
+End of proof.
+
+3.4. The exact finite-intersection criterion
+--------------------------------------------
+
+Theorem 3.4 (Countable nonuniform generation).
+For a nonempty countable class H of unbounded targets, the following are equivalent:
+
+1. H satisfies NU_{m};
+
+2. for every nonempty finite F ⊆ H, the intersection ⋂_{L ∈ F}L is either unbounded or totally
+bounded.
+
+When these conditions hold, one generator serves every positive scale pair. If H is finite, these
+conditions are also equivalent to U_{m}.
+
+Proof.
+Necessity is Lemma 3.3: an intersection that is neither unbounded nor totally bounded is precisely a
+bounded, non-totally-bounded set.
+
+We first prove sufficiency for a finite class. For each realizable sample S, define its version
+space and common core by
+
+    V(S)={L ∈ H:S ⊆ L}, C(S)=⋂_{L ∈ V(S)}L.
+
+Here “realizable” means V(S) ≠ ∅. Its core contains S. There are only finitely many intersections of
+nonempty subfamilies of H. Under condition 2, every bounded one is totally bounded. Fix an input
+radius a>0, and let E_{a} be the maximum of their finite covering numbers at radius a; set E_{a}=0
+if there are no bounded intersections.
+
+If N_{m}(a;S)>E_{a}, the core C(S) cannot be bounded, because a cover of C(S) also covers S. An
+unbounded core supplies a point outside the radius-b balls around any finite sample, by Lemma 3.2.
+Choosing such a point yields an output valid for every target consistent with S. The threshold
+E_{a}+1 proves uniform generation at (a,b). For any history outside this guarantee, an arbitrary
+fixed output makes the generator a total function. Uniform generation always implies nonuniform
+generation by using the same threshold for every target.
+
+For a countable class, enumerate its targets as L_{1},L_{2},…, repeating members if the class is
+finite. For a finite sample S, let
+
+    V_{j}(S)={L_{i}:1 ≤ i ≤ j, S ⊆ L_{i}}, C_{j}(S)=⋂_{L ∈ V_{j}(S)}L
+
+whenever V_{j}(S) is nonempty. At a history of length t, choose the largest index j ≤ t for which
+V_{j}(S) is nonempty and C_{j}(S) is unbounded. If there is no such index, output a fixed fallback
+point. Otherwise choose a point of C_{j}(S) whose distance from each observation is greater than t.
+Such a point exists by Lemma 3.2. This construction makes no reference to a or b. Its choices may be
+noncomputable, as allowed by the semantic model.
+
+Fix a target whose first occurrence is L_{z}, and fix a,b>0. Consider all intersections of nonempty
+subfamilies of {L_{1},…,L_{z}}. Each bounded one is totally bounded, and there are finitely many.
+Let E_{z,a} be the maximum of their radius-a covering numbers, with value zero when none are
+bounded. Choose a positive integer
+
+    D_{L_{z}}>max{E_{z,a},z,b}.
+
+Suppose a positive history for L_{z} has N_{m}(a;S) ≥ D_{L_{z}}. Since a finite sample covers itself
+using its own points as centers,
+
+    N_{m}(a;S) ≤ |S| ≤ t.
+
+Thus t>z and t>b. The version space V_{z}(S) is nonempty because it contains L_{z}. If its core were
+bounded, that core would have cover number at most E_{z,a}, which would also bound the sample's
+cover number. This contradicts the chosen threshold. Hence z is eligible.
+
+The selected index j is consequently at least z. Since L_{z} remains consistent and appears among
+the first j targets, C_{j}(S) ⊆ L_{z}. The output belongs to L_{z} and has distance greater than t>b
+from every observation. This proves the required target-dependent guarantee. The construction used
+one generator for all targets and all scale pairs, completing the proof.
+
+End of proof.
+
+Remark 3.5 (What the scheduler needs).
+The maximum in this construction is over the finite set {1,…,t}. The proof does not take a maximum
+of countably many thresholds. For a fixed true target, it uses only finitely many earlier targets
+and finitely many intersections. Countability of the class is the resource that makes this
+finite-prefix argument available.
+
+3.5. From a generation property to proper completion
+----------------------------------------------------
+
+A metric space is proper if every closed bounded subset is compact. Let hat(X) denote the metric
+completion of X, with X identified with its dense isometric copy. Completion is part of the
+conclusion: the original space need not be complete or proper.
+
+Lemma 3.6 (Two targets realize every bounded obstruction).
+If X is unbounded and A ⊆  X is bounded, there are disjoint unbounded sets T_{0},T_{1} ⊆  X ∖  A.
+Consequently, the unbounded targets L_{0}=A ∪  T_{0} and L_{1}=A ∪  T_{1} have intersection exactly
+A.
+
+Proof.
+Fix x_{0} ∈  X. Recursively, for each n ≥ 1, choose two new points u_{n},v_{n} outside A and all
+points chosen earlier, with both distances from x_{0} greater than n. Make the two choices
+successively so that they are distinct. Each choice excludes a bounded set: the union of A, a finite
+set, and B_{m}(x_{0},n). Such a union cannot exhaust unbounded X. Set T_{0}={u_{n}:n ≥ 1} and
+T_{1}={v_{n}:n ≥ 1}. They are disjoint, avoid A, and are unbounded by their distance requirements.
+The asserted intersection follows immediately.
+
+End of proof.
+
+Theorem 3.7 (Generation characterizes proper completion).
+For an unbounded countable metric space (X,m), the following conditions are equivalent:
+
+1. Every countable class of unbounded targets satisfies NU_{m}.
+
+2. Every two-target class of unbounded targets satisfies U_{m}.
+
+3. Every bounded subset of X is totally bounded.
+
+4. The metric completion hat(X) is proper.
+
+Proof.
+If condition 3 holds, every finite intersection of unbounded targets is either unbounded or, by
+condition 3, totally bounded. Theorem 3.4 therefore gives conditions 1 and 2.
+
+Conversely, if condition 3 fails, choose a bounded subset A that is not totally bounded. Lemma 3.6
+supplies two unbounded targets with intersection exactly A. Lemma 3.3 shows that this two-target
+class fails even nonuniform generation at one positive scale pair. It contradicts condition 1. Since
+uniform generation implies nonuniform generation, it also contradicts condition 2. Thus either
+condition 1 or condition 2 implies condition 3.
+
+We next show that condition 4 implies condition 3. Let A ⊆ X be bounded. Its closure in hat(X) is
+closed and bounded, hence compact by condition 4. For any a>0, the open radius-a/3 balls centered at
+points of that compact closure have a finite subcover. Move each of those finitely many centers to a
+point of X within distance a/3, using density. The resulting radius-a balls centered in X cover A.
+Thus A is totally bounded in the ambient-center convention used here.
+
+Finally assume condition 3. We first prove that every bounded subset B ⊆ hat(X) is totally bounded
+in the completion. For any a>0, choose for every y ∈ B a point q_{y} ∈ X with m(y,q_{y})<a/3. The
+set A={q_{y}:y ∈ B} is bounded, so it has a finite radius-a/3 cover with centers in X. The triangle
+inequality shows that these centers cover B by radius-2a/3 balls. Since a was arbitrary, B is
+totally bounded.
+
+Let now B be closed and bounded in hat(X). It is complete, because it is closed in a complete space,
+and it is totally bounded by the preceding paragraph. For completeness, we verify that these two
+properties make it compact. Suppose an open cover of B has no finite subcover. Starting from
+C_{0}=B, cover C_{n-1} by finitely many closed balls of radius 2^{-n}. At least one intersection of
+such a ball with C_{n-1} still has no finite subcover from the given open cover; otherwise the
+finitely many finite subcovers would cover C_{n-1}. Choose that intersection as C_{n}.
+
+The sets C_{n} are nonempty, closed in B, nested, and have diameter at most 2^{1-n}. Choose x_{n} ∈
+C_{n}. The diameter bound and nesting make (x_{n}) Cauchy. Completeness gives a limit x ∈ B, and
+closedness gives x ∈ C_{n} for every n. Some member of the original open cover contains a relative
+neighborhood of x in B. For sufficiently large n, the diameter bound forces all of C_{n} into that
+neighborhood, contradicting the choice that C_{n} has no finite subcover. Every open cover therefore
+has a finite subcover, so B is compact. This proves properness of hat(X) and finishes the
+equivalence.
+
+End of proof.
+
+3.6. Examples and interpretation
+--------------------------------
+
+Remark 3.8 (Example: the rational line).
+On X=ℚ with ordinary distance, every bounded subset is totally bounded: subdivide a bounded
+containing interval into finitely many intervals of any prescribed small length and choose rational
+centers. Thus every countable class of unbounded rational targets satisfies NU_{m}. The completion
+is ℝ, which is proper. The original rational space is not proper. For instance, [0,2] ∩ ℚ is closed
+and bounded in ℚ, but a sequence of rationals converging in ℝ to sqrt(2) has no convergent
+subsequence in ℚ, and so this set is not compact. This distinguishes proper completion from
+properness of X itself.
+
+Remark 3.9 (Example: a bounded obstruction in an unbounded space).
+Let X=ℕ × ℕ and
+
+    m((i,j),(i',j'))=|i-i'|+1_{j ≠ j'}.
+
+This is an unbounded metric. The row A={0} × ℕ is bounded, but its distinct points are at distance
+one. It has no finite radius-1/3 cover. Let T_{0}={(i,0):i ≥ 1} and T_{1}={(i,1):i ≥ 1}. The targets
+A ∪ T_{0} and A ∪ T_{1} are unbounded and have intersection A. They fail nonuniform generation at
+input radius 1/3 and output radius 1: arbitrarily many distinct row points cross any proposed input
+threshold, while one observed row point puts all of their common intersection within the forbidden
+output neighborhood.
+
+Table 2. Geometric criteria for the semantic generation model of Definition 3.1. All targets are
+unbounded.
+
+  Scope: One finite target class
+  Generation property: Uniform, equivalently nonuniform, at all scales
+  Exact geometric condition: Every nonempty finite target intersection is unbounded or totally
+    bounded.
+
+  Scope: One countable target class
+  Generation property: Nonuniform at all scales
+  Exact geometric condition: The same finite-intersection condition.
+
+  Scope: Every countable class of unbounded targets
+  Generation property: Nonuniform at all scales
+  Exact geometric condition: Every bounded subset of the universe is totally bounded; equivalently,
+    its completion is proper.
+
+The two-target obstruction explains why this is a geometric classification. Once two targets share a
+bounded region containing arbitrarily much small-scale evidence, large input thresholds cannot force
+a geometrically novel common output. Conversely, when every bounded finite intersection is totally
+bounded, sufficiently dispersed evidence forces an unbounded common core among the relevant finite
+prefix of targets. That core always has room for a novel output.
+
+4. Contrastive ambiguity and exact list learning
+================================================
+
+4.1. Motivation and source papers
+---------------------------------
+
+A contrastive observation says that exactly one of two points belongs to the target, but hides which
+one. How much uncertainty can survive an entire sequence of such observations? If a short list of
+hypotheses is enough, does that mean the class splits into equally few ordinary identification
+problems?
+
+These questions combine the list-learning objective of Charikar et al. (2025) with the contrastive
+observation model of Li et al. (2026b). The latter supplies the common-crossing geometry; the former
+motivates the comparison between list size and decomposition into identifiable subclasses. The
+findings below realize arbitrary finite-face ambiguity patterns on countable vertex sets, compute
+two exact list widths, and identify subclass decomposition with hypergraph coloring. These formulas
+concern the constructed families, rather than all contrastive classes.
+
+The central example is particularly simple: a class can require only two eventual guesses, yet need
+arbitrarily many subclasses if each subclass must be identifiable with one guess. Its difficulty is
+entirely due to contrastive identification: ordinary full-positive-text identification and fresh
+generation remain easy.
+
+4.2. Observation and success conventions
+----------------------------------------
+
+The distinction between the input promises matters throughout this section. A full positive text for
+a support L has range exactly L. A partial positive text has infinite range contained in L, and need
+not cover L. A contrastive presentation consists of unordered pairs of distinct points, each pair
+having exactly one endpoint in L, and its endpoints must cover every point of L. A deterministic
+k-list learner returns a finite set of at most k target names on every finite history. The empty
+list is permitted. Lists name the original supports; on histories outside the stated promise a
+learner may return the empty list. Success means that the true support belongs to every sufficiently
+late output list; the whole list need not stabilize. All classes are extensional, so different names
+below denote different supports.
+
+4.3. Every countable simplicial complex is realizable
+-----------------------------------------------------
+
+Let V be a nonempty countable vertex set and let K be an abstract simplicial complex of finite
+subsets of V: it contains ∅ and every singleton, and is closed under taking subsets. Its faces form
+a countable set. Take disjoint infinite blocks
+
+    X=⨆_{σ ∈ K}B_{σ}, B_{σ}={(σ,n):n ∈ ℕ}, C=B_{∅}.
+
+For each v ∈ V define
+
+    N_{v}=⋃_{σ ∈ K; v ∈ σ}B_{σ}, h_{v}=X ∖ N_{v}, H_{K}={h_{v}:v ∈ V}.
+
+Every h_{v} contains the infinite common positive block C and excludes B_{{v}}. The supports are
+distinct and incomparable: if u ≠ v, then B_{{u}} ⊆ h_{v} ∖ h_{u}, and conversely.
+
+For a support h write
+
+    Δ(h)={{x,y}:x ≠ y, exactly one of x,y lies in h}, Γ(F)=⋂_{h ∈ F}Δ(h).
+
+A finite nonempty family F is jointly presentable if there is one contrastive presentation valid for
+every member. These are the nonempty faces of the confusability complex of Li et al. (2026b).
+
+Theorem 4.1 (Exact complex realization).
+For every finite nonempty F ⊆  V, the family {h_{v}:v ∈  F} is jointly presentable if and only if F
+∈  K. Thus every countable abstract simplicial complex is exactly the finite-face contrastive
+confusability complex of a countable antichain of infinite proper supports with a common infinite
+positive core.
+
+Proof.
+Suppose first that a shared presentation exists. Fix c ∈  C. Coverage forces c to appear in an edge
+{c,y}. Since c is positive for every target, y must be negative for every h_{v} with v ∈  F. If y ∈
+B_{σ}, this means F ⊆ σ. Downward closure gives F ∈  K.
+
+Conversely, let F ∈ K be nonempty. We will cover U=⋃_{v ∈ F}h_{v} by common crossing edges. Given x
+∈ U, let x ∈ B_{σ} and put τ=F ∖ σ. The fact that x is positive for at least one target says τ ≠ ∅.
+Since τ ⊆ F, it is a face. Choose y ∈ B_{τ}. For every v ∈ F, the point x is negative exactly when v
+∈ σ, and y is negative exactly when v ∈ F ∖ σ. These conditions are complementary on F. The blocks
+are distinct: τ is nonempty and disjoint from σ. Therefore {x,y} is an edge crossing every target in
+the family. Enumerate the countable set U and emit one such edge for each point. Every positive
+point of every target is covered, as required.
+
+End of proof.
+
+Remark 4.2.
+Theorem 4.1 controls higher-order faces, not just pairs. A complex may contain every pair of a
+vertex set while omitting any chosen higher-dimensional faces, subject only to downward closure.
+Such nonflag behavior is relevant because shared contrastive presentations have genuinely
+higher-order obstructions.
+
+4.4. Three distinct complexity measures
+---------------------------------------
+
+Define the rank and two-face union bound by
+
+    r(K)=sup_{σ ∈ K}|σ|, b(K)=sup_{σ,τ ∈ K}|σ ∪ τ|.
+
+Both take values in ℕ ∪ {∞}. Downward closure implies
+
+    [4.1] b(K)=sup_{σ,τ ∈ K}|σ △ τ|.
+
+Indeed, a symmetric difference is contained in the union. In the other direction replace τ by the
+face τ ∖ σ; its symmetric difference with σ is σ ∪ τ. Consequently r(K) ≤ b(K) ≤ 2r(K) whenever r(K)
+is finite.
+
+A nonuniform distinct-edge k-list guarantee uses one learner and a finite threshold d_{v} for each
+target: every finite crossing history for h_{v} with at least d_{v} distinct unordered edges must
+return a list containing h_{v}. A uniform guarantee uses one threshold for the entire class. These
+conditions quantify over finite crossing histories, as do the distinct-edge generation predicates of
+Li et al. (2026b). They are stronger than eventual correctness on complete presentations.
+
+Theorem 4.3 (Exact eventual and threshold widths).
+For every positive integer k:
+
+1. H_{K} is eventually contrastive k-list identifiable if and only if r(K) ≤ k. When this holds, the
+whole list can stabilize.
+
+2. H_{K} has a nonuniform distinct-edge k-list guarantee if and only if it has a uniform one, and
+these hold if and only if b(K) ≤ k. In the positive case, one edge suffices uniformly.
+
+Moreover H_{K} is identifiable from full positive texts and is uniformly contrastively generatable
+from time zero, with optional avoidance of its own earlier outputs.
+
+Proof.
+For the first lower bound, any face with k+1 vertices supplies a presentation shared by k+1 distinct
+targets, by Theorem 4.1. Taking the maximum of their success times forces all names into one
+eventual list. If r(K)>k, downward closure supplies such a face.
+
+For the first upper bound, wait until an observed edge involves C. Full positive-side coverage
+guarantees that this happens on every valid presentation. The other endpoint belongs to some B_{σ}
+with σ ≠ ∅. This edge crosses exactly the targets named by σ, since the endpoint in C is positive
+for all targets. Store and output that fixed set of names forever. It contains the true target and
+has size at most r(K). Before that event return a fixed singleton. This also proves whole-list
+stabilization.
+
+For the threshold upper bound, an edge between B_{σ} and B_{τ} crosses h_{v} exactly when v ∈ σ △ τ.
+Thus the first edge reveals a fixed candidate set of size at most b(K). Output and retain that set;
+on a valid history it is nonempty and contains the target.
+
+For necessity, suppose D=σ △ τ has more than k vertices. The distinct infinite blocks B_{σ} and
+B_{τ} contain arbitrarily many distinct unordered edges between them, all of which cross every
+target named by D. If target-dependent thresholds existed, take at least max_{v ∈ D}d_{v} distinct
+such edges. The resulting one history requires every name in D simultaneously, a contradiction. Each
+finite history used here extends separately to a full presentation of every target in D: append an
+enumeration of that target paired with a fixed negative point. A shared complete presentation for D
+is not needed for this finite-prefix argument.
+
+For full-positive-text identification enumerate V and select the least target consistent with the
+observed sample. On a full text for h_{v}, every earlier wrong h_{u} is eventually eliminated by a
+point of B_{{u}} ⊆ h_{v} ∖ h_{u}. There are only finitely many earlier names. Finally, a generator
+may always choose an element of the infinite common block C outside the finitely many observed
+endpoints and, if desired, outside all its previous outputs. This succeeds on every history.
+
+End of proof.
+
+Corollary 4.4 (Sharp factor two).
+For every integer r ≥ 1 and every integer b with r ≤  b ≤ 2r, there is a finite class with exact
+eventual contrastive list width r and exact nonuniform and uniform distinct-edge list width b. It is
+full-positive-text identifiable and uniformly contrastively generatable from time zero. All supports
+can be finite unions of residue classes of ℕ, hence unary regular languages.
+
+Proof.
+Take r-element sets A and B whose union has size b, allowing A=B when b=r. Set V=A ∪  B, and let K
+consist of all subsets of either set. Its rank is r. Every union of two faces lies in the union of
+the facets, and the two facets attain size b, so its two-face union bound is b. Apply Theorem 4.3.
+Since K is finite, replace its face blocks by distinct residue classes modulo |K|. The same
+membership and crossing calculations hold.
+
+End of proof.
+
+4.5. Hypergraph decomposition is a third invariant
+--------------------------------------------------
+
+For j ≥ 1, let E_{j+1}(K) be the (j+1)-uniform hypergraph on V whose edges are the (j+1)-element
+faces of K. A weak coloring has no monochromatic hyperedge.
+
+Theorem 4.5 (Exact subclass decomposition).
+The minimum number of eventually contrastive j-list-identifiable subclasses covering H_{K} equals
+the weak chromatic number of E_{j+1}(K). In particular, for j=1 any countable graph can be realized
+as the obstruction to decomposing the class into contrastively identifiable subclasses.
+
+Proof.
+For W ⊆  V, the subclass {h_{v}:v ∈  W} is eventually contrastive j-list identifiable exactly when
+every face of K contained in W has size at most j. Necessity follows from the shared-presentation
+lower bound. For sufficiency use the first-C learner from Theorem 4.3, but return σ ∩  W after an
+edge between C and B_{σ}. This is a face contained in W, so it has size at most j, and it contains
+the target. Thus every color class gives an admissible subclass in a cover. Conversely, from any
+finite or countable cover assign to each vertex the least covering index that contains it. A
+monochromatic (j+1)-face would lie in one admissible subclass, contradicting the characterization.
+Countably many singleton subclasses always provide a cover, so these possibilities exhaust the
+minimum.
+
+End of proof.
+
+For example, for m ≥ 2, take all singletons and all pairs of an m-vertex complete graph, with no
+larger faces. The eventual list width is two, but covering by single-identifiable subclasses
+requires m pieces. The countably infinite complete graph makes the required number countably
+infinite. This disproves the direct contrastive analog of the full-positive-text k-way
+stratification theorem of Charikar et al. (2025), even though the entire constructed class is
+already identifiable from ordinary full positive texts.
+
+4.6. What the finding contributes
+---------------------------------
+
+The three quantities separate three questions. The rank r(K) measures ambiguity along a complete
+presentation. The two-face union bound b(K) measures ambiguity after an arbitrarily long finite
+prefix. The weak chromatic number measures how many simpler problems are needed to cover the class.
+Their differences are exact and already occur for finite families of unary regular languages.
+
+5. Sparse holes and the limits of randomization
+===============================================
+
+5.1. Motivation and source papers
+---------------------------------
+
+An error rate that tends to zero can look like successful learning. Generation in the limit asks for
+more: after some finite time, every realized output must be valid and fresh. This chapter separates
+those objectives even for targets that contain almost every natural number, and identifies
+additional information that makes randomization useful.
+
+The main starting point is the randomized diagonalization of Hanneke et al. (2025), which supplies a
+quantile-cutoff idea. The present construction combines that idea with independently chosen residue
+classes to make the missing points sparse: their consecutive gaps tend to infinity. For every
+prescribed randomized no-feedback generator, it produces a fixed dense target and a fixed increasing
+presentation on which the generator makes infinitely many errors almost surely.
+
+Nevertheless, a single generator attains vanishing roundwise error probability and almost-sure zero
+temporal error frequency for every density-one target and each fixed positive input stream. A
+further positive result uses a known nondecreasing, unbounded, sublinear sparsity envelope to make
+the error probabilities summable. Under that common envelope, randomization permits almost-sure
+eventual correctness even though deterministic generation on all full presentations remains
+impossible.
+
+All three results concern no-feedback generators and realized outputs. The density promise concerns
+omitted ambient points, while the error frequency concerns rounds. These differ from density
+objectives for the set of valid strings generated (Kleinberg and Wei, 2025; Kleinberg and Wei,
+2026).
+
+5.2. Model and target geometry
+------------------------------
+
+Here a randomized no-feedback generator is a family of measurable maps g(h,ω) ∈ ℕ, indexed by finite
+positive histories h, on a fixed random-tape probability space (Ω,Pr). Arbitrary dependence between
+rounds through that tape is allowed. An error means failure of target membership or novelty relative
+to the observed sample. All probability-one eventual statements refer to realized outputs, without
+the additional group-representation requirements of Peale et al. (2025).
+
+Call an infinite set D={d_{1}<d_{2}<⋯} thin here if d_{j+1}-d_{j} → ∞. It has upper Banach density
+zero:
+
+    lim_{n → ∞}sup_{m ≥ 0}(|D ∩ [m,m+n)|)/(n)=0.
+
+Indeed, beyond finitely many exceptional points each consecutive gap is at least any prescribed q,
+so every interval contains at most a fixed exceptional count plus n/q+1 points. Its complement
+consequently has one-sided lower Banach density one.
+
+5.3. A fixed thin-complement target forces almost-sure infinitely many errors
+-----------------------------------------------------------------------------
+
+Theorem 5.1.
+For every measurable randomized no-feedback element generator on ℕ, there exist an infinite thin set
+D and the increasing exact presentation of L=ℕ ∖  D such that the generator makes infinitely many
+errors with probability one. Both the target and its presentation are fixed before the random tape
+is realized.
+
+Proof.
+Introduce independent construction randomness R_{k}, uniform on {0,…,k-1} for k ≥ 2, independent
+also of the algorithm tape ω. Initialize B_{1}=0 with no holes. Given the previous construction
+residues, put M_{k}=B_{k-1}+k and extend the current history increasingly to enumerate every integer
+at most M_{k} except holes already selected. Call this history h_{k}.
+
+Conditional on the previous residues, h_{k} is a fixed finite history independent of ω. Since
+g(h_{k},ω) is natural-valued, choose the least integer B_{k} ≥ M_{k}+k satisfying
+
+    Pr_{ω}{g(h_{k},ω)>B_{k}} ≤ 2^{-k}.
+
+This cutoff depends on the generator's law and previous construction residues, but not on its
+realized tape. Reveal the independent residue R_{k} and declare
+
+    D_{k}={n:M_{k}<n ≤ B_{k}, n ≡ R_{k} (mod k)}
+
+to be additional holes. Let D=⋃_{k ≥ 2}D_{k}.
+
+Every new hole is larger than every currently observed point. The histories are nested increasing
+lists and their union enumerates exactly ℕ ∖ D. Their lengths tend to infinity because
+M_{k}>B_{k-1}. Each D_{k} is nonempty, since its defining interval has length at least k. Within
+D_{k} the gaps equal k, and across successive hole blocks the gap is at least k+1. Since each block
+is finite, D is infinite and thin for every realization of the construction randomness.
+
+Write Y_{k}=g(h_{k},ω) and E_{k}={Y_{k} ≤ B_{k}}. Independence of the past construction residues
+from ω gives
+
+    Pr_{ω,R}(E_{k}^{c}) ≤ 2^{-k}.
+
+Thus only finitely many E_{k} fail jointly almost surely. Define an auxiliary event by requesting
+exactly one residue:
+
+    Z_{k}= cases {
+    {R_{k}=Y_{k} mod k}, M_{k}<Y_{k} ≤ B_{k},
+    {R_{k}=0}, otherwise.
+    }
+
+Conditional on the entire algorithm tape and the previous construction residues, the requested
+residue is fixed while R_{k} remains uniform. Consequently
+
+    Pr(Z_{k} | ω,R_{2},…,R_{k-1})=1/k.
+
+By iterated conditioning, for 2 ≤ K ≤ N,
+
+    Pr(⋂_{k=K}^{N} Z_{k}^{c}) =Π_{k=K}^{N}(1-1/k)=(K-1)/(N).
+
+Letting N → ∞ and taking a countable union over K proves that Z_{k} occurs infinitely often almost
+surely. This does not assume that actual generator errors are independent.
+
+On Z_{k} ∩ E_{k}, an actual error occurs at h_{k}. If Y_{k} ≤ M_{k}, it is either already observed
+or an old hole. If M_{k}<Y_{k} ≤ B_{k}, the matching residue makes it a new hole in D_{k}. Since
+E_{k} eventually always holds, there are infinitely many actual errors jointly almost surely.
+
+Fubini's theorem now fixes one realization of all construction residues for which the error event
+has probability one over ω. It gives a deterministic D and a deterministic increasing exact target
+presentation, proving the assertion. All constructions are measurable: histories and least cutoffs
+are functions on the countable tree of finite residue prefixes, and membership of each integer is
+decided after finitely many increasing cutoffs.
+
+End of proof.
+
+A bound on the generator's output tail, followed by a fresh independent residue, supplies the
+required probabilistic diagonalization. It is specifically a no-feedback proof: with
+target-dependent external replies, the observed transcript could depend on the random tape and on
+later-selected holes, requiring a separate independence argument.
+
+5.4. Vanishing error probability and frequency remain possible
+--------------------------------------------------------------
+
+Theorem 5.2.
+There is a randomized no-feedback generator that, for every density-one target and every fixed
+positive input stream, is always novel, has error probability tending to zero, and has almost-sure
+temporal error frequency zero.
+
+Proof.
+At positive history length t, independently choose a uniform point from
+
+    A_{t}={0,…,t^{2}} ∖ S_{t}.
+
+This set is nonempty because |S_{t}| ≤ t<t^{2}+1, and novelty holds identically. At the empty
+history choose zero, also unseen. For D=ℕ ∖ L,
+
+    p_{t}=Pr{g(h_{t}) ∉ L} ≤ (|D ∩ [0,t^{2}]|)/(t^{2}+1-t) → 0,
+
+since D has density zero. No full-presentation promise is needed.
+
+For a fixed stream, the error indicators X_{t} are independent. Put Z_{T}=Σ_{t ≤ T}X_{t}. We have
+Var(Z_{T}) ≤ T, while 𝔼 Z_{T}/T → 0 by averaging the convergent sequence (p_{t}). Chebyshev's
+inequality at T=m^{2} gives
+
+    Pr{|Z_{m^{2}}-𝔼 Z_{m^{2}}|>δ m^{2}} ≤ (1)/(δ^{2}m^{2}).
+
+For each rational δ>0 this bound is summable. Borel–Cantelli, followed by a countable intersection
+over these tolerances, gives Z_{m^{2}}/m^{2} → 0 almost surely. If m^{2} ≤ T<(m+1)^{2}, monotonicity
+gives
+
+    0 ≤ (Z_{T})/(T) ≤ (Z_{(m+1)^{2}})/(m^{2}) =((m+1)^{2})/(m^{2})(Z_{(m+1)^{2}})/((m+1)^{2}).
+
+The right-hand side tends to zero, proving
+
+    (1)/(T)Σ_{t ≤ T}X_{t} → 0 almost surely.
+
+End of proof.
+
+Apply Theorem 5.1 to this generator. On some fixed thin-complement target and its increasing
+presentation, it makes infinitely many errors almost surely, while their temporal frequency tends to
+zero almost surely and each round's error probability tends to zero. Thus even this strong geometric
+target promise does not turn vanishing error into almost-sure eventual correctness.
+
+5.5. A known sparsity envelope separates randomized and deterministic generation
+--------------------------------------------------------------------------------
+
+Fix a nondecreasing unbounded function a:ℕ → ℕ with a(n)/n → 0, and define
+
+    H_{a}={ℕ ∖ D:∀ n ≥ 1, |D ∩ [0,n)| ≤ a(n)}.
+
+For example, take a(n)=⌈log_{2}(n+1)⌉. The envelope is known and common to the class; every target
+has density one.
+
+Lemma 5.3 (Deterministic generation requires a countable inner cover).
+Let H be any class of infinite subsets of ℕ. If one deterministic no-feedback generator eventually
+produces valid, previously unobserved points on every full presentation of every target, then there
+is a countable family (A_{i}) of infinite subsets of ℕ such that every L ∈ H contains at least one
+A_{i}.
+
+Proof.
+Fix a target L. There is a finite positive history h such that the generator succeeds after every
+finite positive extension of h inside L, including the empty extension. Otherwise, start from any
+finite history over L. At each stage, first append the next point of a fixed enumeration of L, and
+then append a finite positive extension at whose end the output is invalid or already observed. The
+bad extension may be empty, but the enumeration step ensures that the history length increases. The
+resulting full presentation has infinitely many errors, a contradiction.
+
+For every finite history h over ℕ, run the following deterministic self-feeding process. Query the
+generator on h, append its output, query again, and continue appending the output as the next
+observation. This process and its range depend only on h and the generator. Retain its range A_{h}
+whenever that range is infinite. There are only countably many finite histories, so the retained
+family is countable. If h is the locking history just constructed for L, induction shows that every
+appended output is in L and outside all preceding observations. The process then has infinite range
+contained in L. Thus every target contains a retained A_{h}.
+
+End of proof.
+
+Theorem 5.4 (Strict deterministic/randomized separation).
+The class H_{a} has no deterministic no-feedback limit element generator under the usual requirement
+of success on every full target presentation. Nevertheless it has a randomized no-feedback generator
+of globally infinite sets that, for each target, is almost surely eventually target-valid and fresh,
+simultaneously on every presentation of that target. For T ≥ 1, the probability of validity and
+freshness at all times t ≥  T is at least 1-2^{1-T}, uniformly over targets. In particular,
+randomized eventual element generation succeeds on the class.
+
+Proof.
+For deterministic impossibility, let A_{i} be any proposed sequence of infinite inner-cover sets.
+Revisit each index infinitely often. At stage m ≥ 1, choose a new increasing d_{m} ∈  A_{i} so large
+that a(d_{m}+1) ≥  m, using monotonicity and unboundedness of a. For D={d_{m}:m ≥ 1}, if [0,n)
+contains m ≥ 1 selected points then n ≥  d_{m}+1, so a(n) ≥  m; the zero-count case is automatic.
+Thus D satisfies the envelope and intersects every A_{i} infinitely. Its complement contains none.
+There is no countable inner cover, so Lemma 5.3 excludes deterministic generation. This necessity
+concerns all full presentations; the inner-cover argument alone does not establish an
+increasing-presentation-only lower bound.
+
+For the randomized positive result, choose disjoint intervals I_{j}=[N_{j},2N_{j}) with N_{j} ≥ 1
+and
+
+    (a(2N_{j}))/(N_{j}) ≤ 2^{-j}, j ≥ 1.
+
+Such intervals exist because the ratio tends to zero; choose successive N_{j} greater than twice
+their predecessors. Independently select one uniform point Z_{j} ∈ I_{j}. At positive history length
+t, emit
+
+    Q_{t}={Z_{j}:j ≥ t} ∖ S_{t}.
+
+At the empty history output {Z_{j}:j ≥ 1}. The selected points are distinct, so Q_{t} is infinite
+for every random tape and every finite history. Removing the sample makes it fresh, including at
+unrealizable histories.
+
+For each fixed target complement D obeying the envelope,
+
+    Pr(Z_{j} ∈ D) ≤ (a(2N_{j}))/(N_{j}) ≤ 2^{-j}.
+
+With probability at least 1-Σ_{j ≥ T}2^{-j}=1-2^{1-T}, no selected point of index at least T is a
+hole. On that event every Q_{t} for t ≥ T lies in the target and is fresh, for every presentation
+simultaneously. Borel–Cantelli also gives eventual safety almost surely. Selecting the least element
+of each infinite Q_{t} yields the element-valued conclusion.
+
+End of proof.
+
+The probability-one set of successful tapes may depend on the target. A target chosen after
+observing the realized tape is a different adversarial model. The infinite output is a semantic
+random set, not a claim of a finite explicit list encoding. There is no contradiction with Theorem
+5.1: its diagonal holes need not satisfy any prescribed envelope. A common known density rate
+permits a summable error budget, whereas the class allowing all unknown rates does not.
+
+5.6. Comparison of the guarantees
+---------------------------------
+
+Appendix Proposition A.2 of Hanneke et al. (2025) already proves randomized impossibility for the
+class of all infinite targets, with only finitely many correct outputs almost surely. Its quantile
+construction makes the target sparse. The new diagonal instead forces infinitely many errors on the
+complement of a thin set, using quantile bounds together with independent residues. This restricts
+the target geometry substantially while weakening the error conclusion appropriately; Theorem 5.2
+shows why eventually-all errors cannot be forced for every generator within the density-one class.
+The refinement concerns the geometry of the admissible targets.
+
+The density objectives in Kleinberg and Wei (2025) and Kleinberg and Wei (2026) concern the breadth
+of generated valid sets. Here, upper Banach density zero is a promise on the omitted ambient points,
+and the positive theorem controls temporal error frequency. The classes used in the impossibility
+and separation theorems are uncountable. Thus the conclusions do not contradict positive generation
+results for arbitrary countable language classes.
+
+Comparison tables
+=================
+
+  Tables 3–6 summarize the mathematical results, their assumptions, and the scope of available
+    verification. The list below also includes the two tables appearing in the main text.
+
+LIST OF TABLES
+==============
+
+Table 1. Finite profile cells in the maximum-cut reduction. The zero-profile cell is infinite.
+
+Table 2. Geometric criteria for the semantic generation model of Definition 3.1. All targets are
+unbounded.
+
+Table 3. The five findings and their source relationships.
+
+Table 4. Model assumptions that determine the meaning of each theorem.
+
+Table 5. Which conclusions are different, even when they sound similar.
+
+Table 6. Proof status and provenance of this edition.
+
+Table 3. The five findings and their source relationships.
+
+  Finding: Overlapping groups
+  Starting point: Peale et al. (2025)
+  Additional result and category: Completed-cell characterization, exact two-block discrepancy
+    formula, and sharp square-root rate. Structural refinement and sharp quantitative theorem.
+
+  Finding: Exact mistake coefficient
+  Starting point: Peale et al. (2025) and Kleinberg et al. (2026)
+  Additional result and category: An explicit coefficient for the minimax logarithmic law, with
+    exact examples and evaluation hardness. Two-paper synthesis, minimax characterization, and
+    complexity.
+
+  Finding: Metric generation
+  Starting point: Li et al. (2026a)
+  Additional result and category: Finite-intersection classification and equivalence to properness
+    of the completion. Geometric characterization informed by a correction to covering conventions.
+
+  Finding: Contrastive ambiguity
+  Starting point: Charikar et al. (2025) and Li et al. (2026b)
+  Additional result and category: Realization of arbitrary ambiguity complexes, exact list widths,
+    and hypergraph-coloring decomposition. Two-paper synthesis and combinatorial separation.
+
+  Finding: Sparse holes
+  Starting point: Hanneke et al. (2025); see also Kleinberg and Wei (2025) and Kleinberg and Wei
+    (2026)
+  Additional result and category: Dense-target impossibility, vanishing-error guarantees, and strict
+    randomization advantage under a known rate. Probabilistic refinement and separation.
+
+Table 4. Model assumptions that determine the meaning of each theorem.
+
+  Finding: Overlapping groups
+  Input and structure: One countably infinite target; finite distinct samples; finite dual VC
+    dimension. Sharp rate uses two dual-VC-one blocks and linear completed-cell growth.
+  Output and success: A probability law on unobserved target points; discrepancy is worst error over
+    group masses. General infima need not be attained.
+
+  Finding: Exact mistake coefficient
+  Input and structure: Fixed finite target class and finite groups; distinct positive observations;
+    target fixed before private randomness; observation order may adapt.
+  Output and success: Representation at every round. A draw outside the target or inside the
+    observed sample costs one. Constants in the asymptotic law depend on the fixed instance.
+
+  Finding: Metric generation
+  Input and structure: Countable metric universe and countable classes of unbounded targets;
+    positive input and output scales; thresholds measured by ambient covering numbers.
+  Output and success: A target point farther than the output scale from the observed sample.
+    Threshold may depend on target and scales, but not on the particular stream.
+
+  Finding: Contrastive ambiguity
+  Input and structure: Unordered pairs with exactly one positive endpoint; complete presentations
+    cover the positive side. Threshold results count distinct unordered edges.
+  Output and success: A list containing the true original support eventually, or after the specified
+    threshold. Exact formulas apply to the constructed classes.
+
+  Finding: Sparse holes
+  Input and structure: Natural-number universe; no feedback; arbitrary measurable private tape. Bad
+    target and increasing full text are fixed before the tape is realized.
+  Output and success: Realized output is valid and unobserved. The known-envelope result permits
+    target-dependent probability-one sets of successful tapes.
+
+Table 5. Which conclusions are different, even when they sound similar.
+
+  Distinction: Small discrepancy vs. an optimizer
+  Why it matters: Approaching an infimum does not imply some distribution attains it. The proofs
+    retain slack where needed.
+
+  Distinction: Freshness as constraint vs. mistake
+  Why it matters: Section 2 charges outputs already present in the input sample; this makes
+    immediate representation feasible in depleted groups.
+
+  Distinction: Eventual list width vs. threshold width
+  Why it matters: Complete contrastive coverage can eventually reveal information that an
+    arbitrarily long finite prefix hides.
+
+  Distinction: Vanishing errors vs. finitely many errors
+  Why it matters: An error probability and an empirical error fraction can both tend to zero while
+    infinitely many errors occur almost surely.
+
+Table 6. Proof status and provenance of this edition.
+
+  Finding: Overlapping groups
+  Mathematical proof in these notes: Completed-cell iff, exact two-block formula, upper bound, and
+    matching sharpness example.
+  Formal and archival evidence: Later overlap manuscript and audit records. Related finite-profile
+    tools occur in Lean; the complete section is not claimed as formally certified.
+
+  Finding: Exact mistake coefficient
+  Mathematical proof in these notes: Matching minimax bounds, explicit examples, and evaluation
+    complexity.
+  Formal and archival evidence: September 18 coefficient manuscript and written audit notes. No Lean
+    certificate for the full logarithmic law.
+
+  Finding: Metric generation
+  Mathematical proof in these notes: Finite-intersection iff and equivalence with proper completion,
+    including the negative construction.
+  Formal and archival evidence: September 18 classification manuscript. Covering and fresh-core
+    diagnostics have Lean checks; the full classification is written mathematics.
+
+  Finding: Contrastive ambiguity
+  Mathematical proof in these notes: Realization, exact eventual and threshold widths, sharp factor
+    two, and coloring theorem.
+  Formal and archival evidence: F04/F13/F14; Round2ContrastiveComplex.lean has archived successful
+    checks for realization and width equivalences. Coloring is a written consequence.
+
+  Finding: Sparse holes
+  Mathematical proof in these notes: Fixed-target diagonalization, vanishing error, inner-cover
+    necessity, and known-envelope separation.
+  Formal and archival evidence: F18/F19 in the September 13 collection, with written AI audit
+    records. Probability layer is not Lean-certified.
+
+Source trail and audit
+----------------------
+
+This edition consolidates the September 13 Natural-language proofs, Readable finding guide, and
+Ranked discoveries collection with the September 18 contextual manuscripts
+overlap_characterization.tex, sharp_log_coefficient.tex, and metric_classification.tex. The
+September 19 overlap proof refinements supply the sharp two-block argument. Those files record the
+wider exploration and additional results not selected here. The section sources retained alongside
+these notes permit later editing and theorem-level comparison.
+
+A successful archived Lean check certifies the declarations that were checked under their stated
+definitions. It does not certify neighboring prose, a changed protocol, or the complete collection.
+The distinctions in Table 6 are therefore part of the notes' mathematical specification.
+
+The five findings were reviewed in a fresh proof-by-proof audit. The review checked the separation
+and attainment arguments, the minimax dual programs and fixed-target lower bound, the all-scale
+metric scheduler, the distinction between complete contrastive presentations and finite prefixes,
+and the measurable fixed-target extraction in the sparse-hole diagonal. It found no material
+mathematical defect in the stated results. The revision clarifies the positive-supremum attainment
+claim, integer sample counts, and several presentation and probability conventions.
+
+Supplementary finite checks compared the overlap formula with primal linear programs on 160
+instances, checked the minimax constructions through 3,450 linear-program solves, and enumerated all
+126 simplicial complexes with one to four vertices. These diagnostics support the review but do not
+replace the proofs. The accompanying audit records give their precise scope and reproducible code
+where retained. No new Lean build was performed for this edition; the complete collection is not
+claimed to be formally certified. The review also does not establish comprehensive literature
+priority.
+
+REFERENCES
+==========
+
+Charikar et al. (2025). Moses Charikar, Chirag Pabbaraju, and Ambuj Tewari. A Characterization of
+List Language Identification in the Limit. arXiv:2511.04103, 2025. https://arxiv.org/abs/2511.04103.
+
+Garey et al. (1976). Michael R. Garey, David S. Johnson, and Larry Stockmeyer. Some simplified
+NP-complete graph problems. Theoretical Computer Science 1(3):237–267, 1976.
+https://doi.org/10.1016/0304-3975(76)90059-1.
+
+Gurvits and Koiran (1997). Leonid Gurvits and Pascal Koiran. Approximation and learning of convex
+superpositions. Journal of Computer and System Sciences 55(1):161–170, 1997.
+https://doi.org/10.1006/jcss.1997.1506.
+
+Hanneke et al. (2025). Steve Hanneke, Amin Karbasi, Anay Mehrotra, and Grigoris Velegkas. On
+Union-Closedness of Language Generation. arXiv:2506.18642, 2025. See Appendix A.1 for the randomized
+diagonalization. https://arxiv.org/abs/2506.18642.
+
+Kleinberg et al. (2026). Jon Kleinberg, Charlotte Peale, and Omer Reingold. Mistake-Bounded Language
+Generation. arXiv:2605.10809, 2026. https://arxiv.org/abs/2605.10809.
+
+Kleinberg and Wei (2025). Jon Kleinberg and Fan Wei. Density Measures for Language Generation.
+arXiv:2504.14370, 2025. https://arxiv.org/abs/2504.14370.
+
+Kleinberg and Wei (2026). Jon Kleinberg and Fan Wei. Validity, Sparse Holes, and Breadth in Language
+Generation: Banach Density, Topology, and Geometry. arXiv:2604.02385, 2026.
+https://arxiv.org/abs/2604.02385.
+
+Li et al. (2026a). Jiaxun Li, Vinod Raman, and Ambuj Tewari. On Generation in Metric Spaces.
+arXiv:2602.07710, 2026a. https://arxiv.org/abs/2602.07710.
+
+Li et al. (2026b). Xiaoyu Li, Andi Han, Jiaojiao Jiang, and Junbin Gao. Contrastive Identification
+and Generation in the Limit. arXiv:2605.06211, 2026b. https://arxiv.org/abs/2605.06211.
+
+Peale et al. (2025). Charlotte Peale, Vinod Raman, and Omer Reingold. Representative Language
+Generation. Proceedings of the 42nd International Conference on Machine Learning, PMLR
+267:48518–48541, 2025. https://proceedings.mlr.press/v267/peale25a.html.
+
+Vapnik and Chervonenkis (1971). V. N. Vapnik and A. Ya. Chervonenkis. On the uniform convergence of
+relative frequencies of events to their probabilities. Theory of Probability and Its Applications
+16(2):264–280, 1971. https://doi.org/10.1137/1116025.

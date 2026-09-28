@@ -1,0 +1,10 @@
+import Density
+#check Set.Countable.to_subtype
+#check Set.Countable.image
+#check Set.Countable.of_injective
+#check Countable.of_injective
+#check Function.Injective.countable
+#check Set.countable_range
+#check Set.Infinite.to_subtype
+#check Set.Infinite.to_subtype
+#check SetCoe.ext

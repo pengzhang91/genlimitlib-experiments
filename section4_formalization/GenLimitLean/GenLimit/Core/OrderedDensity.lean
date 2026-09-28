@@ -1,0 +1,672 @@
+import GenLimit.Core.Basic
+import Mathlib.Data.Real.Archimedean
+import Mathlib.Order.LiminfLimsup
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+import Mathlib.Topology.Algebra.Ring.Real
+
+/-!
+# Ordered relative density
+
+This file records the ordered-density language shared by the three
+Kleinberg--Wei papers.  In the notation of Definition 4.1 of
+*Density Measures for Language Generation*, `enumeration` lists the elements
+of the reference language `K` without repetition.  Density is measured in the
+first `n` positions of that ordering, rather than in ambient natural-number
+prefixes.
+-/
+
+namespace GenLimit
+namespace KleinbergWei
+
+open Filter
+
+/-- A duplicate-free ordering of all strings in a language. -/
+structure OrderedLanguage where
+  carrier : Language
+  enumeration : ℕ → ℕ
+  enumeration_injective : Function.Injective enumeration
+  range_enumeration : Set.range enumeration = carrier
+
+namespace OrderedLanguage
+
+/-- Number of the first `n` ordered strings of `K` which belong to `A`. -/
+noncomputable def prefixCount (K : OrderedLanguage) (A : Language) (n : ℕ) : ℕ := by
+  classical
+  exact ((Finset.range n).filter fun i => K.enumeration i ∈ A).card
+
+theorem prefixCount_le (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    K.prefixCount A n ≤ n := by
+  classical
+  simpa [prefixCount] using
+    Finset.card_filter_le (s := Finset.range n) (p := fun i => K.enumeration i ∈ A)
+
+/-- Ranks in the fixed ordering whose strings belong to `A`. -/
+def rankSet (K : OrderedLanguage) (A : Language) : Set ℕ :=
+  {i | K.enumeration i ∈ A}
+
+/-- Elements of an arbitrary rank set below `n`. -/
+noncomputable def rankPrefix (P : Set ℕ) (n : ℕ) : Finset ℕ := by
+  classical
+  exact (Finset.range n).filter fun i => i ∈ P
+
+@[simp] theorem mem_rankPrefix {P : Set ℕ} {n i : ℕ} :
+    i ∈ rankPrefix P n ↔ i < n ∧ i ∈ P := by
+  classical
+  simp [rankPrefix]
+
+@[simp] theorem rankPrefix_rankSet_card
+    (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    (rankPrefix (K.rankSet A) n).card = K.prefixCount A n :=
+  rfl
+
+theorem rankPrefix_subset_succ (P : Set ℕ) (n : ℕ) :
+    rankPrefix P n ⊆ rankPrefix P (n + 1) := by
+  classical
+  intro i hi
+  have hi' : i < n ∧ i ∈ P := mem_rankPrefix.mp hi
+  exact mem_rankPrefix.mpr ⟨Nat.lt.step hi'.1, hi'.2⟩
+
+/-- Adding one ordered position changes a prefix count by at most one. -/
+theorem prefixCount_succ_le_add_one
+    (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    K.prefixCount A (n + 1) ≤ K.prefixCount A n + 1 := by
+  classical
+  let old := rankPrefix (K.rankSet A) n
+  let new := rankPrefix (K.rankSet A) (n + 1)
+  have hsub : new ⊆ insert n old := by
+    intro i hi
+    by_cases hin : i = n
+    · subst i
+      simp
+    · apply Finset.mem_insert_of_mem
+      apply mem_rankPrefix.mpr
+      have hi' := mem_rankPrefix.mp hi
+      exact ⟨by omega, hi'.2⟩
+  have hcard : new.card ≤ old.card + 1 := by
+    calc
+      new.card ≤ (insert n old).card := Finset.card_le_card hsub
+      _ ≤ old.card + 1 := Finset.card_insert_le n old
+  simpa [old, new] using hcard
+
+/-- Outside finitely many exceptional source ranks, an injective charge that
+moves rank `i` by at most `offset` embeds each source prefix into the shifted
+output prefix. -/
+theorem rankPrefix_card_le_shifted_output_add_exceptions
+    (K : OrderedLanguage) (sourceRanks : Set ℕ) (output : Language)
+    (charge : ℕ → ℕ) (offset : ℕ) (exceptions : Finset ℕ)
+    (houtput : ∀ ⦃i : ℕ⦄, i ∈ sourceRanks → i ∉ exceptions →
+      K.enumeration (charge i) ∈ output)
+    (hle : ∀ ⦃i : ℕ⦄, i ∈ sourceRanks → i ∉ exceptions →
+      charge i ≤ i + offset)
+    (hinjective : Set.InjOn charge
+      (sourceRanks \ (exceptions : Set ℕ)))
+    (n : ℕ) :
+    (rankPrefix sourceRanks n).card ≤
+      K.prefixCount output (n + offset) + exceptions.card := by
+  classical
+  let sourcePrefix := rankPrefix sourceRanks n
+  let clean := sourcePrefix \ exceptions
+  let outputPrefix := rankPrefix (K.rankSet output) (n + offset)
+  have hmaps : Set.MapsTo charge clean outputPrefix := by
+    intro i hi
+    have hiParts := Finset.mem_sdiff.mp hi
+    have hiSource := (mem_rankPrefix.mp hiParts.1).2
+    apply mem_rankPrefix.mpr
+    refine ⟨?_, houtput hiSource hiParts.2⟩
+    have hiRange := (mem_rankPrefix.mp hiParts.1).1
+    have hcharge := hle hiSource hiParts.2
+    omega
+  have hinj : Set.InjOn charge clean := by
+    intro i hi j hj hij
+    apply hinjective
+    · exact ⟨(mem_rankPrefix.mp (Finset.mem_sdiff.mp hi).1).2,
+        (Finset.mem_sdiff.mp hi).2⟩
+    · exact ⟨(mem_rankPrefix.mp (Finset.mem_sdiff.mp hj).1).2,
+        (Finset.mem_sdiff.mp hj).2⟩
+    · exact hij
+  have hclean : clean.card ≤ outputPrefix.card :=
+    Finset.card_le_card_of_injOn charge hmaps hinj
+  have hcover : sourcePrefix ⊆ clean ∪ exceptions := by
+    intro i hi
+    by_cases hie : i ∈ exceptions
+    · exact Finset.mem_union_right _ hie
+    · exact Finset.mem_union_left _ (Finset.mem_sdiff.mpr ⟨hi, hie⟩)
+  have hsource : sourcePrefix.card ≤ clean.card + exceptions.card :=
+    (Finset.card_le_card hcover).trans (Finset.card_union_le _ _)
+  simpa [sourcePrefix, clean, outputPrefix] using
+    hsource.trans (Nat.add_le_add_right hclean _)
+
+/-- Exception-free specialization of
+`rankPrefix_card_le_shifted_output_add_exceptions`. -/
+theorem rankPrefix_card_le_shifted_output
+    (K : OrderedLanguage) (sourceRanks : Set ℕ) (output : Language)
+    (charge : ℕ → ℕ) (offset : ℕ)
+    (houtput : ∀ ⦃i : ℕ⦄, i ∈ sourceRanks →
+      K.enumeration (charge i) ∈ output)
+    (hle : ∀ ⦃i : ℕ⦄, i ∈ sourceRanks → charge i ≤ i + offset)
+    (hinjective : Set.InjOn charge sourceRanks)
+    (n : ℕ) :
+    (rankPrefix sourceRanks n).card ≤
+      K.prefixCount output (n + offset) := by
+  simpa using K.rankPrefix_card_le_shifted_output_add_exceptions
+    sourceRanks output charge offset ∅
+    (fun {_i} hi _ => houtput hi) (fun {_i} hi _ => hle hi)
+    (by simpa using hinjective) n
+
+theorem prefixCount_mono
+    (K : OrderedLanguage) {A B : Language} (hAB : A ⊆ B) (n : ℕ) :
+    K.prefixCount A n ≤ K.prefixCount B n := by
+  classical
+  unfold prefixCount
+  apply Finset.card_le_card
+  intro i hi
+  simp only [Finset.mem_filter] at hi ⊢
+  exact ⟨hi.1, hAB hi.2⟩
+
+@[simp] theorem prefixCount_empty (K : OrderedLanguage) (n : ℕ) :
+    K.prefixCount (∅ : Language) n = 0 := by
+  classical
+  simp [prefixCount]
+
+@[simp] theorem prefixCount_carrier (K : OrderedLanguage) (n : ℕ) :
+    K.prefixCount K.carrier n = n := by
+  classical
+  have hmem : ∀ i, K.enumeration i ∈ K.carrier := by
+    intro i
+    rw [← K.range_enumeration]
+    exact ⟨i, rfl⟩
+  simp [prefixCount, hmem]
+
+@[simp] theorem prefixCount_inter_carrier
+    (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    K.prefixCount (A ∩ K.carrier) n = K.prefixCount A n := by
+  classical
+  unfold prefixCount
+  congr 1
+  ext i
+  have hcarrier : K.enumeration i ∈ K.carrier := by
+    rw [← K.range_enumeration]
+    exact ⟨i, rfl⟩
+  simp [hcarrier]
+
+/-- The finite relative-density ratio in the first `n` positions.
+
+The value at `n = 0` is set to zero; the asymptotic densities are unchanged
+by this convention.
+-/
+noncomputable def prefixRatio
+    (K : OrderedLanguage) (A : Language) (n : ℕ) : ℝ :=
+  if n = 0 then 0 else (K.prefixCount A n : ℝ) / n
+
+@[simp] theorem prefixRatio_zero (K : OrderedLanguage) (A : Language) :
+    K.prefixRatio A 0 = 0 := by
+  simp [prefixRatio]
+
+theorem prefixRatio_nonneg (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    0 ≤ K.prefixRatio A n := by
+  by_cases hn : n = 0
+  · simp [prefixRatio, hn]
+  · simp only [prefixRatio, hn, if_false]
+    exact div_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _)
+
+theorem prefixRatio_le_one (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    K.prefixRatio A n ≤ 1 := by
+  by_cases hn : n = 0
+  · simp [prefixRatio, hn]
+  · simp only [prefixRatio, hn, if_false]
+    have hnpos : (0 : ℝ) < n := by
+      exact_mod_cast Nat.pos_of_ne_zero hn
+    rw [div_le_one hnpos]
+    exact_mod_cast K.prefixCount_le A n
+
+theorem prefixRatio_mono
+    (K : OrderedLanguage) {A B : Language} (hAB : A ⊆ B) (n : ℕ) :
+    K.prefixRatio A n ≤ K.prefixRatio B n := by
+  by_cases hn : n = 0
+  · simp [hn]
+  · simp only [prefixRatio, hn, if_false]
+    exact div_le_div_of_nonneg_right
+      (by exact_mod_cast K.prefixCount_mono hAB n)
+      (Nat.cast_nonneg n)
+
+/-- Definition 4.1: upper density of `A` in the ordered language `K`. -/
+noncomputable def upperDensity (K : OrderedLanguage) (A : Language) : ℝ :=
+  limsup (K.prefixRatio A) atTop
+
+/-- Definition 4.1: lower density of `A` in the ordered language `K`. -/
+noncomputable def lowerDensity (K : OrderedLanguage) (A : Language) : ℝ :=
+  liminf (K.prefixRatio A) atTop
+
+@[simp] theorem prefixRatio_empty (K : OrderedLanguage) (n : ℕ) :
+    K.prefixRatio (∅ : Language) n = 0 := by
+  simp [prefixRatio]
+
+@[simp] theorem prefixRatio_carrier (K : OrderedLanguage) (n : ℕ) :
+    K.prefixRatio K.carrier n = if n = 0 then 0 else 1 := by
+  by_cases hn : n = 0
+  · simp [prefixRatio, hn]
+  · simp [prefixRatio, hn]
+
+theorem upperDensity_nonneg (K : OrderedLanguage) (A : Language) :
+    0 ≤ K.upperDensity A := by
+  unfold upperDensity
+  apply le_limsup_of_frequently_le
+  · exact Frequently.of_forall (fun n => K.prefixRatio_nonneg A n)
+  · exact isBoundedUnder_of ⟨1, fun n => K.prefixRatio_le_one A n⟩
+
+theorem upperDensity_le_one (K : OrderedLanguage) (A : Language) :
+    K.upperDensity A ≤ 1 := by
+  unfold upperDensity
+  apply limsup_le_of_le
+  · exact isCoboundedUnder_le_of_le atTop
+      (fun n => K.prefixRatio_nonneg A n)
+  · exact Eventually.of_forall (fun n => K.prefixRatio_le_one A n)
+
+theorem lowerDensity_nonneg (K : OrderedLanguage) (A : Language) :
+    0 ≤ K.lowerDensity A := by
+  unfold lowerDensity
+  apply le_liminf_of_le
+  · exact isCoboundedUnder_ge_of_le atTop
+      (fun n => K.prefixRatio_le_one A n)
+  · exact Eventually.of_forall (fun n => K.prefixRatio_nonneg A n)
+
+theorem lowerDensity_le_one (K : OrderedLanguage) (A : Language) :
+    K.lowerDensity A ≤ 1 := by
+  unfold lowerDensity
+  apply liminf_le_of_frequently_le
+  · exact (Eventually.of_forall
+      (fun n => K.prefixRatio_le_one A n)).frequently
+  · exact isBoundedUnder_of
+      ⟨0, fun n => K.prefixRatio_nonneg A n⟩
+
+theorem lowerDensity_mono
+    (K : OrderedLanguage) {A B : Language} (hAB : A ⊆ B) :
+    K.lowerDensity A ≤ K.lowerDensity B := by
+  unfold lowerDensity
+  apply liminf_le_liminf
+  · exact Eventually.of_forall (K.prefixRatio_mono hAB)
+  · exact isBoundedUnder_of
+      ⟨0, fun n => K.prefixRatio_nonneg A n⟩
+  · exact isCoboundedUnder_ge_of_le atTop
+      (fun n => K.prefixRatio_le_one B n)
+
+theorem upperDensity_mono
+    (K : OrderedLanguage) {A B : Language} (hAB : A ⊆ B) :
+    K.upperDensity A ≤ K.upperDensity B := by
+  unfold upperDensity
+  apply limsup_le_limsup
+  · exact Eventually.of_forall (K.prefixRatio_mono hAB)
+  · exact isCoboundedUnder_le_of_le atTop
+      (fun n => K.prefixRatio_nonneg A n)
+  · exact isBoundedUnder_of
+      ⟨1, fun n => K.prefixRatio_le_one B n⟩
+
+@[simp] theorem upperDensity_carrier (K : OrderedLanguage) :
+    K.upperDensity K.carrier = 1 := by
+  have htendsto : Tendsto (K.prefixRatio K.carrier) atTop (nhds 1) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ne_atTop 0] with n hn
+    simp [prefixRatio_carrier, hn]
+  exact htendsto.limsup_eq
+
+@[simp] theorem lowerDensity_carrier (K : OrderedLanguage) :
+    K.lowerDensity K.carrier = 1 := by
+  have htendsto : Tendsto (K.prefixRatio K.carrier) atTop (nhds 1) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ne_atTop 0] with n hn
+    simp [prefixRatio_carrier, hn]
+  exact htendsto.liminf_eq
+
+@[simp] theorem lowerDensity_inter_carrier
+    (K : OrderedLanguage) (A : Language) :
+    K.lowerDensity (A ∩ K.carrier) = K.lowerDensity A := by
+  unfold lowerDensity prefixRatio
+  congr 2
+  funext n
+  rw [K.prefixCount_inter_carrier]
+
+/-- Shared analytic transfer for ordered lower density.
+
+If, up to an asymptotically vanishing error, every source prefix ratio is at
+most `q` times the corresponding output ratio, then the output lower density
+is at least the source lower density divided by `q`. Paper-specific files
+should prove their finite counting inequality and instantiate this theorem,
+rather than duplicating the `liminf` argument. -/
+theorem lowerDensity_div_le_of_eventually_prefixRatio_le
+    (K : OrderedLanguage) (source output : Language)
+    (q : ℝ) (hq : 0 < q) (error : ℕ → ℝ)
+    (herror : Tendsto error atTop (nhds 0))
+    (hprefix : ∀ᶠ n : ℕ in atTop,
+      K.prefixRatio source n ≤ q * K.prefixRatio output n + error n) :
+    K.lowerDensity source / q ≤ K.lowerDensity output := by
+  unfold lowerDensity
+  apply (le_liminf_iff
+    (isCoboundedUnder_ge_of_le atTop
+      (fun n => K.prefixRatio_le_one output n))
+    (isBoundedUnder_of
+      ⟨0, fun n => K.prefixRatio_nonneg output n⟩)).2
+  intro y hy
+  have hscaled :
+      q * y < liminf (K.prefixRatio source) atTop := by
+    have h := (lt_div_iff₀ hq).mp hy
+    simpa [mul_comm] using h
+  obtain ⟨r, hyr, hrDensity⟩ := exists_between hscaled
+  have hrEventually :
+      ∀ᶠ n : ℕ in atTop, r < K.prefixRatio source n :=
+    eventually_lt_of_lt_liminf hrDensity
+      (isBoundedUnder_of
+        ⟨0, fun n => K.prefixRatio_nonneg source n⟩)
+  have herrorEventually :
+      ∀ᶠ n : ℕ in atTop, error n < r - q * y := by
+    have hpositive : 0 < r - q * y := by linarith
+    exact herror.eventually (Iio_mem_nhds hpositive)
+  filter_upwards [hrEventually, herrorEventually, hprefix] with
+      n hr hsmall hcount
+  nlinarith
+
+/-! ## Finite perturbations of the measured set -/
+
+/-- A finite exceptional set can contribute at most its cardinality to any
+ordered prefix count. -/
+theorem prefixCount_le_ncard_of_finite
+    (K : OrderedLanguage) {F : Language} (hF : F.Finite) (n : ℕ) :
+    K.prefixCount F n ≤ hF.toFinset.card := by
+  classical
+  unfold prefixCount
+  have hcardImage :
+      (((Finset.range n).filter fun i => K.enumeration i ∈ F).image
+          K.enumeration).card =
+        ((Finset.range n).filter fun i => K.enumeration i ∈ F).card := by
+    exact Finset.card_image_of_injective _ K.enumeration_injective
+  rw [← hcardImage]
+  apply Finset.card_le_card
+  intro x hx
+  simp only [Finset.mem_image, Finset.mem_filter] at hx
+  obtain ⟨i, ⟨_hiRange, hiF⟩, rfl⟩ := hx
+  exact Set.Finite.mem_toFinset hF |>.2 hiF
+
+/-- Every finite measured set has ordered lower density zero. -/
+theorem lowerDensity_eq_zero_of_finite
+    (K : OrderedLanguage) {F : Language} (hF : F.Finite) :
+    K.lowerDensity F = 0 := by
+  let B := hF.toFinset.card
+  have hbound :
+      ∀ n, K.prefixRatio F n ≤ (B : ℝ) / n := by
+    intro n
+    by_cases hn : n = 0
+    · simp [hn]
+    · simp only [prefixRatio, hn, if_false]
+      apply div_le_div_of_nonneg_right
+      · exact_mod_cast K.prefixCount_le_ncard_of_finite hF n
+      · positivity
+  have htendsto :
+      Tendsto (K.prefixRatio F) atTop (nhds 0) := by
+    apply squeeze_zero
+      (fun n => K.prefixRatio_nonneg F n) hbound
+    exact tendsto_const_nhds.div_atTop tendsto_natCast_atTop_atTop
+  exact htendsto.liminf_eq
+
+/-- Prefix counts change by at most the finite asymmetric difference in the
+first argument. -/
+theorem prefixCount_le_add_ncard_diff
+    (K : OrderedLanguage) {A B : Language}
+    (hfinite : (A \ B).Finite) (n : ℕ) :
+    K.prefixCount A n ≤ K.prefixCount B n + hfinite.toFinset.card := by
+  classical
+  let aIndices :=
+    (Finset.range n).filter fun i => K.enumeration i ∈ A
+  let bIndices :=
+    (Finset.range n).filter fun i => K.enumeration i ∈ B
+  let diffIndices :=
+    (Finset.range n).filter fun i => K.enumeration i ∈ A \ B
+  have hsub : aIndices ⊆ bIndices ∪ diffIndices := by
+    intro i hi
+    simp only [aIndices, bIndices, diffIndices, Finset.mem_filter,
+      Finset.mem_union] at hi ⊢
+    by_cases hiB : K.enumeration i ∈ B
+    · exact Or.inl ⟨hi.1, hiB⟩
+    · exact Or.inr ⟨hi.1, hi.2, hiB⟩
+  have hcard : aIndices.card ≤ bIndices.card + diffIndices.card := by
+    exact (Finset.card_le_card hsub).trans
+      (Finset.card_union_le bIndices diffIndices)
+  have hdiff : diffIndices.card ≤ hfinite.toFinset.card := by
+    simpa [diffIndices, prefixCount] using
+      K.prefixCount_le_ncard_of_finite hfinite n
+  simpa [aIndices, bIndices, diffIndices, prefixCount] using
+    hcard.trans (Nat.add_le_add_left hdiff _)
+
+/-- Ratio form of `prefixCount_le_add_ncard_diff`.  The finite error is
+displayed explicitly because it vanishes along `atTop`. -/
+theorem prefixRatio_le_add_finiteError
+    (K : OrderedLanguage) {A B : Language}
+    (hfinite : (A \ B).Finite) (n : ℕ) :
+    K.prefixRatio A n ≤
+      K.prefixRatio B n + (hfinite.toFinset.card : ℝ) / n := by
+  by_cases hn : n = 0
+  · simp [hn]
+  · have hnnonneg : (0 : ℝ) ≤ n := by positivity
+    have hcount :
+        (K.prefixCount A n : ℝ) ≤
+          K.prefixCount B n + hfinite.toFinset.card := by
+      exact_mod_cast K.prefixCount_le_add_ncard_diff hfinite n
+    simp only [prefixRatio, hn, if_false]
+    rw [← add_div]
+    exact div_le_div_of_nonneg_right hcount hnnonneg
+
+/-- Removing finitely many points from the measured set does not change its
+ordered lower density.  The target ordering `K` is fixed; no claim is made
+about changing the reference language or its ordering. -/
+theorem lowerDensity_diff_finite
+    (K : OrderedLanguage) (A : Language) {F : Language}
+    (hF : F.Finite) :
+    K.lowerDensity (A \ F) = K.lowerDensity A := by
+  apply le_antisymm
+  · exact K.lowerDensity_mono Set.diff_subset
+  · have hfinite : (A \ (A \ F)).Finite := by
+      apply hF.subset
+      intro x hx
+      by_contra hxF
+      exact hx.2 ⟨hx.1, hxF⟩
+    have herror :
+        Tendsto (fun n : ℕ => (hfinite.toFinset.card : ℝ) / (n : ℝ))
+          atTop (nhds 0) :=
+      tendsto_const_nhds.div_atTop tendsto_natCast_atTop_atTop
+    have hle :=
+      K.lowerDensity_div_le_of_eventually_prefixRatio_le
+        A (A \ F) 1 (by norm_num)
+        (fun n : ℕ => (hfinite.toFinset.card : ℝ) / (n : ℝ))
+        herror
+        (Eventually.of_forall fun n => by
+          simpa using K.prefixRatio_le_add_finiteError hfinite n)
+    simpa using hle
+
+/-- Finite symmetric perturbations of the measured set preserve ordered
+lower density.  As above, the reference ordering `K` itself is unchanged. -/
+theorem lowerDensity_eq_of_finite_symmetricDifference
+    (K : OrderedLanguage) {A B : Language}
+    (hAB : (A \ B).Finite) (hBA : (B \ A).Finite) :
+    K.lowerDensity A = K.lowerDensity B := by
+  calc
+    K.lowerDensity A = K.lowerDensity (A \ (A \ B)) :=
+      (K.lowerDensity_diff_finite A hAB).symm
+    _ = K.lowerDensity (B \ (B \ A)) := by
+      congr 1
+      ext x
+      simp only [Set.mem_diff]
+      tauto
+    _ = K.lowerDensity B :=
+      K.lowerDensity_diff_finite B hBA
+
+/-! ## Upper density and finite perturbations -/
+
+/-- Ordered prefix ratios are subadditive under union. -/
+theorem prefixRatio_union_le
+    (K : OrderedLanguage) (A B : Language) (n : ℕ) :
+    K.prefixRatio (A ∪ B) n ≤
+      K.prefixRatio A n + K.prefixRatio B n := by
+  classical
+  by_cases hn : n = 0
+  · simp [hn]
+  · simp only [prefixRatio, hn, if_false]
+    rw [← add_div]
+    apply div_le_div_of_nonneg_right
+    · unfold prefixCount
+      rw [← Nat.cast_add]
+      norm_cast
+      apply (Finset.card_le_card ?_).trans
+        (Finset.card_union_le
+          ((Finset.range n).filter fun i => K.enumeration i ∈ A)
+          ((Finset.range n).filter fun i => K.enumeration i ∈ B))
+      intro i hi
+      simp only [Finset.mem_filter, Finset.mem_range,
+        Finset.mem_union, Set.mem_union] at hi ⊢
+      rcases hi.2 with hiA | hiB
+      · exact Or.inl ⟨hi.1, hiA⟩
+      · exact Or.inr ⟨hi.1, hiB⟩
+    · exact Nat.cast_nonneg n
+
+/-- Ordered upper density is subadditive under union. -/
+theorem upperDensity_union_le
+    (K : OrderedLanguage) (A B : Language) :
+    K.upperDensity (A ∪ B) ≤
+      K.upperDensity A + K.upperDensity B := by
+  unfold upperDensity
+  have hpoint :
+      limsup (K.prefixRatio (A ∪ B)) atTop ≤
+        limsup (fun n => K.prefixRatio A n + K.prefixRatio B n) atTop := by
+    apply limsup_le_limsup
+    · exact Eventually.of_forall (K.prefixRatio_union_le A B)
+    · exact isCoboundedUnder_le_of_le atTop
+        (fun n => K.prefixRatio_nonneg (A ∪ B) n)
+    · exact isBoundedUnder_of
+        ⟨2, fun n => by
+          linarith [K.prefixRatio_le_one A n,
+            K.prefixRatio_le_one B n]⟩
+  apply hpoint.trans
+  apply limsup_add_le
+  · exact isBoundedUnder_of
+      ⟨0, fun n => K.prefixRatio_nonneg A n⟩
+  · exact isBoundedUnder_of
+      ⟨1, fun n => K.prefixRatio_le_one A n⟩
+  · exact isCoboundedUnder_le_of_le atTop
+      (fun n => K.prefixRatio_nonneg B n)
+  · exact isBoundedUnder_of
+      ⟨1, fun n => K.prefixRatio_le_one B n⟩
+
+/-- Every finite measured set has ordered upper density zero. -/
+theorem upperDensity_eq_zero_of_finite
+    (K : OrderedLanguage) {F : Language} (hF : F.Finite) :
+    K.upperDensity F = 0 := by
+  let B := hF.toFinset.card
+  have hbound :
+      ∀ n, K.prefixRatio F n ≤ (B : ℝ) / n := by
+    intro n
+    by_cases hn : n = 0
+    · simp [hn]
+    · simp only [prefixRatio, hn, if_false]
+      apply div_le_div_of_nonneg_right
+      · exact_mod_cast K.prefixCount_le_ncard_of_finite hF n
+      · positivity
+  have htendsto :
+      Tendsto (K.prefixRatio F) atTop (nhds 0) := by
+    apply squeeze_zero
+      (fun n => K.prefixRatio_nonneg F n) hbound
+    exact tendsto_const_nhds.div_atTop tendsto_natCast_atTop_atTop
+  exact htendsto.limsup_eq
+
+/-- Removing finitely many measured points does not change ordered upper
+density. -/
+theorem upperDensity_diff_finite
+    (K : OrderedLanguage) (A : Language) {F : Language}
+    (hF : F.Finite) :
+    K.upperDensity (A \ F) = K.upperDensity A := by
+  apply le_antisymm
+  · exact K.upperDensity_mono Set.diff_subset
+  · have hsubset : A ⊆ (A \ F) ∪ F := by
+      intro x hx
+      by_cases hxF : x ∈ F
+      · exact Or.inr hxF
+      · exact Or.inl ⟨hx, hxF⟩
+    calc
+      K.upperDensity A ≤ K.upperDensity ((A \ F) ∪ F) :=
+        K.upperDensity_mono hsubset
+      _ ≤ K.upperDensity (A \ F) + K.upperDensity F :=
+        K.upperDensity_union_le _ _
+      _ = K.upperDensity (A \ F) := by
+        rw [K.upperDensity_eq_zero_of_finite hF, add_zero]
+
+/-- Finite symmetric perturbations preserve ordered upper density. -/
+theorem upperDensity_eq_of_finite_symmetricDifference
+    (K : OrderedLanguage) {A B : Language}
+    (hAB : (A \ B).Finite) (hBA : (B \ A).Finite) :
+    K.upperDensity A = K.upperDensity B := by
+  calc
+    K.upperDensity A = K.upperDensity (A \ (A \ B)) :=
+      (K.upperDensity_diff_finite A hAB).symm
+    _ = K.upperDensity (B \ (B \ A)) := by
+      congr 1
+      ext x
+      simp only [Set.mem_diff]
+      tauto
+    _ = K.upperDensity B :=
+      K.upperDensity_diff_finite B hBA
+
+/-! ## Complements inside the reference language -/
+
+/-- Every reference-prefix position lies either in `A` or in its complement
+inside the reference carrier. -/
+theorem prefixCount_diff_add
+    (K : OrderedLanguage) (A : Language) (n : ℕ) :
+    K.prefixCount (K.carrier \ A) n + K.prefixCount A n = n := by
+  classical
+  have hcarrier : ∀ i, K.enumeration i ∈ K.carrier := by
+    intro i
+    rw [← K.range_enumeration]
+    exact ⟨i, rfl⟩
+  unfold prefixCount
+  simpa [hcarrier, Nat.add_comm] using
+    (Finset.filter_card_add_filter_neg_card_eq_card
+      (s := Finset.range n) (p := fun i => K.enumeration i ∈ A))
+
+/-- At every nonempty prefix, the relative ratios of a set and its carrier
+complement sum to one. -/
+theorem prefixRatio_diff
+    (K : OrderedLanguage) (A : Language) {n : ℕ} (hn : n ≠ 0) :
+    K.prefixRatio (K.carrier \ A) n = 1 - K.prefixRatio A n := by
+  simp only [prefixRatio, hn, if_false]
+  have hsumNat := K.prefixCount_diff_add A n
+  have hsumReal :
+      (K.prefixCount (K.carrier \ A) n : ℝ) +
+          (K.prefixCount A n : ℝ) = (n : ℝ) := by
+    exact_mod_cast hsumNat
+  have hnReal : (n : ℝ) ≠ 0 := by exact_mod_cast hn
+  field_simp
+  linarith
+
+/-- Ordered lower density of a carrier complement is one minus the ordered
+upper density.  This is the shared analytic identity behind recall-complement
+bounds such as Paper 32 Lemma 4.7. -/
+theorem lowerDensity_diff
+    (K : OrderedLanguage) (A : Language) :
+    K.lowerDensity (K.carrier \ A) = 1 - K.upperDensity A := by
+  have heq :
+      (fun n => K.prefixRatio (K.carrier \ A) n) =ᶠ[atTop]
+        (fun n => 1 - K.prefixRatio A n) := by
+    filter_upwards [eventually_ne_atTop 0] with n hn
+    exact K.prefixRatio_diff A hn
+  unfold lowerDensity upperDensity
+  calc
+    liminf (fun n => K.prefixRatio (K.carrier \ A) n) atTop =
+        liminf (fun n => 1 - K.prefixRatio A n) atTop := by
+      unfold liminf
+      rw [Filter.map_congr heq]
+    _ = 1 - limsup (K.prefixRatio A) atTop := by
+      apply liminf_const_sub
+      · exact isBoundedUnder_of
+          ⟨1, fun n => K.prefixRatio_le_one A n⟩
+      · exact isCoboundedUnder_le_of_le atTop
+          (fun n => K.prefixRatio_nonneg A n)
+
+end OrderedLanguage
+end KleinbergWei
+end GenLimit

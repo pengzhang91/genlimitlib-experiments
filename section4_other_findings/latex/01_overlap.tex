@@ -1,0 +1,286 @@
+% Sources: LGITL_next_research_2026_09_19/source_context/overlap_characterization.tex;
+% research_2026_09_19/proofs/two_block_bottleneck.tex and its independent audit.
+% Written-proof chapter; no claim of a complete Lean certificate.
+\section{Fresh representation: the exact obstruction and a sharp two-block bound}
+\label{ov:chapter}
+
+\subsection{Motivation and source problem}
+Representative language generation asks for new valid examples whose group proportions resemble those of the observed examples \citep{P09}. Overlapping groups create a difficulty that disjoint groups conceal: preserving each marginal separately may require placing mass in an intersection that the observations have already exhausted. The question here is when this is the only kind of obstruction, and how quickly its effect vanishes with sample size.
+
+This finding has two parts. First, for a test family of finite dual VC dimension, uniformly accurate fresh approximation is possible exactly when every fixed number of completed tests has uniformly bounded finite cells. Second, when the tests split into two families of dual VC dimension at most one, an exact Boolean bottleneck formula gives the optimal coefficient $1/\sqrt2$ in the square-root rate under linear cell growth. The second hypothesis is stronger than merely having dual VC dimension two.
+
+The source problem and group-matching objective come from \citet{P09}. The results below concern the existence of fresh probability laws on a known countably infinite target after arbitrary finite samples. They do not assume independent observations or claim an efficient algorithm for learning an unknown target. The findings are the particular characterizations and sharp bounds; their proofs use classical separation, VC approximation, and finite-tree rounding tools.
+
+\subsection{Model and statements}
+Let $L$ be countably infinite and let $\mathcal A$ be a family of subsets of $L$, called tests. We may adjoin the empty test without changing any quantity below. Its \emph{pointwise completion} is
+\[
+ \mathcal K=\overline{\mathcal A}\subseteq\{0,1\}^{L}.
+\]
+This is closure of individual tests, not Boolean closure. The space $\mathcal K$ is compact and metrizable. The dual VC dimension is the VC dimension of the point profiles: a finite collection of tests is shattered if every binary membership pattern on it is realized by a point of $L$.
+
+A completed cell of arity at most $r$ is a set
+\[
+ C(J,\sigma)=\{x\in L:\mathbf1_A(x)=\sigma_A\text{ for every }A\in J\},
+ \qquad J\subseteq\mathcal K,\quad |J|\le r.
+\]
+Define its finite-cell capacity by
+\[
+ \overline B_r=\sup\{|C(J,\sigma)|:0<|C(J,\sigma)|<\infty,\ |J|\le r\},
+ \qquad r\ge1,
+\]
+with empty supremum zero. The value may be infinite.
+
+For a finite forbidden set $F$ and a probability law $\mu$ supported on $F$, put
+\[
+ e_F(\mu)=\inf_{Q\in\Delta(L\setminus F)}
+              \sup_{A\in\mathcal A}|\mu(A)-Q(A)|.
+\]
+All probabilities are countably additive. For a finite nonempty sample $S$, let $P_S$ be its uniform law and define
+\[
+ e_L(S)=e_S(P_S),\qquad
+ E_L(n)=\sup_{\substack{S\subset L\text{ finite}\\|S|\ge n}}e_L(S).
+\]
+Freshness excludes all of $F$, including any additional forbidden points of zero $\mu$-mass. The definition uses an infimum and does not presume an optimizer exists.
+
+\begin{theorem}[Completed-cell characterization]\label{ov:criterion}
+If the dual VC dimension of $\mathcal A$ is finite, then
+\[
+ E_L(n)\longrightarrow0
+ \quad\Longleftrightarrow\quad
+ \overline B_r<\infty\text{ for every fixed integer }r\ge1.
+\]
+More quantitatively, write $v$ for a finite upper bound on the dual VC dimension and $\Pi_v(r)=\sum_{j=0}^{\min(v,r)}\binom rj$. For every $0<\eta<1$ there is an integer $m=m(v,\eta)$, independent of the target and its probability laws, such that, with $r=2m$,
+\begin{equation}\label{ov:quantitative}
+ E_L(n)\le 2\eta+\frac{\Pi_v(r)\overline B_r}{n}.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Sharp square-root bound]\label{ov:sharp}
+Suppose $\mathcal A=\mathcal A_1\cup\mathcal A_2$, each block has dual VC dimension at most one, and
+\[
+ \overline B_r\le C_0r\qquad(r\ge1),\qquad C_0>0.
+\]
+Then
+\begin{equation}\label{ov:sqrt}
+ E_L(n)\le\sqrt{\frac{C_0}{2n}}\qquad(n\ge2C_0).
+\end{equation}
+The coefficient $1/\sqrt2$ is optimal, even in one fixed countable target with $C_0=1$ and with the tests in each block pairwise disjoint.
+\end{theorem}
+
+The proofs follow in full. The quantitative bound in Theorem~\ref{ov:criterion} is a general-purpose bound, whereas Theorem~\ref{ov:sharp} uses the special two-block structure to obtain the sharp rate and constant.
+
+\subsection{Completion and finite signed witnesses}
+\begin{lemma}[Completion preserves the problem]\label{ov:completion}
+Completion preserves dual VC dimension and, for any two countably additive probabilities $P,Q$ on $L$,
+\[
+ \sup_{A\in\mathcal A}|P(A)-Q(A)|
+ =\sup_{A\in\mathcal K}|P(A)-Q(A)|.
+\]
+Restricting the infimum defining $e_F(\mu)$ to finite-support fresh laws does not change its value.
+\end{lemma}
+\begin{proof}
+Enumerate $L$. For $A\in\mathcal K$, choose original tests agreeing with $A$ on the first $j$ points. Their indicators converge pointwise to $\mathbf1_A$. Dominated convergence for $P$ and $Q$ proves the equality of suprema. If completed tests shatter a finite set of test coordinates, choose one point for each pattern and approximate each test on that finite witness set. The original tests then realize the same patterns, proving preservation of dual dimension. Finally, truncate a countable fresh law and move its remaining mass to a fixed fresh point. Every test probability changes by at most that remaining mass, which tends to zero.
+\end{proof}
+
+For $x\in L$, define the continuous evaluation $f_x(A)=\mathbf1_A(x)$ on $\mathcal K$. The probability profile $f_\mu(A)=\mu(A)$ is continuous: it is the uniformly convergent sum $\sum_x\mu\{x\}f_x$. For a potential $h:L\to\mathbb R$, write
+\[
+ G_{F,\mu}(h)=\mathbb E_\mu h-\sup_{y\notin F}h(y).
+\]
+
+\begin{lemma}[Separation]\label{ov:separation}
+The discrepancy has the representation
+\begin{equation}\label{ov:dual}
+ e_F(\mu)=\sup_{\|\lambda\|_{\mathrm{TV}}\le1}
+ G_{F,\mu}\left(x\mapsto\int_{\mathcal K}f_x\,d\lambda\right),
+\end{equation}
+where $\lambda$ ranges over finite signed regular Borel measures on $\mathcal K$.
+\end{lemma}
+\begin{proof}
+In the Banach space $C(\mathcal K)$ with its supremum norm, let $H$ be the norm-closed convex hull of $\{f_y:y\notin F\}$. Finite convex combinations are exactly the profiles of finite-support fresh laws. Lemma~\ref{ov:completion} shows that their distance from $f_\mu$ is $e_F(\mu)$. The Hahn--Banach distance formula for a closed convex set expresses this distance as the supremum of $\ell(f_\mu)-\sup_{g\in H}\ell(g)$ over continuous linear functionals of norm at most one. The Riesz representation theorem identifies those functionals with the signed regular measures in the display, with functional norm equal to total variation. A linear functional has the same supremum on a set and its closed convex hull, so its supremum on $H$ is the fresh-point supremum in~\eqref{ov:dual}.
+\end{proof}
+
+We include the classical VC sampling argument~\citep{VC} needed to reduce these possibly non-atomic separators to finite tests. Signed-measure decomposition followed by dual-VC approximation is established machinery; Gurvits and Koiran use it for finite approximation of convex superpositions~\citep{GK}. No compactness of output laws is assumed.
+
+\begin{lemma}[Uniform finite approximation]\label{ov:vc}
+Let $\mathcal R$ be a countable measurable range family of VC dimension at most $v$ on a probability space with law $\pi$. For each $0<\eta<1$, an empirical law $\pi_m$ on $m=m(v,\eta)$ points satisfies
+\[
+ \sup_{R\in\mathcal R}|\pi_m(R)-\pi(R)|\le\eta.
+\]
+One may choose any sufficiently large integer $m$ satisfying
+\[
+ m\eta^2\ge2,\qquad 4\Pi_v(2m)e^{-m\eta^2/8}<1.
+\]
+\end{lemma}
+\begin{proof}
+The Sauer trace bound gives at most $\Pi_v(k)$ different traces on $k$ points. Its counting recurrence follows by separating traces according to the last coordinate: traces with both extensions have dimension at most $v-1$, while all prefixes have dimension at most $v$. Induction and the binomial recurrence give the bound, including the zero-coordinate and zero-dimension cases.
+
+Draw $m$ independent points and an independent ghost sample of size $m$, with empirical laws $\pi_m,\pi'_m$. If the first sample has error greater than $\eta$ on some range, select the first such range in a fixed enumeration. Conditional Chebyshev, using variance at most $1/(4m)$, gives ghost error at most $\eta/2$ with probability at least $1/2$. Thus
+\[
+ \Pr\!\left(\sup_R|\pi_m(R)-\pi(R)|>\eta\right)
+ \le2\Pr\!\left(\sup_R|\pi_m(R)-\pi'_m(R)|>\eta/2\right).
+\]
+Independently swap the two members of each pooled sample pair; this does not change their joint law. Conditional on the pooled points, a fixed trace gives an empirical difference $m^{-1}\sum_{j=1}^m\varepsilon_j a_j$, where the independent signs $\varepsilon_j$ are symmetric and $|a_j|\le1$. The exponential bound $\mathbb E e^{t\varepsilon_j a_j}\le e^{t^2a_j^2/2}$, followed by Markov's inequality with the optimal $t$, bounds its two-sided tail at $\eta/2$ by $2e^{-m\eta^2/8}$. There are at most $\Pi_v(2m)$ traces. A union bound therefore bounds the original bad-sample probability by $4\Pi_v(2m)e^{-m\eta^2/8}<1$. Some sample is good. The stated integers exist because the trace bound is polynomial in $m$ for fixed $v$ and the exponential factor decays.
+\end{proof}
+
+\begin{corollary}[Finite signed witnesses suffice]\label{ov:finite-witness}
+If the dual VC dimension is at most $v<\infty$, every $\lambda$ in~\eqref{ov:dual} can, for each $0<\eta<1$, be replaced by a signed atomic measure supported on at most $2m(v,\eta)$ completed tests, with total variation at most one, such that its potential differs uniformly on $L$ by at most $\eta$. Consequently $e_F(\mu)$ is the supremum of $G_{F,\mu}(h)$ over finite potentials
+\[
+ h=\sum_{A\in J}c_A\mathbf1_A,\qquad
+ J\subseteq\mathcal K\text{ finite},\quad\sum_{A\in J}|c_A|\le1.
+\]
+\end{corollary}
+\begin{proof}
+Normalize the nonzero positive and negative parts of the Jordan decomposition of $\lambda$. Apply Lemma~\ref{ov:vc} to each, with ranges $R_x=\{A\in\mathcal K:x\in A\}$. These ranges are clopen, indexed by countable $L$, and have VC dimension at most $v$. Multiply the two empirical measures by the original Jordan masses and subtract. Their total variation is at most the sum of those masses, at most one; their uniform potential error is at most $\eta$ times that sum. A uniform potential error $\eta$ changes both the $\mu$-average and the fresh supremum by at most $\eta$, so it changes $G_{F,\mu}$ by at most $2\eta$. Letting $\eta$ tend to zero in~\eqref{ov:dual} proves the assertion.
+\end{proof}
+
+\subsection{Proof of the completed-cell characterization}
+\begin{proof}[Proof of Theorem~\ref{ov:criterion}]
+Suppose first that $\overline B_r=\infty$ for some fixed $r\ge1$. There are arbitrarily large finite cells $C=C(J,\sigma)$ with $1\le |J|\le r$. For the sample $S=C$, every fresh point differs from $\sigma$ on at least one test. Hence every fresh law $Q$ satisfies
+\[
+ \sum_{A\in J}|Q(A)-P_C(A)|
+ =\mathbb E_Q\sum_{A\in J}\mathbf1\{\mathbf1_A(x)\ne\sigma_A\}\ge1.
+\]
+Some completed test has discrepancy at least $1/r$; completion preserves discrepancy. Since such samples have arbitrarily large size, $E_L(n)\ge1/r$ for every $n$. Necessity does not require a VC hypothesis.
+
+For sufficiency fix $\eta$, put $r=2m(v,\eta)$, and consider a sample $S$ of size $N$. By Corollary~\ref{ov:finite-witness}, any unit separator has gap at most $2\eta$ plus the gap of a finite potential $h$ using at most $r$ completed tests and coefficient norm at most one. Those tests partition $L$ into at most $\Pi_v(r)$ nonempty cells. Move the empirical mass in each infinite cell to a fresh point in that same cell. Move the empirical mass in all finite cells to any fresh point. This produces a finite-support fresh law $Q$. The total empirical mass moved between distinct cells is at most
+\[
+ \frac{\Pi_v(r)\overline B_r}{N}.
+\]
+Moving one unit of mass changes $h$ by at most $\sum_A|c_A|\le1$, while within-cell moves do not change it. Therefore
+\[
+ G_{S,P_S}(h)\le\mathbb E_{P_S}h-\mathbb E_Qh
+ \le\frac{\Pi_v(r)\overline B_r}{N}.
+\]
+Take the supremum over separators and then over $N\ge n$ to obtain~\eqref{ov:quantitative}. If every $\overline B_r$ is finite, first choose $\eta$ small and then $n$ large. This proves convergence.
+\end{proof}
+
+\subsection{Boolean costs in a VC-one block}
+For the remainder assume $\mathcal A=\mathcal A_1\cup\mathcal A_2$ with both blocks of dual VC dimension at most one. Put $\mathcal K_i=\overline{\mathcal A_i}$; then $\mathcal K=\mathcal K_1\cup\mathcal K_2$. The full family has dual VC dimension at most two, because a shattered collection cannot contain two tests assigned to the same block.
+
+Let $\mathcal B_i$ be the algebra of finite Boolean combinations of tests in $\mathcal K_i$. For $U\in\mathcal B_i$, define
+\begin{equation}\label{ov:cost}
+ \gamma_i(U)=\inf\left\{\sum_{A\in J}|c_A|:
+ \mathbf1_U=c_0+\sum_{A\in J}c_A\mathbf1_A,\quad
+ J\subseteq\mathcal K_i\text{ finite}\right\}.
+\end{equation}
+The additive constant is free, since it cancels when comparing probabilities.
+
+\begin{lemma}[Tree representation and integral cost]\label{ov:tree}
+Every $U\in\mathcal B_i$ has an attained, nonnegative integer cost. It has cost zero exactly when $U=\varnothing$ or $U=L$. An attaining representation is given by a binary labeling of a finite inclusion tree, with cost equal to the number of edges across which the label changes.
+\end{lemma}
+\begin{proof}
+Fix $z\in L$ and finitely many tests from one block. Complement each test containing $z$, discard empty sets, and identify duplicates. The resulting sets all exclude $z$ and are laminar: overlapping, nonnested sets would realize $11,10,01$, while $z$ realizes $00$, contradicting dual VC dimension one. Form their inclusion tree with root $L$, attaching each set to its smallest strict superset. The residual atom of a vertex is its set minus its immediate children. These atoms partition $L$; some are empty and remain as vertices.
+
+For any node values $p_v$, the function taking value $p_v$ on the residual atom at $v$ is
+\begin{equation}\label{ov:telescoping}
+ p_{\mathrm{root}}+
+ \sum_{v\ne\mathrm{root}}(p_v-p_{\mathrm{parent}(v)})\mathbf1_{B_v}.
+\end{equation}
+Indeed, at an actual point only the sets along its root-to-atom path contribute, and their differences telescope. Replacing oriented indicators by original tests only changes coefficient signs and the free constant. A Boolean combination is constant on each residual atom, so binary node values representing it exist. Its cost is the number of crossing edges.
+
+Conversely, start with any real-coefficient representation of $\mathbf1_U$. Orientation and combining duplicates do not increase coefficient norm. Assign root-path sums to the nodes; their total edge variation is at most that norm. Clamp every node value to $[0,1]$. This preserves values on nonempty atoms and cannot increase variation. Thresholding these values at $t\in(0,1)$ gives a binary representation of the same set $U$. If $k(t)$ counts its crossing edges, then
+\[
+ \int_0^1 k(t)\,dt
+ =\sum_{v\ne\mathrm{root}}|p_v-p_{\mathrm{parent}(v)}|,
+\]
+because an edge is cut for an interval of thresholds whose length is its endpoint difference. Some threshold has integer cost no larger than the original norm. The nonempty set of all obtainable integer costs has a minimum, and this minimum is no larger than every real representation cost. It is itself an allowable representation cost, proving equality with~\eqref{ov:cost} and attainment. A zero-edge binary labeling is constant on its tree. Conversely, the empty and full sets have free constant representations.
+\end{proof}
+
+\subsection{The exact exhausted-intersection bottleneck}
+\begin{theorem}[Exact two-block discrepancy]\label{ov:bottleneck}
+For every finite $F$ and probability $\mu$ supported on $F$,
+\begin{equation}\label{ov:exact}
+ e_F(\mu)=
+ \sup_{\substack{U\in\mathcal B_1,\ V\in\mathcal B_2\\
+ U\cap V\subseteq F,\ \gamma_1(U)+\gamma_2(V)>0}}
+ \frac{(\mu(U)+\mu(V)-1)_+}{\gamma_1(U)+\gamma_2(V)}.
+\end{equation}
+The empty supremum is zero. If this supremum is positive, it is attained by a pair $U,V$.
+\end{theorem}
+The numerator is an unavoidable marginal deficit: fresh output cannot put total mass greater than one into two sets whose intersection has been exhausted. The denominator converts discrepancies of these Boolean sets into discrepancies of the original tests.
+
+\begin{proof}
+Denote the right side by $D$. A fresh law satisfies $Q(U)+Q(V)\le1$. If its test discrepancy is $\delta$, the attained representations in Lemma~\ref{ov:tree} give $|Q(U)-\mu(U)|\le\delta\gamma_1(U)$ and its analogue for $V$. Thus every displayed ratio is at most $\delta$. Taking infima gives $D\le e_F(\mu)$.
+
+For the reverse inequality, use Corollary~\ref{ov:finite-witness}. Assign each test in a finite unit-norm potential to one block and write $h=f+g$. Construct the two inclusion trees as in Lemma~\ref{ov:tree}, with node potentials representing $f$ and $g$. Their combined edge variation is at most one. Set
+\[
+ u=\max_{x\in L}f(x),\quad v=\max_{x\in L}g(x),\quad
+ M=\max_{y\notin F}h(y),\quad \Delta=u+v-M\ge0.
+\]
+These maxima exist because the potentials take finitely many values. If $\Delta=0$, the separator gap is nonpositive. Otherwise apply to every node, including those with empty atoms, the clamping maps
+\[
+ \alpha=\left[\frac{f-u+\Delta}{\Delta}\right]_0^1,
+ \qquad
+ \beta=\left[\frac{g-v+\Delta}{\Delta}\right]_0^1,
+ \qquad [a]_0^1=\min\{1,\max\{0,a\}\}.
+\]
+The display specifies the functions on actual atoms as well. Their combined tree variation is at most $1/\Delta$. On actual points the unclamped expressions are at most one, so clamping only increases them. Consequently
+\begin{equation}\label{ov:gap-clamp}
+ G_{F,\mu}(h)\le\Delta(\mathbb E_\mu\alpha+\mathbb E_\mu\beta-1).
+\end{equation}
+For fresh $y$, one has $\alpha(y)+\beta(y)\le1$: if either unclamped value is nonpositive, its clamped value is zero and the other is at most one; if both are positive, their sum is at most one by $h(y)\le M$.
+
+For $0<t<1$, let $U_t=\{\alpha>t\}$ and $V_t=\{\beta\ge1-t\}$. They lie in their respective Boolean algebras and $U_t\cap V_t\subseteq F$, since membership in both gives $\alpha+\beta>1$. Thus
+\[
+ \mu(U_t)+\mu(V_t)-1\le D\bigl(\gamma_1(U_t)+\gamma_2(V_t)\bigr).
+\]
+This also holds when both costs vanish: both sets are constant and cannot both be $L$, because $L$ is infinite and their intersection is contained in finite $F$. Thresholding the node potentials bounds each Boolean cost by its tree boundary count. The edge identity used in Lemma~\ref{ov:tree} therefore yields
+\[
+ \int_0^1\bigl(\gamma_1(U_t)+\gamma_2(V_t)\bigr)\,dt
+ \le\frac1\Delta.
+\]
+All integrands take finitely many values; strict versus weak thresholds affect only finitely many endpoints. Integrating the preceding inequality and using
+$\int_0^1\mathbf1_{\{\alpha>t\}}dt=\alpha$ and
+$\int_0^1\mathbf1_{\{\beta\ge1-t\}}dt=\beta$
+in~\eqref{ov:gap-clamp} gives $G_{F,\mu}(h)\le D$. Finite signed witnesses suffice, so $e_F(\mu)\le D$.
+
+Finally, there are finitely many trace pairs $(U\cap F,V\cap F)$. Each fixes the numerator. For every attainable trace pair admitting a positive denominator, the possible denominators are positive integers and have an attained minimum. Taking the best ratio over these finitely many trace pairs proves positive bottleneck attainment. This is attainment of a dual witness; it is not by itself a proof that the primal fresh-law infimum is attained.
+\end{proof}
+
+\subsection{Boundary counting gives the sharp constant}
+\begin{proof}[Proof of the upper bound in Theorem~\ref{ov:sharp}]
+We first allow arbitrary $\mu$, set $\rho=\max_x\mu\{x\}$, and write $a=C_0\rho$. Take an admissible pair in~\eqref{ov:exact} with positive costs $p=\gamma_1(U)$ and $q=\gamma_2(V)$. Choose attaining binary tree representations. Remove crossing edges. Each component labeled one has at least one boundary edge, and their total boundary size is $p$; thus there are at most $p$ such components. The corresponding assertions hold with $q$ in the other tree.
+
+The union of residual atoms in a connected component is a completed cell with at most its boundary size in literals. To see this, if its highest vertex is a nonroot set $A$, the cell is $A$ minus the sets at all downward exit edges. Its defining literals are the entering positive literal and the exit negative literals. If the component contains the root, omit the entering literal. Oriented sets are literals of original completed tests. This argument also handles empty atoms.
+
+Intersect every selected component cell from the first tree with every selected component cell from the second. The nonempty intersections partition $U\cap V$ and lie in finite $F$. If their component boundary sizes are $b_j$ and $c_k$, their defining arities are at most $b_j+c_k$. Therefore
+\[
+ |U\cap V|\le C_0\sum_{j,k}(b_j+c_k)
+ \le C_0(qp+pq)=2C_0pq.
+\]
+Empty intersections may be retained in this upper bound. The numerator in~\eqref{ov:exact} is at most both $1$ and $\mu(U\cap V)$. Since $pq\le(p+q)^2/4$, putting $s=p+q$ bounds the ratio by
+\[
+ \min\left\{\frac1s,\frac{2apq}{s}\right\}
+ \le\min\left\{\frac1s,\frac{as}{2}\right\}
+ \le\sqrt{a/2}.
+\]
+The last inequality follows by considering $s$ below or above $\sqrt{2/a}$.
+
+If one cost is zero, only the case in which its set equals $L$ can contribute a positive numerator. The other set is then contained in $F$. Its selected component cells have total boundary equal to its positive cost, so their total size is at most $C_0$ times that cost. This branch's ratio is at most $a$. Consequently
+\[
+ e_F(\mu)\le\min\{1,\max\{a,\sqrt{a/2}\}\}.
+\]
+For the uniform law on a sample of size $N\ge n\ge2C_0$, $a=C_0/N\le1/2$, so $a\le\sqrt{a/2}$. Taking the supremum over those samples proves~\eqref{ov:sqrt}.
+\end{proof}
+
+\subsection{A single target witnessing optimality}
+\begin{proof}[Sharpness in Theorem~\ref{ov:sharp}]
+For every $k\ge1$, create $k$ infinite private row reservoirs $R_{k,i}$, $k$ infinite private column reservoirs $T_{k,j}$, and a two-point set $F_{k,ij}$ for each pair $1\le i,j\le k$. All these sets, including sets from different values of $k$, are disjoint. Add an infinite background. Their union is one countable target $L$. Define row and column tests
+\[
+ U_{k,i}=R_{k,i}\mathbin{\dot\cup}\bigcup_{j=1}^kF_{k,ij},
+ \qquad
+ V_{k,j}=T_{k,j}\mathbin{\dot\cup}\bigcup_{i=1}^kF_{k,ij}.
+\]
+Within each block the tests are pairwise disjoint, hence have dual VC dimension at most one. Each point belongs to at most two tests. Any sequence of distinct tests converges pointwise to the empty set, while a convergent sequence with a repeated test subsequence has that test as its limit. Thus completion adds only the empty test.
+
+A nonempty cell with no positive nonconstant literal contains the infinite background. A cell with exactly one positive test retains that test's entire private reservoir, unless it is inconsistent. A cell with two compatible positive tests is one pair set $F_{k,ij}$; additional negative literals either preserve or empty it, because its two points have identical profiles. Two positives from the same block, or from incompatible gadgets, give the empty cell. It follows that every nonempty finite completed cell has size two and least arity two. Hence $\overline B_1=0$ and $\overline B_r=2$ for $r\ge2$, in particular $\overline B_r\le r$.
+
+Take $S_k=\bigcup_{i,j}F_{k,ij}$, of size $2k^2$. Its total empirical mass summed over the $2k$ local tests is two. Every fresh point belongs to at most one of those tests, so every fresh law has total local test mass at most one. At least one test therefore has discrepancy at least $1/(2k)$. Put mass $1/(2k)$ on one point from each private row and column reservoir. Each local test then has mass $1/(2k)$, compared with empirical mass $1/k$; all other tests have mass zero under both laws. This fresh law attains error $1/(2k)$. Thus
+\[
+ e_L(S_k)=\frac1{2k}=\sqrt{\frac1{2|S_k|}}
+\]
+for every $k$ in the same target, proving sharpness. At $k=2$, eight observed points have row and column proportions $1/2$; every fresh distribution incurs error at least $1/4$, and a four-point reservoir law achieves it.
+\end{proof}
+
+\subsection{Interpretation and scope}
+Theorem~\ref{ov:criterion} separates qualitative feasibility from quantitative rates. Finiteness of the capacity at each fixed arity is sufficient for convergence, whereas a prescribed growth bound yields an explicit rate. In the two-block setting, Theorem~\ref{ov:bottleneck} further reduces discrepancy to exhausted intersections of Boolean sets. Their boundary costs control the finite intersection and give the optimal square-root constant. The argument allows arbitrary correlations between the two blocks.

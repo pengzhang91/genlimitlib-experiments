@@ -1,0 +1,234 @@
+{
+  "scope": "Section 5.2 and the shortened Appendix C.",
+  "units": "Accuracy in percent; differences in percentage points.",
+  "method": {
+    "estimand": "Equal weight per group of recorded paper identifiers and source label (unlabeled questions stand alone); equal weight per question within group and per held-out rotation within question.",
+    "provenance_scope": "Exact extracted declaration signatures; no claim about mathematical equivalence.",
+    "inputs_unchanged": false,
+    "anonymous_release_redactions": "Historical identity/contact redactions preceded this public export; archived responses were not regenerated.",
+    "public_excerpt_omissions": "Unresolved excerpts replaced by boundary locators in public files; original hashes kept separately.",
+    "input_validation_scope": "public locator presentation; omitted text not verified"
+  },
+  "validation": {
+    "t1_screen": {
+      "items": 825,
+      "requests": 1650,
+      "arms": [
+        "CLOSED"
+      ],
+      "rotations": [
+        0,
+        1
+      ],
+      "unique_ids_and_complete_schedule": true,
+      "prompt_hashes_and_bank_content_match": true,
+      "answer_keys_and_option_rotations_match": true
+    },
+    "t1_confirm": {
+      "items": 404,
+      "requests": 6060,
+      "arms": [
+        "CLOSED",
+        "PAPER",
+        "PAPER_LEAN_OLD",
+        "PAPER_LEAN_NEW",
+        "PAPER_SHAM"
+      ],
+      "rotations": [
+        2,
+        3,
+        4
+      ],
+      "unique_ids_and_complete_schedule": true,
+      "prompt_hashes_and_bank_content_match": true,
+      "answer_keys_and_option_rotations_match": true
+    },
+    "t2_screen": {
+      "items": 368,
+      "requests": 736,
+      "arms": [
+        "CLOSED"
+      ],
+      "rotations": [
+        0,
+        1
+      ],
+      "unique_ids_and_complete_schedule": true,
+      "prompt_hashes_and_bank_content_match": true,
+      "answer_keys_and_option_rotations_match": true
+    },
+    "t2_confirm": {
+      "items": 204,
+      "requests": 2448,
+      "arms": [
+        "CLOSED",
+        "PAPERS",
+        "PAPERS_MAP",
+        "PAPERS_SHAMMAP"
+      ],
+      "rotations": [
+        2,
+        3,
+        4
+      ],
+      "unique_ids_and_complete_schedule": true,
+      "prompt_hashes_and_bank_content_match": true,
+      "answer_keys_and_option_rotations_match": true
+    },
+    "screen_recomputed_from_raw": true,
+    "screen_retained_counts": {
+      "2": 204,
+      "1": 404
+    },
+    "map_character_counts": {
+      "PAPERS_MAP": 19102,
+      "PAPERS_SHAMMAP": 19102
+    },
+    "frozen_maps_match_copied_map_files": true,
+    "public_input_hashes_verified": true,
+    "public_excerpt_registry_verified": true,
+    "original_full_input_hashes_verified": false,
+    "full_prompt_audit_requires_private_excerpts": true,
+    "public_excerpt_counts": {
+      "bank_items_changed": 835,
+      "unique_excerpt_blocks_omitted": 414,
+      "prompt_records_changed": 4521,
+      "supporting_quote_fields_changed": 199,
+      "distinct_supporting_quotes_omitted": 192
+    },
+    "input_scope": "public locator presentation; omitted text not verified",
+    "historical_source_files_verified": 573,
+    "historical_input_hashes_match": false,
+    "unchanged_historical_input_hashes_match": true,
+    "historical_point_estimates_match": true,
+    "old_minus_sham_point_estimate_matches_archived_analysis": true
+  },
+  "main_accuracies": [
+    {
+      "test": 1,
+      "arm": "CLOSED",
+      "information": "Question only",
+      "questions": 404,
+      "groups": 372,
+      "accuracy_pct": 41.2037037037037
+    },
+    {
+      "test": 1,
+      "arm": "PAPER",
+      "information": "Paper excerpts",
+      "questions": 404,
+      "groups": 372,
+      "accuracy_pct": 70.08661887694146
+    },
+    {
+      "test": 1,
+      "arm": "PAPER_SHAM",
+      "information": "Paper + unrelated Lean",
+      "questions": 404,
+      "groups": 372,
+      "accuracy_pct": 71.11708482676224
+    },
+    {
+      "test": 1,
+      "arm": "PAPER_LEAN_OLD",
+      "information": "Paper + Lean in file order",
+      "questions": 404,
+      "groups": 372,
+      "accuracy_pct": 73.4468339307049
+    },
+    {
+      "test": 1,
+      "arm": "PAPER_LEAN_NEW",
+      "information": "Paper + relevant Lean",
+      "questions": 404,
+      "groups": 372,
+      "accuracy_pct": 78.55436081242533
+    },
+    {
+      "test": 2,
+      "arm": "PAPERS",
+      "information": "No map",
+      "questions": 204,
+      "groups": 203,
+      "accuracy_pct": 60.26272577996716
+    },
+    {
+      "test": 2,
+      "arm": "PAPERS_MAP",
+      "information": "Relevant map",
+      "questions": 204,
+      "groups": 203,
+      "accuracy_pct": 70.60755336617406
+    },
+    {
+      "test": 2,
+      "arm": "PAPERS_SHAMMAP",
+      "information": "Sham map",
+      "questions": 204,
+      "groups": 203,
+      "accuracy_pct": 60.50903119868637
+    }
+  ],
+  "exclusion_check": {
+    "criterion": "At least one relevant-Lean declaration signature outside the source module and Core.",
+    "excluded_questions": 15,
+    "remaining_questions": 389,
+    "remaining_groups": 357,
+    "relevant_lean_accuracy_pct": 78.40024898848428,
+    "question_ids": [
+      "H-A-P02-14",
+      "H-A-P02-25",
+      "H-A-P06-07",
+      "H-B-X-05",
+      "H-B-X-12",
+      "H-B-X-16",
+      "H-O-S2-09",
+      "H-O-S2-11",
+      "H-O-S2-13",
+      "H-O-S2-16",
+      "H-O-X-01",
+      "H-O-X-03",
+      "H-O-X-18",
+      "H-O-X-21",
+      "H-O-X-24"
+    ]
+  },
+  "map_categories": [
+    {
+      "category": "Two-paper",
+      "questions": 51,
+      "groups": 51,
+      "no_map_pct": 60.130718954248366,
+      "relevant_map_pct": 59.47712418300654,
+      "sham_map_pct": 58.16993464052287,
+      "map_minus_sham_pp": 1.30718954248366
+    },
+    {
+      "category": "One-paper",
+      "questions": 116,
+      "groups": 115,
+      "no_map_pct": 56.811594202898554,
+      "relevant_map_pct": 68.98550724637681,
+      "sham_map_pct": 58.405797101449274,
+      "map_minus_sham_pp": 10.579710144927537
+    },
+    {
+      "category": "Stem-only",
+      "questions": 19,
+      "groups": 19,
+      "no_map_pct": 85.96491228070175,
+      "relevant_map_pct": 87.71929824561403,
+      "sham_map_pct": 85.96491228070175,
+      "map_minus_sham_pp": 1.754385964912281
+    },
+    {
+      "category": "Repository",
+      "questions": 18,
+      "groups": 18,
+      "no_map_pct": 55.55555555555556,
+      "relevant_map_pct": 94.44444444444444,
+      "sham_map_pct": 53.703703703703695,
+      "map_minus_sham_pp": 40.74074074074074
+    }
+  ]
+}

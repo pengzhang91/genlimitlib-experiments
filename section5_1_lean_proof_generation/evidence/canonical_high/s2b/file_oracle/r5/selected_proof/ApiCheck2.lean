@@ -1,0 +1,16 @@
+import S2BFormalization
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+#check Set.Countable.mono
+#check Set.countable_range
+#check Set.range_comp
+#check Function.Injective.comp
+#check Set.PairwiseDisjoint
+#check Set.InjOn
+#check Set.Countable.of_injective
+#check Set.countable_iff_exists_injective
+#check GenLimit.UnionClosedness.powerSet_not_countable
+#check Set.compl_injective
+#check Set.union_right_injective
+#check Set.union_left_injective
+#check Set.ext
+#check Set.preimage

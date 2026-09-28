@@ -1,0 +1,32 @@
+{
+  "pml_case019_delta_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T20:39:02.620840+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case019_delta_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T20:39:02.620867+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case019_delta_v1_r3": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T20:39:02.620872+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case019_delta_v1_r4": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T20:39:02.620875+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case019_delta_v1_r5": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-20T20:39:02.620878+00:00",
+    "source_template": "templates/pml/packet"
+  }
+}

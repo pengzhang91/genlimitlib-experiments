@@ -1,0 +1,48 @@
+{
+  "arm": "PML-FileOracle",
+  "attempt_id": "file_oracle_case019_nocanonical_v1_r1",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "file_oracle_case019_nocanonical_v1_r1",
+  "final_output_files": 8,
+  "formal_run_id": "file_oracle_case019_nocanonical_v1_r1",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 16533853,
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_v1_r1/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "74722b5d99e380d3cfefb526353242c07c18505dc201b636bd27e9fe336ed437"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 1,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case019/file_oracle/r1/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case019/file_oracle/r1/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case019/file_oracle/r1/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 8,
+  "source_bundle": "lean2paper_case019_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_v1_r1/proxy_requests.jsonl",
+      "sha256": "06ef43e4070d13dd0760a4b4fa7687b81366e4c96e31121add62e8c6b5952434"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_v1_r1/ROUTING_AUDIT.json",
+      "sha256": "44f1e1c84851b1e968934e0c80b8b0fc117738effb66b1dad79e8efe391363c5"
+    },
+    "status": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/file_oracle/logs/file_oracle_case019_nocanonical_v1_r1/STATUS.json",
+      "sha256": "cfd11f497e12d5bd2404f2264deb427de59cbe0b055843adc548be7e8198794b"
+    },
+    "validation": {
+      "path": "lean2paper_case019_nocanonical_v1/cohort/arms/file_oracle/results/file_oracle_case019_nocanonical_v1_r1/VALIDATION.json",
+      "sha256": "60dc849c8c975e9b645dadca93d9d7e2eb04e24d6c6c40b2f24cbd1a36ca3360"
+    }
+  },
+  "task": "case019"
+}

@@ -1,0 +1,14 @@
+{
+  "pml_case017_nocanonical_v1_r1": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-21T03:55:34.833016+00:00",
+    "source_template": "run_003_v2"
+  },
+  "pml_case017_nocanonical_v1_r2": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-21T03:55:34.833037+00:00",
+    "source_template": "run_003_v2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "target_kernel_pass": false,
+  "entry_compile_exit": 1,
+  "source_hashes": {
+    "Case024Formalization.lean": "e1cb8ad792fed23bd8818fc58ad577e1c28d7fef49a1b974cbcbddfa6f6e3e6b"
+  },
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

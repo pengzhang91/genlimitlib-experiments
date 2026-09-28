@@ -1,0 +1,45 @@
+{
+  "author_exit_code": -9,
+  "author_state": "TIMEOUT",
+  "category": "AUTHOR_TIMEOUT",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 5400.049456,
+    "entry_compile_exit": 1,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case017Formalization.lean": "ad8f2d3af0cb99073ee73975a66b7a6bbdbcd5e2d60b1a4400ee47fa4359f1da"
+    },
+    "source_hashes": {
+      "Case017Formalization.lean": "ad8f2d3af0cb99073ee73975a66b7a6bbdbcd5e2d60b1a4400ee47fa4359f1da",
+      "CheckedHelpers.lean": "db2179a7d1e93ca44f0857c755951601107434296ed787569e707ed560249757",
+      "ChoiceProbe.lean": "77cc9858e3164a47cf84a725de2b358ba7ea106d13bc0450dc312698d137b3cc",
+      "CoreAnnounced.lean": "63f5413ff771c671928c95b5550cd7ead03a28e2f82041e47596ce4cdd514611",
+      "Part31.lean": "8b2c83511360afc2da2f6ae1003547bed478b5255ae8e6a3680644368f9eb09e",
+      "Part48.lean": "0459312a5dfde6a4818239a31833e1b8482e7e9ccf3ff6f84ab2cacbad4571bb",
+      "Part57.lean": "69464a869ef104a60f7e89632ec70b2a188914d7ca403d421c3f25b55c640b5e",
+      "Part67.lean": "4679364ef1e41f26cb3a06ed188e6c9150de325feeae360f75d4d8f50cb559f8",
+      "Part73.lean": "c954c3ed824155f30591313fe30bd0692db1dd37cd9f3541f9f4e49f02650a29",
+      "Part80.lean": "2e88dd71d16643440ba4ebdfa1cb6b5b0149edbeea594a49506a6316d4352020",
+      "Probe.lean": "e168e5f894c37c39e753c02ed7eddadd637544250779531b3015a94346e1109d",
+      "T100.lean": "3fb9a5e6d753e872e17fd98b81e2a5d11c6e1b739938baea1e414d374e908ca3",
+      "T118.lean": "36a8abb7d48e99f16f7a6f6e65bad95234f4c371c2b26ed321c00fe86461bd4c",
+      "T140.lean": "2422c3f8e449b518eafc40b40257d322004de8d2e2e6ef9858393834a0bcb2bc",
+      "T147.lean": "03536c6cd450521a7d202d72f78139ebaa2908e23e77451f1aca5b3f080c98c2",
+      "T188.lean": "cb69b8f3e02febf6dcdfa3112c5e976291bf112573238ee378746fb34412a440",
+      "U166.lean": "a5d095cdec03fe210e4a75df194f42e3af4d5257daa3b1d9c74c03770bd2a43e",
+      "U170.lean": "97e81af06c4c6db43d2eb3a890a4f872b63153c0250aed545abdb0d7b2d0b74b",
+      "U181.lean": "09571e34d51b06830eaaf762e89b91958d30a38142057c8f3b7862fcaba67d86",
+      "U188.lean": "cb69b8f3e02febf6dcdfa3112c5e976291bf112573238ee378746fb34412a440"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

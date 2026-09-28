@@ -1,0 +1,11 @@
+import Stage3Model
+import Mathlib
+#check Nat.le_log_of_pow_le
+#check Nat.log_lt_iff_lt_pow
+#check Nat.log_monotone
+#check Real.tendsto_logb_div_mul_add_atTop
+#check Real.tendsto_pow_logb_div_mul_add_atTop
+#check Filter.Tendsto.comp
+#check Filter.Tendsto.limsup_eq
+#check Finset.card_le_card
+#check Finset.card_image_iff

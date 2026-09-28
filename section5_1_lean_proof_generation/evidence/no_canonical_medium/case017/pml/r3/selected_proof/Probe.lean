@@ -1,0 +1,11 @@
+import GenLimit.Paper39_DenseGeneration.Partial.Main
+#check Nat.find_congr
+#check Set.infinite_range_of_injective
+#check Set.Finite.range
+#check Set.finite_Iic
+#check Set.Iic
+#check Finset.finite_toSet
+#check Set.Finite.subset
+#check GenLimit.Generic.sample_eq_of_eq_on_prefix
+#check GenLimit.sample
+#print GenLimit.PatientMachine.leastAvailable

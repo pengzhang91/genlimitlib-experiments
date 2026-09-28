@@ -1,0 +1,20 @@
+% Suggested targeted replacements for main.tex; not a standalone document.
+% Merge with the live source rather than replacing main.tex wholesale.
+
+% Section 4 introduction:
+We present three mathematical case studies developed while building and working
+with GenLimitLib: a proof repair, a characterization of proper generation
+under replay, and an exact mistake--convergence tradeoff for a special family.
+Appendix~\ref{app:proof-status} describes the research workflow and gives
+complete written proofs; their Lean verification is available in the
+accompanying GitHub repository.
+
+% Contribution bullet (retain the existing itemize environment):
+\item \textbf{Mathematical findings from working across the library.}
+We repair a gap in a published non-uniform generation proof, preserving its
+algorithm and convergence bound. We transfer a three-language construction
+to replay, improve a four-language impossibility example to three, and
+characterize exactly which finite families permit deterministic proper
+generation under replay. For the staircase family, we determine the complete
+Pareto frontier of mistake and convergence guarantees. The appendix gives
+the written proofs, with accompanying Lean verification in the repository.

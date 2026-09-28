@@ -1,0 +1,22 @@
+'GenLimit.ParetoGeneration.literal_claim_3_2_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GenLimit.ParetoGeneration.maxScoreBound_persists_insert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GenLimit.ParetoGeneration.InsertionSplit.orderMaxScoreBounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GenLimit.ParetoGeneration.target_selected_in_greedyListScan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.InvariantRepair.published_theorem_8_with_repetitions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Section4.Replay.triangle_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Replay.finite_replay_characterization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Replay.finite_replay_characterization_profiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Replay.finite_state_replay_corollary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Family.exact_staircase_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Family.mistakeBound_iff_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Family.deadlineBound_iff_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Realization.exact_staircase_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Realization.every_history_completes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.Family.extreme_profiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.exists_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.abstract_exact_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Section4.Staircase.abstract_exact_staircase_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]

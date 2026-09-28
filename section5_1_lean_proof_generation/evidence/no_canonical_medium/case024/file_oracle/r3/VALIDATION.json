@@ -1,0 +1,146 @@
+{
+  "author_lean_size": {
+    "bytes": 17819,
+    "files": 3,
+    "lines": 458,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 698.240866,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 32,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 32
+      },
+      "total_upstream_usd": 0.8042066000000001,
+      "unverifiable": 0
+    },
+    "run_id": "file_oracle_case024_nocanonical_reasoning_medium_v1_r3",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "cbb8131f42918bba789d0a39b25b5498d93b0036eb40632368551b8b3266ec7b",
+      "within_word_limit": true,
+      "words": 152
+    }
+  },
+  "checkpoints": [
+    {
+      "checker_exit": 2,
+      "checkpoint": "0001",
+      "elapsed_seconds": 621.8931630151346,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a",
+        "Helpers.lean": "6182df3ab2d8d46f4d4bd128702151f95647a30e8d55412a23028c195a9879d1",
+        "Probe.lean": "f9d1ed2b7d998422fa92a276dac23270c74552c6bd2e0ea139111adf66f9fb65"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "0002",
+      "elapsed_seconds": 684.9481913251802,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a",
+        "Helpers.lean": "6182df3ab2d8d46f4d4bd128702151f95647a30e8d55412a23028c195a9879d1",
+        "Probe.lean": "f9d1ed2b7d998422fa92a276dac23270c74552c6bd2e0ea139111adf66f9fb65"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "0003",
+      "elapsed_seconds": 684.9481913251802,
+      "entry_compile_exit": 1,
+      "kind": "observed_gate",
+      "matches_logged_gate": true,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a",
+        "Helpers.lean": "6182df3ab2d8d46f4d4bd128702151f95647a30e8d55412a23028c195a9879d1",
+        "Probe.lean": "f9d1ed2b7d998422fa92a276dac23270c74552c6bd2e0ea139111adf66f9fb65"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    },
+    {
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 698.240866,
+      "entry_compile_exit": 1,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a"
+      },
+      "source_hashes": {
+        "Case024Formalization.lean": "7b20c271f112ac90caabeeb4af9891969b7c7b4559a29feda47e4c29e8fe404a",
+        "Helpers.lean": "6182df3ab2d8d46f4d4bd128702151f95647a30e8d55412a23028c195a9879d1",
+        "Probe.lean": "f9d1ed2b7d998422fa92a276dac23270c74552c6bd2e0ea139111adf66f9fb65"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 697.5968377701938,
+        "usage": {
+          "cache_write_input_tokens": 88166,
+          "cached_input_tokens": 1745848,
+          "input_tokens": 1836190,
+          "output_tokens": 23027,
+          "reasoning_output_tokens": 7941
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "file_oracle_case024_nocanonical_reasoning_medium_v1_r3",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

@@ -1,0 +1,12 @@
+import output.Sep
+import Mathlib
+#check Set.Finite.preimage
+#check Set.Finite.preimage_of_injective
+#check Set.Finite.bddAbove
+#check Set.Finite.exists_nat_subset_range
+#check Set.Finite.eventually
+#check Filter.Eventually
+#check Set.Finite.image
+#check Set.Finite.range
+#check Set.finite_range_iff
+#check Finset.exists_nat_subset_range

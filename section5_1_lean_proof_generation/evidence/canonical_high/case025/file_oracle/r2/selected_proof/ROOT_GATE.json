@@ -1,0 +1,26 @@
+{
+  "target_kernel_pass": true,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "PatientBridge.lean": "ed970d26699827d3b609e6e0c94dac1d00f98f8ecb0cf0ec4a262dc4b53ebcc8",
+    "PositiveEngine.lean": "beb348df9a694215830d1c019d21720c7a62023f0fbc73026ce6f66c86897f3d",
+    "DensityTransfer.lean": "bafa64655d688e76a4a363d8624a82a67aabaa1b6554c26b2aece1e622f03385",
+    "Case025Formalization.lean": "a985595447b55c69426a2d0a3e056deaf642608520f0333a96295931f0e67102"
+  },
+  "exact_target_compile_exit": 0,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "stage3_result": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {},
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

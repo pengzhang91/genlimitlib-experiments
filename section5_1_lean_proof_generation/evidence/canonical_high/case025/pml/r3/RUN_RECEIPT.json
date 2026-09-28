@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case025_delta_v1_r3",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "pml_case025_delta_v1_r3",
+  "final_output_files": 6,
+  "formal_run_id": "pml_case025_delta_v1_r3",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 15663187,
+      "path": "lean2paper_case025_delta_v1_r3r5/cohort/arms/pml/logs/pml_case025_delta_v1_r3/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "f2ef011fec4414b4df7708c490177c610e801669c61186e9a0652773f2a5fd7b"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 3,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_high/case025/pml/r3/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_high/case025/pml/r3/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_high/case025/pml/r3/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 9,
+  "source_bundle": "lean2paper_case025_delta_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case025_delta_v1_r3r5/cohort/arms/pml/logs/pml_case025_delta_v1_r3/proxy_requests.jsonl",
+      "sha256": "8c0394a37db910138ef0b68c134fb6692eccd1fe8671f6bf5f6ab50726bca02f"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case025_delta_v1_r3r5/cohort/arms/pml/logs/pml_case025_delta_v1_r3/ROUTING_AUDIT.json",
+      "sha256": "c28189f56e8c7e898765cc9b4df442c7a65cb2ea0b648bd44312246bc7bb2ce6"
+    },
+    "status": {
+      "path": "lean2paper_case025_delta_v1_r3r5/cohort/arms/pml/logs/pml_case025_delta_v1_r3/STATUS.json",
+      "sha256": "cdb4910dda8454410517a487fa02953667922e1a478246ba2346b5ade90b02d8"
+    },
+    "validation": {
+      "path": "lean2paper_case025_delta_v1_r3r5/cohort/arms/pml/results/pml_case025_delta_v1_r3/VALIDATION.json",
+      "sha256": "b785fe0595f06ef0fa1ffa8afc47bb778a843d8a79fb0f3a37914de7370f3548"
+    }
+  },
+  "task": "case025"
+}

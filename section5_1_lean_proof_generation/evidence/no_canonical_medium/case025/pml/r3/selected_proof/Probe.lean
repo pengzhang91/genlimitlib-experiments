@@ -1,0 +1,12 @@
+import «output».Case025Core
+open Filter
+#check liminf_le_liminf
+#check liminf_add_le
+#check le_liminf_add
+#check Filter.Tendsto.liminf_eq
+#check Filter.Tendsto.limsup_eq
+#check isCoboundedUnder_ge_of_le
+#check isBoundedUnder_le_of_le
+#check GenLimit.PatientScope.prefixCount_mono
+#check GenLimit.KleinbergWei.OrderedLanguage.prefixCount_le_add_ncard_diff
+#check Set.Finite.toFinset

@@ -1,0 +1,10 @@
+import Mathlib.Order.OrderIsoNat
+#print Nat.Subtype.ofNat
+#print Nat.Subtype.ofNat_le
+#print Nat.Subtype.lt_ofNat
+#print Nat.Subtype.ofNat_lt_iff
+#print Nat.Subtype.ofNat_surjective
+#check Finset.card_le_card
+#check Finset.card_range
+#check Finset.card_image_iff
+#check Set.ncard_le_ncard

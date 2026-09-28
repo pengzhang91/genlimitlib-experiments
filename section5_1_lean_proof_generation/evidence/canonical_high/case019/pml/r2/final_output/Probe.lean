@@ -1,0 +1,14 @@
+import Case019Helpers
+#check Finset.exists_mem_not_mem_of_card_lt_card
+#check Finset.exists_mem_not_mem
+#check Finset.card_lt_card
+#check Finset.card_filter_le
+#check Finset.card_image_le
+#check Finset.card_union_le
+#check Finset.min'
+#check Finset.min'_mem
+#check Finset.min'_le
+#check Finset.exists_mem_eq_min'
+#check Finset.card_lt_iff_exists_not_mem
+#check Finset.card_lt_iff_exists_mem_not_mem
+#check Finset.not_subset

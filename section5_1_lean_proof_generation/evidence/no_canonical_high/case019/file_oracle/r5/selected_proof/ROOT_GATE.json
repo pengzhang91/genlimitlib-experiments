@@ -1,0 +1,29 @@
+{
+  "target_kernel_pass": true,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "Helpers.lean": "61d91b6b00fa32b42aea5011b93bcfa775233c10a5c694576c6c56929e5b2d91",
+    "Countable.lean": "0fe517bfbc1d58a8e4909addadd464759a21115d6402f12927befbf756a776ce",
+    "Separation.lean": "1727de45ea33c48989b4bce823c9344fcacc51d62d7756047c988b1d81911df1",
+    "PairSweep.lean": "63978c00a50222a873292aabb514d8a5adc6d04d158d68f9d5796e109cf84876",
+    "DensitySweep.lean": "cc8c8f1f10142ef5a11d6f846d5fce2374a50c4e8686cb1069c6dcbf441dfe2e",
+    "FinalSeparation.lean": "69fa7e60258043180c0bf9410e9fd91af75bb705b34a1c3e429569a4ec1ef969",
+    "Case019Formalization.lean": "cb1fe869a97054f5b060f66c0b6d4b2691f90138bbc60b542c358c781694fc57"
+  },
+  "exact_target_compile_exit": 0,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "stage3_result": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {},
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

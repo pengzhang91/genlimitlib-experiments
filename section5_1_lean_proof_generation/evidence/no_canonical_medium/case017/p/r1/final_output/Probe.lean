@@ -1,0 +1,10 @@
+import Stage3Model
+#check le_of_forall_lt_imp_le_of_dense
+#check le_of_forall_lt_imp_le
+#check Filter.Tendsto.eventually
+#check Metric.tendsto_atTop
+#check tendsto_order
+#check Filter.Eventually.exists
+#check Filter.IsCoboundedUnder.of_eventually_le
+#check Filter.IsCoboundedUnder.of_frequently_ge
+#check Filter.isBoundedUnder_of_eventually_ge

@@ -1,0 +1,13 @@
+import Stage3Model
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+open Set
+#check Set.countable_univ
+#check Set.countable_univ_iff
+#check Set.to_countable
+#check Set.Countable.to_subtype
+#check Set.univ_preimage
+#check Set.preimage_eq_univ_iff
+#check Set.Countable.preimage
+#check GenLimit.UnionClosedness.powerSet_not_countable
+#check Set.mem_image
+#check Set.image_image

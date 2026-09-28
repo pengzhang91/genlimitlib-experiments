@@ -1,0 +1,10 @@
+import Case024Helpers
+open MeasureTheory
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integral_congr_ae
+#check MeasureTheory.integral_const
+#check MeasureTheory.Integrable.integral_mono_ae
+#check MeasureTheory.Integrable.integral_le_integral
+#check measure_univ
+#check measure_univ_eq_one
+#check integral_const

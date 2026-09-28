@@ -1,0 +1,9 @@
+import Stage3Model
+import Mathlib
+#check List.Sublist.mem
+#check List.Sublist.pairwise
+#check List.dropWhile_sublist
+#check List.forall_mem_cons
+#check List.forall_mem_of_sublist
+#check List.toFinset_ofFn
+#check List.toFinset_eq_iff_perm

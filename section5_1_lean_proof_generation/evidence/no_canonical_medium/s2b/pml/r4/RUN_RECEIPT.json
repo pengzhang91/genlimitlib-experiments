@@ -1,0 +1,48 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_s2b_nocanonical_reasoning_medium_v1_r4",
+  "condition": "no_canonical_medium",
+  "evidence_directory_run_id": "pml_s2b_nocanonical_reasoning_medium_v1_r4",
+  "final_output_files": 5,
+  "formal_run_id": "pml_s2b_nocanonical_reasoning_medium_v1_r4",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 8523115,
+      "path": "lean2paper_s2b_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_reasoning_medium_v1_r4/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "4079127036bd9526e1adfdc8688d7b12b0b0d8f8aafb963ff5552a25ed486d23"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 4,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_medium/s2b/pml/r4/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_medium/s2b/pml/r4/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_medium/s2b/pml/r4/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_s2b_nocanonical_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_s2b_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_reasoning_medium_v1_r4/proxy_requests.jsonl",
+      "sha256": "dc9727457243dc31aae9eb0eac07b95d2fecd1ba7ebfbea6cfbc6f3ff5392243"
+    },
+    "routing_audit": {
+      "path": "lean2paper_s2b_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_reasoning_medium_v1_r4/ROUTING_AUDIT.json",
+      "sha256": "339f81cb33aaead82645ee6df1564472cb26d5b630276ab081dc34b5c54ec978"
+    },
+    "status": {
+      "path": "lean2paper_s2b_nocanonical_reasoning_medium_v1/cohort/arms/pml/logs/pml_s2b_nocanonical_reasoning_medium_v1_r4/STATUS.json",
+      "sha256": "0c7cd91b857b414f63ef59f5689bc92be223f3f0a47796cffb7672d0e51262fa"
+    },
+    "validation": {
+      "path": "lean2paper_s2b_nocanonical_reasoning_medium_v1/cohort/arms/pml/results/pml_s2b_nocanonical_reasoning_medium_v1_r4/VALIDATION.json",
+      "sha256": "8e7ef390f9d7ae03cba1f0460b9548688f6dd94b809b1213678bbbf700b76918"
+    }
+  },
+  "task": "s2b"
+}

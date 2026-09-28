@@ -1,0 +1,9 @@
+import Stage3Model
+#check Fintype.card_le_of_injective
+#check Finset.card_le_card_of_injOn
+#check Finset.card_image_iff
+#check Set.Infinite
+#check Set.Finite.subset
+#check Filter.liminf_le_liminf
+#check isBoundedUnder_of_eventually_ge
+#check isCoboundedUnder_ge_of_le

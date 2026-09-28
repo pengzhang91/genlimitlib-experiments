@@ -1,0 +1,14 @@
+import Stage3Model
+#check Finset.exists_mem_notMem_of_card_lt_card
+#check Finset.card_image_iff
+#check Finset.card_image_of_injective
+#check Finset.card_image_le
+#check Finset.card_union_le
+#check Finset.mem_image
+#check Finset.mem_image_of_mem
+#check Nat.find_min'
+#check Nat.log2_mul_le
+#check Nat.log2_le_iff_le_pow
+#check Nat.lt_pow_succ_log2
+#check Nat.pow_log2_le
+#check Nat.log2_mono

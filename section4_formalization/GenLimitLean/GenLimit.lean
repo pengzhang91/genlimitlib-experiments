@@ -1,0 +1,39 @@
+import GenLimit.Core
+import GenLimit.Paper00_LanguageIdentification
+import GenLimit.Paper01_LanguageGeneration
+import GenLimit.Paper02_LearningTheory
+import GenLimit.Paper03_HallucinationAndModeCollapse
+import GenLimit.Paper04_ExploringFacetsOfLanguageGeneration
+import GenLimit.Paper05_HallucinationsBreadthAndStability
+import GenLimit.Paper06_NoisyExamples
+import GenLimit.Paper00A_PositiveDataInference
+import GenLimit.Paper08_HallucinationDetection
+import GenLimit.Paper09_RepresentativeLanguageGeneration
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration
+import GenLimit.Paper11_LearningAlgorithmsInTheLimit
+import GenLimit.Paper12_NoiseLossAndFeedback
+import GenLimit.Paper13_ParetoOptimalNonuniformGeneration
+import GenLimit.Paper14_ListLanguageIdentification
+import GenLimit.Paper07_DensityMeasuresForLanguageGeneration
+import GenLimit.Paper15_PartialEnumeration
+import GenLimit.Paper17_InfiniteContamination
+import GenLimit.Paper18_SafeLanguageGeneration
+import GenLimit.Paper19_EffectOfNoise
+import GenLimit.Paper21_GenerationInMetricSpaces
+import GenLimit.Paper22_LanguageGenerationWithReplay
+import GenLimit.Paper23_BanachDensityTopologyAndGeometry
+import GenLimit.Paper27_FeedbackQueriesAndMistakes
+import GenLimit.Paper28_ContrastiveGeneration
+import GenLimit.Paper29_MistakeBoundedLanguageGeneration
+import GenLimit.Paper30_TimeSensitiveLanguageGeneration
+import GenLimit.Paper31_BoundedMemory
+import GenLimit.Paper32_InfinitelyManyHallucinations
+import GenLimit.Paper39_DenseGeneration
+import GenLimit.Bridges
+
+/-!
+# GenLimit
+
+Umbrella import for the shared foundations, the numbered paper developments,
+and explicit cross-paper bridge theorems.
+-/

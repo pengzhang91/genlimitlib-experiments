@@ -1,0 +1,15 @@
+import Case017Helpers
+#check Set.infinite_range_of_injective
+#check Set.Finite.subset
+#check Set.finite_Iic
+#check Set.Iic
+#check Set.range_subset_iff
+#check Set.infinite_coe_iff
+#check Finset.card_image_iff
+#check Finset.card_image_of_injective
+#check Finset.card_erase_add_one
+#check Finset.card_filter_le_iff
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Nat.find_spec
+#check Nat.find_min'

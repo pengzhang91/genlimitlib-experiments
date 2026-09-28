@@ -1,0 +1,11 @@
+import Helpers
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset_of_subset
+#check Finset.univ
+#check Finset.image_image
+#check Finset.image_finset_univ_fin
+#check Finset.image_finset_univ_embedding
+#check Finset.image_univ
+#check Finset.image_range
+#check Finset.image_congr
+#print Set.Infinite.exists_not_mem_finset

@@ -1,0 +1,17 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+import GenLimit.Paper17_InfiniteContamination.ElementDensity
+
+#check liminf_add_le
+#check le_liminf_add
+#check Filter.Tendsto.liminf_eq
+#check Filter.Tendsto.limsup_eq
+#check GenLimit.PatientScope.tendsto_prefixCount_atTop
+#check GenLimit.Generic.output
+#check GenLimit.PatientMachine.output
+#check GenLimit.InfiniteContamination.FiniteNoiseFiniteOmissionEnumeration
+#check GenLimit.InfiniteContamination.finiteNoise_iff_finite_badIndices
+

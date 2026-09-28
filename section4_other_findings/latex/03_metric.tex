@@ -1,0 +1,386 @@
+\section{Metric generation detects properness of the completion}
+\label{mt:chapter}
+
+\subsection{Motivation and source}
+When examples live in a metric space, a new output can be different from every observation and still be arbitrarily close to something already seen. Metric language generation asks for a stronger form of novelty: the output must stay a prescribed positive distance from the whole observed sample. The amount of information in that sample is measured by a covering number. A thousand observations concentrated in one small ball may therefore count as less evidence than ten well-separated observations.
+
+The covering-threshold framework comes from \emph{On Generation in Metric Spaces} by \citet{P21}. The finding developed here identifies a classical geometric property that the framework can detect. For a countable class of unbounded targets in a countable unbounded metric space, generation with a target-dependent threshold is possible at every positive pair of scales exactly when every nonempty finite intersection of targets is either unbounded or totally bounded. Consequently, the ability to generate for \emph{every} countable such class is equivalent to properness of the metric completion.
+
+There is a concrete proof issue behind this connection. A ball cover may use centers outside the set it covers. Such centers cannot automatically be appended to a positive sample: to preserve every currently possible target, the new observations must belong to their common intersection. The library's diagnostic for this source paper isolates the distinction between ambient centers and internal centers. The proofs below work directly with legal positive samples and identify the obstruction that survives at all scales.
+
+The all-scale qualification is essential. We allow the output radius to be larger than the input radius, and require success for \emph{every} positive pair. The result does not assert that each fixed-scale theorem in \citet{P21} has the same characterization. Unboundedness of every target also matters: it ensures that every fixed finite input threshold can actually be reached.
+
+\subsection{The semantic model}
+
+Fix a countably infinite set $X$ with an unbounded metric $m$.
+A target is an unbounded subset of $X$, and a target class $\mathcal H$
+is a collection of such subsets. A finite ordered history
+$h=(x_1,\ldots,x_t)$ has observation set
+$S(h)=\{x_1,\ldots,x_t\}$. Repetitions are permitted. It is positive for
+$L$ when $S(h)\subseteq L$. A generator is a function from all finite
+histories to $X$; no computability or oracle-efficiency assumption is made.
+
+For $a>0$, write
+\[
+ B_m(x,a)=\{y\in X:m(x,y)\le a\},
+ \qquad
+ N_m(a;A)=\min\left\{|C|:
+ \begin{array}{l}
+ C\subseteq X\text{ finite},\\[-2pt]
+ A\subseteq\displaystyle\bigcup_{c\in C}B_m(c,a)
+ \end{array}\right\}.
+\]
+Set $N_m(a;A)=\infty$ when there is no finite cover, and
+$N_m(a;\varnothing)=0$. Whenever finite covers exist, the minimum exists
+because their cardinalities are natural numbers. Centers are ambient
+points of $X$ and need not belong to $A$. A set is \emph{totally bounded}
+if $N_m(a;A)<\infty$ for every $a>0$. It is \emph{bounded} if it is
+contained in one ball of finite radius.
+
+\begin{definition}[Uniform and nonuniform generation at all scales]
+\label{mt:model}
+For fixed input scale $a>0$ and output scale $b>0$, a generator $g$ has a
+uniform threshold $D\ge1$ for $\mathcal H$ if, for every positive history,
+\begin{equation}
+\label{mt:guarantee}
+ S(h)\subseteq L\in\mathcal H,\quad N_m(a;S(h))\ge D
+ \quad\Longrightarrow\quad
+ g(h)\in L\setminus\bigcup_{x\in S(h)}B_m(x,b).
+\end{equation}
+The class satisfies $\mathsf U_m$ if such a generator and threshold exist
+for every $a,b>0$. It satisfies $\mathsf{NU}_m$ if, for every $a,b>0$,
+there is one generator with a positive integer threshold $D_L$ for each
+$L\in\mathcal H$, satisfying the same implication with $D_L$ in place
+of $D$. Initially the generator may depend on $(a,b)$.
+\end{definition}
+
+Thus the nonuniform quantifiers are
+\[
+ \forall a,b>0\ \exists g\ \forall L\in\mathcal H\ \exists D_L\ge1
+ \ \forall h:\quad \text{\eqref{mt:guarantee} holds with }D_L.
+\]
+The true target may influence the threshold, but it cannot select a different
+generator. We will construct a single generator that in fact works for
+all scale pairs, after changing only the thresholds. The empty class is
+vacuous throughout; statements involving an enumeration will assume the
+class is nonempty.
+
+The model can equivalently be tested on finite prefixes of complete positive
+presentations. Every positive finite history extends to such a presentation:
+append an enumeration of its countable infinite target. Moreover, on any
+complete presentation of an unbounded target, $N_m(a;S(h))$ eventually
+crosses every finite threshold. To see this, select as many target points
+as desired with pairwise distances greater than $2a$. At each selection
+step, finitely many radius-$2a$ balls form a bounded set and cannot cover
+the unbounded target. Once all selected points have appeared, every
+radius-$a$ ball covers at most one of them.
+
+\subsection{The geometric obstruction in a finite intersection}
+
+\begin{lemma}[Packing and legal covering centers]
+\label{mt:packing}
+The following facts hold in any metric space.
+\begin{enumerate}
+\item If $N_m(a;A)=\infty$, then for every $q\ge1$ there are $q$ points
+of $A$ whose pairwise distances are greater than $a$. A radius-$a/2$
+cover of those points needs at least $q$ balls.
+\item If $A$ is nonempty and totally bounded, then for every $b>0$ it
+has a finite radius-$b$ cover whose centers belong to $A$.
+\item If $A$ is unbounded and $S$ is finite, then for every $b>0$ some
+point of $A$ has distance greater than $b$ from every point of $S$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For the first assertion, choose points greedily. If fewer than $q$ chosen
+points already cover $A$ by their radius-$a$ balls, they give a finite
+cover, contrary to the premise. Otherwise choose a point outside those
+balls and continue. Two chosen points cannot belong to one radius-$a/2$
+ball, since the triangle inequality would make their distance at most $a$.
+
+For the second assertion, take a finite ambient radius-$b/2$ cover of $A$.
+Discard every ball missing $A$, and choose a point of $A$ in each remaining
+ball. If $y$ and the chosen point lie in the same original ball, their
+distance is at most $b$. These chosen points are the required internal
+centers. This argument changes the radius; it does not justify moving
+ambient centers into $A$ at the original radius without a loss.
+
+For the third assertion, a finite union of finite-radius balls is bounded.
+For example, its distance from one fixed center is bounded by the largest
+distance to the other finitely many centers plus $b$. It therefore cannot
+contain $A$. A point outside that union has the required distances.
+\end{proof}
+
+For a nonempty finite family $\mathcal F\subseteq\mathcal H$, its common
+intersection $A=\bigcap_{L\in\mathcal F}L$ is a region where positive
+observations cannot distinguish the targets in $\mathcal F$.
+If $A$ is bounded but not totally bounded, it can supply arbitrarily much
+input-covering evidence while fitting inside a single sufficiently large
+output-neighborhood. This is the obstruction.
+
+\begin{lemma}[A bounded, non-totally-bounded intersection prevents generation]
+\label{mt:obstruction}
+If a nonempty finite subfamily $\mathcal F$ has a bounded intersection
+$A$ that is not totally bounded, then $\mathcal H$ fails
+$\mathsf{NU}_m$.
+\end{lemma}
+\begin{proof}
+Choose $a>0$ with $N_m(a;A)=\infty$. The set $A$ is nonempty; fix
+$c\in A$. Since $A$ is bounded, choose $b>0$ such that
+$A\subseteq B_m(c,b)$.
+
+Suppose a generator satisfies the nonuniform guarantee at input scale
+$a/2$ and output scale $b$. Let $D$ be the maximum of its finitely many
+thresholds $D_L$, $L\in\mathcal F$. By Lemma~\ref{mt:packing}, select
+$D$ pairwise more-than-$a$ separated points of $A$. Form a history
+containing these points and $c$. It is positive for every target in
+$\mathcal F$, and its input cover number is at least $D$. Thus its one
+output must belong to every target in $\mathcal F$, hence to $A$.
+However, the observed point $c$ makes every point of $A$ non-novel at
+radius $b$. This contradicts \eqref{mt:guarantee}.
+The history extends to a complete presentation for each possible target,
+so imposing that extension requirement does not remove the contradiction.
+\end{proof}
+
+\subsection{The exact finite-intersection criterion}
+
+\begin{theorem}[Countable nonuniform generation]
+\label{mt:intersection}
+For a nonempty countable class $\mathcal H$ of unbounded targets,
+the following are equivalent:
+\begin{enumerate}
+\item $\mathcal H$ satisfies $\mathsf{NU}_m$;
+\item for every nonempty finite $\mathcal F\subseteq\mathcal H$, the
+intersection $\bigcap_{L\in\mathcal F}L$ is either unbounded or totally
+bounded.
+\end{enumerate}
+When these conditions hold, one generator serves every positive scale pair.
+If $\mathcal H$ is finite, these conditions are also equivalent to
+$\mathsf U_m$.
+\end{theorem}
+\begin{proof}
+Necessity is Lemma~\ref{mt:obstruction}: an intersection that is neither
+unbounded nor totally bounded is precisely a bounded, non-totally-bounded
+set.
+
+We first prove sufficiency for a finite class. For each realizable sample
+$S$, define its version space and common core by
+\[
+ V(S)=\{L\in\mathcal H:S\subseteq L\},
+ \qquad C(S)=\bigcap_{L\in V(S)}L.
+\]
+Here ``realizable'' means $V(S)\ne\varnothing$. Its core contains $S$.
+There are only finitely many intersections of nonempty subfamilies of
+$\mathcal H$. Under condition 2, every bounded one is totally bounded.
+Fix an input radius $a>0$, and let $E_a$ be the maximum of their finite
+covering numbers at radius $a$; set $E_a=0$ if there are no bounded
+intersections.
+
+If $N_m(a;S)>E_a$, the core $C(S)$ cannot be bounded, because a cover
+of $C(S)$ also covers $S$. An unbounded core supplies a point outside
+the radius-$b$ balls around any finite sample, by Lemma~\ref{mt:packing}.
+Choosing such a point yields an output valid for every target consistent
+with $S$. The threshold $E_a+1$ proves uniform generation at $(a,b)$.
+For any history outside this guarantee, an arbitrary fixed output makes
+the generator a total function. Uniform generation always implies
+nonuniform generation by using the same threshold for every target.
+
+For a countable class, enumerate its targets as $L_1,L_2,\ldots$,
+repeating members if the class is finite. For a finite sample $S$, let
+\[
+ V_j(S)=\{L_i:1\le i\le j,\ S\subseteq L_i\},
+ \qquad C_j(S)=\bigcap_{L\in V_j(S)}L
+\]
+whenever $V_j(S)$ is nonempty. At a history of length $t$, choose the
+largest index $j\le t$ for which $V_j(S)$ is nonempty and $C_j(S)$ is
+unbounded. If there is no such index, output a fixed fallback point.
+Otherwise choose a point of $C_j(S)$ whose distance from each observation
+is greater than $t$. Such a point exists by Lemma~\ref{mt:packing}.
+This construction makes no reference to $a$ or $b$. Its choices may be
+noncomputable, as allowed by the semantic model.
+
+Fix a target whose first occurrence is $L_z$, and fix $a,b>0$.
+Consider all intersections of nonempty subfamilies of
+$\{L_1,\ldots,L_z\}$. Each bounded one is totally bounded, and there
+are finitely many. Let $E_{z,a}$ be the maximum of their radius-$a$
+covering numbers, with value zero when none are bounded. Choose a
+positive integer
+\[
+ D_{L_z}>\max\{E_{z,a},z,b\}.
+\]
+Suppose a positive history for $L_z$ has $N_m(a;S)\ge D_{L_z}$.
+Since a finite sample covers itself using its own points as centers,
+\[
+ N_m(a;S)\le |S|\le t.
+\]
+Thus $t>z$ and $t>b$. The version space $V_z(S)$ is nonempty because
+it contains $L_z$. If its core were bounded, that core would have cover
+number at most $E_{z,a}$, which would also bound the sample's cover
+number. This contradicts the chosen threshold. Hence $z$ is eligible.
+
+The selected index $j$ is consequently at least $z$. Since $L_z$
+remains consistent and appears among the first $j$ targets,
+$C_j(S)\subseteq L_z$. The output belongs to $L_z$ and has distance
+greater than $t>b$ from every observation. This proves the required
+target-dependent guarantee. The construction used one generator for all
+targets and all scale pairs, completing the proof.
+\end{proof}
+
+\begin{remark}[What the scheduler needs]
+The maximum in this construction is over the finite set
+$\{1,\ldots,t\}$. The proof does not take a maximum of countably many
+thresholds. For a fixed true target, it uses only finitely many earlier
+targets and finitely many intersections. Countability of the class is the
+resource that makes this finite-prefix argument available.
+\end{remark}
+
+\subsection{From a generation property to proper completion}
+
+A metric space is \emph{proper} if every closed bounded subset is compact.
+Let $\widehat X$ denote the metric completion of $X$, with $X$ identified
+with its dense isometric copy. Completion is part of the conclusion:
+the original space need not be complete or proper.
+
+\begin{lemma}[Two targets realize every bounded obstruction]
+\label{mt:tails}
+If $X$ is unbounded and $A\subseteq X$ is bounded, there are disjoint
+unbounded sets $T_0,T_1\subseteq X\setminus A$. Consequently, the
+unbounded targets $L_0=A\cup T_0$ and $L_1=A\cup T_1$ have
+intersection exactly $A$.
+\end{lemma}
+\begin{proof}
+Fix $x_0\in X$. Recursively, for each $n\ge1$, choose two new points
+$u_n,v_n$ outside $A$ and all points chosen earlier, with both distances
+from $x_0$ greater than $n$. Make the two choices successively so that
+they are distinct. Each choice excludes a bounded set: the union of $A$,
+a finite set, and $B_m(x_0,n)$. Such a union cannot exhaust unbounded
+$X$. Set $T_0=\{u_n:n\ge1\}$ and $T_1=\{v_n:n\ge1\}$.
+They are disjoint, avoid $A$, and are unbounded by their distance
+requirements. The asserted intersection follows immediately.
+\end{proof}
+
+\begin{theorem}[Generation characterizes proper completion]
+\label{mt:proper}
+For an unbounded countable metric space $(X,m)$, the following conditions
+are equivalent:
+\begin{enumerate}
+\item Every countable class of unbounded targets satisfies
+$\mathsf{NU}_m$.
+\item Every two-target class of unbounded targets satisfies
+$\mathsf U_m$.
+\item Every bounded subset of $X$ is totally bounded.
+\item The metric completion $\widehat X$ is proper.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+If condition 3 holds, every finite intersection of unbounded targets is
+either unbounded or, by condition 3, totally bounded. Theorem~\ref{mt:intersection}
+therefore gives conditions 1 and 2.
+
+Conversely, if condition 3 fails, choose a bounded subset $A$ that is
+not totally bounded. Lemma~\ref{mt:tails} supplies two unbounded targets
+with intersection exactly $A$. Lemma~\ref{mt:obstruction} shows that
+this two-target class fails even nonuniform generation at one positive
+scale pair. It contradicts condition 1. Since uniform generation implies
+nonuniform generation, it also contradicts condition 2. Thus either
+condition 1 or condition 2 implies condition 3.
+
+We next show that condition 4 implies condition 3. Let $A\subseteq X$
+be bounded. Its closure in $\widehat X$ is closed and bounded, hence
+compact by condition 4. For any $a>0$, the open radius-$a/3$ balls
+centered at points of that compact closure have a finite subcover.
+Move each of those finitely many centers to a point of $X$ within
+distance $a/3$, using density. The resulting radius-$a$ balls centered
+in $X$ cover $A$. Thus $A$ is totally bounded in the ambient-center
+convention used here.
+
+Finally assume condition 3. We first prove that every bounded subset
+$B\subseteq\widehat X$ is totally bounded in the completion. For any
+$a>0$, choose for every $y\in B$ a point $q_y\in X$ with
+$m(y,q_y)<a/3$. The set $A=\{q_y:y\in B\}$ is bounded, so it has
+a finite radius-$a/3$ cover with centers in $X$. The triangle inequality
+shows that these centers cover $B$ by radius-$2a/3$ balls. Since $a$
+was arbitrary, $B$ is totally bounded.
+
+Let now $B$ be closed and bounded in $\widehat X$. It is complete,
+because it is closed in a complete space, and it is totally bounded by
+the preceding paragraph. For completeness, we verify that these two
+properties make it compact. Suppose an open cover of $B$ has no finite
+subcover. Starting from $C_0=B$, cover $C_{n-1}$ by finitely many
+closed balls of radius $2^{-n}$. At least one intersection of such a
+ball with $C_{n-1}$ still has no finite subcover from the given open
+cover; otherwise the finitely many finite subcovers would cover
+$C_{n-1}$. Choose that intersection as $C_n$.
+
+The sets $C_n$ are nonempty, closed in $B$, nested, and have diameter
+at most $2^{1-n}$. Choose $x_n\in C_n$. The diameter bound and nesting
+make $(x_n)$ Cauchy. Completeness gives a limit $x\in B$, and closedness
+gives $x\in C_n$ for every $n$. Some member of the original open cover
+contains a relative neighborhood of $x$ in $B$. For sufficiently large
+$n$, the diameter bound forces all of $C_n$ into that neighborhood,
+contradicting the choice that $C_n$ has no finite subcover. Every open
+cover therefore has a finite subcover, so $B$ is compact. This proves
+properness of $\widehat X$ and finishes the equivalence.
+\end{proof}
+
+\subsection{Examples and interpretation}
+
+\begin{remark}[Example: the rational line]
+\label{mt:rationals}
+On $X=\mathbb Q$ with ordinary distance, every bounded subset is totally
+bounded: subdivide a bounded containing interval into finitely many
+intervals of any prescribed small length and choose rational centers.
+Thus every countable class of unbounded rational targets satisfies
+$\mathsf{NU}_m$. The completion is $\mathbb R$, which is proper.
+The original rational space is not proper. For instance,
+$[0,2]\cap\mathbb Q$ is closed and bounded in $\mathbb Q$, but a sequence
+of rationals converging in $\mathbb R$ to $\sqrt2$ has no convergent
+subsequence in $\mathbb Q$, and so this set is not compact.
+This distinguishes proper completion from properness of $X$ itself.
+\end{remark}
+
+\begin{remark}[Example: a bounded obstruction in an unbounded space]
+\label{mt:badspace}
+Let $X=\N\times\N$ and
+\[
+ m\bigl((i,j),(i',j')\bigr)=|i-i'|+\mathbf1_{j\ne j'}.
+\]
+This is an unbounded metric. The row $A=\{0\}\times\N$ is bounded,
+but its distinct points are at distance one. It has no finite
+radius-$1/3$ cover. Let
+$T_0=\{(i,0):i\ge1\}$ and $T_1=\{(i,1):i\ge1\}$.
+The targets $A\cup T_0$ and $A\cup T_1$ are unbounded and have
+intersection $A$. They fail nonuniform generation at input radius
+$1/3$ and output radius $1$: arbitrarily many distinct row points cross
+any proposed input threshold, while one observed row point puts all of
+their common intersection within the forbidden output neighborhood.
+\end{remark}
+
+\begin{table}[tbp]
+\centering
+\small
+\begin{tabular}{@{}p{.24\linewidth}p{.28\linewidth}p{.39\linewidth}@{}}
+\toprule
+Scope & Generation property & Exact geometric condition\\
+\midrule
+One finite target class & Uniform, equivalently nonuniform, at all scales &
+Every nonempty finite target intersection is unbounded or totally bounded.\\[5pt]
+One countable target class & Nonuniform at all scales &
+The same finite-intersection condition.\\[5pt]
+Every countable class of unbounded targets & Nonuniform at all scales &
+Every bounded subset of the universe is totally bounded; equivalently,
+its completion is proper.\\
+\bottomrule
+\end{tabular}
+\caption{Geometric criteria for the semantic generation model of
+Definition~\ref{mt:model}. All targets are unbounded.}
+\label{mt:table}
+\end{table}
+
+The two-target obstruction explains why this is a geometric classification.
+Once two targets share a bounded region containing arbitrarily much
+small-scale evidence, large input thresholds cannot force a geometrically
+novel common output. Conversely, when every bounded finite intersection
+is totally bounded, sufficiently dispersed evidence forces an unbounded
+common core among the relevant finite prefix of targets. That core always
+has room for a novel output.
+

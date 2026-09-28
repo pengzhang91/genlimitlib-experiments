@@ -1,0 +1,47 @@
+{
+  "author_exit_code": 0,
+  "author_state": "FINISHED",
+  "category": "LEAN_GATE_FAILURE",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 1815.692385,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 1,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case019Formalization.lean": "eef6260f02fb739eda8059172ee7376c44dad16bc425ab1336320a73b29789e4",
+      "Case019Foundations.lean": "6c0b8a76f8a058f6b52cf93223727ac8f263537223c4f7109841315e2fedba94",
+      "CountableScratch.lean": "2ef56f1be7aa868540ffbd8086ec86e6f02fa3eb72cab056a7f5d87ba705349c",
+      "DensityScratch.lean": "74642be832cf5b79ccf46eb8af8a70aa9315b85f93043094208f0a5128ece57c"
+    },
+    "source_hashes": {
+      "Case019Formalization.lean": "eef6260f02fb739eda8059172ee7376c44dad16bc425ab1336320a73b29789e4",
+      "Case019Foundations.lean": "6c0b8a76f8a058f6b52cf93223727ac8f263537223c4f7109841315e2fedba94",
+      "CountableScratch.lean": "2ef56f1be7aa868540ffbd8086ec86e6f02fa3eb72cab056a7f5d87ba705349c",
+      "DensityScratch.lean": "74642be832cf5b79ccf46eb8af8a70aa9315b85f93043094208f0a5128ece57c"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

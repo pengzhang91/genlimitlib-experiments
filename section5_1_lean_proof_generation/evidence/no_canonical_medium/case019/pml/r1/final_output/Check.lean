@@ -1,0 +1,8 @@
+import output.CountablePartial
+open Filter
+#check isBoundedUnder_le_of_eventually_le
+#check isBoundedUnder_ge_of_eventually_ge
+#check isCoboundedUnder_ge_of_le
+#check isCoboundedUnder_le_of_ge
+#check isBoundedUnder_le_of
+#check isBoundedUnder_ge_of

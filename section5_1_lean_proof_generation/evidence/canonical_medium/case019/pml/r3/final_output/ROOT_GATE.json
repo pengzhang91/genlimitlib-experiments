@@ -1,0 +1,25 @@
+{
+  "target_kernel_pass": false,
+  "entry_compile_exit": 0,
+  "source_hashes": {
+    "PrefixCausality.lean": "356b53dc1499b2a1795d68760fa3c319ac808027782bd1c58c6c8fbc9c04cd28",
+    "Negative.lean": "36b62e813f0dd5363c860f565b155ae82e73ffec0ec037c298422c259062108a",
+    "Case019Formalization.lean": "a635aedb90415d521b7d3d0137edc1a6bedddf55f241226f5a35dc2298a7e3fb"
+  },
+  "exact_target_compile_exit": 1,
+  "axioms": {
+    "controller_exact_target": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inadmissible_axioms": {
+    "controller_exact_target": [
+      "sorryAx"
+    ]
+  },
+  "prohibited_mechanisms": [],
+  "sources_unchanged_during_check": true
+}

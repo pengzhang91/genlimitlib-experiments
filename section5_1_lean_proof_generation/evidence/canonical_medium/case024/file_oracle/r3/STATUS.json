@@ -1,0 +1,21 @@
+{
+  "author_budget_seconds": 5400,
+  "deadline_overshoot_seconds": 0,
+  "elapsed_seconds": 734.617392,
+  "exit_code": 0,
+  "formal_run_id": "file_oracle_case024_reasoning_medium_v1_r3",
+  "monitor_errors": [],
+  "monitor_finished": true,
+  "recorded_run_id": "file_oracle_case024_reasoning_medium_v1_r3",
+  "routing_audit": {
+    "calls": 36,
+    "pass": true,
+    "providers": {
+      "OpenAI": 36
+    },
+    "total_upstream_usd": 0.8627412999999998,
+    "unverifiable": 0
+  },
+  "schema_version": 1,
+  "state": "FINISHED"
+}

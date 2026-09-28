@@ -1,0 +1,12 @@
+import Helpers
+#check isBoundedUnder_le_iff_eventually_le
+#check isBoundedUnder_ge_iff_eventually_ge
+#check isCoboundedUnder_le_iff_eventually_le
+#check isCoboundedUnder_ge_iff_eventually_ge
+#check Filter.isBoundedUnder_le_of_eventually_le
+#check Filter.isBoundedUnder_ge_of_eventually_ge
+#check Finset.card_union_le
+#check GenLimit.PatientScope.prefixFinset
+#check GenLimit.PatientScope.mem_prefixFinset
+#check GenLimit.PatientScope.prefixCount
+#check tendsto_natCast_atTop_iff

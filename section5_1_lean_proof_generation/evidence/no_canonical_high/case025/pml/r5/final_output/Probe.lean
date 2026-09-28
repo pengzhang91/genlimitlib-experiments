@@ -1,0 +1,9 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import Mathlib.Combinatorics.Colex
+#check Set.Finite.bddAbove
+#check Set.Finite.isBoundedUnder_le
+#check GenLimit.Generic.finset_eventually_subset_sample
+#check GenLimit.finset_eventually_subset_sample
+#check Finset.exists_le
+#check Finset.sup

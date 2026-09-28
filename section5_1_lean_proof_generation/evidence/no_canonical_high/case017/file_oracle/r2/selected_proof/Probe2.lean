@@ -1,0 +1,14 @@
+import Case017Helpers
+#check Finset.exists_max_image
+#check Finset.max'_mem
+#check Finset.le_max'
+#check Finset.mem_image
+#check Finset.card_filter_le_iff
+#check Finset.filter_union_filter_neg_eq
+#check Finset.filter_card_add_filter_neg_card_eq_card
+#check Nat.sub_add_cancel
+#check Nat.add_sub_of_le
+#check Nat.sub_lt_iff_lt_add
+#check Function.Injective.injOn
+#check Finset.card_image_of_injective
+#check Finset.card_le_card_of_injOn

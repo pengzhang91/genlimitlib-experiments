@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case024_delta_v1_r3",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "p_case024_delta_v1_r3",
+  "final_output_files": 6,
+  "formal_run_id": "p_case024_delta_v1_r3",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 22106499,
+      "path": "lean2paper_case024_delta_v1_r3r5/cohort/arms/p/logs/p_case024_delta_v1_r3/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "eb5393400325f245e49cd0dd3bd182043b01ab53a6f15324196f6e54aeb8bad4"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 3,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_high/case024/p/r3/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_high/case024/p/r3/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_high/case024/p/r3/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 9,
+  "source_bundle": "lean2paper_case024_delta_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case024_delta_v1_r3r5/cohort/arms/p/logs/p_case024_delta_v1_r3/proxy_requests.jsonl",
+      "sha256": "571820a27f6b4958af994f4d350c3bac540d451d3d7b49afc4d12bddd84220d9"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case024_delta_v1_r3r5/cohort/arms/p/logs/p_case024_delta_v1_r3/ROUTING_AUDIT.json",
+      "sha256": "89f32d22cacfa9e5fd928bd7923b985662d8e2dae06c2872360cee11c47d07a8"
+    },
+    "status": {
+      "path": "lean2paper_case024_delta_v1_r3r5/cohort/arms/p/logs/p_case024_delta_v1_r3/STATUS.json",
+      "sha256": "2a97286a516218f6b2a69f29792a96305558b0a56b9aa2d2428a0d7e84fe22fe"
+    },
+    "validation": {
+      "path": "lean2paper_case024_delta_v1_r3r5/cohort/arms/p/results/p_case024_delta_v1_r3/VALIDATION.json",
+      "sha256": "51c5b45c0a1515364846a46e5764db99a0fc080e3c855f0b11c16edbd0880b26"
+    }
+  },
+  "task": "case024"
+}

@@ -1,0 +1,13 @@
+import Stage3Model
+import Mathlib.Order.OrderIsoNat
+#check Set.Infinite.diff
+#check Set.Infinite.nonempty
+#check Nat.sInf_mem
+#check Nat.sInf_def
+#check Set.Finite.toFinite
+#check Set.infinite_range_of_injective
+#check Finset.finite_toSet
+#check Finset.coe_union
+#check Set.Finite.union
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset

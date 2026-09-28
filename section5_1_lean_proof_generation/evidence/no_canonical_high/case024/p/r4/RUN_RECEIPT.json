@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case024_nocanonical_v1_r4",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case024_nocanonical_v1_r4",
+  "final_output_files": 6,
+  "formal_run_id": "p_case024_nocanonical_v1_r4",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 21963153,
+      "path": "lean2paper_case024_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case024_nocanonical_v1_r4/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "add0de236222e37198c99146a6c21177fde25ef099b1ec71399ac39add12d2b5"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 4,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case024/p/r4/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case024/p/r4/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case024/p/r4/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 6,
+  "source_bundle": "lean2paper_case024_nocanonical_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case024_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case024_nocanonical_v1_r4/proxy_requests.jsonl",
+      "sha256": "2583924ad55fc944627e891aded6607ff120ba74716adae58d6c86a62dcfa011"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case024_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case024_nocanonical_v1_r4/ROUTING_AUDIT.json",
+      "sha256": "d15036a345986e16798dc4ce1ef96dbdf4b4c588f8bd2a4944aba8fd24c728eb"
+    },
+    "status": {
+      "path": "lean2paper_case024_nocanonical_v1_r3r5/cohort/arms/p/logs/p_case024_nocanonical_v1_r4/STATUS.json",
+      "sha256": "9743d9a088e05222bc3530e59430558a081949e2f99357847b00b3d65d25f95f"
+    },
+    "validation": {
+      "path": "lean2paper_case024_nocanonical_v1_r3r5/cohort/arms/p/results/p_case024_nocanonical_v1_r4/VALIDATION.json",
+      "sha256": "061e722eb0faf040560a2818d8629ff4034651ecbe246c860cc93c074b5b8d20"
+    }
+  },
+  "task": "case024"
+}

@@ -1,0 +1,56 @@
+{
+  "author_exit_code": -9,
+  "author_state": "TIMEOUT",
+  "category": "AUTHOR_TIMEOUT",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "axioms": {
+      "controller_exact_target": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "stage3_result": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "checker_exit": 2,
+    "checkpoint": "final",
+    "elapsed_seconds": 5400.014571,
+    "entry_compile_exit": 0,
+    "exact_target_compile_exit": 0,
+    "inadmissible_axioms": {
+      "controller_exact_target": [
+        "sorryAx"
+      ],
+      "stage3_result": [
+        "sorryAx"
+      ]
+    },
+    "inventory_analysis_exit": 0,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "prohibited_mechanisms": [],
+    "root_source_hashes": {
+      "Case025Formalization.lean": "f9c5200d7b4c0f48b726c73c267fafea9e14c9cb3e5a186deaf882e98418a723"
+    },
+    "source_hashes": {
+      "Api.lean": "133056b036fe881d912310b2764180840be7493f66771b7b15592a7012c10a38",
+      "ApiProbe.lean": "32df83e9e0502480ecc78921239f522006dac4c940be7c6ca0344bd6f14bc9ae",
+      "Case025Formalization.lean": "f9c5200d7b4c0f48b726c73c267fafea9e14c9cb3e5a186deaf882e98418a723",
+      "Explore.lean": "4422b0c0e8e5e1618472f04bdefa2c89b2c3ea1023c74514701ec94b685b5b7b",
+      "Probe.lean": "97f10b7feebc0f2830647ac3df588a8c763be5853316ccf25ccc259c2467194f",
+      "RecProbe.lean": "aaed46aae616dfc3707cbfeeed2ca1ad8b456c98e8abce2ad119542628368c74",
+      "RecProbe2.lean": "5d1f84e5952c3df7ea96c1303c9ea7cc8fae12c1428384155a96c479a9a491ed"
+    },
+    "sources_unchanged_during_check": true,
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

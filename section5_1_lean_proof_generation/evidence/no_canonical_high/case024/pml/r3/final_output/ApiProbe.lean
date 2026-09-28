@@ -1,0 +1,13 @@
+import Case024Helpers
+#check Set.ssubset_def
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_not_subset
+#check Set.ssubset_of_subset_of_ssubset
+#check Finset.mem_image
+#check integral_const
+#check integral_mono_ae
+#check ae_eq_of_ae_eq_of_subset
+#check Fin.last
+#check Fin.last_val
+#check Set.Finite.infinite_compl
+#check Set.infinite_univ

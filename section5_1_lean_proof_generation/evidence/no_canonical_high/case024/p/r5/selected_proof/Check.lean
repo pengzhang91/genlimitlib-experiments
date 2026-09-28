@@ -1,0 +1,20 @@
+import Stage3Model
+open Filter
+open scoped Topology
+#check Filter.limsup_le_iff
+#check Filter.limsup_le_iff'
+#check Filter.limsup_le
+#check Filter.le_limsup
+#check Filter.limsup_le_of_le
+#check Filter.limsup_mono
+#check Filter.limsup_const
+#check Filter.Tendsto.limsup_eq
+#check Filter.Eventually.limsup_le
+#check Filter.isCobounded_le
+#check bddAbove_def
+#check MeasureTheory.integral_const
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integrable_const
+#check MeasureTheory.Integrable.const
+#check integral_const
+#check measureReal_univ_eq_one

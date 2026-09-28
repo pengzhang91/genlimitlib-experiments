@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case017_nocanonical_reasoning_medium_v1_r3",
+  "condition": "no_canonical_medium",
+  "evidence_directory_run_id": "p_case017_nocanonical_reasoning_medium_v1_r3",
+  "final_output_files": 15,
+  "formal_run_id": "p_case017_nocanonical_reasoning_medium_v1_r3",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 11549665,
+      "path": "lean2paper_case017_nocanonical_reasoning_medium_v1/cohort/arms/p/logs/p_case017_nocanonical_reasoning_medium_v1_r3/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "5398d70f810faec454e4ce963996f6577b75c4996931608ccaa9a04fbb9f0e19"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 3,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_medium/case017/p/r3/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_medium/case017/p/r3/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_medium/case017/p/r3/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 15,
+  "source_bundle": "lean2paper_case017_nocanonical_reasoning_medium_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_nocanonical_reasoning_medium_v1/cohort/arms/p/logs/p_case017_nocanonical_reasoning_medium_v1_r3/proxy_requests.jsonl",
+      "sha256": "7fd7583db0823c62c75121e5291ff6936708b0951eeb874be29d72854cb0d3ee"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_nocanonical_reasoning_medium_v1/cohort/arms/p/logs/p_case017_nocanonical_reasoning_medium_v1_r3/ROUTING_AUDIT.json",
+      "sha256": "2f9cbeed81e568a08f12a41dafc7121ce31528c7566dba61500766e6dc83d779"
+    },
+    "status": {
+      "path": "lean2paper_case017_nocanonical_reasoning_medium_v1/cohort/arms/p/logs/p_case017_nocanonical_reasoning_medium_v1_r3/STATUS.json",
+      "sha256": "601d5162df48b37794ca21c5c5ccd496646c8a8fe4e2ab8abd1c134971c95091"
+    },
+    "validation": {
+      "path": "lean2paper_case017_nocanonical_reasoning_medium_v1/cohort/arms/p/results/p_case017_nocanonical_reasoning_medium_v1_r3/VALIDATION.json",
+      "sha256": "836578626f073de6d9a34f5d1aab36537ecede57feae7dcc901777b03456618d"
+    }
+  },
+  "task": "case017"
+}

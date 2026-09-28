@@ -1,0 +1,14 @@
+{
+  "api_cost_usd": 1.6953313999999997,
+  "api_cost_usd_to_first_valid": 1.6144674999999997,
+  "cache_write_input_tokens": 236768,
+  "cached_input_tokens": 3439297,
+  "calls_to_first_valid": 67,
+  "input_tokens": 3680896,
+  "model_calls": 72,
+  "non_reasoning_output_tokens": 25980,
+  "output_tokens": 40589,
+  "reasoning_output_tokens": 14609,
+  "schema_version": 1,
+  "seconds_to_first_valid": 1350.6396119617857
+}

@@ -1,0 +1,13 @@
+import Stage3Model
+#check Set.Finite.of_finite_image
+#check Set.Finite.of_finite_image_iff
+#check Set.Finite.image
+#check Set.Finite.preimage
+#check Set.Finite.exists_nat_gt
+#check Set.Finite.bddAbove
+#check bddAbove_def
+#check Set.Finite.isBounded_under_le
+#check Set.Finite.isBoundedUnder_le
+#check Set.Finite.isBoundedUnder
+#check Set.Finite.eventually_not_mem
+#check Set.Finite.eventually_atTop_not_mem

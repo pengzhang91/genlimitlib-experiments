@@ -1,0 +1,12 @@
+import Stage3Model
+import Mathlib.Tactic
+open Filter
+#check Filter.Tendsto.eventually_lt_const
+#check Filter.Tendsto.const_lt_eventually
+#check Filter.Tendsto.eventually_lt_const_iff
+#check Metric.tendsto_atTop
+#check tendsto_order
+#check eventually_lt_nhds
+#check eventually_abs_lt
+#check Filter.Tendsto.eventually
+#check half_pos

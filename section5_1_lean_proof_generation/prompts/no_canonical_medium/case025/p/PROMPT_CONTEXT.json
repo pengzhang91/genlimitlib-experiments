@@ -1,0 +1,39 @@
+{
+  "arm": "P",
+  "condition": "no_canonical_medium",
+  "formal_runs": [
+    "p_case025_nocanonical_reasoning_medium_v1_r1",
+    "p_case025_nocanonical_reasoning_medium_v1_r2",
+    "p_case025_nocanonical_reasoning_medium_v1_r3",
+    "p_case025_nocanonical_reasoning_medium_v1_r4",
+    "p_case025_nocanonical_reasoning_medium_v1_r5"
+  ],
+  "model": "openai/gpt-5.6-sol",
+  "prompt_file_source_sha256": {
+    "AGENTS.md": "6fb87dcc51c63ab5e61c031eabfc9f1cb15152da8c98ddba1f58f14306917015",
+    "control/AUTHOR_PROMPT.txt": "fa4f2abb340971f7e17c6662e90f69e5e9ca0e6cd5160de4d7ab9646359380f8",
+    "design/AGENTS.md": "432c33dfaafd22b7b60d504b9a9c9681ca591b617c2d951a267df1a85eba8087",
+    "design/LEAN_CHECK.md": "f5194aa746265d73cf851793ed0e63519cd829cf6514a491aa0266d34102f713",
+    "design/SOURCE_CONFIG.md": "4c19b8351a6ea5bcabef46300f620bf77d4aee1398df5c63b09ea1774b0bd1ff",
+    "design/Stage3Model.lean": "9a7dd2e287a98f9d3eddfbb3b286eba7ff4aed9acad8307f0c3a34a2af44e941",
+    "design/TASK_STAGE3.md": "cdeff7afaff988ffb70ecd63d4336015a14d8b06640886e636e1945c2e45fb5f",
+    "design/THEOREM_STATEMENT.md": "f6fbd3a4da024728dd7c631cfb0731df760eda359b089e0711c3b733109e16cd",
+    "design/TargetTemplate.lean": "cb8ad032216bdc23e9da0a8865e11d3a29c8c85998b19fcbeee67ead44a16a79",
+    "review_design/AGENTS.md": "2b3561f9b21d93b50345b3ed651753722659ade9dfbae4a561c72beb13acdf55",
+    "review_design/OBLIGATIONS.md": "3694d8e238a763af9d0b429148950f3f19c97934242468240f8db61a0437159f",
+    "review_design/REVIEW_TASK.md": "690352c7997fe638185ec2d5b792a008f3c4f1de03a00ceb2125e8782ccaffdb"
+  },
+  "provider_pin": {
+    "allow_fallbacks": false,
+    "only": [
+      "openai"
+    ]
+  },
+  "reasoning_effort": "medium",
+  "seconds_per_run": 5400,
+  "source_bundles": [
+    "lean2paper_case025_nocanonical_reasoning_medium_v1"
+  ],
+  "task": "case025",
+  "transport": "openrouter-via-local-pinning-proxy"
+}

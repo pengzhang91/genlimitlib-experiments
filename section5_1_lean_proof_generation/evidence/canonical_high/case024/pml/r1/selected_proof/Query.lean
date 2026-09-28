@@ -1,0 +1,9 @@
+import Stage3Model
+#check MeasureTheory.integral_mono_ae
+#check MeasureTheory.integral_eq_zero_of_ae
+#check MeasureTheory.integrable_const
+#check MeasureTheory.integral_const
+#check MeasureTheory.measureReal_univ_eq_one
+#check Set.infinite_univ
+#check Set.Infinite.mono
+#check Set.ssubset_iff_subset_ne

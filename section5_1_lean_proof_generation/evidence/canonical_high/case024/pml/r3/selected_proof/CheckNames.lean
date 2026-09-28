@@ -1,0 +1,11 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+import Mathlib.Tactic
+#check Nat.mul_self_inj
+#check Nat.pow_left_injective
+#check Set.disjoint_compl_right_iff_subset
+#check Set.disjoint_compl_left
+#check Set.disjoint_compl_right
+#check Set.disjoint_compl_left_iff_subset
+#check GenLimit.mem_sample_iff
+#print GenLimit.mem_sample_iff

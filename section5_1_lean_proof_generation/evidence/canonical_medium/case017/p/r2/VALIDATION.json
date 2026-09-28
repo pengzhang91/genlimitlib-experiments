@@ -1,0 +1,67 @@
+{
+  "author_lean_size": {
+    "bytes": 24097,
+    "files": 4,
+    "lines": 629,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0.016911162063479424,
+    "elapsed_seconds": 5400.016911,
+    "exit_code": -9,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 166,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 166
+      },
+      "total_upstream_usd": 2.7574182999999985,
+      "unverifiable": 0
+    },
+    "run_id": "p_case017_reasoning_medium_v1_r2",
+    "state": "TIMEOUT"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": false
+    }
+  },
+  "checkpoints": [
+    {
+      "checkpoint": "final",
+      "elapsed_seconds": 5400.016911,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "reason": "missing root or unstable snapshot",
+      "source_hashes": {
+        "Helpers.lean": "e06b1ec345c4bc2da89af9ab24a29342d702cfff4c7cd7293b6abc430c0b08d0",
+        "Minimal.lean": "00170938866271d15dce03d820ad06b9136128921ca6000234e2378c6a5ded55",
+        "Query.lean": "beb8b6db404b5822d6f83d5548506991f2672ef0de5ade07a7117c859ee5d6e0",
+        "Test.lean": "8b87e6b67ae9a9a9f2c6a64436ff3525724158193f8ab05a3cadb58f85820f51"
+      },
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": []
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "p_case017_reasoning_medium_v1_r2",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

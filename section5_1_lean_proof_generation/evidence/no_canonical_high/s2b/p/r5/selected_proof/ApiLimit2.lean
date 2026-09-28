@@ -1,0 +1,21 @@
+import TraceTest
+open Set Filter Asymptotics
+#check Filter.tendsto_atTop.2
+#check tendsto_atTop_mono
+#check tendsto_atTop_mono'
+#check Filter.Tendsto.mono_left
+#check Filter.Tendsto.mono_right
+#check Filter.Tendsto.add_const
+#check Filter.Tendsto.const_add
+#check Filter.Tendsto.const_mul_atTop
+#check Filter.Tendsto.atTop_mul_const
+#check Filter.Tendsto.div
+#check Filter.Tendsto.mul
+#check Filter.Tendsto.const_mul
+#check Real.logb
+#check Real.logb_pos
+#check Real.log_nonneg
+#check eventually_ne_atTop
+#check Filter.Eventually.of_forall
+#check Nat.cast_add
+#check Nat.cast_mul

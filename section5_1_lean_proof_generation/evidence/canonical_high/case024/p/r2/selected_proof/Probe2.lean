@@ -1,0 +1,12 @@
+import Stage3Model
+import Mathlib
+open Filter
+#check Nat.lt_succ_sqrt
+#check Nat.lt_succ_sqrt'
+#check Nat.sqrt_lt
+#check Nat.le_sqrt
+#check Nat.le_sqrt'
+#check tendsto_atTop.2
+#check squeeze_zero'
+#check squeeze_zero
+#check tendsto_const_div_atTop_nhds_zero_nat

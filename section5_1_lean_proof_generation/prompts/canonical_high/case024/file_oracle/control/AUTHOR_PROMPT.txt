@@ -1,0 +1,7 @@
+Read AGENTS.md, SOURCE_CONFIG.md, TASK_STAGE3.md, THEOREM_STATEMENT.md,
+CANONICAL_FULL_PROOF.md, and Stage3Model.lean. Consult any additional supplied
+source material, TargetTemplate.lean, and LEAN_CHECK.md selectively.
+Implement the exact stage3_result : Stage3Case024.MainClaim, adding local helpers
+as needed. Check complete entry-point versions before optional refactoring.
+Leave the final Lean source and a brief STATUS.md. You have 90 minutes including
+tools and compilation. Work autonomously and do not ask questions.

@@ -1,0 +1,9 @@
+import output.SeparationProof
+#check Set.Countable.mono
+#check Set.Countable.range
+#check Set.countable_range
+#check Set.countable_range_iff
+#check Function.Injective.countable_iff
+#check Countable.of_injective
+#check Set.toFinite
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower

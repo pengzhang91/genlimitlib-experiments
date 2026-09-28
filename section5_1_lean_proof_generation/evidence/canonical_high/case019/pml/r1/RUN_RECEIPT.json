@@ -1,0 +1,36 @@
+{
+  "arm": "PML",
+  "attempt_id": "pml_case019_delta_v1_r1",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "pml_case019_delta_v1_r1",
+  "final_output_files": 10,
+  "formal_run_id": "pml_case019_delta_v1_r1",
+  "lean_success": false,
+  "original_validation_primary_success": false,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 1,
+  "schema_version": 1,
+  "selected_checkpoint": null,
+  "selected_checkpoint_metadata": [],
+  "selected_proof_files": 0,
+  "source_bundle": "lean2paper_case019_delta_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case019_delta_v1/cohort/arms/pml/logs/pml_case019_delta_v1_r1/proxy_requests.jsonl",
+      "sha256": "e422b82ee9675a691483bc3635cfc292d1cd692d09611c393cbcf7f0be6655e0"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case019_delta_v1/cohort/arms/pml/logs/pml_case019_delta_v1_r1/ROUTING_AUDIT.json",
+      "sha256": "704c14ef0dba5094ee968e99265f12c22b72e8ab810b2cede87e0d2a861510c5"
+    },
+    "status": {
+      "path": "lean2paper_case019_delta_v1/cohort/arms/pml/logs/pml_case019_delta_v1_r1/STATUS.json",
+      "sha256": "45b8d35b7477225a6b094b56b5cc36a8c6f88be89845bd062fdaba630f367806"
+    },
+    "validation": {
+      "path": "lean2paper_case019_delta_v1/cohort/arms/pml/results/pml_case019_delta_v1_r1/VALIDATION.json",
+      "sha256": "e21db5c678914b0ae1e0ec722eb7f964adec399cbefd4b38238daf52ee89c906"
+    }
+  },
+  "task": "case019"
+}

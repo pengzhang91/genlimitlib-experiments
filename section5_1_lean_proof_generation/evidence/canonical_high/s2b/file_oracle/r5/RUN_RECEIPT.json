@@ -1,0 +1,48 @@
+{
+  "arm": "PML-FileOracle",
+  "attempt_id": "file_oracle_delta_v1_r5",
+  "condition": "canonical_high",
+  "evidence_directory_run_id": "file_oracle_delta_v1_r5",
+  "final_output_files": 5,
+  "formal_run_id": "file_oracle_delta_v1_r5",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 14896152,
+      "path": "lean2paper_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_delta_v1_r5/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "e313cde103d02dbf7dcc6e88e12ac4e8233362d82144d68a3f93477e9edf85bc"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 5,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/canonical_high/s2b/file_oracle/r5/selected_checkpoint/CAPTURE.json",
+    "evidence/canonical_high/s2b/file_oracle/r5/selected_checkpoint/LEAN_ENV.json",
+    "evidence/canonical_high/s2b/file_oracle/r5/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 11,
+  "source_bundle": "lean2paper_delta_v1_r3r5",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_delta_v1_r5/proxy_requests.jsonl",
+      "sha256": "54b6cc327c9ffab2866e55bab08e74dee9e1bc5371a8d0406ad12472c3ab3edf"
+    },
+    "routing_audit": {
+      "path": "lean2paper_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_delta_v1_r5/ROUTING_AUDIT.json",
+      "sha256": "5ecf9c1408c2b4cadacd1aeb086155f3531803285cdc652cb03b1072327d53cb"
+    },
+    "status": {
+      "path": "lean2paper_delta_v1_r3r5/cohort/arms/file_oracle/logs/file_oracle_delta_v1_r5/STATUS.json",
+      "sha256": "acbce2dc36a1f01947f33e6830e23adb6a31fa6459b8c2e98c94f399ef0c373c"
+    },
+    "validation": {
+      "path": "lean2paper_delta_v1_r3r5/cohort/arms/file_oracle/results/file_oracle_delta_v1_r5/VALIDATION.json",
+      "sha256": "3b48c20a954a52b2576604a18f2e46dd96d6585a1c8055f89c2d5d97d03d7307"
+    }
+  },
+  "task": "s2b"
+}

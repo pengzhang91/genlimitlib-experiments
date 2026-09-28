@@ -1,0 +1,10 @@
+import Stage3Model
+import Mathlib.Combinatorics.Colex
+import Mathlib.Data.Nat.Pairing
+#check Finset.equivBitIndices
+#check Set.Finite.toFinset
+#check Set.Finite.coe_toFinset
+#check Set.coe_toFinite
+#check Set.infinite_union
+#check Set.Infinite.mono
+#check Nat.unpair_pair

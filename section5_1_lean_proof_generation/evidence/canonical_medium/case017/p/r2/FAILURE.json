@@ -1,0 +1,23 @@
+{
+  "author_exit_code": -9,
+  "author_state": "TIMEOUT",
+  "category": "AUTHOR_TIMEOUT",
+  "final_artifact_kernel_pass": false,
+  "final_checkpoint_diagnostics": {
+    "checkpoint": "final",
+    "elapsed_seconds": 5400.016911,
+    "kind": "final_artifact",
+    "matches_logged_gate": false,
+    "reason": "missing root or unstable snapshot",
+    "source_hashes": {
+      "Helpers.lean": "e06b1ec345c4bc2da89af9ab24a29342d702cfff4c7cd7293b6abc430c0b08d0",
+      "Minimal.lean": "00170938866271d15dce03d820ad06b9136128921ca6000234e2378c6a5ded55",
+      "Query.lean": "beb8b6db404b5822d6f83d5548506991f2672ef0de5ade07a7117c859ee5d6e0",
+      "Test.lean": "8b87e6b67ae9a9a9f2c6a64436ff3525724158193f8ab05a3cadb58f85820f51"
+    },
+    "stable_capture": true,
+    "target_kernel_pass": false
+  },
+  "selected_checkpoint": null,
+  "target_kernel_pass": false
+}

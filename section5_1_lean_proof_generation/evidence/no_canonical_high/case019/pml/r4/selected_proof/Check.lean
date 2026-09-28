@@ -1,0 +1,36 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper39_DenseGeneration.Partial.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+import GenLimit.Paper02_LearningTheory.Common.FiniteHistory
+open Set Filter
+open scoped Topology
+#check Filter.map_mono
+#check Filter.liminf_le_liminf
+#check Filter.le_liminf_iff
+#check Filter.isCoboundedUnder_ge_of_le
+#check Filter.isBoundedUnder_of
+#check Filter.map_div_atTop_eq_nat
+#check Filter.tendsto_sub_atTop_nat
+#check Filter.Eventually.filter_mono
+#check Nat.cast_div_le
+#check Nat.div_mul_le_self
+#check Nat.div_add_mod
+#check tendsto_one_div_atTop_nhds_zero_nat
+#check tendsto_of_tendsto_of_tendsto_of_le_of_le'
+#check GenLimit.PatientScope.prefixFinset
+#check Finset.card_filter_le
+#check Finset.card_le_card_of_injOn
+#check Finset.card_le_card_of_injOn
+#check Finset.card_image_iff
+#check Finset.card_image_of_injective
+#check Finset.card_image_le
+#check Finset.image_subset_iff
+#check Set.Finite.infinite_compl
+#check Set.infinite_of_compl_finite
+#check Set.Finite.compl
+#check Set.infinite_univ
+#check GenLimit.PartialEnumeration.section_3_3_generation_and_lowerDensity
+#check GenLimit.NoiseLossFeedback.allMarkers_eventually_observed

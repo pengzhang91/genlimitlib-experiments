@@ -1,0 +1,9 @@
+import Helpers
+open Filter
+#check IsBounded.isCobounded_ge
+#check IsBounded.isCobounded_le
+#check IsBoundedUnder.isCobounded_flip
+#check isCoboundedUnder_of_le
+#check isCoboundedUnder_of_ge
+#check isBoundedUnder_of_eventually_ge
+#check isBoundedUnder_of_eventually_le

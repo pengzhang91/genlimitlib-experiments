@@ -1,0 +1,8 @@
+import Stage3Model
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+import Mathlib.Tactic
+#check Nat.mul_self_inj
+#check sq_inj
+#check Set.infinite_range_of_injective
+#check GenLimit.InfiniteContamination.sparseBetweenSquares_nonsquare
+#check GenLimit.InfiniteContamination.sparseNonSquare_infinite

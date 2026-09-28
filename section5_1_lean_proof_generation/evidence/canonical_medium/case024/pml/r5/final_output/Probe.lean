@@ -1,0 +1,15 @@
+import Case024Helpers
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_ne
+#check Finset.le_sup
+#check Finset.le_sup_of_mem
+#check Finset.sup_le
+#check Finset.sup'_le_iff
+#check Fin.last
+#check Fin.castSucc
+#check Finset.univ
+#check Nat.mul_lt_mul
+#check Nat.mul_lt_mul_left
+#check Set.Finite.image
+#check Set.finite_Iio
+#check Function.Injective.infinite_iff

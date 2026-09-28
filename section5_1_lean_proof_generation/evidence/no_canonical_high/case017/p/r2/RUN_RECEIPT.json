@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case017_nocanonical_v1_r2",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case017_nocanonical_v1_r2",
+  "final_output_files": 4,
+  "formal_run_id": "p_case017_nocanonical_v1_r2",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 9512589,
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r2/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "d2dc19e8f23d844e28697dd99f14b2b947f23319a7498acf2096a939b9701fc2"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 2,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case017/p/r2/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case017/p/r2/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case017/p/r2/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 5,
+  "source_bundle": "lean2paper_case017_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r2/proxy_requests.jsonl",
+      "sha256": "aadbec81d2a8eec59f5963de92cd08788b83c2670cc9b1c6a7a8a2ec90105b86"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r2/ROUTING_AUDIT.json",
+      "sha256": "4e284b12668d7143ba7c2fbe37193556e509dc7bad986a3de27f7b6ce74bcede"
+    },
+    "status": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r2/STATUS.json",
+      "sha256": "54dd3d0064f1e7f098a5f3afbbc71fabe955918b7a425815f953d18c0b2257ec"
+    },
+    "validation": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/results/p_case017_nocanonical_v1_r2/VALIDATION.json",
+      "sha256": "decfe1000da167e3684301480cc644057c5c8d904699806111e95daf4279932b"
+    }
+  },
+  "task": "case017"
+}

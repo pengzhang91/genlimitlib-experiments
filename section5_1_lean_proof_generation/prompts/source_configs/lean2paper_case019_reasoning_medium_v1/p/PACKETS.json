@@ -1,0 +1,32 @@
+{
+  "p_case019_reasoning_medium_v1_r1": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T04:24:32.679476+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_reasoning_medium_v1_r2": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T04:24:32.679525+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_reasoning_medium_v1_r3": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T04:24:32.679529+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_reasoning_medium_v1_r4": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T04:24:32.679532+00:00",
+    "source_template": "templates/p/packet"
+  },
+  "p_case019_reasoning_medium_v1_r5": {
+    "author_output_empty": true,
+    "condition": "P",
+    "created_utc": "2026-09-23T04:24:32.679534+00:00",
+    "source_template": "templates/p/packet"
+  }
+}

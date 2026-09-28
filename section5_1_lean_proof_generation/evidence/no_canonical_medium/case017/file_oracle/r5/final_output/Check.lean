@@ -1,0 +1,3 @@
+import Stage3Model
+#check Finset.filter_card_add_filter_neg_card_eq_card
+#print Finset.filter_card_add_filter_neg_card_eq_card

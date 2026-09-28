@@ -1,0 +1,12 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+#check Countable.exists_surjective
+#check Function.Surjective
+#check Encodable.ofCountable
+#check Nat.PartENat
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check Set.Countable.to_subtype
+#check Set.Countable.range
+#check Filter.liminf_le_liminf
+#check Filter.Tendsto.liminf_eq

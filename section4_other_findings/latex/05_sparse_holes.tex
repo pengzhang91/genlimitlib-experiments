@@ -1,0 +1,153 @@
+\section{Sparse holes and the limits of randomization}
+\label{sh:chapter}
+\subsection{Motivation and source papers}
+An error rate that tends to zero can look like successful learning. Generation in the limit asks for more: after some finite time, every realized output must be valid and fresh. This chapter separates those objectives even for targets that contain almost every natural number, and identifies additional information that makes randomization useful.
+
+The main starting point is the randomized diagonalization of \citet{P10}, which supplies a quantile-cutoff idea. The present construction combines that idea with independently chosen residue classes to make the \emph{missing} points sparse: their consecutive gaps tend to infinity. For every prescribed randomized no-feedback generator, it produces a fixed dense target and a fixed increasing presentation on which the generator makes infinitely many errors almost surely.
+
+Nevertheless, a single generator attains vanishing roundwise error probability and almost-sure zero temporal error frequency for every density-one target and each fixed positive input stream. A further positive result uses a known nondecreasing, unbounded, sublinear sparsity envelope to make the error probabilities summable. Under that common envelope, randomization permits almost-sure eventual correctness even though deterministic generation on all full presentations remains impossible.
+
+All three results concern no-feedback generators and realized outputs. The density promise concerns omitted ambient points, while the error frequency concerns rounds. These differ from density objectives for the set of valid strings generated \citep{P07,P23}.
+
+\subsection{Model and target geometry}
+Here a randomized no-feedback generator is a family of measurable maps $g(h,\omega)\in\N$, indexed by finite positive histories $h$, on a fixed random-tape probability space $(\Omega,\Pr)$. Arbitrary dependence between rounds through that tape is allowed. An error means failure of target membership or novelty relative to the observed sample. All probability-one eventual statements refer to realized outputs, without the additional group-representation requirements of \citet{P09}.
+
+Call an infinite set $D=\{d_1<d_2<\cdots\}$ \emph{thin} here if $d_{j+1}-d_j\to\infty$. It has upper Banach density zero:
+\[
+\lim_{n\to\infty}\sup_{m\ge0}\frac{|D\cap[m,m+n)|}{n}=0.
+\]
+Indeed, beyond finitely many exceptional points each consecutive gap is at least any prescribed $q$, so every interval contains at most a fixed exceptional count plus $n/q+1$ points. Its complement consequently has one-sided lower Banach density one.
+
+\subsection{A fixed thin-complement target forces almost-sure infinitely many errors}
+
+\begin{theorem}\label{sh:element-diagonal}
+For every measurable randomized no-feedback element generator on $\N$, there exist an infinite thin set $D$ and the increasing exact presentation of $L=\N\setminus D$ such that the generator makes infinitely many errors with probability one. Both the target and its presentation are fixed before the random tape is realized.
+\end{theorem}
+\begin{proof}
+Introduce independent construction randomness $R_k$, uniform on $\{0,\ldots,k-1\}$ for $k\ge2$, independent also of the algorithm tape $\omega$. Initialize $B_1=0$ with no holes. Given the previous construction residues, put $M_k=B_{k-1}+k$ and extend the current history increasingly to enumerate every integer at most $M_k$ except holes already selected. Call this history $h_k$.
+
+Conditional on the previous residues, $h_k$ is a fixed finite history independent of $\omega$. Since $g(h_k,\omega)$ is natural-valued, choose the least integer $B_k\ge M_k+k$ satisfying
+\[
+\Pr_\omega\{g(h_k,\omega)>B_k\}\le2^{-k}.
+\]
+This cutoff depends on the generator's law and previous construction residues, but not on its realized tape. Reveal the independent residue $R_k$ and declare
+\[
+D_k=\{n:M_k<n\le B_k,\ n\equiv R_k\pmod k\}
+\]
+to be additional holes. Let $D=\bigcup_{k\ge2}D_k$.
+
+Every new hole is larger than every currently observed point. The histories are nested increasing lists and their union enumerates exactly $\N\setminus D$. Their lengths tend to infinity because $M_k>B_{k-1}$. Each $D_k$ is nonempty, since its defining interval has length at least $k$. Within $D_k$ the gaps equal $k$, and across successive hole blocks the gap is at least $k+1$. Since each block is finite, $D$ is infinite and thin for every realization of the construction randomness.
+
+Write $Y_k=g(h_k,\omega)$ and $E_k=\{Y_k\le B_k\}$. Independence of the past construction residues from $\omega$ gives
+\[
+\Pr_{\omega,R}(E_k^c)\le2^{-k}.
+\]
+Thus only finitely many $E_k$ fail jointly almost surely. Define an auxiliary event by requesting exactly one residue:
+\[
+Z_k=
+\begin{cases}
+\{R_k=Y_k\bmod k\},& M_k<Y_k\le B_k,\\
+\{R_k=0\},&\text{otherwise}.
+\end{cases}
+\]
+Conditional on the entire algorithm tape and the previous construction residues, the requested residue is fixed while $R_k$ remains uniform. Consequently
+\[
+\Pr(Z_k\mid\omega,R_2,\ldots,R_{k-1})=1/k.
+\]
+By iterated conditioning, for $2\le K\le N$,
+\[
+\Pr\left(\bigcap_{k=K}^N Z_k^c\right)
+=\prod_{k=K}^N(1-1/k)=\frac{K-1}{N}.
+\]
+Letting $N\to\infty$ and taking a countable union over $K$ proves that $Z_k$ occurs infinitely often almost surely. This does not assume that actual generator errors are independent.
+
+On $Z_k\cap E_k$, an actual error occurs at $h_k$. If $Y_k\le M_k$, it is either already observed or an old hole. If $M_k<Y_k\le B_k$, the matching residue makes it a new hole in $D_k$. Since $E_k$ eventually always holds, there are infinitely many actual errors jointly almost surely.
+
+Fubini's theorem now fixes one realization of all construction residues for which the error event has probability one over $\omega$. It gives a deterministic $D$ and a deterministic increasing exact target presentation, proving the assertion. All constructions are measurable: histories and least cutoffs are functions on the countable tree of finite residue prefixes, and membership of each integer is decided after finitely many increasing cutoffs.
+\end{proof}
+
+A bound on the generator's output tail, followed by a fresh independent residue, supplies the required probabilistic diagonalization. It is specifically a \emph{no-feedback} proof: with target-dependent external replies, the observed transcript could depend on the random tape and on later-selected holes, requiring a separate independence argument.
+
+\subsection{Vanishing error probability and frequency remain possible}
+
+\begin{theorem}\label{sh:vanishing-error}
+There is a randomized no-feedback generator that, for every density-one target and every fixed positive input stream, is always novel, has error probability tending to zero, and has almost-sure temporal error frequency zero.
+\end{theorem}
+\begin{proof}
+At positive history length $t$, independently choose a uniform point from
+\[
+A_t=\{0,\ldots,t^2\}\setminus S_t.
+\]
+This set is nonempty because $|S_t|\le t<t^2+1$, and novelty holds identically. At the empty history choose zero, also unseen. For $D=\N\setminus L$,
+\[
+p_t=\Pr\{g(h_t)\notin L\}
+\le\frac{|D\cap[0,t^2]|}{t^2+1-t}\longrightarrow0,
+\]
+since $D$ has density zero. No full-presentation promise is needed.
+
+For a fixed stream, the error indicators $X_t$ are independent. Put $Z_T=\sum_{t\le T}X_t$. We have $\operatorname{Var}(Z_T)\le T$, while $\mathbb E Z_T/T\to0$ by averaging the convergent sequence $(p_t)$. Chebyshev's inequality at $T=m^2$ gives
+\[
+ \Pr\{|Z_{m^2}-\mathbb E Z_{m^2}|>\delta m^2\}
+ \le\frac1{\delta^2m^2}.
+\]
+For each rational $\delta>0$ this bound is summable. Borel--Cantelli, followed by a countable intersection over these tolerances, gives $Z_{m^2}/m^2\to0$ almost surely. If $m^2\le T<(m+1)^2$, monotonicity gives
+\[
+ 0\le\frac{Z_T}{T}\le\frac{Z_{(m+1)^2}}{m^2}
+ =\frac{(m+1)^2}{m^2}\frac{Z_{(m+1)^2}}{(m+1)^2}.
+\]
+The right-hand side tends to zero, proving
+\[
+\frac1T\sum_{t\le T}X_t\longrightarrow0\quad\text{almost surely}.
+\]
+\end{proof}
+
+Apply Theorem~\ref{sh:element-diagonal} to this generator. On some fixed thin-complement target and its increasing presentation, it makes infinitely many errors almost surely, while their temporal frequency tends to zero almost surely and each round's error probability tends to zero. Thus even this strong geometric target promise does not turn vanishing error into almost-sure eventual correctness.
+
+\subsection{A known sparsity envelope separates randomized and deterministic generation}
+
+Fix a nondecreasing unbounded function $a:\N\to\N$ with $a(n)/n\to0$, and define
+\[
+\mathcal H_a=\{\N\setminus D:\forall n\ge1,\ |D\cap[0,n)|\le a(n)\}.
+\]
+For example, take $a(n)=\lceil\log_2(n+1)\rceil$. The envelope is known and common to the class; every target has density one.
+
+
+\begin{lemma}[Deterministic generation requires a countable inner cover]\label{sh:inner}
+Let $\mathcal H$ be any class of infinite subsets of $\N$. If one deterministic no-feedback generator eventually produces valid, previously unobserved points on every full presentation of every target, then there is a countable family $(A_i)$ of infinite subsets of $\N$ such that every $L\in\mathcal H$ contains at least one $A_i$.
+\end{lemma}
+\begin{proof}
+Fix a target $L$. There is a finite positive history $h$ such that the generator succeeds after every finite positive extension of $h$ inside $L$, including the empty extension. Otherwise, start from any finite history over $L$. At each stage, first append the next point of a fixed enumeration of $L$, and then append a finite positive extension at whose end the output is invalid or already observed. The bad extension may be empty, but the enumeration step ensures that the history length increases. The resulting full presentation has infinitely many errors, a contradiction.
+
+For every finite history $h$ over $\N$, run the following deterministic self-feeding process. Query the generator on $h$, append its output, query again, and continue appending the output as the next observation. This process and its range depend only on $h$ and the generator. Retain its range $A_h$ whenever that range is infinite. There are only countably many finite histories, so the retained family is countable. If $h$ is the locking history just constructed for $L$, induction shows that every appended output is in $L$ and outside all preceding observations. The process then has infinite range contained in $L$. Thus every target contains a retained $A_h$.
+\end{proof}
+
+\begin{theorem}[Strict deterministic/randomized separation]\label{sh:envelope-separation}
+The class $\mathcal H_a$ has no deterministic no-feedback limit element generator under the usual requirement of success on every full target presentation. Nevertheless it has a randomized no-feedback generator of globally infinite sets that, for each target, is almost surely eventually target-valid and fresh, simultaneously on every presentation of that target. For $T\ge1$, the probability of validity and freshness at all times $t\ge T$ is at least $1-2^{1-T}$, uniformly over targets. In particular, randomized eventual element generation succeeds on the class.
+\end{theorem}
+\begin{proof}
+For deterministic impossibility, let $A_i$ be any proposed sequence of infinite inner-cover sets. Revisit each index infinitely often. At stage $m\ge1$, choose a new increasing $d_m\in A_i$ so large that $a(d_m+1)\ge m$, using monotonicity and unboundedness of $a$. For $D=\{d_m:m\ge1\}$, if $[0,n)$ contains $m\ge1$ selected points then $n\ge d_m+1$, so $a(n)\ge m$; the zero-count case is automatic. Thus $D$ satisfies the envelope and intersects every $A_i$ infinitely. Its complement contains none. There is no countable inner cover, so Lemma~\ref{sh:inner} excludes deterministic generation. This necessity concerns all full presentations; the inner-cover argument alone does not establish an increasing-presentation-only lower bound.
+
+For the randomized positive result, choose disjoint intervals $I_j=[N_j,2N_j)$ with $N_j\ge1$ and
+\[
+\frac{a(2N_j)}{N_j}\le2^{-j},\qquad j\ge1.
+\]
+Such intervals exist because the ratio tends to zero; choose successive $N_j$ greater than twice their predecessors. Independently select one uniform point $Z_j\in I_j$. At positive history length $t$, emit
+\[
+Q_t=\{Z_j:j\ge t\}\setminus S_t.
+\]
+At the empty history output $\{Z_j:j\ge1\}$. The selected points are distinct, so $Q_t$ is infinite for every random tape and every finite history. Removing the sample makes it fresh, including at unrealizable histories.
+
+For each fixed target complement $D$ obeying the envelope,
+\[
+\Pr(Z_j\in D)\le\frac{a(2N_j)}{N_j}\le2^{-j}.
+\]
+With probability at least $1-\sum_{j\ge T}2^{-j}=1-2^{1-T}$, no selected point of index at least $T$ is a hole. On that event every $Q_t$ for $t\ge T$ lies in the target and is fresh, for every presentation simultaneously. Borel--Cantelli also gives eventual safety almost surely. Selecting the least element of each infinite $Q_t$ yields the element-valued conclusion.
+\end{proof}
+
+The probability-one set of successful tapes may depend on the target. A target chosen after observing the realized tape is a different adversarial model. The infinite output is a semantic random set, not a claim of a finite explicit list encoding. There is no contradiction with Theorem~\ref{sh:element-diagonal}: its diagonal holes need not satisfy any prescribed envelope. A common known density rate permits a summable error budget, whereas the class allowing all unknown rates does not.
+
+\subsection{Comparison of the guarantees}
+
+Appendix Proposition A.2 of \citet{P10} already proves randomized impossibility for the class of all infinite targets, with only finitely many correct outputs almost surely. Its quantile construction makes the target sparse. The new diagonal instead forces infinitely many errors on the complement of a thin set, using quantile bounds together with independent residues. This restricts the target geometry substantially while weakening the error conclusion appropriately; Theorem~\ref{sh:vanishing-error} shows why eventually-all errors cannot be forced for every generator within the density-one class. The refinement concerns the geometry of the admissible targets.
+
+The density objectives in \citet{P07,P23} concern the breadth of generated valid sets. Here, upper Banach density zero is a promise on the omitted ambient points, and the positive theorem controls temporal error frequency. The classes used in the impossibility and separation theorems are uncountable. Thus the conclusions do not contradict positive generation results for arbitrary countable language classes.

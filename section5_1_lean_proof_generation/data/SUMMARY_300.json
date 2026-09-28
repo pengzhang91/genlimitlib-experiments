@@ -1,0 +1,50 @@
+{
+  "conditions": {
+    "canonical_high": {
+      "api_cost_usd": 130.29568419999995,
+      "author_elapsed_seconds": 83258.91470900005,
+      "input_tokens": 270032181,
+      "lean_failures": 13,
+      "lean_successes": 62,
+      "model_calls": 4483,
+      "output_tokens": 2905973,
+      "reasoning_output_tokens": 932793,
+      "runs": 75
+    },
+    "canonical_medium": {
+      "api_cost_usd": 93.0074445,
+      "author_elapsed_seconds": 85586.04059599999,
+      "input_tokens": 232613129,
+      "lean_failures": 32,
+      "lean_successes": 43,
+      "model_calls": 3997,
+      "output_tokens": 1886695,
+      "reasoning_output_tokens": 512204,
+      "runs": 75
+    },
+    "no_canonical_high": {
+      "api_cost_usd": 122.40395930000005,
+      "author_elapsed_seconds": 90404.37297699999,
+      "input_tokens": 255703534,
+      "lean_failures": 15,
+      "lean_successes": 60,
+      "model_calls": 4366,
+      "output_tokens": 2798360,
+      "reasoning_output_tokens": 995949,
+      "runs": 75
+    },
+    "no_canonical_medium": {
+      "api_cost_usd": 85.67606220000002,
+      "author_elapsed_seconds": 56468.627703000006,
+      "input_tokens": 184362419,
+      "lean_failures": 32,
+      "lean_successes": 43,
+      "model_calls": 3262,
+      "output_tokens": 1994573,
+      "reasoning_output_tokens": 616945,
+      "runs": 75
+    }
+  },
+  "runs": 300,
+  "schema_version": 1
+}

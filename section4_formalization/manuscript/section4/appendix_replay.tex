@@ -1,0 +1,299 @@
+% Adapted from the existing proper-replay appendix and its archived written proof.
+% Written proof accompanied by the Section4.Replay Lean development.
+\subsection{Proper generation under replay}
+\label{app:replay}
+\newcommand{\replayset}[1]{\{#1\}}
+
+This subsection proves the three-language impossibility discussed in
+Section~\ref{sec:connections} and the finite-family characterization in
+Theorem~\ref{thm:proper-replay}. We first specify the replay model, then
+explain why the three-language construction prevents successful generation,
+and finally identify exactly when a finite family admits a successful
+learner. The model follows~\citet[][P22]{replay}; the three-language family
+comes from~\citet[][P31]{memory}. The Lean development verifies the transferred
+impossibility, both directions of the characterization, and the finite-state
+consequences proved below.
+
+\subsubsection{The replay model}
+
+Let $\mathcal H=(L_1,\ldots,L_N)$, with $N\ge1$, be a finite family of
+infinite subsets of a countable universe $U$, and let
+$X=\bigcup_{i=1}^N L_i$. Different indices may name the same language.
+The target is one fixed member $L_i$ of the family. At round $n\ge0$,
+the learner first receives a point $x_n\in X$ and then outputs an index
+$j_n\in[N]$. Thus a proper learner always proposes one of the languages
+in $\mathcal H$, although that language need not contain every point
+observed so far.
+
+A \emph{complete replay text} for target $L_i$ satisfies
+\begin{align}
+ x_n&\in L_i\cup\bigcup_{t<n}L_{j_t}
+       \qquad(n\ge0),\label{app:replay:eq:legal}\\
+ L_i&\subseteq\replayset{x_n:n\ge0}.\label{app:replay:eq:full}
+\end{align}
+The first condition allows each observation to come either from the target
+or from any language previously proposed by the learner. The second
+condition requires every target point eventually to appear. Observations
+may repeat, and there is no bound on how long the adversary may delay a
+particular target point. Because there is no earlier output at round zero,
+the first observation satisfies $x_0\in L_i$.
+
+The learner succeeds if $L_{j_n}\subseteq L_i$ for all sufficiently large
+$n$. It need not identify the target's index or output the whole target
+language. We initially allow any deterministic learner that uses its full
+input history. No computability restriction is imposed on the family or
+on the learner. The finite-state construction below will use only the
+membership profile of each observation, namely the set of languages that
+contain it.
+
+\subsubsection{The three-language impossibility}
+\label{app:replay:construction}
+
+The construction from the bounded-memory paper gives a useful first
+example of what replay can hide. After the first output, the same complete
+input stream can be legal for two targets that have no common allowable
+output. The argument applies to learners with full history.
+
+\begin{suppprop}[Three-language impossibility]
+\label{app:replay:prop:triangle}
+Let $T\subseteq U$ be infinite, and let $a_1,a_2,a_3\in U\setminus T$
+be distinct. The family $L_i=T\cup\replayset{a_s:s\ne i}$, for
+$i\in\{1,2,3\}$, does not admit deterministic proper generation in the
+limit with replay.
+\end{suppprop}
+
+\begin{proof}
+Suppose that a learner succeeds for this family. Give it a first point
+$x_0\in T$, and let its first output be $j$. Write $p$ and $q$ for the
+two indices different from $j$. Continue the input by enumerating every
+point of $S=T\cup\replayset{a_1,a_2,a_3}$.
+
+This is a complete legal replay text for either fixed target $L_p$ or
+fixed target $L_q$. Indeed, the first point belongs to both targets,
+and $S=L_p\cup L_j=L_q\cup L_j$. Every subsequent point is therefore
+either a target point or a point of the first output language $L_j$,
+which is already eligible for replay. The continuation also contains
+every point of each target. Legality uses only the first output; it
+places no restriction on the learner's later choices.
+
+The learner sees the same input history in the two cases, so it produces
+the same output sequence. If it succeeded for both targets, then after
+the larger of the two success times every output language would be
+contained in $L_p\cap L_q=T\cup\replayset{a_j}$. But every language in
+the family contains two of the three exceptional points, so none is
+contained in this intersection. This is a contradiction.
+\end{proof}
+
+\subsubsection{The finite-family characterization}
+
+The preceding proof identifies the relevant ambiguity: two targets can
+have the same union with the learner's first output language. Equivalently,
+they agree outside that language. We now formulate a condition requiring
+all targets that remain indistinguishable in this way to admit a common
+allowable output.
+
+For $x\in X$, define its membership profile by
+$\operatorname{prof}(x)=\replayset{i\in[N]:x\in L_i}$, and let
+$\mathcal P=\replayset{\operatorname{prof}(x):x\in X}$.
+Every $P\in\mathcal P$ is nonempty. If the first observation has profile
+$P$, precisely the indices in $P$ are possible targets at that point.
+For a proposed first output $j$, write
+$R_j(i)=L_i\setminus L_j$ for the part of target $L_i$ outside that
+output. For each $i\in P$, define
+\[
+ E_j(i;P)=\replayset{k\in P:R_j(k)=R_j(i)}.
+\]
+This is the group of possible targets having the same residual as $L_i$.
+The groups partition $P$. A common allowable output for such a group
+is an index $h\in[N]$ satisfying $L_h\subseteq L_k$ for every
+$k\in E_j(i;P)$. The language $L_h$ need not equal their intersection,
+and its index need not belong to the group.
+
+\begin{suppthm}[Exact finite characterization]
+\label{app:replay:thm:main}
+The family $\mathcal H$ admits deterministic proper generation in the
+limit with replay if and only if the following condition holds:
+for every $P\in\mathcal P$, there is an index $j\in[N]$ such that,
+for every $i\in P$, there is an index $h\in[N]$ with
+\[
+ L_h\subseteq\bigcap_{k\in E_j(i;P)}L_k.
+\]
+The index $j$ need not belong to $P$.
+\end{suppthm}
+
+\begin{proof}
+\emph{Necessity.}
+Fix a realized profile $P$ and choose a first point $x$ with this profile.
+Let $j$ be the first output of a learner that succeeds for every target
+and every complete legal replay text. Consider any group
+$E=E_j(i;P)$, and let $R$ denote the residual shared by its members.
+After $x$, supply an enumeration of $S=L_j\cup R$.
+
+For each $k\in E$, we have $x\in L_k$ and
+$S=L_j\cup L_k$. Consequently the continuation is legal for target
+$L_k$, because the first output permits replay from $L_j$, and it is
+complete because it enumerates all of $L_k$. These are different
+possible fixed targets for one and the same input sequence. The
+learner's outputs are therefore identical in all cases.
+
+By success on target $L_k$, all sufficiently late outputs must be
+contained in $L_k$. There are only finitely many indices in $E$, so
+we can take the largest of their success times. Every output after
+that time is a member of $\mathcal H$ contained in every $L_k$ with
+$k\in E$. At least one such output exists, giving the required index
+$h$. Since this argument applies to every group, the first output
+$j$ satisfies the condition for $P$.
+
+\emph{Sufficiency.}
+Assume the stated condition. For each realized profile $P$, fix an
+index $j(P)$ satisfying it. Also, for every nonempty set of indices
+$E\subseteq[N]$ for which a common allowable output exists, fix one
+such index $h(E)$. These choices are made once for the whole family.
+In particular, $h(E)$ depends only on $E$, not on the history by which
+the learner reaches that set.
+
+On receiving its first observation, the learner sets
+$P=\operatorname{prof}(x_0)$, outputs $j=j(P)$, and initializes the
+candidate set $C=P$. It keeps the index $j$ for the rest of the run.
+For every subsequent observation $x$, it proceeds as follows:
+\begin{enumerate}
+\item If $x\notin L_j$, replace $C$ by
+      $\replayset{k\in C:x\in L_k}$. If $x\in L_j$, leave $C$
+      unchanged.
+\item Examine the residuals $R_j(k)$ for $k\in C$. If one of them
+      is contained in every other surviving residual, let $R$ be
+      this least residual and let
+      $E=\replayset{k\in C:R_j(k)=R}$. Output $h(E)$.
+\item If there is no least residual, output $j$.
+\end{enumerate}
+On an empty candidate set the learner may output $j$; we will show
+that this case never occurs on a legal replay text.
+
+The distinction between a \emph{least} residual and an
+\emph{inclusion-minimal} residual is essential here. A least residual
+is contained in every surviving residual. An inclusion-minimal one
+merely has no strictly smaller survivor; other survivors may be
+incomparable with it. The proof needs containment in the true
+residual, so the rule uses a least residual and otherwise returns
+to $j$.
+
+We first justify that $h(E)$ in the rule is defined. Initially $C=P$.
+An update tests membership only at a point outside $L_j$. Two indices
+with equal residuals give the same answer to every such test. Thus
+an update either retains an entire original group $E_j(i;P)$ or
+removes the entire group. By induction, $C$ is always a union of
+these original groups. If a least surviving residual exists, its
+indices form one entire original group, for which the assumed
+condition provides a common allowable output.
+
+We next prove the property that makes the updates reliable. Fix the
+true target $i_*$. At every stage, the candidate set contains $i_*$,
+and every output language lies inside $L_j\cup L_{i_*}$. Both
+assertions hold initially: $x_0\in L_{i_*}$ gives $i_*\in P$, and
+the first output is $j$. Suppose they hold for all earlier outputs,
+and consider the next observation $x$. By replay legality, $x$
+belongs either to $L_{i_*}$ or to an earlier output language. Every
+such earlier language lies in $L_j\cup L_{i_*}$ by the induction
+hypothesis. Therefore, if $x\notin L_j$, necessarily
+$x\in L_{i_*}$. The update retains the true target, so $C$ stays
+nonempty.
+
+It remains to check the new output. Outputting $j$ preserves the
+claimed containment immediately. Otherwise the learner outputs
+$h(E)$ for a least residual $R$. Choose $k\in E$. Since
+$L_{h(E)}\subseteq L_k$ and the true target is still in $C$, we have
+\[
+ L_{h(E)}\setminus L_j
+ \subseteq L_k\setminus L_j
+ =R
+ \subseteq L_{i_*}\setminus L_j.
+\]
+Hence $L_{h(E)}\subseteq L_j\cup L_{i_*}$, as required. This
+completes the induction. In particular, the construction satisfies
+\begin{equation}
+ L_{j_n}\setminus L_{i_*}\subseteq L_j
+       \qquad(n\ge0).\label{app:replay:eq:contain}
+\end{equation}
+Thus any point outside the target that an output makes available for
+replay was already available from the first output. The proof
+establishes that later observations outside $L_j$ are trustworthy;
+it does not assume this when defining the candidate updates.
+
+Finally, we prove convergence. For every initial candidate $k\in P$
+such that $R_j(i_*)\nsubseteq R_j(k)$, choose a point
+$w_k\in R_j(i_*)\setminus R_j(k)$. This point belongs to the true
+target and lies outside $L_j$, but does not belong to $L_k$.
+Completeness guarantees that it eventually appears, at which point
+$k$ is removed if it has not been removed already. There are only
+finitely many initial candidates, so there is a time after all these
+witnesses have appeared. From then on, every surviving residual
+contains $R_j(i_*)$. Since $i_*$ survives, its residual is a least
+surviving residual.
+
+Moreover, every initial candidate with residual equal to
+$R_j(i_*)$ survives forever: each observation used for an update is
+a true-target point outside $L_j$, and hence belongs to every one
+of these equal residuals. The group selected by the learner from
+that time onward is therefore the fixed set $E_j(i_*;P)$. Its
+chosen output $h(E_j(i_*;P))$ is contained in $L_{i_*}$, because
+$i_*$ is a member of the group. The learner stabilizes to this
+correct index, proving sufficiency.
+\end{proof}
+
+The proof also gives quantitative information about the learner and
+shows that outputs can be restricted to inclusion-minimal languages
+in the family. We state these consequences separately to distinguish
+them from the existence criterion.
+
+\begin{suppcor}[Finite memory and output choices]
+\label{app:replay:cor:implementation}
+Whenever the condition of Theorem~\ref{app:replay:thm:main} holds,
+there is a learner that reads only membership profiles, uses at
+most $1+N2^N$ states, changes its output index at most $N$ times,
+and stabilizes to a correct index. It can be chosen so that every
+output language is inclusion-minimal in $\mathcal H$, meaning that
+no language in $\mathcal H$ is its proper subset. The containment
+property~\eqref{app:replay:eq:contain} continues to hold.
+\end{suppcor}
+
+\begin{proof}
+For the state bound, there is one initial state before the first
+observation. Thereafter the learner need only store $(j,C)$, where
+$j\in[N]$ and $C\subseteq[N]$. The update tests $j\in
+\operatorname{prof}(x)$ and, when this fails, replaces $C$ by
+$C\cap\operatorname{prof}(x)$. All residual comparisons and the
+choices $j(P)$ and $h(E)$ are fixed data of the finite family.
+Thus a finite-state transducer can implement the rule with at most
+$1+N2^N$ states. This is an existence statement for the fixed
+family, rather than an assertion that an arbitrary representation
+allows these data to be computed.
+
+After the first output, the output is a fixed function of $(j,C)$.
+Consequently it can change only when $C$ strictly decreases,
+apart from a possible change on the first subsequent round when
+the initial output $j$ is replaced by the choice for the same
+candidate set. Because $C$ starts nonempty and always contains the
+true target, it strictly decreases at most $|P|-1\le N-1$ times.
+There are therefore at most $N$ output changes. Stabilization and
+containment were proved in the theorem.
+
+To obtain inclusion-minimal outputs, first consider any index $j$
+that satisfies the theorem's condition for a profile $P$. Since
+the family is finite, there is an inclusion-minimal member $L_{j'}$
+of the family with $L_{j'}\subseteq L_j$. If two targets agree
+outside $L_{j'}$, they also agree outside $L_j$, because
+$U\setminus L_j\subseteq U\setminus L_{j'}$. Each group formed
+using $j'$ is therefore contained in a group formed using $j$.
+A language contained in every target of the larger group is also
+contained in every target of the smaller one. Thus $j'$ satisfies
+the same condition, and every first-output choice can be made
+inclusion-minimal.
+
+Likewise, whenever a group $E$ admits a common allowable language,
+choose an inclusion-minimal member of the family below that
+language. It is still contained in every target in $E$. Fix these
+minimal choices globally as the selectors $h(E)$ and run the same
+construction. Every output is now inclusion-minimal, while the
+state bound, output-change bound, convergence proof, and containment
+argument remain valid.
+\end{proof}

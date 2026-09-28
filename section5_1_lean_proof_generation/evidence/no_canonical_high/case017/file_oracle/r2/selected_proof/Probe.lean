@@ -1,0 +1,20 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Abstract.PartialDensity
+
+#check Filter.Eventually.all
+#check Filter.eventually_all
+#check Set.Infinite.exists_not_mem_finset
+#check Set.Infinite.exists_not_mem_finset
+#check Nat.find_spec
+#check Finset.card_le_card_of_injOn
+#check Finset.card_image_iff
+#check Function.invFun
+#check Function.leftInverse_invFun
+#check Set.range
+#check GenLimit.PatientScope.partialDensity_of_counting
+#check Filter.eventually_atTop.2
+#check Filter.eventually_atTop.1
+#check Finset.card_sdiff
+#check Finset.card_sdiff_add_card_inter
+#check Finset.card_erase_add_one
+#check Finset.max'

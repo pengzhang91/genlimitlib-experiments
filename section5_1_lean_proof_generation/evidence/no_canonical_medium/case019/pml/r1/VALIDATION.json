@@ -1,0 +1,113 @@
+{
+  "author_lean_size": {
+    "bytes": 24024,
+    "files": 9,
+    "lines": 618,
+    "scope": "All retained author Lean, including unimported scratch; not a quality score."
+  },
+  "author_status": {
+    "author_budget_seconds": 5400,
+    "deadline_overshoot_seconds": 0,
+    "elapsed_seconds": 2318.432564,
+    "exit_code": 0,
+    "monitor_errors": [],
+    "monitor_finished": true,
+    "routing_audit": {
+      "calls": 129,
+      "exit_code": 0,
+      "pass": true,
+      "providers": {
+        "OpenAI": 129
+      },
+      "total_upstream_usd": 3.5449784999999974,
+      "unverifiable": 0
+    },
+    "run_id": "pml_case019_nocanonical_reasoning_medium_v1_r1",
+    "state": "FINISHED"
+  },
+  "auxiliary_reports": {
+    "STATUS.md": {
+      "present": true,
+      "sha256": "b95f0b4daf160bd68a198caf220f70a46bf0dd6d41551e301e83d7838f6eb45d",
+      "within_word_limit": true,
+      "words": 166
+    }
+  },
+  "checkpoints": [
+    {
+      "axioms": {
+        "controller_exact_target": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "checker_exit": 2,
+      "checkpoint": "final",
+      "elapsed_seconds": 2318.432564,
+      "entry_compile_exit": 0,
+      "exact_target_compile_exit": 1,
+      "inadmissible_axioms": {
+        "controller_exact_target": [
+          "sorryAx"
+        ]
+      },
+      "inventory_analysis_exit": 0,
+      "kind": "final_artifact",
+      "matches_logged_gate": false,
+      "prohibited_mechanisms": [],
+      "root_source_hashes": {
+        "Case019Formalization.lean": "d86026e7d2adecdaeba67f7f6ac5226cac0d142bd47e5daa9865a31b4e112eaf",
+        "CountableClause.lean": "d7f2781ea2cd990ce1d08e9c8d1b62ebbe88105ad1872976286839c037210381",
+        "CountablePartial.lean": "65d1310dd6a5216f208e3d816e5170f683194791426ebb416c62b96e1e6acbf6",
+        "DensityTransfer.lean": "b4adf87b86e706c325be6d68db23b5dff3e2a42a3c2cf42189359742537f70ca",
+        "Helpers.lean": "606409ac4c33b1204e3f695ccd39c8af75536b813d673da4a6bbbf315ed086ca",
+        "PatientAdapter.lean": "10b7a0c54d975664fc3b621dde27508bdb8bbc050aa5c1a7297666b1d189b6b8",
+        "SeparationPartial.lean": "e86db0cfbd41b21c7bc6e87b73b43bd9b0b0d4831383e9f6c0b26dd27fccaa74"
+      },
+      "source_hashes": {
+        "Case019Formalization.lean": "d86026e7d2adecdaeba67f7f6ac5226cac0d142bd47e5daa9865a31b4e112eaf",
+        "Check.lean": "7960cc79d73194638f6970952439e2cef3310bc2843731ae62a712a1e6156c0b",
+        "CountableClause.lean": "d7f2781ea2cd990ce1d08e9c8d1b62ebbe88105ad1872976286839c037210381",
+        "CountablePartial.lean": "65d1310dd6a5216f208e3d816e5170f683194791426ebb416c62b96e1e6acbf6",
+        "DensityTransfer.lean": "b4adf87b86e706c325be6d68db23b5dff3e2a42a3c2cf42189359742537f70ca",
+        "Helpers.lean": "606409ac4c33b1204e3f695ccd39c8af75536b813d673da4a6bbbf315ed086ca",
+        "PatientAdapter.lean": "10b7a0c54d975664fc3b621dde27508bdb8bbc050aa5c1a7297666b1d189b6b8",
+        "Probe.lean": "273b9e265de82ff89f7db357c8d549330a17b48e1183861749273336f18caa96",
+        "SeparationPartial.lean": "e86db0cfbd41b21c7bc6e87b73b43bd9b0b0d4831383e9f6c0b26dd27fccaa74"
+      },
+      "sources_unchanged_during_check": true,
+      "stable_capture": true,
+      "target_kernel_pass": false
+    }
+  ],
+  "efficiency": {
+    "checker_command_events_to_first_pass": null,
+    "failed_checker_command_events_to_first_pass": null,
+    "first_valid_observed_pass_seconds": null,
+    "metric_limit": "Counts command events, not every Lean process hidden inside compound shell commands; raw timestamped events retained.",
+    "time_interpretation": "Controller receipt time of a successful checker event whose exact sources were captured and independently reverified; an observed upper bound, not guaranteed earliest possible proof.",
+    "tokens_to_first_valid_pass": null,
+    "tokens_to_pass_note": "No exact within-turn token telemetry is assumed. Full-run usage is not substituted for tokens-to-pass.",
+    "usage_observations": [
+      {
+        "elapsed_seconds": 2317.984669103753,
+        "usage": {
+          "cache_write_input_tokens": 597287,
+          "cached_input_tokens": 7222785,
+          "input_tokens": 7828649,
+          "output_tokens": 59005,
+          "reasoning_output_tokens": 15911
+        }
+      }
+    ]
+  },
+  "final_artifact_kernel_pass": false,
+  "partial_review_eligible": true,
+  "primary_success": false,
+  "run_id": "pml_case019_nocanonical_reasoning_medium_v1_r1",
+  "selected_checkpoint": null,
+  "semantic_review_required": false,
+  "target_kernel_pass": false
+}

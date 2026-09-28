@@ -1,0 +1,13 @@
+import output.Case024Helpers
+#check Set.ssubset_iff_subset_ne
+#check Set.ssubset_iff_subset_not_subset
+#check Set.ssubset_of_subset_of_ne
+#check Set.ssubset_of_subset_of_mem
+#check Set.ssubset_def
+#check Fin.last
+#check Fin.last_val
+#check Fin.zero_eta
+#check Nat.sub_lt
+#check Nat.sub_add_cancel
+#check Nat.succ_le_iff
+#check Set.infinite_coe_iff

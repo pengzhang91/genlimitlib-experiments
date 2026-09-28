@@ -1,0 +1,11 @@
+import Stage3Model
+import Mathlib.SetTheory.Cardinal.Continuum
+#check Cardinal.mk_set_nat
+#check Cardinal.aleph0_lt_mk_iff
+#check Cardinal.cantor'
+#check Cardinal.mk_nat
+#check Cardinal.aleph0_le_mk
+#check Cardinal.continuum
+#check Cardinal.aleph0_lt_continuum
+#check Uncountable.of_not_countable
+#check not_countable_iff

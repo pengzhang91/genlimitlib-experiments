@@ -1,0 +1,20 @@
+{
+  "elapsed_seconds": 935.2669193451293,
+  "kind": "observed_gate",
+  "matches_logged_gate": true,
+  "source_hashes": {
+    "AnalyticChecks.lean": "abf8ca90501b70149edeb9f02cc09e83992391abb4c084ec3d41d4cad71455e0",
+    "AnalyticChecks2.lean": "f1e1d2540ecbc1a3490f40ed46e47b68de1bf1957690f1a7cafa46496b1a50d1",
+    "BoundChecks.lean": "6207618963aa0d0423c5bf3fd6df39013cb7c4853905d0be5001c9a0e7e49ec2",
+    "CardChecks.lean": "838461814fc3d1cb29995b2db13b15b4b233aa3284ce55a321bf498f7b40a75c",
+    "Case017Formalization.lean": "340e238fce8c92b4b94af1f47f88c15856c269310ebc1a877f16331b1489a9a2",
+    "Check.lean": "0c0d51de6996d0c16fa37c66a86fd687eec3839ad12862758e0c483d646f7cc8",
+    "Checks.lean": "c0d6c4a407531ea3a3581a527ae757a6fb8abe9e0703abbf947a1bdc0b74c5e5",
+    "DivChecks.lean": "fb676db347836e78f590c2ce159fe72b5532eb3dc7322f08e5ffce76378c76dd",
+    "EraseChecks.lean": "fd1cf02780c49c2872aad85597ab0e3c3e5c647bd4a7920b8ddeb0665c12d1a9",
+    "Explore.lean": "e68f44f8f700b71e19fd911541b1650c616dcb0dfc32669c47d946a4121dc5fd",
+    "MinChecks.lean": "6fa41a46559d5cd691db2f6033b1e8aafec9dabbae59df3384665b403e6132a7",
+    "WF.lean": "c22c6a2e058df0e7973e2f2159fe9e5ad38ccc73879f097a4899beba8456a918"
+  },
+  "stable_capture": true
+}

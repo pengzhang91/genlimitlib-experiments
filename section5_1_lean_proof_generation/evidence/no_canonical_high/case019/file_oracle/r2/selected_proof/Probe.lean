@@ -1,0 +1,25 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import GenLimit.Paper10_UnionClosednessOfLanguageGeneration.Cardinality
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+
+#check le_liminf_add
+#check liminf_add_le
+#check liminf_le_liminf
+#check Filter.Tendsto.liminf_eq
+#check tendsto_natCast_atTop_atTop
+#check Filter.Tendsto.const_div_atTop
+#check tendsto_const_div_atTop_nhds_zero_nat
+#check Set.Countable.image
+#check Set.Countable.mono
+#check Set.countable_range
+#check Set.not_countable_univ
+#check GenLimit.UnionClosedness.not_countable_set_of_infinite
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.InfiniteContamination.exists_finiteExpansion_index_for_stream
+#check GenLimit.NoiseLossFeedback.finiteNoiseLevel_lower
+#check Set.ncard_inter_le
+#check Set.ncard_le_ncard
+#check GenLimit.PatientScope.prefixCount_mono

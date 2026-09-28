@@ -1,0 +1,48 @@
+{
+  "arm": "P",
+  "attempt_id": "p_case017_nocanonical_v1_r1",
+  "condition": "no_canonical_high",
+  "evidence_directory_run_id": "p_case017_nocanonical_v1_r1",
+  "final_output_files": 5,
+  "formal_run_id": "p_case017_nocanonical_v1_r1",
+  "lean_success": true,
+  "omitted_large_evidence": [
+    {
+      "bytes": 10473043,
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r1/checkpoints/0001/output/DEPENDENCIES.json",
+      "reason": "omitted full dependency graph; compact reuse evidence retained",
+      "sha256": "43d81089444f894ccace6f19cb4095492a04cacc99dd42a12165aa16819e59d2"
+    }
+  ],
+  "original_validation_primary_success": true,
+  "outcome_basis": "original_independent_validation",
+  "replicate": 1,
+  "schema_version": 1,
+  "selected_checkpoint": "0001",
+  "selected_checkpoint_metadata": [
+    "evidence/no_canonical_high/case017/p/r1/selected_checkpoint/CAPTURE.json",
+    "evidence/no_canonical_high/case017/p/r1/selected_checkpoint/LEAN_ENV.json",
+    "evidence/no_canonical_high/case017/p/r1/selected_checkpoint/REUSE.json"
+  ],
+  "selected_proof_files": 10,
+  "source_bundle": "lean2paper_case017_nocanonical_v1",
+  "source_receipts": {
+    "proxy_usage_log": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r1/proxy_requests.jsonl",
+      "sha256": "447e4a493d0059677c0b3dac82fd6ed5311511623c8f947828e3cae3175d3ad0"
+    },
+    "routing_audit": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r1/ROUTING_AUDIT.json",
+      "sha256": "8f1f976ef83d3f172076334ea854c0de683c07bc3f0789e15e0e36fab78e3a76"
+    },
+    "status": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/logs/p_case017_nocanonical_v1_r1/STATUS.json",
+      "sha256": "63b3c03e50d227f0c27681059fee431680b82c3d73d3591f4e646227b8c483c4"
+    },
+    "validation": {
+      "path": "lean2paper_case017_nocanonical_v1/cohort/arms/p/results/p_case017_nocanonical_v1_r1/VALIDATION.json",
+      "sha256": "e08d9edf72bfe72b8568d9f64f917e4b71929504613cb92855e95fa30f895907"
+    }
+  },
+  "task": "case017"
+}

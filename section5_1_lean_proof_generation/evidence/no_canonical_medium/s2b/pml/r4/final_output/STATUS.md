@@ -1,0 +1,5 @@
+Overall outcome: COMPLETE
+
+The exact theorem `stage3_result : Stage3S2B.MainClaim` is proved in `S2BFormalization.lean` and passes the supplied Lean entry-point checker. The proof establishes uncountability by diagonalization, uniform generation by the powers-of-two core, and the feedback-resistant negative claim via an adaptive clean injective complete presentation. The target's ambient increasing enumeration is built with `Nat.nth`; finite forbidden-set bounds give a linear ambient bound on ordinary presentations, and a square-root count of powers of two yields zero ordered upper density for the scored set.
+
+Materially used declarations include the shared model in `Stage3Model.lean`, ordered-density lemmas from `GenLimit.Core.OrderedDensity`, `Nat.nth` enumeration results, and the supplied square-root limit theorem from `GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation`. The checked proof uses only the permitted standard axioms `propext`, `Classical.choice`, and `Quot.sound`.

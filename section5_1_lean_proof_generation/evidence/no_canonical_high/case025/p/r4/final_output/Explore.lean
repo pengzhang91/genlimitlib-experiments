@@ -1,0 +1,9 @@
+import Stage3Model
+#print GenLimit.GeneratorFirst
+#print GenLimit.PatientScope.relativeLowerDensity
+#print GenLimit.PatientScope.prefixFinset
+#print GenLimit.PatientScope.prefixCount
+#print GenLimit.PatientScope.ordinaryAttacker
+#print GenLimit.PatientScope.PatientScopeCertificate.attackerCount
+#print GenLimit.PatientScope.PatientScopeCertificate.defenderCount
+#print GenLimit.PatientScope.PatientScopeCertificate.targetCount

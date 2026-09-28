@@ -1,0 +1,20 @@
+{
+  "pml_case025_nocanonical_v1_r3": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-22T19:58:36.208464+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case025_nocanonical_v1_r4": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-22T19:58:36.208502+00:00",
+    "source_template": "templates/pml/packet"
+  },
+  "pml_case025_nocanonical_v1_r5": {
+    "author_output_empty": true,
+    "condition": "PML",
+    "created_utc": "2026-09-22T19:58:36.208506+00:00",
+    "source_template": "templates/pml/packet"
+  }
+}

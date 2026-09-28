@@ -1,0 +1,17 @@
+import S2BFormalization
+#check Nat.count_eq_card_filter_range
+#check Nat.lt_nth_iff_count_lt
+#check Nat.log2_pow
+#check Nat.log2_two_pow
+#check Nat.log2_le_log2
+#check Nat.log2_mono
+#check Nat.log2_lt
+#check Nat.le_log2
+#check Nat.pow_le_pow_right
+#check Filter.Tendsto.const_mul
+#check Filter.Tendsto.add
+#check tendsto_const_nhds.div_atTop
+#check tendsto_natCast_atTop_atTop
+#check GenLimit.tendsto_natLog2_div
+#check Finset.card_image_of_injective
+#check Finset.card_filter_le

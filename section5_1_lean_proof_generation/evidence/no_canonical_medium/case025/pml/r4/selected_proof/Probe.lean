@@ -1,0 +1,14 @@
+import GenLimit.Paper39_DenseGeneration.Abstract.TargetDensity
+import Mathlib.Topology.Algebra.Order.LiminfLimsup
+open Filter
+#check Nat.tendsto_cast_atTop_atTop
+#check Nat.tendsto_natCast_atTop_atTop
+#check tendsto_natCast_atTop_atTop
+#check tendsto_const_nhds.div_atTop
+#check Tendsto.const_div_atTop
+#check tendsto_const_nhds.div
+#check liminf_add_le
+#check isBoundedUnder_le_of
+#check isBoundedUnder_ge_of
+#check isCoboundedUnder_ge_of_le
+#check isBoundedUnder_ge_of_le

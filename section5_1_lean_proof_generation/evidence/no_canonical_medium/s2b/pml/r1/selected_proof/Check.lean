@@ -1,0 +1,9 @@
+import GenLimit.Paper17_InfiniteContamination.SharedVanishingPresentation
+#check Nat.sqrt_le
+#check Nat.sqrt_le'
+#check Nat.sqrt_sq_eq_abs
+#check Nat.sqrt_eq_iff_sq_le
+#check Nat.sqrt_le_iff
+#check tendsto_nat_add_atTop_iff
+#check Filter.Tendsto.comp
+#check tendsto_sparseSqrt_add_one_div

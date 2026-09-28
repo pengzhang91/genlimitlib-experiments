@@ -1,0 +1,9 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper17_InfiniteContamination.FiniteContaminationSufficiency
+#check GenLimit.Generic.finset_eventually_subset_sample
+#check GenLimit.PatientMachine.patientScope_generation_and_lowerDensity
+#check GenLimit.PatientMachine.patientLowerDensity
+#check GenLimit.NovelGeneratesInLimit
+#check GenLimit.mem_sample_iff
+#check GenLimit.Generic.mem_sample_iff

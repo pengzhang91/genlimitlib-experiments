@@ -1,0 +1,15 @@
+import Stage3Model
+import GenLimit.Paper39_DenseGeneration.Patient.Main
+import GenLimit.Paper12_NoiseLossAndFeedback.FiniteNoiseSeparation
+import Mathlib.Logic.Equiv.Finset
+#check Encodable.encode
+#check Encodable.decode
+#check Encodable.encodek
+#check Prod.unpair_pair
+#check Nat.unpair_pair
+#check Nat.pair_unpair
+#check GenLimit.UnionClosedness.ascendingPositiveGenerator_spec
+#check GenLimit.UnionClosedness.descendingNegativeGenerator_spec
+#check GenLimit.UnionClosedness.powerSet_not_countable
+#check GenLimit.NoiseLossFeedback.finiteOmissionClass
+#check GenLimit.Generic.CorrectAt

@@ -1,0 +1,13 @@
+import Mathlib
+#check Real.le_sqrt
+#check Real.sq_sqrt
+#check Real.sqrt_sq_eq_abs
+#check Filter.tendsto_atTop.2
+#check Filter.tendsto_atTop_mono
+#check tendsto_inv_atTop_zero
+#check squeeze_zero
+#check Filter.Tendsto.add
+#check Nat.cast_le
+#check Nat.cast_pow
+#check Nat.sqrt_le
+#check Nat.sqrt_le_self
