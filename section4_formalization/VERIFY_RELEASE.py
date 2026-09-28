@@ -121,7 +121,6 @@ def main() -> None:
 
     required = (
         "README.md",
-        "ANONYMIZATION.md",
         "LICENSE",
         "GenLimitLean/lean-toolchain",
         "GenLimitLean/lakefile.toml",

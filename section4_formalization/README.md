@@ -57,7 +57,6 @@ implementations, running-time bounds, or Lean certification of the separate
 The public library is
 [generation-in-the-limit-lib](https://github.com/pengzhang91/generation-in-the-limit-lib).
 This release preserves the review snapshot's source-history boundary; it does
-not recover omitted private records or original revisions. See
-[ANONYMIZATION.md](ANONYMIZATION.md) and the root
+not recover omitted private records or original revisions. See the root
 [reproducibility scope](../REPRODUCIBILITY.md). The existing
 [Apache-2.0 license](LICENSE) remains in force.

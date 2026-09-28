@@ -43,25 +43,9 @@ python3 section5_2_math_reading/scripts/reproduce_appendix_c.py \
   --output "$recount_dir/recount.json"
 ```
 
-The reconstruction outputs go to a temporary directory so the frozen release
-files remain unchanged. These checks validate saved records and reconstruct
-reported mathematical-reading statistics; they do not rerun model inference or
-guarantee identical responses from a fresh run. See
-[REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the scope of each workflow.
-
 ## Licenses and provenance
 
-Project-owned code is licensed under [Apache-2.0](LICENSE-CODE), and
-project-owned documentation and experimental data under
-[CC BY 4.0](LICENSE-DATA.md), subject to the scope in [LICENSE.md](LICENSE.md).
-Existing upstream licenses and third-party rights are preserved. Paper excerpts
-are excluded from our license grant; their sources and unresolved redistribution
-questions are recorded in
-[the source-rights register](section5_2_math_reading/THIRD_PARTY_NOTICES.md).
-
-This is a separate public distribution. Selected reading-experiment excerpts
-are represented by exact boundary snippets and source locators. The original
-experiment used the complete excerpts. Saved responses, question wording,
-answers, Lean sources, and numerical results are preserved. See
-[PUBLIC_RELEASE.md](PUBLIC_RELEASE.md) for omissions and the optional full-input
-audit, and [ANONYMIZATION.md](ANONYMIZATION.md) for earlier review-time redactions.
+Project-owned code uses [Apache-2.0](LICENSE-CODE); project-owned documentation
+and data use [CC BY 4.0](LICENSE-DATA.md), subject to [license scope and third-party
+exclusions](LICENSE.md).
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for excerpt omissions and provenance.

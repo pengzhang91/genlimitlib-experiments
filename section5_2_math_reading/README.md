@@ -1,6 +1,6 @@
 # Mathematical-reading experiment artifact
 
-This module contains the mathematical-reading experiments in Section 5.2 of the GenLimitLib paper by Shuangping Li and Peng Zhang, with the protocol described in Appendix C. It contains a public presentation of the final question bank and prompts, the unchanged answer keys and saved model responses, source snapshots, and a portable script that reconstructs reported accuracies offline. Selected paper excerpts are abbreviated; the original experiment used complete excerpts. See [the public-release guide](../PUBLIC_RELEASE.md).
+This module contains the mathematical-reading experiments in Section 5.2 of the GenLimitLib paper by Shuangping Li and Peng Zhang, with the protocol described in Appendix C. It contains a public presentation of the final question bank and prompts, the unchanged answer keys and saved model responses, source snapshots, and a portable script that reconstructs reported accuracies offline. Selected paper excerpts are abbreviated; the original experiment used complete excerpts. See [the public-release guide](../REPRODUCIBILITY.md).
 
 No network access, API key, model download, GPU, or Lean installation is required for the offline analysis.
 
@@ -32,7 +32,6 @@ The current entry point does not calculate or report confidence intervals. It us
 - `results/`: reconstructed current results and detailed validation records.
 - `archive/`: historical numerical reference; selected supporting quotations are abbreviated, while every numerical value is retained.
 - `docs/`: file guide, runtime notes, and provenance limitations.
-- `verification/`: historical anonymous-release audit metadata.
 
 The question bank and two large evaluation prompt files use deterministic gzip (`bank24.json.gz`, `t1_confirm.jsonl.gz`, and `t2_confirm.jsonl.gz`). The portable script reads them transparently.
 
@@ -44,7 +43,7 @@ During preparation of the review snapshot, direct author identifiers, contact st
 
 Source citations, short boundary snippets, and original excerpt hashes are recorded in `PUBLIC_RELEASE.json`. Mixed-source blocks with unresolved material are abbreviated as a whole where reliable internal boundaries are unavailable.
 
-The saved model responses predate both the identity redactions and this public excerpt abbreviation. Inference was not rerun. Public prompts have refreshed character counts and SHA-256 values; their preceding snapshot hashes are retained separately in `PUBLIC_RELEASE.json`. Response records, screening decisions, and reconstructed point estimates are unchanged. The released prompt text is therefore not a byte-for-byte copy of the original inference input. See [ANONYMIZATION.md](ANONYMIZATION.md) for the scope and limitations.
+The saved model responses predate both the identity redactions and this public excerpt abbreviation. Inference was not rerun. Public prompts have refreshed character counts and SHA-256 values; their preceding snapshot hashes are retained separately in `PUBLIC_RELEASE.json`. Response records, screening decisions, and reconstructed point estimates are unchanged. The released prompt text is therefore not a byte-for-byte copy of the original inference input. See [runtime and provenance notes](docs/RUNTIME_AND_PROVENANCE.md) for the scope and limitations.
 
 ## Integrity
 

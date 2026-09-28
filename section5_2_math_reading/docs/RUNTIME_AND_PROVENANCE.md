@@ -35,8 +35,16 @@ No independently frozen final-run server startup receipt or exact executed runti
 
 ## Review-snapshot provenance
 
+The review snapshot replaced personal repository handles, author/contact strings,
+and local absolute paths with neutral placeholders, then recomputed prompt
+lengths, prompt hashes, and the archived bank hash. Lean source snapshots were
+not rewritten. The bank and two large prompt files use deterministic gzip;
+decompression restores the stored text exactly. Source-repository history,
+private authoring workspaces, handoff archives, and unneeded intermediate
+question-development records were excluded.
+
 Identity and contact strings in released metadata and prompt evidence were redacted after inference, and corresponding prompt hashes and character counts were recomputed. Response records and screening decisions remain unchanged. The public export additionally abbreviates selected paper excerpts. Default verification checks the public presentation and compares reconstructed point estimates with the historical recount. It does not claim to verify omitted original text. With `--private-excerpts`, complete review-snapshot bank, prompt, and historical-reference bytes are reconstructed in memory and checked against original hashes. This still does not undo earlier identity redactions.
 
 Historical evidence budgets describe the original run. Redaction can change released prompt character counts, so refreshed metadata describes the released text. Both released map blocks are 19,102 characters, matching the recorded original length. The sham map shares the relevant map's heading and length but contains Lean statements from outside the five-paper collection; it does not match the relevant map's relationship structure.
 
-The full early question-development and model-assisted authoring lineage is excluded from the released snapshot. It is not used by the portable command. See [ANONYMIZATION.md](../ANONYMIZATION.md) for redaction details and [LICENSES.md](../LICENSES.md) for source-material licensing.
+The full early question-development and model-assisted authoring lineage is excluded from the released snapshot. It is not used by the portable command. See [LICENSES.md](../LICENSES.md) for source-material licensing.

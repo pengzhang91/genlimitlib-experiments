@@ -14,7 +14,6 @@
 | Methods and historical question examples | `experiments/01_final_evaluation/reports/` |
 | Frozen source snapshots | `sources/` |
 | Historical reference for numerical and hash checks | `archive/recount_e24_20260920.json` |
-| Release audit | `verification/ANONYMITY_REPORT.json` |
 
 In prompt filenames, `t1` is the single-paper experiment and `t2` is the map experiment. `screen` is the question-only screening stage and `confirm` is the held-out evaluation stage. Request IDs join prompts, answer keys, and saved responses.
 
@@ -38,4 +37,4 @@ The following files are retained as historical records:
 
 The release retains the final experiment and every source needed by the portable analysis, including material needed to reconstruct the reported 78.40% accuracy after source exclusions. The earlier question-development tree retains only `MAP5.txt` and `SHAMMAP5.txt`, the frozen blocks checked against map-study prompts.
 
-Superseded manuscript drafts, duplicate reports and table dumps, the editorial audit memo, and the predecessor recount script are omitted. Intermediate authoring records and handoff archives remain excluded. Selected paper excerpts are abbreviated in this public distribution; PUBLIC_RELEASE.json records their original hashes and locators, and scripts/public_inputs.py validates the derivative or restores locally supplied complete excerpts. See [ANONYMIZATION.md](../ANONYMIZATION.md), [runtime and provenance notes](RUNTIME_AND_PROVENANCE.md), and [LICENSES.md](../LICENSES.md).
+Superseded manuscript drafts, duplicate reports and table dumps, the editorial audit memo, and the predecessor recount script are omitted. Intermediate authoring records and handoff archives remain excluded. Selected paper excerpts are abbreviated in this public distribution; PUBLIC_RELEASE.json records their original hashes and locators, and scripts/public_inputs.py validates the derivative or restores locally supplied complete excerpts. See [runtime and provenance notes](RUNTIME_AND_PROVENANCE.md), and [LICENSES.md](../LICENSES.md).

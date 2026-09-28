@@ -10,9 +10,9 @@
 ## Repository provenance
 
 - The bundled Lean dependency snapshot is distributed under the included
-  Apache-2.0 license. Author-identifying repository coordinates and revision
-  identifiers are withheld during double-blind review and will be restored in
-  the archival release.
+  Apache-2.0 license in the public
+  [experiment repository](https://github.com/pengzhang91/genlimitlib-experiments).
+  This module's `SHA256SUMS` records the bundled file hashes.
 - Lean: `leanprover/lean4:v4.24.0`.
 - Mathlib: `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` (v4.24.0); all transitive pins remain in `GenLimitLean/lake-manifest.json`.
 - The replay proof is compiled directly from the sources in this module; no

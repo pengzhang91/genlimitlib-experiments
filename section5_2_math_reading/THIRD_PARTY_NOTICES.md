@@ -59,7 +59,7 @@ The artifact stores excerpts as extracted text rather than original page
 facsimiles. Extraction can change line breaks, spacing, ligatures, and formula
 layout. Excerpts are selected or truncated and assembled with experiment
 instructions, answer options, and Lean context. Review-time redactions replaced
-some author-identity and contact strings; see [ANONYMIZATION.md](ANONYMIZATION.md).
+some author-identity and contact strings; see [runtime and provenance notes](docs/RUNTIME_AND_PROVENANCE.md).
 The original review snapshot remains separate. This public derivative replaces
 selected excerpts with exact boundary snippets, source links, and hashes;
 PUBLIC_RELEASE.json lists every affected block and question, including

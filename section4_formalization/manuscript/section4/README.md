@@ -11,7 +11,7 @@ Files `results_connections.tex` and `results_math.tex` contain Sections 4.1–4.
 
 The accompanying [Lean map](../../registry/section4/README.md) identifies exact theorem names, indexing conventions, assumptions, and verification commands.
 
-These files contain the Section 4 revision used for this artifact. Private manuscript-synchronization records and unrelated sections of the collaborative manuscript are intentionally excluded from the anonymous release.
+These files contain the Section 4 revision used for this artifact. Private manuscript-synchronization records and unrelated sections of the collaborative manuscript are intentionally excluded from the public release.
 
 ## Other Findings
 

@@ -9,12 +9,6 @@
       "category": "root"
     },
     {
-      "path": "ANONYMIZATION.md",
-      "bytes": 2964,
-      "sha256": "4abc1440693283662e417116908e55db16c3f3405046fc8478fb675fe9882a13",
-      "category": "root"
-    },
-    {
       "path": "LICENSES.md",
       "bytes": 2912,
       "sha256": "8b20ee622829bf7df130df24639dfef93a66fd902a3054006cd9dee45e3bf3cc",
@@ -28,20 +22,14 @@
     },
     {
       "path": "README.md",
-      "bytes": 4898,
-      "sha256": "7c115d7f6b1a11e7df7af554d838a89c2b20276ffe6eebce5bb33bb0427e9de9",
-      "category": "root"
-    },
-    {
-      "path": "RELEASE_NOTES.md",
-      "bytes": 3157,
-      "sha256": "b6b3ccaf614f0ddc79627019106c1de6c0c2ef5ff2eead0131db26f55e65e43c",
+      "bytes": 4861,
+      "sha256": "a815e15f2e3ee43e5cdd843b9b8ac4ee8812643bff139f146bdd90c29a757fa0",
       "category": "root"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 9225,
-      "sha256": "7d226f9449baa21a21eda9c37976e53362a6e5fad8d7ae0910bbe78952f727b4",
+      "bytes": 9251,
+      "sha256": "b8ccaf96ae5aa09e42c62388521cc9eaa2d9d2ad88a48272fa0c5c20affb07b0",
       "category": "root"
     },
     {
@@ -52,14 +40,14 @@
     },
     {
       "path": "docs/FILE_GUIDE.md",
-      "bytes": 3922,
-      "sha256": "e8575bf66d9a7ac8517d58d7d217561bada0d6fd0203b965b9f2ac19252fcac7",
+      "bytes": 3824,
+      "sha256": "be5e276f90fc518f0a26753e89f0a1101524f853b16299ce4f83ebf5e3fded7c",
       "category": "docs"
     },
     {
       "path": "docs/RUNTIME_AND_PROVENANCE.md",
-      "bytes": 3632,
-      "sha256": "0efcbc1513a77c44c0d79a4e195ad410a900f1157c3eaf5a594cad8e01cf3405",
+      "bytes": 4071,
+      "sha256": "117a02c27a939cf9612f918fc0fbf04c8f80943182d49901caae8bf2419a69dc",
       "category": "docs"
     },
     {
@@ -136,8 +124,8 @@
     },
     {
       "path": "experiments/01_final_evaluation/reports/METHODS.md",
-      "bytes": 6889,
-      "sha256": "c739d3f9c593ec4717862b602151cbe6e3cd7d34bfac7e4bd5d578423953edbe",
+      "bytes": 6834,
+      "sha256": "b52f0563c23e88124c40c961d2724d9459bb9ec88964c56cd2c7c4fb13eb625b",
       "category": "experiments"
     },
     {
@@ -3691,12 +3679,6 @@
       "bytes": 8036,
       "sha256": "751bef4861c2cb185a95f6dbee6bae016a3b391a539e709fe3968d45764a81f1",
       "category": "sources"
-    },
-    {
-      "path": "verification/ANONYMITY_REPORT.json",
-      "bytes": 2741,
-      "sha256": "0e9ef54f39a340bf7d03cdd374ca3bf9bfb5143235eb4b740b31f72af295d375",
-      "category": "verification"
     }
   ]
 }

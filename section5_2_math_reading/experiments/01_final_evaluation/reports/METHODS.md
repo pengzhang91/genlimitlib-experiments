@@ -67,4 +67,4 @@ From the release root, run `python3 scripts/reproduce_appendix_c.py`. The filena
 
 The three scripts in this directory's sibling `scripts/` folder are historical authoring/analysis records. In particular, `build_bank.py` depends on earlier workspaces excluded from this release, and `analyze.py` implements older supplemental analyses. Use the root-level portable command for the current results.
 
-Identity strings were redacted after inference; released prompts are not byte-identical to the original model inputs. See [the anonymization record](../../../ANONYMIZATION.md), [runtime and provenance notes](../../../docs/RUNTIME_AND_PROVENANCE.md), and [licensing notes](../../../LICENSES.md).
+Identity strings were redacted after inference; released prompts are not byte-identical to the original model inputs. See [runtime and provenance notes](../../../docs/RUNTIME_AND_PROVENANCE.md), and [licensing notes](../../../LICENSES.md).

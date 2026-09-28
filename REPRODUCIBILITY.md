@@ -76,7 +76,47 @@ in the bank and historical numerical reference. The original complete excerpts w
 used in the experiment; the shortened presentations were never sent to the
 model. Questions, answers, source snapshots, model responses, and scores are
 unchanged. Original hashes remain separate from public presentation hashes.
-See [PUBLIC_RELEASE.md](PUBLIC_RELEASE.md) for an optional full-input audit
-using locally supplied complete excerpts. Historical manifests and audit reports
-inside experiment records describe their original snapshots; current root and
-module integrity manifests describe this release.
+Historical manifests and audit reports inside experiment records describe their
+original snapshots; current root and module integrity manifests describe this
+release. The optional full-input audit is described below.
+
+
+## Omitted excerpts and full-input audit
+
+The public copy abbreviates 414 reading excerpts in 835 bank items and 4,521
+prompt records, plus 199 supporting `basis` fields containing 192 distinct
+quotations. Copies of those supporting quotations in the historical numerical
+reference are also abbreviated; numerical values remain unchanged. Identical
+blocks are abbreviated wherever reused. Mixed-source blocks are abbreviated
+as a whole when reliable internal source boundaries are unavailable.
+
+Locators preserve exact beginning/end snippets, capped at 240 characters per
+boundary. They can be sentence fragments and are not the complete text supplied
+to the model. `section5_2_math_reading/PUBLIC_RELEASE.json` records source links,
+affected question IDs, original lengths and hashes, public presentation hashes,
+and supporting-quotation mappings. Unrecorded page/section locations remain
+unknown. Third-party snippets retain the exclusions described in [LICENSE.md](LICENSE.md).
+
+The default offline command verifies the public presentation and reproduces the
+reported statistics, but reports `original_full_input_hashes_verified: false`.
+To verify omitted text, supply a local UTF-8 JSON object mapping each required
+excerpt SHA-256 to its exact complete text. Keep it outside the repository or
+under the ignored `private_inputs/` directory:
+
+```bash
+recount_dir=$(mktemp -d)
+python3 section5_2_math_reading/scripts/reproduce_appendix_c.py \
+  --private-excerpts /path/to/private-excerpts.json \
+  --output "$recount_dir/recount.json"
+```
+
+The script restores the bank, two prompt files, and historical numerical
+reference in memory and checks all four original input hashes before completing
+the audit. Missing or incorrect fragments fail verification. No restored text
+is uploaded or written to disk. Different PDF text extraction can change bytes,
+so access to a paper alone does not guarantee exact reconstruction.
+
+Successful restoration recovers the review snapshot after its earlier identity
+redactions. It does not recover unredacted model requests or rerun inference.
+The complete original artifact and private restoration material are retained
+separately; they must not be merged into this public repository's Git history.
